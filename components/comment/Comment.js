@@ -6,49 +6,88 @@ import isEmpty from 'lodash/isEmpty'
 import CommentSettings from "./CommentSettings";
 import "../../stylesheets/css/CommentSection.css";
 
-const NewReply = (props) => {
-    return(
-        <Formik
-            enableReinitialize={true}
-            validationSchema={Yup.object().shape({
-                comment: Yup.string().trim()
-                    .min(1, "Please enter a comment.")
-                    .required("Please enter a comment.")
-            })}
-            initialValues={{
-                comment: "",
-            }}
-            onSubmit={(values, actions) => {
-                props.submitReply(props.articleID, props.partID, props.commentID, values.comment);
+class NewReply extends React.Component {
+    constructor() {
+        super();
+        this.state = { showError: false }
+        this.hideError = this.hideError.bind(this);
+    }
 
-                values.comment = "";
-            }}
-            render={({
-                values,
-                handleSubmit,
-                errors,
-            }) => (
-                    <form autoComplete="off" onSubmit={handleSubmit} className="commentSection_newReply comment_newReply">
-                        <Field
-                            component="textarea"
-                            style={{ resize: "none", width: "100%" }}
-                            name="comment"
-                            rows="10"
-                            value={values.comment}
-                            maxLength="1500"
-                        />
+    componentDidUpdate() {
+        console.log(this.props)
+    }
 
-                        <button
-                            type="submit"
-                            disabled={!props.replyAdded || !isEmpty(errors)}
-                            className={!props.replyAdded ? "commentSection_submit commentSection_submit--disabled" : "commentSection_submit"}
-                        >
-                            SUBMIT
+    componentWillReceiveProps(newProps) {
+        if (newProps.error) {
+            this.setState({ showError: true });
+        }
+    }
+
+    hideError() {
+        this.setState({ showError: false })
+    }
+
+    render() {
+        return (
+            <Formik
+                enableReinitialize={true}
+                validationSchema={Yup.object().shape({
+                    comment: Yup.string().trim()
+                        .min(1, "Please enter a comment.")
+                        .required("Please enter a comment.")
+                })}
+                initialValues={{
+                    comment: "",
+                }}
+                onSubmit={(values) => {
+                    const comment = values.comment;
+                    values.comment = "";
+                    this.props.submitReply(this.props.articleID, this.props.partID, this.props.commentID, comment);
+                }}
+                render={({
+                    values,
+                    handleSubmit,
+                    errors,
+                }) => (
+                        <form autoComplete="off" onSubmit={handleSubmit} className="commentSection_newReply comment_newReply">
+                            <div style={{ width: "100%", position: "relative" }}>
+                                <Field
+                                    component="textarea"
+                                    style={{ resize: "none", width: "100%", verticalAlign: "top" }}
+                                    name="comment"
+                                    rows="10"
+                                    value={values.comment}
+                                    maxLength="1500"
+                                    onClick={() => {
+                                        if (this.props.error) {
+                                            this.hideError();
+                                        }
+                                    }}
+                                />
+
+                                {this.state.showError ?
+                                    <div
+                                        style={{ position: "absolute", width: "100%", height: "100%", top: 0, display: "flex", justifyContent: "center", alignItems: "flex-end", cursor: "text", pointerEvents: "none" }}
+                                    >
+                                        <p style={{ color: "red", marginBottom: "10px", fontSize: "0.6rem", textAlign: "center" }}>There was a problem submitting your comment. Please try again.</p>
+                                    </div>
+                                    :
+                                    null
+                                }
+                            </div>
+
+                            <button
+                                type="submit"
+                                disabled={!this.props.replySent || !isEmpty(errors)}
+                                className={!this.props.replySent ? "commentSection_submit commentSection_submit--disabled" : "commentSection_submit"}
+                            >
+                                SUBMIT
                         </button>
-                    </form>
-                )}
-        />
-    )
+                        </form>
+                    )}
+            />
+        )
+    }
 }
 
 const Comment = (props) => { 
@@ -75,14 +114,16 @@ const Comment = (props) => {
             <div className="comment_replies">
                 {props.showReplyBox === true ? 
                     <NewReply 
-                        replyAdded={props.replyAdded}
+                        replySent={props.replySent}
                         submitReply={props.submitReply}
                         articleID={props.articleID}
                         commentID={props.commentID}
                         partID={props.partID}
+                        error={props.replyError}
+                        replySent={props.replySent}
                     />
                     : null
-                }
+                }              
 
                 {props.replies}
             </div>

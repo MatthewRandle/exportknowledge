@@ -25,14 +25,14 @@
 }
 
 .course_video {
-    width: 640px;
-    height: 360px;
+    width: 40vw;
+    height: 22.5vw;
     border: 3px solid $OneDarkBG;
     background: $OneDarkBG;
 
     @include desktop-down() {
-        width: 75vw;
-        height: 42.1875vw;
+        width: 65vw;
+        height: 36.5625vw;
     }
 
     @include tablet-down() {
@@ -46,10 +46,11 @@
     flex-direction: column;
     justify-content: center;
     padding: 25px;
+    padding-bottom: 0;
     flex: 1;
 
     @include desktop-down() {
-        align-items: center;
+        align-items: center;        
     }
 
     @include tablet-down() {
@@ -67,7 +68,8 @@
 .course_title {
     font-family: "Zilla Slab";
     font-weight: bold;
-    font-size: 2.2rem;    
+    font-size: 2.9vw;    
+    text-align: center;
     color: $OneDarkBG;
 
     @include desktop-down() {
@@ -88,7 +90,8 @@
     font-family: "Open Sans";
     margin-top: 10px;
     line-height: 1.5em;
-    font-size: 0.9rem;
+    font-size: 1.6vw;
+    text-align: center;
 
     @include desktop-down() {
         font-size: 1rem;
@@ -108,6 +111,12 @@
 
 .course_preface {
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+
+    @include desktop-down() {
+        align-items: center;
+    }
 }
 
 .course_preface h1 {
@@ -120,9 +129,16 @@
 .course_preface p {
     margin-top: 10px;
     width: 65%;
+
+    @include desktop-down() {
+        width: 90%;
+        text-align: center;
+    }
 }
 
 .course_parts {
+    margin-top: 30px;
+
     @include desktop-down() {
         display: flex;
         flex-direction: column;

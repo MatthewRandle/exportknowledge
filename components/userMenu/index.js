@@ -78,7 +78,7 @@ class UserMenuContainer extends Component {
             }
         }
 
-        return <div>loading</div>;
+        return <div></div>;
     }
 }
 

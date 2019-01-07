@@ -60,16 +60,16 @@
 }
 
 .course_video {
-  width: 640px;
-  height: 360px;
+  width: 40vw;
+  height: 22.5vw;
   border: 3px solid #282c34;
   background: #282c34;
 }
 
 @media only screen and (max-width: 1200px) {
   .course_video {
-    width: 75vw;
-    height: 42.1875vw;
+    width: 65vw;
+    height: 36.5625vw;
   }
 }
 
@@ -92,6 +92,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   padding: 25px;
+  padding-bottom: 0;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -125,7 +126,8 @@
 .course_title {
   font-family: "Zilla Slab";
   font-weight: bold;
-  font-size: 2.2rem;
+  font-size: 2.9vw;
+  text-align: center;
   color: #282c34;
 }
 
@@ -152,7 +154,8 @@
   font-family: "Open Sans";
   margin-top: 10px;
   line-height: 1.5em;
-  font-size: 0.9rem;
+  font-size: 1.6vw;
+  text-align: center;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -178,6 +181,21 @@
 
 .course_preface {
   margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media only screen and (max-width: 1200px) {
+  .course_preface {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .course_preface h1 {
@@ -190,6 +208,17 @@
 .course_preface p {
   margin-top: 10px;
   width: 65%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .course_preface p {
+    width: 90%;
+    text-align: center;
+  }
+}
+
+.course_parts {
+  margin-top: 30px;
 }
 
 @media only screen and (max-width: 1200px) {

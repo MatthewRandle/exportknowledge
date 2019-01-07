@@ -1,8 +1,6 @@
 import axios from "axios";
 import getRouteString from "../../utils/getRouteString";
 
-import keys from "../../config/keys";
-
 export const COMMENT_SUCCESS = "COMMENT_SUCCESS";
 export const COMMENT_FAILURE = "COMMENT_FAILURE";
 export const DELETE_COMMENT_SUCCESS = "DELETE_ARTICLE_COMMENT_SUCCESS";
@@ -14,7 +12,7 @@ export const newArticleComment = (articleID, comment) => async dispatch => {
     try {
         await axios.post("/api/new-article-comment", { articleID, comment });
 
-        dispatch({ type: COMMENT_SUCCESS, payload: { commentAdded: true } });
+        dispatch({ type: COMMENT_SUCCESS, payload: { commentSent: true } });
         dispatch(fetchArticlesComments(articleID)); 
     }
     catch (err) {
@@ -26,7 +24,7 @@ export const newArticleReply = (articleID, commentID, comment) => async dispatch
     try {
         await axios.post("/api/new-article-comment-reply", { commentID, comment });
 
-        dispatch({ type: COMMENT_SUCCESS, payload: { replyAdded: true } });
+        dispatch({ type: COMMENT_SUCCESS, payload: { replySent: true } });
         dispatch(fetchArticlesComments(articleID));
     }
     catch (err) {
@@ -73,23 +71,23 @@ export const newCoursePartComment = (partID, comment) => async dispatch => {
     try {
         await axios.post("/api/new-course-part-comment", { partID, comment });
 
-        dispatch({ type: COMMENT_SUCCESS, payload: { commentAdded: true } });
+        dispatch({ type: COMMENT_SUCCESS, payload: { commentSent: true } });
         dispatch(fetchCoursePartComments(partID));
     }
     catch(err) {
-        dispatch({ type: COMMENT_FAILURE, payload: err.response.data.error });
+        dispatch({ type: COMMENT_FAILURE, payload: { error: true, commentSent: true } });
     }
 };
 
-export const newCourseseReply = (partID, commentID, comment) => async dispatch => {
+export const newCoursesReply = (partID, commentID, comment) => async dispatch => {
     try {
         await axios.post("/api/new-courses-comment-reply", { commentID, comment });
 
-        dispatch({ type: COMMENT_SUCCESS, payload: { replyAdded: true } });
+        dispatch({ type: COMMENT_SUCCESS, payload: { replySent: true } });
         dispatch(fetchCoursePartComments(partID));
     }
     catch (err) {
-        dispatch({ type: COMMENT_FAILURE, payload: err.response.data.error });
+        dispatch({ type: COMMENT_FAILURE, payload: { replyError: true, replySent: true } });
     }
 };
 

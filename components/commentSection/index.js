@@ -11,7 +11,7 @@ class CommentSectionContaner extends Component {
     constructor() { 
         super();
         this.submitComment = this.submitComment.bind(this);
-        this.state = { commentAdded: true }
+        this.state = { commentSent: true, error: false }
     }
 
     componentDidMount() {
@@ -38,20 +38,24 @@ class CommentSectionContaner extends Component {
                 }
             }
 
-            if(this.props.comment.commentAdded) {
-                this.setState({ commentAdded: true });
+            if (newProps.comment.commentSent && newProps.comment.error) {
+                this.setState({ commentSent: true, error: true });
+            }            
+            else if(newProps.comment.commentSent) {
+                this.setState({ commentSent: true })
             }
         }        
     }
 
     submitComment(comment) {
         if(this.props.articleID != null) {
+            this.setState({ commentSent: false, error: false })
             this.props.newArticleComment(this.props.articleID, comment);
-            this.setState({ commentAdded: false })
         }
         else if(this.props.partID != null) {
+            console.log(comment)
+            this.setState({ commentSent: false, error: false });
             this.props.newCoursePartComment(this.props.partID, comment);
-            this.setState({ commentAdded: false })
         }
     }
 
@@ -107,7 +111,8 @@ class CommentSectionContaner extends Component {
             <CommentSection
                 submit={this.submitComment}
                 comments={this.getComments()}
-                commentAdded={this.state.commentAdded}
+                commentSent={this.state.commentSent}
+                error={this.state.error}
             />
         );
     }
