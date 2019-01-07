@@ -1,0 +1,140 @@
+@import "_variables";
+
+.course_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.course {
+    @extend %container;
+}
+
+.course_info {
+    display: flex;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $OneDarkBG;
+    border-style: dashed;
+
+    @include desktop-down() {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.course_video {
+    width: 640px;
+    height: 360px;
+    border: 3px solid $OneDarkBG;
+    background: $OneDarkBG;
+
+    @include desktop-down() {
+        width: 75vw;
+        height: 42.1875vw;
+    }
+
+    @include tablet-down() {
+        width: 93vw;
+        height: 52.3125vw;
+    }
+}
+
+.course_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px;
+    flex: 1;
+
+    @include desktop-down() {
+        align-items: center;
+    }
+
+    @include tablet-down() {
+        width: 100%;
+        align-items: center;
+        padding: 0px;
+        padding-top: 20px;
+    }
+
+    @include phone-down() {
+        padding-top: 10px;
+    }
+}
+
+.course_title {
+    font-family: "Zilla Slab";
+    font-weight: bold;
+    font-size: 2.2rem;    
+    color: $darkGrey;
+
+    @include desktop-down() {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    @include tablet-down() {
+        font-size: 1.6rem;
+    }
+
+    @include phone-down() {
+        font-size: 1.5rem;
+    }
+}
+
+.course_description {
+    font-family: "Open Sans";
+    margin-top: 10px;
+    line-height: 1.5em;
+    font-size: 0.9rem;
+
+    @include desktop-down() {
+        font-size: 1rem;
+    }
+
+    @include tablet-down() {
+        width: auto;
+        font-size: 1rem;
+        margin-top: 5px;
+    }
+
+    @include phone-down() {
+        font-size: 1rem;
+        margin-top: 0px;
+    }
+}
+
+.course_preface {
+    margin-bottom: 20px;
+}
+
+.course_preface h1 {
+    color: $OneDarkBG;
+    font-family: "Zilla Slab";
+    margin-top: 20px;
+    font-size: 1.75rem;
+}
+
+.course_preface p {
+    margin-top: 10px;
+}
+
+.course_parts {
+    @include desktop-down() {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+//LOADERS
+.course_title--loading {
+    height: 50px;
+}
+
+.course_description--loading {
+    margin-top: 10px;
+    width: 100%;
+}

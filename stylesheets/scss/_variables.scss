@@ -1,0 +1,50 @@
+$desktopContainer: 1100px;
+$articleContainer: 980px;
+$purple: #8950ff;
+$blue: #00b7ff;
+$navbarHeight: 55px;
+$darkGrey: #3c3c3c;
+$OneDarkBG: #282c34;
+
+@mixin desktop-down() {@media only screen and (max-width: 1200px) { @content; }}
+
+@mixin tablet-down() {@media only screen and (max-width: 768px) { @content; }}
+
+@mixin phone-down() {@media only screen and (max-width: 480px) { @content; }}
+
+%containerPadding {
+    padding-right: 20px;
+    padding-left: 20px;
+    box-sizing: border-box;
+
+    @include phone-down() {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+%container {
+    width: 95%;
+    height: 100%;
+    @extend %containerPadding;
+
+    @include desktop-down() {
+        width: 100%;
+    }
+}
+
+%articleContainer {
+    width: $desktopContainer;
+    height: 100%;
+    @extend %containerPadding;
+
+    @include desktop-down() {
+        width: 100%;
+    }
+}
+
+@mixin gradientBorder($color1, $color2) {
+    border: 3px solid transparent;
+    border-image: linear-gradient(to right, $color1, $color2);
+    border-image-slice: 1;
+}

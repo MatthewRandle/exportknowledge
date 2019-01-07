@@ -1,0 +1,221 @@
+.coursePart {
+  padding-right: 20px;
+  padding-left: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media only screen and (max-width: 480px) {
+  .coursePart {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+.coursePart {
+  width: 95%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .coursePart {
+    width: 100%;
+  }
+}
+
+.coursePart_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 60px;
+}
+
+.coursePart {
+  border-bottom: 2px solid #3c3c3c;
+}
+
+.coursePart_preface {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #3c3c3c;
+  padding-bottom: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .coursePart_preface {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.coursePart_video {
+  width: 640px;
+  height: 360px;
+  border: 6px solid #282c34;
+  background: #282c34;
+}
+
+@media only screen and (max-width: 1200px) {
+  .coursePart_video {
+    width: 75vw;
+    height: 42.1875vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .coursePart_video {
+    width: 93vw;
+    height: 52.3125vw;
+  }
+}
+
+.coursePart_information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 25px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+@media only screen and (max-width: 1200px) {
+  .coursePart_information {
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .coursePart_information {
+    padding: 0px;
+    padding-top: 20px;
+  }
+}
+
+.coursePart_title {
+  font-family: "Zilla Slab";
+  font-weight: bold;
+  font-size: 2.3rem;
+  color: #3c3c3c;
+}
+
+@media only screen and (max-width: 1200px) {
+  .coursePart_title {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .coursePart_title {
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .coursePart_title {
+    font-size: 1.5rem;
+  }
+}
+
+.coursePart_description {
+  font-family: "Open Sans";
+  width: 90%;
+  margin-top: 10px;
+  line-height: 1.5em;
+  font-size: 0.9rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .coursePart_description {
+    width: auto;
+  }
+}
+
+.coursePart_text_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.coursePart_text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 70%;
+  font-family: "Open Sans";
+  padding-bottom: 20px;
+  word-wrap: break-word;
+}
+
+@media only screen and (max-width: 1200px) {
+  .coursePart_text {
+    width: 100%;
+  }
+}
+
+.coursePart_text li {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.5em;
+}
+
+.coursePart_text a {
+  color: #00b7ff;
+}
+
+.course_parts .coursePartPanel_container:nth-child(1) {
+  border-top: 6px solid #8950ff;
+}
+
+.course_parts .coursePartPanel_container:last-of-type {
+  border-bottom: 6px solid #8950ff;
+}
+
+.coursePart_title--loading {
+  height: 50px;
+}
+
+.coursePart_description--loading {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.coursePart_text--loading {
+  width: 1100px;
+  line-height: 1.5em;
+  font-family: "Open Sans";
+  height: 1200px;
+}
+/*# sourceMappingURL=CoursePart.css.map */

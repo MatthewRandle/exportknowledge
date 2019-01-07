@@ -1,0 +1,217 @@
+.course {
+  padding-right: 20px;
+  padding-left: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media only screen and (max-width: 480px) {
+  .course {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+.course {
+  width: 95%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .course {
+    width: 100%;
+  }
+}
+
+.course_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 60px;
+}
+
+.course_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #282c34;
+  border-style: dashed;
+}
+
+@media only screen and (max-width: 1200px) {
+  .course_info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.course_video {
+  width: 640px;
+  height: 360px;
+  border: 3px solid #282c34;
+  background: #282c34;
+}
+
+@media only screen and (max-width: 1200px) {
+  .course_video {
+    width: 75vw;
+    height: 42.1875vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .course_video {
+    width: 93vw;
+    height: 52.3125vw;
+  }
+}
+
+.course_text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 25px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+@media only screen and (max-width: 1200px) {
+  .course_text {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .course_text {
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0px;
+    padding-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .course_text {
+    padding-top: 10px;
+  }
+}
+
+.course_title {
+  font-family: "Zilla Slab";
+  font-weight: bold;
+  font-size: 2.2rem;
+  color: #3c3c3c;
+}
+
+@media only screen and (max-width: 1200px) {
+  .course_title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .course_title {
+    font-size: 1.6rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .course_title {
+    font-size: 1.5rem;
+  }
+}
+
+.course_description {
+  font-family: "Open Sans";
+  margin-top: 10px;
+  line-height: 1.5em;
+  font-size: 0.9rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .course_description {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .course_description {
+    width: auto;
+    font-size: 1rem;
+    margin-top: 5px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .course_description {
+    font-size: 1rem;
+    margin-top: 0px;
+  }
+}
+
+.course_preface {
+  margin-bottom: 20px;
+}
+
+.course_preface h1 {
+  color: #282c34;
+  font-family: "Zilla Slab";
+  margin-top: 20px;
+  font-size: 1.75rem;
+}
+
+.course_preface p {
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .course_parts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.course_title--loading {
+  height: 50px;
+}
+
+.course_description--loading {
+  margin-top: 10px;
+  width: 100%;
+}
+/*# sourceMappingURL=Course.css.map */

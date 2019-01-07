@@ -1,0 +1,160 @@
+When styling websites spacing is a very important thing. When I say spacing I mean the space between multiple html elements. If we don't take control over how our elements are spaced, we will end up with a big mess with lots of elements clumped together.
+
+<br>
+<br>
+
+If we look at our website so far the list we have created is very squashed in. It makes it harder to read each of the list items! To fix this we will use padding and spacing. Firstly padding. Padding is the amount of space an element takes up. Think the fat on a human body - the more padding we give an element the more space it takes up just like the fatter someone is the more space they take up. Now unlike fat on a human body the padding we apply to an element will not always be visible. Lets look at an example of this. We will go into our css file and add a new style of padding for all li's on our page. We will add this under our existing code
+
+<code><css>
+.title {
+    color: red;
+    font-size: 50px;
+}
+
+.small_header {
+    color: green;
+    font-size: 15px;
+}
+
+li {
+    padding: 
+}
+<code>
+
+But what value do we actually give to this padding property? Well it can be many units, but for now we are going to stick with px which stands for pixels. Go ahead and give the li's 10px of padding.
+
+<code><css>
+.title {
+    color: red;
+    font-size: 50px;
+}
+
+.small_header {
+    color: green;
+    font-size: 15px;
+}
+
+li {
+    padding: 10px;
+}
+<code>
+
+If we open up our page we will see that each of the list items now have some space around them. This helps keep the list readable - imagine if we had 100 items in this list without padding, it would be a nightmare to read.
+
+<br>
+<br>
+
+Now onto margins. Margins are very similar to paddings, we give them a value and some space is added around the element. The key difference is where that space is added. When we use padding the space is added onto the element (again think fat on a human), whereas margins are added to the outside of the element - imagine this as the air around a human. The more margin we give an element the more 'air' that is added around it, pushing things near it further away.
+
+<br>
+<br>
+
+So lets add a margin of 10px to our li
+
+<code><css>
+.title {
+    color: red;
+    font-size: 50px;
+}
+
+.small_header {
+    color: green;
+    font-size: 15px;
+}
+
+li {
+    padding: 10px;
+    margin: 10px;
+}
+<code>
+
+If we refresh our site we will see that again all of the list items get moved further away from each other, but apart from that there is no visible difference between the margin and the padding. Well there is and its actually quite important, and we will showcase this importance with buttons.
+
+<br>
+<br>
+
+Lets add a button to our site using button tags, add this anywhere in the body section of our html file
+
+<code><pre><html>
+<button>Click Me!</button>
+<code>
+
+We will then add some padding to this button using css
+
+<code><css>
+.title {
+    color: red;
+    font-size: 50px;
+}
+
+.small_header {
+    color: green;
+    font-size: 15px;
+}
+
+li {
+    padding: 10px;
+    margin: 10px;
+}
+
+button {
+    padding: 10px;
+}
+<code>
+
+If we refresh our page we will see that the button has more space inside of itself, but the elements around it aren't being pushed away. We will add some margin to this button and see what happens
+
+<code><css>
+.title {
+    color: red;
+    font-size: 50px;
+}
+
+.small_header {
+    color: green;
+    font-size: 15px;
+}
+
+li {
+    padding: 10px;
+    margin: 10px;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+}
+<code>
+
+As you can see the elements around our button are now pushed away. So we use padding when we want our element to be bigger, and margin when we want our element to have more space around it.
+
+<br>
+<br>
+
+We can also set padding and margin on just one side of an element. If wanted to just have some padding on the top  we would do this
+
+<code><pre><css>
+ol {
+    padding-top: 10px;
+}
+
+So keep in mind that we dont always need to set padding or margin on all sides, we can specify which side we want to be affected.
+
+<br>
+<br>
+
+This brings us onto our last topic of this part - multiple class selectors. If we look at our css, the styling for our li's and our button are the exact same. Instead of writing them separately we can join them together by simple adding the 2 selectors onto the same line like so
+
+<code><pre><css>
+li button {
+    padding: 10px;
+    margin: 10px;
+}
+<code>
+
+Now both elements have the same styling and we saved some space in our css file. Using multiple class selectors becomes very useful when we are writing styling for lots of elements that have the same styling. It also decreases the size of our files and makes our code more readable.
+
+<br>
+<br>
+
+And that's it for part 3, thanks for reading!

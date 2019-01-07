@@ -1,0 +1,38 @@
+.oauthButton_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #3c3c3c;
+  height: 75%;
+}
+
+.oauthButton_container:hover {
+  cursor: pointer;
+}
+
+.oauthButton_logo {
+  height: 22px;
+  width: 22px;
+  margin-right: 12px;
+  margin-left: 12px;
+}
+
+.oauthButton_text {
+  font-family: "Open Sans";
+  font-size: 0.65rem;
+  color: white;
+  margin-right: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .oauthButton_text {
+    display: none;
+  }
+}
+/*# sourceMappingURL=OAuthButton.css.map */

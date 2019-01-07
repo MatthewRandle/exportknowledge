@@ -1,0 +1,128 @@
+So far, we have a main page with some information - in my case, information about dogs. Let's pretend I want another page on my website. To make a new page we are going to make a new file in the same place our current file 'index.html' is. If you are using Visual Studio Code like me, go to the left section, there should be a title that is called whatever the folder that holds your file is called. Hover over it and some icons should appear. Click the new file button and call it 'page2.html'.
+
+<br>
+<br>
+
+Inside of this file we are going to follow the steps we did in the first part of this course. First create a DOCTYPE tag, with opening and closing html tags
+
+<code><html>
+<!DOCTYPE html>
+<html>
+
+</html>
+<code>
+
+Inside this we will put our head and body tags
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <body>
+    
+    </body>
+</html>
+<code>
+
+And for now, let’s just put a header saying 'Welcome to page 2', so we will easily be able to see when we are on the new page
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <body>
+        <h1>Welcome to page 2</h1>
+    </body>
+</html>
+<code>
+
+Now go back to our index.html file. We want to have a button that when clicked, takes us to this new page. If you remember from the 3rd part of this course, we learnt about links, that are denoted by an 'a' tag which stands for anchor. Under the header and first paragraph on our 'index.html' page, we will put an 'a' tag
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <title>Dogs</title>
+    </head>
+
+    <body>
+        <h1 style="color:red; font-size:50px; font-family: Oswald">A website dedicated to dogs</h1>
+        <p>A mans best friend!</p>
+
+        <a href="">Go to page 2!</a> <!-- RIGHT HERE -->
+
+        <p>Facts about dogs</p>
+        <ol>
+            <li>They are as smart as a 2 year old toddler</li>
+            <li>They have a sense of time and miss us when we are gone</li>
+            <li>They have sweat glands in their paws</li>
+            <li>
+                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+            </li>
+        </ol>
+
+        <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/09/funny-dog-thoughts-tweets-1.jpg" />
+    </body>
+</html>
+<code>
+
+But if we click this link as is, we won’t be taken anywhere! Remember the last time we used an 'a' tag, we put a url to a website inside of the href. But we aren't going to be linking using a url since the page is part of our site. This means we can link to it locally. To link to a file that’s in the same location as the one we are in ('index.html') we use './page2.html'. The './' means go to the same folder I am in, followed by the files name we want to link to - so we get './page2.html'. Putting this in our 'a' tag we get this
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <title>Dogs</title>
+    </head>
+
+    <body>
+        <h1 style="color:red; font-size:50px; font-family: Oswald">A website dedicated to dogs</h1>
+        <p>A mans best friend!</p>
+
+        <a href="./page2.html">Go to page 2!</a>
+
+        <p>Facts about dogs</p>
+        <ol>
+            <li>They are as smart as a 2 year old toddler</li>
+            <li>They have a sense of time and miss us when we are gone</li>
+            <li>They have sweat glands in their paws</li>
+            <li>
+                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+            </li>
+        </ol>
+
+        <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/09/funny-dog-thoughts-tweets-1.jpg" />
+    </body>
+</html>
+<code>
+
+Now if we click on this link, we will be taken to the new page! But how do we get back from that page to our home page (without using the back button). We do the exact same things we just did, but in our 'page2.html' file. So, we add an 'a' tag, this time with the href set to './index.html'
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <body>
+        <h1>Welcome to page 2</h1>
+
+        <a href="./index.html">Back to Homepage</a>
+    </body>
+</html>
+<code>
+
+And that's it. Using anchor tags we can create navigation across different pages on our site.
+
+<br>
+<br>
+
+Well done, you've completed this course and are on your way to becoming a web developer! Moving on I would suggest taking one of my courses, CSS: An Introduction. This course will introduce you to CSS, which is the way we style websites, where we will take our ugly website we made during this course and make it presentable.
+
+<br>
+<br>
+
+Thanks for reading!

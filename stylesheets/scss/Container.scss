@@ -1,0 +1,34 @@
+@import "_variables";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    height: 100%;
+    @extend %containerPadding;
+
+    @include desktop-down() {
+        width: 100%;
+    }
+}
+
+.container--article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: $desktopContainer;
+    height: 100%;
+    @extend %containerPadding;
+
+    //by deault every pages elements will fit 100% to the container
+    & > * {
+        width: 100%;
+    }
+
+    @include desktop-down() {
+        width: 100%;
+    }
+}

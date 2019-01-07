@@ -1,0 +1,97 @@
+@import "_variables";
+
+.settings_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings,
+.settings_buttons button {
+    font-family: "Zilla Slab";
+    font-weight: bold;
+    color: white;
+}
+
+.settings {
+    border: 1px solid gray;
+    height: 500px;
+    width: 350px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    background: #dbdbdb;
+    box-shadow: 6px 6px 39px -16px rgba(0,0,0,0.75);
+
+    @include phone-down() {
+        width: 75%;
+        height: 300px;
+    }
+}
+
+.settings_loader {
+    padding: 0;
+}
+
+.settings form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.settings form p {
+    color: $darkGrey;
+}
+
+.settings_checkbox {
+    margin-left: 10px;
+    margin-top: 6px;
+    font-size: .75rem;
+}
+
+.settings_input {
+    width: 100%;
+    height: 20px;
+    font-size: 0.8rem;
+    font-family: "Zilla Slab";
+    margin-bottom: 10px;
+}
+
+.settings_buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.settings_buttons button {
+    height: 35px;
+    border: none;
+    font-size: 1rem;
+    margin-top: 10px;
+    background: $darkGrey;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.settings_alert {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "Zilla Slab";
+}
+
+.settings_alert button {
+    background: $OneDarkBG;
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 0.75rem;
+    margin-top: 5px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}

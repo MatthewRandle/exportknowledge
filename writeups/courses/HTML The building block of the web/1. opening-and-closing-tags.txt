@@ -1,0 +1,70 @@
+To kick things off, we are going to download Visual Studio Code, which is what we call a text editor. If you would prefer to use another be free but note that I will be using Visual Studio Code. So, go
+ <a href="https://code.visualstudio.com/Download" target="_blank" rel="noopener noreferrer">here</a>
+ and install the editor. Once its downloaded and installed open it, press the 'Explorer' button on the left-hand side, or press Ctrl+Shift+E. Next press the open folder button and choose a folder for the website we are going to create. Then go to where it says 'New Folder' under 'Open Editors' and press the new file button. Call it 'index.html'. 
+
+<br>
+<br>
+
+Before we get started building our site we first need to learn about tags. A tag is a bit of code that lets the browser know what html element we want to use. For example, when we want to use a paragraph, the following tag is used
+
+<code><pre><html>
+<p>
+<code>
+
+Every single tag that we write in html is accompanied by a closing tag, which is the exact same as the opening tag, with one difference - a /
+
+<code><pre><html>
+</p>
+<code>
+
+Inside these tags we would write what text we want to be in our paragraph. So, each pair of opening and closing tags will almost always have something inside of them. This something is what will be seen on your website
+
+<code><pre><html>
+<p>This text will show on the website!</p>
+<code>
+
+Now that you understand what an opening and closing tag is lets setup our html document. Each html file that you create must have a declaration that lets the browser know what kind of file we are creating, in this case a html document
+
+<code><pre><html>
+<!DOCTYPE html>
+<code>
+
+We put this at the very top of our file. We then add a set of html opening and closing tags
+
+<code><html>
+<!DOCTYPE html>
+<html>
+
+</html>
+<code>
+
+Now everything that you want on a page will go inside of these html tags. Each html document has what we call a head, and a body. The head is a place where we put what is called metadata. This can be things like fonts or styles for the way we want certain things to look. The body is where we will put stuff that will be displayed on our website, such as the paragraph showed above. Putting the head and body tags in our document will give us this
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <body></body>
+</html>
+<code>
+
+If we were to open this document in a web browser nothing will show up, this is because we have left our body tags empty. To finish this first part of the course let’s make something show up in our browser. Add a set of paragraph inside of the body, with whatever text you want to show on your website
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <body>
+        <p>My first website. Yey!</p>
+    </body>
+</html>
+<code>
+
+To open your website simply search for the file on the computer (wherever you chose to save it) and drag and drop it into your browser. 
+
+<br>
+<br>
+
+That’s it, you just created your first website. It may not be pretty or serve any use right now but continue learning and you'll be able to make a fully functioning, beautiful website in no time!

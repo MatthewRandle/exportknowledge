@@ -1,0 +1,102 @@
+@import "_variables";
+
+.navbar_container {
+    z-index: 2;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-family: "Zilla Slab";
+    color: white;
+    background: linear-gradient(to right, $purple, $blue, $OneDarkBG, $OneDarkBG);
+    background-size: 400% 400%;
+}
+
+.navbar {
+    @extend %container;
+    display: flex;
+}
+
+.navbar_left {
+    display: flex;
+    height: 55px;
+    align-items: center;
+}
+
+.navbar_logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar_logo img {
+    margin-right: 3px;
+    height: 40px;
+    transform: translateY(-3px);
+}
+
+.navbar_logo_title {
+    color: white;
+    font-family: "Zilla Slab";
+    font-weight: bold;   
+    font-size: .8rem;
+    line-height: 0.8em;
+    width: 150px;
+    padding-left: 10px;
+
+    @include phone-down() {
+        display: none;
+    }
+}
+
+.navbar_links {    
+    display: flex;
+    font-size: 0.85rem;
+    margin-left: 30px;
+
+    @include desktop-down() {
+        margin-left: 20px;
+    }
+
+    @include tablet-down() {
+        margin-left: 0px;
+    }
+
+    @include phone-down() {
+        margin-left: 20px;
+        margin-top: 5px;
+        font-size: 1rem;
+    }
+}
+
+.navbar_links li a {
+    color: white;
+    padding-right: 15px; 
+    font-family: "Zilla Slab";  
+}
+
+
+
+
+
+.accountSection_container {
+    margin-left: auto;
+    pointer-events: none;
+}
+
+.accountSection { 
+    right: 0;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.accountSection > * {
+    pointer-events: auto;
+}
+
+.accountSection a {
+    text-decoration: none;
+    color: white;
+    font-size: .9rem;
+}

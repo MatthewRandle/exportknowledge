@@ -1,0 +1,133 @@
+@import "_variables";
+
+.articlePanel_container {
+    width: 100%;
+    height: 100%;
+    font-family: "Zilla Slab";
+    color: white;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+        .articlePanel_bottomBar {
+            background-color: $OneDarkBG;
+        }
+
+        cursor: pointer;
+    }
+}
+
+.articlePanel_base {
+    flex: 1;
+    width: 100%;
+    background-color: $OneDarkBG;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include desktop-down() {
+        padding: 4px;
+    }
+
+    @include tablet-down() {
+        padding: 3px;
+    }
+}
+
+.articlePanel_content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.articlePanel_title {
+    font-weight: bold;
+    font-size: 1.35vw;
+    text-align: center;
+    width: 95%;
+
+    @include desktop-down() {
+        font-size: 1.8vw;
+    }
+
+    @include tablet-down() {
+        font-size: 3vw;
+    }
+
+    @include phone-down() {
+        font-size: 5.5vw;
+    }
+}
+
+.articlePanel_description {
+    font-size: 1vw;
+    text-align: center;
+    padding-right: 5px;
+    padding-left: 5px;
+
+    @include desktop-down() {
+        font-size: 1.4vw;
+    }
+
+    @include tablet-down() {
+        font-size: 2vw;
+    }
+
+    @include phone-down() {
+        font-size: 4vw;
+    }
+}
+
+.articlePanel_base img {
+    width: 100%;
+    padding: 0.3vw;
+    box-sizing: border-box;
+
+    @include desktop-down() {
+        padding: 0.1vw;
+    }
+
+    @include phone-down() {
+        padding: 0.4vw;
+    }
+}
+
+.articlePanel_bottomBar {
+    font-family: "Open Sans";
+    border-top: 2px solid white;
+    background-color: $purple;
+    height: 1.1vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: .55vw;
+    font-weight: bold;
+    padding-right: 8px;
+    padding-left: 8px;
+    box-sizing: border-box;
+
+    @include desktop-down() {
+        font-size: 0.8vw;
+        height: 1.3vw;
+    }
+
+    @include tablet-down() {
+        font-size: 1.1vw;
+        height: 1.8vw;
+    }
+
+    @include phone-down() {
+        font-size: 2.3vw;
+        height: 4vw;
+    }
+}
+
+.articlePanel_bottomBar--doesntExist {
+    background-color: red;
+}

@@ -1,0 +1,146 @@
+@import "_variables";
+
+.coursePart_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.coursePart {
+    @extend %container;
+    border-bottom: 2px solid $darkGrey;
+}
+
+.coursePart_preface {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid $darkGrey;
+    padding-bottom: 20px;
+
+    @include desktop-down() {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.coursePart_video {
+    width: 640px;
+    height: 360px;
+    border: 6px solid $OneDarkBG;
+    background: $OneDarkBG;
+
+    @include desktop-down() {
+        width: 75vw;
+        height: 42.1875vw;
+    }
+
+    @include tablet-down() {
+        width: 93vw;
+        height: 52.3125vw;
+    }
+}
+
+.coursePart_information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px;
+    box-sizing: border-box;
+    flex: 1;
+
+    @include desktop-down() {
+        width: 100%;
+        align-items: center;
+        padding-bottom: 0;
+    }
+
+    @include tablet-down() {
+        padding: 0px;
+        padding-top: 20px;
+    }
+}
+
+.coursePart_title {
+    font-family: "Zilla Slab";
+    font-weight: bold;
+    font-size: 2.3rem;
+    color: $darkGrey;
+
+    @include desktop-down() {
+        font-size: 2rem;
+    }
+
+    @include tablet-down() {
+        font-size: 1.8rem;
+    }
+
+    @include phone-down() {
+        font-size: 1.5rem;
+    }
+}
+
+.coursePart_description {
+    font-family: "Open Sans";
+    width: 90%;
+    margin-top: 10px;
+    line-height: 1.5em;
+    font-size: 0.9rem;
+
+    @include desktop-down() {
+        width: auto;
+    }
+}
+
+.coursePart_text_container {
+    display: flex;
+}
+
+.coursePart_text {
+    display: flex;
+    flex-direction: column;
+    width: 70%;    
+    font-family: "Open Sans";
+    padding-bottom: 20px;
+    word-wrap: break-word;
+
+    @include desktop-down() {
+        width: 100%;
+    }
+}
+
+.coursePart_text li {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    line-height: 1.5em;
+}
+
+.coursePart_text a {
+    color: $blue;
+}
+
+.course_parts .coursePartPanel_container:nth-child(1) {
+    border-top: 6px solid $purple;
+}
+
+.course_parts .coursePartPanel_container:last-of-type {
+    border-bottom: 6px solid $purple;
+}
+
+//Loaders
+.coursePart_title--loading {
+    height: 50px;
+}
+
+.coursePart_description--loading {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.coursePart_text--loading {
+    width: $desktopContainer;    
+    line-height: 1.5em;
+    font-family: "Open Sans";
+    height: 1200px;
+}

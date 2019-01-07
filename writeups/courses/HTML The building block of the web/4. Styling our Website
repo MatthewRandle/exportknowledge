@@ -1,0 +1,110 @@
+So, we have a website. But it looks bland and boring. Let's spice things up a bit with styling. Styling is a very crucial part of web development because we want our website to look attractive and pleasing to the eye. Any html element can be styled, such as a paragraph, image, link and header. We are going to style the h1 tag at the top our site. The way we style elements looks like this
+
+<code><pre><html>
+<h1 style="property:value">This is styled</h1>
+<code>
+
+This should look familiar as style is just an attribute like the 'src' attribute we used in the last part, for settings an image on an img tag. We set this style attribute = to a 'property' that has a certain 'value'. These can be a lot of things so to keep it simple, we will set the color of our header. To set the color we use a 'color' property, with the color we want to use as the value, like so
+
+<code><pre><html>
+<h1 style="color:red">This is styled</h1>
+<code>
+
+So I'm giving the h1 a color of red. So on our website we had this
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <body>
+        <h1>A website dedicated to dogs</h1>
+        <p>A mans best friend!</p>
+
+        <p>Facts about dogs</p>
+        <ol>
+            <li>They are as smart as a 2 year old toddler</li>
+            <li>They have a sense of time and miss us when we are gone</li>
+            <li>They have sweat glands in their paws</li>
+            <li>
+                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+            </li>
+        </ol>
+
+        <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/09/funny-dog-thoughts-tweets-1.jpg" />
+    </body>
+</html>
+<code>
+
+The h1 tag at the top of the body is what we are going to update. Which turns into this
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <body>
+        <h1 style="color:red">A website dedicated to dogs</h1>
+        <h1></h1>
+        <p>A mans best friend!</p>
+
+        <p>Facts about dogs</p>
+        <ol>
+            <li>They are as smart as a 2 year old toddler</li>
+            <li>They have a sense of time and miss us when we are gone</li>
+            <li>They have sweat glands in their paws</li>
+            <li>
+                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+            </li>
+        </ol>
+
+        <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/09/funny-dog-thoughts-tweets-1.jpg" />
+    </body>
+</html>
+<code>
+
+Now if we load our website we should see our header is now red! I think this header could also do with being a bit bigger, as it is a heading for the website. To do this we use a property called 'font-size', that takes a range of values. The value we will be using is 'px' which stands for pixel. We will set the font size to '50px'.
+
+<br>
+<br>
+
+But wait. We already have one set of styling on our header, how do we add another? It's easy, simply separate the different styles with a ';' like this
+
+<code><pre><html>
+<h1 style="color:red; font-size:50px">This is red and big!</h1>
+<code>
+
+This allows us to add multiple styles to elements. Adding this to our site we have
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <body>
+        <h1 style="color:red; font-size:50px">A website dedicated to dogs</h1>
+        <h1></h1>
+        <p>A mans best friend!</p>
+
+        <p>Facts about dogs</p>
+        <ol>
+            <li>They are as smart as a 2 year old toddler</li>
+            <li>They have a sense of time and miss us when we are gone</li>
+            <li>They have sweat glands in their paws</li>
+            <li>
+                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+            </li>
+        </ol>
+
+        <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/09/funny-dog-thoughts-tweets-1.jpg" />
+    </body>
+</html>
+<code>
+
+This concludes part 4 of this course. This was only an introduction to styling. Styling will not be a main focus of this course. For styling look at the 'CSS' courses that I have created. If you would simply like to learn a few more styles that you can add to our website in the meantime, look 
+ <a href="http://www.stylinwithcss.com/resources_css_properties.php" target="_blank"h rel="noopener noreferrer">here</a>.
+
+<br>
+<br>
+
+Thanks for reading!

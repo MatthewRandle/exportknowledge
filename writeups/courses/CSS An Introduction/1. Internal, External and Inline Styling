@@ -1,0 +1,144 @@
+CSS, which stands for Cascading Style Sheets is a way in which we can style and format our html. If you went through my course 
+<a href="/course/html-the-building-block-of-the-web">HTML: The Building Block of the Web</a>
+ we used styling to make a header on our website red. CSS is just as common as html and you will use it everyday as a web developer.
+
+<br>
+<br>
+
+We are going to be styling the code from
+ <a href="/course/html-the-building-block-of-the-web">HTML: The Building Block of the Web</a>, 
+if you do not have that code here it is
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <title>Dogs</title>
+    </head>
+
+    <body>
+        <h1 style="color:red">A website dedicated to dogs</h1>
+        <p>A mans best friend!</p>
+
+        <a href="./page2.html">Go to page 2!</a>
+
+        <p>Facts about dogs</p>
+        <ol>
+            <li>They are as smart as a 2 year old toddler</li>
+            <li>They have a sense of time and miss us when we are gone</li>
+            <li>They have sweat glands in their paws</li>
+            <li>
+                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+            </li>
+        </ol>
+
+        <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/09/funny-dog-thoughts-tweets-1.jpg" />
+    </body>
+</html>
+<code>
+
+There are a few different ways in which we can use CSS, one way being inline styling. Inline styling is when we write CSS on the same line as we have wrote html, hence the name inline. An example of this is on line 9 of the code above where we have written style="color:red". This is inline CSS, we are telling the h1 that we want its color to be red. We may use inline styling to quickly mock up a design, or when we know that we won't be using lots of styles on the element.
+
+<br>
+<br>
+
+Next we have external styling. External styling is the most common way we style our html - using a CSS file. To get started we are going to create a new file in the same location as our existing files. We are going to call it 'Index.css'. When creating CSS for our html pages, it makes sense to name it the same as the html file we are styling.
+
+<br>
+<br>
+
+So, we have a new empty CSS file. We will delete the h1 styling on line 9 of our index.html file, and recreate the styling in our CSS file. Deleting the styling will return the h1 to a standard h1 like this
+
+<code><pre><html>
+<h1>A website dedicated to dogs</h1>
+<code>
+
+In our CSS file we are going to style this h1. When writing CSS, we specify which html element we want to target for the styling. For example this would be h1 for our header or p for a paragraph. We then would follow with opening and closing curly brackets like this
+
+<code><css>h1 {
+
+}<code>
+
+In our original inline styling we had written style="color:red". We know that the style attribute takes a property and value in the format property:value. When writing our property and values in a CSS file we do the exact same thing, with a semicolon on the end of each line
+
+<code><css>
+h1 {
+    color: red;
+}
+<code>
+
+So we have moved our inline styling over to a CSS file. If we view our index.html file in our browser we will see that the styling on the h1 has gone. To get the changes we make in our CSS file to alter the html file we have to link them together. We do this in the head section of our html like this
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./index.css" />
+    </head>
+</html>
+<code>
+
+Firstly we have a 'rel' attribute that is used to specify the relation between the current document (our html file) and the linked document (our CSS file). So here we set it to stylesheet, as that's what a CSS file is. Next we have a 'href' attribute. We have seen the href attribute before, when using anchor tags to tell the link where to go. We set this to the location of the CSS file we created. And thats it, if we put this link together with our index.html file we have this
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./index.css" />
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <title>Dogs</title>
+    </head>
+
+    <body>
+        <h1>A website dedicated to dogs</h1>
+        <p>A mans best friend!</p>
+
+        <a href="./page2.html">Go to page 2!</a>
+
+        <p>Facts about dogs</p>
+        <ol>
+            <li>They are as smart as a 2 year old toddler</li>
+            <li>They have a sense of time and miss us when we are gone</li>
+            <li>They have sweat glands in their paws</li>
+            <li>
+                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+            </li>
+        </ol>
+
+        <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/09/funny-dog-thoughts-tweets-1.jpg" />
+    </body>
+</html>
+<code>
+
+Our html and css files are now linked. Any change that we make in the css file will now update our html styling. Let's test this by adding a new style to our h1. We will set the font size to 50px like this
+
+<code><css>
+h1 {
+    color: red;
+    font-size: 50px;
+}
+<code>
+
+If we refresh our page in the browser we will see that the h1 is much bigger. The last thing we have to learn about is internal styling. Internal styling is the exact same as external styling, with one difference, we write the css in the head section of our html, using style tags
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            h1 {
+                color: red;
+                font-size: 50px;
+            }
+        </style>
+    </head>
+</html>
+<code>
+
+In my opinion internal styling is not of much use apart from quickly prototyping styles. Once your html and css starts to get bigger and more complex having them both in the same file can make the code harder to read, so I like to keep them separate.
+
+<br>
+<br>
+
+And thats it for the first part of this course, thanks for reading!

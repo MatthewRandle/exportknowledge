@@ -1,0 +1,158 @@
+.coursePanel_container {
+  width: 100%;
+  height: 100%;
+}
+
+.coursePanel_container:hover {
+  cursor: pointer;
+}
+
+.coursePanel_container:hover .coursePanel_bottomBar {
+  background-color: #00b7ff;
+}
+
+.coursePanel_base {
+  background-color: #282c34;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.coursePanel_base img {
+  width: 100%;
+  height: 65%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 0.4vw;
+  padding-bottom: 0vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media only screen and (max-width: 480px) {
+  .coursePanel_base img {
+    padding: 1vw;
+  }
+}
+
+.coursePanel_content {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.coursePanel_title {
+  font-family: "Zilla Slab";
+  font-weight: bold;
+  font-size: 1.5vw;
+}
+
+@media only screen and (max-width: 768px) {
+  .coursePanel_title {
+    font-size: 1.8vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .coursePanel_title {
+    font-size: 5vw;
+  }
+}
+
+.coursePanel_description {
+  text-align: center;
+  font-size: 0.9vw;
+  line-height: 1.2em;
+}
+
+@media only screen and (max-width: 1200px) {
+  .coursePanel_description {
+    font-size: 0.9vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .coursePanel_description {
+    font-size: 1.3vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .coursePanel_description {
+    font-size: 2.8vw;
+  }
+}
+
+.coursePanel_bottomBar {
+  background: #8950ff;
+  width: 100%;
+  height: 15px;
+  color: white;
+  font-family: "Open Sans";
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-left: 8px;
+  padding-right: 8px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 0.55vw;
+}
+
+@media only screen and (max-width: 1200px) {
+  .coursePanel_bottomBar {
+    font-size: 0.55vw;
+    height: 11px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .coursePanel_bottomBar {
+    font-size: 0.8vw;
+    height: 11px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .coursePanel_bottomBar {
+    font-size: 2vw;
+    height: 3vw;
+  }
+}
+
+.coursePanel_bottomBar--doesntExist {
+  background: red;
+}
+/*# sourceMappingURL=CoursePanel.css.map */

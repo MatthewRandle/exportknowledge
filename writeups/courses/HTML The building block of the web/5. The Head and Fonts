@@ -1,0 +1,132 @@
+In the first part of this course, we learned that each html document has what is called a head and a body. We've used the body so far, to display elements on our website. The head is also a very important place (note a html document does not actually need a head to work, but it is recommended and nearly always used).
+
+<br>
+<br>
+
+The head is where we put what is called metadata. This metadata can be things such as what font we are going to use or the title of our document. The first thing we are going to do is set the documents title. This title is what you see in the tab section of your browser - for example this website right now should have a document title of 'The Head and Fonts - export Knowledge;'. To set the documents title we use a title tag in our head section with whatever title we want inside of the tags, like so
+
+<code><pre><html>
+<title>Document title</title>
+<code>
+
+We're going to put this code inside the head of our website, I'm going to title mine 'Dogs'
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dogs</title>
+    </head>
+
+    <body>
+        <h1>A website dedicated to dogs</h1>
+        <p>A mans best friend!</p>
+
+        <p>Facts about dogs</p>
+        <ol>
+            <li>They are as smart as a 2 year old toddler</li>
+            <li>They have a sense of time and miss us when we are gone</li>
+            <li>They have sweat glands in their paws</li>
+            <li>
+                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+            </li>
+        </ol>
+
+        <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/09/funny-dog-thoughts-tweets-1.jpg" />
+    </body>
+</html>
+<code>
+
+Now if you load your website in your browser you should see that the document title has now changed. Another very useful thing we put inside the head is a link tag. This tag is used to link to things such as a font or a CSS stylesheet.
+
+<br>
+<br>
+
+We are going to put a link to a font in the head. This font can be locally on your computer or hosted somewhere online. For this tutorial we are going to load the font from Google Fonts. So go  
+<a href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer">here</a>
+ and pick a nice font.
+
+<br>
+<br>
+
+Once you have found a font you like click on it. You should be taken to a page specific to the font you chose. Near the top right it says, 'Select this font'. Click on it and a popup should appear at the bottom. Click on that popup and a little window should open. Under the 'Embed Font' section there is a box that has a link tag with the font url. Copy that.
+
+<br>
+<br>
+
+If you are struggling to follow along to these steps, or Google has changed their font system, copy this, which is the code I will be using:
+
+<code><pre><html>
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+<code>
+
+So now inside of the head paste this code, like so
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <title>Dogs</title>
+    </head>
+
+    <body>
+        <h1>A website dedicated to dogs</h1>
+        <p>A mans best friend!</p>
+
+        <p>Facts about dogs</p>
+        <ol>
+            <li>They are as smart as a 2 year old toddler</li>
+            <li>They have a sense of time and miss us when we are gone</li>
+            <li>They have sweat glands in their paws</li>
+            <li>
+                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+            </li>
+        </ol>
+
+        <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/09/funny-dog-thoughts-tweets-1.jpg" />
+    </body>
+</html>
+<code>
+
+So now whenever somebody visits our website, the browser sees that we are linking to a font and will load that font. To change the font of our header to the one chosen we will be using our knowledge of styling from the previous part. The style that we want to change is 'font-family', which controls what font an element has. The font-family property is given a value of the name of the chosen font. The name of the font I chose was 'Oswald'. So, putting this styling on a h1 would look like this
+
+<code><pre><html>
+<h1 style="font-family:Oswald"></h1>
+<code>
+
+If we add this to our already styled h1 on our website we get this
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <title>Dogs</title>
+    </head>
+
+    <body>
+        <h1 style="color:red; font-size:50px; font-family: Oswald">A website dedicated to dogs</h1>
+        <p>A mans best friend!</p>
+
+        <p>Facts about dogs</p>
+        <ol>
+            <li>They are as smart as a 2 year old toddler</li>
+            <li>They have a sense of time and miss us when we are gone</li>
+            <li>They have sweat glands in their paws</li>
+            <li>
+                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+            </li>
+        </ol>
+
+        <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/09/funny-dog-thoughts-tweets-1.jpg" />
+    </body>
+</html>
+<code>
+
+And there, if we load the website up in our browser we will see that only the h1 has the chosen font, and all other elements have a default font. If you wanted, you could load another font from Google Fonts and use 2 of them on your website. I wouldn't recommended loading more than 2 as load times for your website will be affected.
+
+<br>
+<br>
+
+That concludes part 5 of this course, thanks for reading!

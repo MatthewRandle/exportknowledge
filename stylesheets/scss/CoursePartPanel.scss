@@ -1,0 +1,84 @@
+@import "_variables";
+
+.coursePartPanel_container {
+    background: $OneDarkBG;
+    width: 60vw;
+    height: 2vw;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-family: "Zilla Slab";    
+    border: 3px solid $purple;
+    border-left: 6px solid $purple;
+    border-right: 6px solid $purple;
+    padding: 5px;
+    font-size: 1.5vw;
+    font-weight: bold;
+
+    &:hover {
+        cursor: pointer;
+        background: $purple;
+
+        .coursePartPanel_part {
+            background: $OneDarkBG;
+        }
+    }
+
+    @include desktop-down() {
+        width: 95%;
+        height: 2.5vw;
+    }
+
+    @include tablet-down() {
+        width: 100%;
+        border: 2px solid $purple !important;
+        border-left: 4px solid $purple;
+        border-right: 4px solid $purple;
+        padding: 4px;
+    }
+
+    @include phone-down() {
+        height: 3.25vw;
+    }
+}
+
+.coursePartPanel_part {
+    flex-basis: 50px;
+    background: $purple;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Open Sans";
+    font-size: 1.2vw;
+
+    @include tablet-down() {
+        font-size: 1.5vw;
+    }
+
+    @include phone-down() {
+        flex-basis: 30px;
+    }
+}
+
+.coursePartPanel_title {
+    flex: 1;
+    display: flex;
+    justify-content: center;   
+
+    @include desktop-down()  {
+        font-size: 2vw;
+    }
+
+    @include tablet-down() {
+        font-size: 2.6vw;
+    }
+
+    @include phone-down() {
+        font-size: 3vw;
+    }
+}
+
+.coursePartPanel_open {
+    padding: 10px;
+}

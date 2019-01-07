@@ -1,0 +1,32 @@
+@import "_variables";
+
+.oauthButton_container {    
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    background: $darkGrey;
+    height: 75%;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.oauthButton_logo {
+    height: 22px;
+    width: 22px;
+    margin-right: 12px;
+    margin-left: 12px;
+}
+
+.oauthButton_text {
+    font-family: "Open Sans";  
+    font-size: 0.65rem;
+    color: white;  
+    margin-right: 20px;
+
+    @include tablet-down() {
+        display: none;
+    }
+}

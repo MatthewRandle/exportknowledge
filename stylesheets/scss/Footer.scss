@@ -1,0 +1,120 @@
+@import "_variables";
+
+.footer_container {
+    height: 100px;
+    width: 100%; 
+    background: linear-gradient(to right, $purple, $blue);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+
+    @include phone-down() {
+        height: 70px;
+    }
+}
+
+.footer, .footer a {
+    color: white;
+    font-family: "Zilla Slab";
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    @extend %container;
+}
+
+.footer_logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+
+    @include phone-down() {
+        font-size: 1rem;
+    }
+}
+
+.footer_logo_image {
+    height: 50px;
+    margin-right: 20px;
+    transform: translateY(-4px);
+
+    @include desktop-down() {
+        transform: translateY(-5px);
+    }
+
+    @include tablet-down() {
+        transform: translateY(-5px);
+    }
+
+    @include phone-down() {
+        margin-right: 10px;
+        height: 40px;
+    }
+}
+
+.footer_links,
+.footer_social_links {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    margin-top: 5px;
+
+    @include phone-down() {
+        font-size: 0.6rem;
+    }
+}
+
+.footer_links {
+    width: 500px;
+
+    @include desktop-down() {
+        width: 390px;
+    }
+
+    @include tablet-down() {
+        width: 100%;
+        font-size: 0.55rem;
+    }
+}
+
+.footer_links a {
+    margin-right: 20px;
+
+    @include tablet-down() {
+        margin-right: 10px;
+    }
+
+    @include phone-down() {
+        margin-right: 5px;
+    }
+}
+
+.footer_social_links a img {
+    height: 65px;
+    margin-left: 20px;
+
+    @include tablet-down() {
+        margin-left: 10px;
+        height: 35px;
+    }
+
+    @include phone-down() {
+        height: 30px;
+    }
+}
+
+.footer_youtube {
+    height: 50px;
+
+    @include tablet-down() {
+        margin-left: 5px;
+        height: 40px;
+    }
+
+    @include phone-down() {
+        height: 30px;
+        margin-left: 3px;
+    }
+}

@@ -1,0 +1,131 @@
+When we've have been giving elements styles such as padding and margin, we have been setting them to a value of px (pixel). A px is a unit that we give to certain properties to set the value. There are many more units that we use and understanding them is important.
+
+<br>
+<br>
+
+To showcase how the different units affect elements we will add a button to our html, right at the top above our h1
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./index.css" />
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <title>Dogs</title>
+    </head>
+
+    <body>
+        <button>Im a button!</button>
+
+        <h1 class="title">A website dedicated to dogs</h1>
+        <h1 class="small_header>Second h1</h1>
+
+        <p>A mans best friend!</p>
+
+        <a href="./page2.html">Go to page 2!</a>
+
+        <p>Facts about dogs</p>
+        <ol>
+            <li>They are as smart as a 2 year old toddler</li>
+            <li>They have a sense of time and miss us when we are gone</li>
+            <li>They have sweat glands in their paws</li>
+            <li>
+                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+            </li>
+        </ol>
+
+        <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/09/funny-dog-thoughts-tweets-1.jpg" />
+    </body>
+</html>
+<code>
+
+We are going to change the size of the button using different units. To change the size of an element we can use the width and height properties. 
+
+<code><pre><css>
+button {
+    width:
+}
+<code>
+
+A very common unit is the percentage unit (%). Giving an element a % size, sets it relative to the parent. What I mean by this is image we had a box that is 300px of width, if we were to give a button that is inside of this box a width of 50%, the button would be half of the size of the box - so 150px.
+
+<br>
+<br>
+
+We will give our button a width of 100%
+
+<code><pre><css>
+button {
+    width: 100%;
+}
+<code>
+
+You will see that the button now stretches across the entire page, this is because the buttons parent is the body which has a width of the full page. So we know that a % sets the width relative to the parent.
+
+<br>
+<br>
+
+A very useful set of units are vw and vh - which stand for viewport width and viewport height. Giving an element a width of vw sets the width of the element relative to the viewports width. The viewport is simply the entire page. We will give our button a width of 100vw
+
+<code><pre><css>
+button {
+    width: 100vw;
+}
+<code>
+
+If you refresh you will see that nothing has changed, this is because we are saying be 100% if the vw, so it remains the same size as 100% since the button has no parent so its 100% of the viewport as well. To showcase the difference between % and vw we will change our list width. First give the ol a width of 10% and li a width of 100%
+
+<code><pre><css>
+ol {
+    width: 10%;
+}
+
+li {
+    width: 100%;
+}
+<code>
+
+You will see if you refresh that the list items are now squished onto new lines (if you list items are only 1 or 2 words you may not see this, so make sure you have plenty of text in each of your li's). Now give the li's a width of 100vw
+
+<code><pre><css>
+li {
+    width: 100vw;
+}
+<code>
+
+You will see that the li's width stretches across the viewport (100% of it). So vw always sets the elements size relative to the viewport, whereas % is relative to the parent. Using vw is very common when making things the same size on different screen sizes (desktop, tablet and mobile etc) as the element is always scaled to the browser width and height (when using vh).
+
+<br>
+<br>
+
+Lastly we have em and rem. These units are commonly used for sizing fonts. Giving an element a font size of em works very similar to how % works - it is sized relative to the parent element. We will give our ol a font-size of 2em
+
+<code><pre><css>
+ol {
+    font-size: 2em;
+}
+<code>
+
+We will see that each of the li's text gets bigger. As we have not yet set a size for the li's font they are using the same as the parent (ol) - this is called inheritance. We will now give the li's a font-size of 2em
+
+<code><pre><css>
+ol {
+    font-size: 2em;
+}
+
+li {
+    font-size: 2em;
+}
+<code>
+
+Now we will see the li's get even bigger. So whats happening here? First we gave the ol a font-size of 2em. As the ol's parent is the body we are giving the ol a font-size relative to the body's font-size, and then the li's are getting a font-size relative to the ol's. So as we go deeper and deeper ems get bigger and bigger because they all inherit from their parents causing each child to be bigger than the last.
+
+<br>
+<br>
+
+Rem's are very similar to the way vw works - they are relative to the body. So it doesn't matter if we are giving an li inside of an ol a rem of 1.5 and the li's child a size of 1.5, they will both be the same size. If we give the body a font-size of 20px and set any element in our html to a font-size of 1rem, we know that that element is 20px. So we use rem's to keep things consistent across all our elements. It's becoming more and more common to use rem's for sizing fonts, so knowing about them now will be very helpful for future tutorials.
+
+<br>
+<br>
+
+And thats it for this part. I know it was a bit boring but we had to get units out of the way. Thanks for reading!

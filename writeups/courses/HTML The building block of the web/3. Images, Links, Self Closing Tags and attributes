@@ -1,0 +1,107 @@
+We have a website - buts its boring right? Let’s add some images and links to brighten things up a bit. We can add images to our site using a img tag. Up until this point we have been using tags as such
+
+<code><pre><html>
+<p></p>
+<code>
+
+We know that we can put stuff inside opening and closing tags, but if we are going to be linking to an image why would we need to put stuff inside of the tags. This is where self-closing tags come in. A self-closing image tag looks like this
+
+<code><pre><html>
+<img />
+<code>
+
+Simple right? We just have an opening tag with a / before the last >. We use self closing tags all the time with images, as we don't need anything in the image. We need to tell our self-closing image tag what image to show. We do that with what is called an attribute.
+
+<br>
+<br>
+
+An attribute is something that we put inside of the tags - either inside of the opening tag if using opening and closing tags such as when using paragraphs like so
+
+<code><pre><html>
+<p attribute></p>
+<code>
+
+or inside of the self-closing tag
+
+<code><pre><html>
+<img attribute />
+<code>
+
+This attribute can be many things that we will learn about in future parts but the specific one we are after is the 'src' attribute, which stands for source. The src attribute is simply a link to the image, which we do like this
+
+<code><pre><html>
+<img src="image link" />
+<code>
+
+We first put the attribute type, which is src, then set it = to something, that something is surrounded by quotes (for a bit of extra knowledge, when something is surrounded by quotes it is called a string, which is text, we will use strings a lot when developing websites).
+
+<br>
+<br>
+
+So, let’s find an image to put on our website. I went to google images and searched 'dog', right clicked the image I wanted and clicked 'Open image in a new tab'. The thing we put inside of the src attribute is the url of the image. My dog image looks like this
+
+<code><pre><html>
+<img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/09/funny-dog-thoughts-tweets-1.jpg" />
+<code>
+
+Now let’s add this image to our website. To stick to the theme of dogs I changed a few things inside of the headers and paragraphs to be about dogs, make yours into whatever you like!
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <body>
+        <h1>A website dedicated to dogs</h1>
+        <p>A mans best friend!</p>
+
+        <p>Facts about dogs</p>
+        <ol>
+            <li>They are as smart as a 2 year old toddler</li>
+            <li>They have a sense of time and miss us when we are gone</li>
+            <li>They have sweat glands in their paws</li>
+        </ol>
+
+        <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/09/funny-dog-thoughts-tweets-1.jpg" />
+    </body>
+</html>
+<code>
+
+Next, we will learn about links. A links tag is denoted by 'a' which stands for anchor. Like an image an 'a' tag has a very important attribute, called the href. The href is where we will be sent to when we click on the link. This can be another page on your site, or to anywhere on the internet (a URL). This is what the 'a' tag looks like
+
+<code><pre><html>
+<a href="link to somewhere">Click Me!</a>
+<code>
+
+Inside of the a tags we put anything we want. I used 'For more facts about dogs click me!' for obvious reasons. I'm going to add a link at the end of our list like this
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <body>
+        <h1>A website dedicated to dogs</h1>
+        <p>A mans best friend!</p>
+
+        <p>Facts about dogs</p>
+        <ol>
+            <li>They are as smart as a 2 year old toddler</li>
+            <li>They have a sense of time and miss us when we are gone</li>
+            <li>They have sweat glands in their paws</li>
+            <li>
+                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+            </li>
+        </ol>
+
+        <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/09/funny-dog-thoughts-tweets-1.jpg" />
+    </body>
+</html>
+<code>
+
+Later on in this course we will be using links to navigate to different pages on our website.
+
+<br>
+<br>
+
+That concludes part 3 of this course. I hope you are starting to feel comfortable with html now. Thanks for reading!

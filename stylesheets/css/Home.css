@@ -1,0 +1,245 @@
+.home, .home_jumbotron {
+  padding-right: 20px;
+  padding-left: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media only screen and (max-width: 480px) {
+  .home, .home_jumbotron {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+.home, .home_jumbotron {
+  width: 95%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .home, .home_jumbotron {
+    width: 100%;
+  }
+}
+
+.home_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 60px;
+}
+
+.home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home_jumbotron_container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: radial-gradient(#1a1d22 3px, transparent 4px), radial-gradient(#1a1d22 3px, transparent 4px), linear-gradient(#282c34 4px, transparent 0), linear-gradient(45deg, transparent 74px, transparent 75px, #1a1d22 75px, #1a1d22 76px, transparent 77px, transparent 109px), linear-gradient(-45deg, transparent 75px, transparent 76px, #1a1d22 76px, #1a1d22 77px, transparent 78px, transparent 109px), #282c34;
+  background-size: 109px 109px, 109px 109px, 100% 6px, 109px 109px, 109px 109px;
+  background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+}
+
+.home_jumbotron {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+  .home_jumbotron {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .home_jumbotron {
+    padding-top: 30px;
+  }
+}
+
+.home_button--loader,
+.jumbotron_button {
+  text-align: center;
+  color: white;
+  background: #00b7ff;
+  font-family: "Zilla Slab";
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 30px;
+  border: 1px solid white;
+  -webkit-box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.75);
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 480px) {
+  .home_button--loader,
+  .jumbotron_button {
+    width: 90%;
+  }
+}
+
+.home_button--loader {
+  height: 40px;
+  width: 185px;
+  padding: 0;
+}
+
+.jumbotron_title--loader,
+.jumbotron_title {
+  font-family: "Zilla Slab";
+  font-weight: bold;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.75);
+  width: 50%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .jumbotron_title--loader,
+  .jumbotron_title {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .jumbotron_title--loader,
+  .jumbotron_title {
+    width: 100%;
+  }
+}
+
+.jumbotron_title--loader {
+  width: 750px;
+  height: 66px;
+}
+
+.home_button {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  background: #8950ff;
+  border: none;
+  color: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+}
+
+.home_button:hover {
+  cursor: pointer;
+}
+
+.home_courses {
+  width: 75%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 10vw;
+  grid-gap: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  .home_courses {
+    width: 95%;
+    grid-auto-rows: 13vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .home_courses {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 28vw;
+  }
+}
+
+.home_courses .coursePanel_container {
+  border: 1px solid white;
+  -webkit-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.75);
+}
+
+.home_courses .coursePanel_base img {
+  padding: 0.3vw;
+  padding-bottom: 0vw;
+}
+
+.home_courses .coursePanel_content {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.home_courses .coursePanel_title {
+  font-size: 1.1vw;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .home_courses .coursePanel_title {
+    font-size: 1.75vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .home_courses .coursePanel_title {
+    font-size: 4.5vw;
+  }
+}
+
+.home_courses .coursePanel_description {
+  display: none;
+}
+
+.home_articles {
+  width: 100%;
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/*# sourceMappingURL=Home.css.map */

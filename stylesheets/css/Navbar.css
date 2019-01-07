@@ -1,0 +1,153 @@
+.navbar {
+  padding-right: 20px;
+  padding-left: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media only screen and (max-width: 480px) {
+  .navbar {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+.navbar {
+  width: 95%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .navbar {
+    width: 100%;
+  }
+}
+
+.navbar_container {
+  z-index: 2;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  font-family: "Zilla Slab";
+  color: white;
+  background: -webkit-gradient(linear, left top, right top, from(#8950ff), color-stop(#00b7ff), color-stop(#282c34), to(#282c34));
+  background: linear-gradient(to right, #8950ff, #00b7ff, #282c34, #282c34);
+  background-size: 400% 400%;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navbar_left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 55px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar_logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar_logo img {
+  margin-right: 3px;
+  height: 40px;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+}
+
+.navbar_logo_title {
+  color: white;
+  font-family: "Zilla Slab";
+  font-weight: bold;
+  font-size: .8rem;
+  line-height: 0.8em;
+  width: 150px;
+  padding-left: 10px;
+}
+
+@media only screen and (max-width: 480px) {
+  .navbar_logo_title {
+    display: none;
+  }
+}
+
+.navbar_links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.85rem;
+  margin-left: 30px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .navbar_links {
+    margin-left: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar_links {
+    margin-left: 0px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .navbar_links {
+    margin-left: 20px;
+    margin-top: 5px;
+    font-size: 1rem;
+  }
+}
+
+.navbar_links li a {
+  color: white;
+  padding-right: 15px;
+  font-family: "Zilla Slab";
+}
+
+.accountSection_container {
+  margin-left: auto;
+  pointer-events: none;
+}
+
+.accountSection {
+  right: 0;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.accountSection > * {
+  pointer-events: auto;
+}
+
+.accountSection a {
+  text-decoration: none;
+  color: white;
+  font-size: .9rem;
+}
+/*# sourceMappingURL=Navbar.css.map */

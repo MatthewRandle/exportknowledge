@@ -1,0 +1,276 @@
+.howmanyhours {
+  padding-right: 20px;
+  padding-left: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media only screen and (max-width: 480px) {
+  .howmanyhours {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+.howmanyhours {
+  width: 95%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .howmanyhours {
+    width: 100%;
+  }
+}
+
+.howmanyhours-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.howmanyhours {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  font-family: "Zilla Slab";
+  font-weight: bold;
+  color: #282c34;
+}
+
+.howmanyhours h1 {
+  text-shadow: 5px 5px 0px #cdcbfd;
+}
+
+.howmanyhours p {
+  text-shadow: 3px 3px 0px #cdcbfd;
+}
+
+.howmanyhours-steps {
+  width: 900px;
+}
+
+.howmanyhours-steps a {
+  background: #00b7ff;
+  text-shadow: none;
+  padding-right: 5px;
+  padding-left: 5px;
+  border-radius: 5px;
+  font-size: .8em;
+  color: white;
+  text-decoration: none;
+  font-family: "Open Sans";
+  font-weight: 100;
+  border: 2px solid white;
+}
+
+.howmanyhours-steps h1 {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.25rem;
+  text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.75);
+  font-family: "Open Sans";
+  font-weight: 100;
+}
+
+.howmanyhours-button {
+  width: 315px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  background-color: #00b7ff;
+  color: white;
+  font-family: "Zilla Slab";
+  font-weight: bold;
+  -webkit-box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.75);
+  border: 2px solid #00b7ff;
+}
+
+.howmanyhours-button:hover {
+  cursor: pointer;
+}
+
+.howmanyhours-button-invalid {
+  background-color: #282c34;
+}
+
+.howmanyhours-upload {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid #00b7ff;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-family: "Zilla Slab";
+  -webkit-box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.75);
+}
+
+.howmanyhours-upload-button {
+  height: 50px;
+  width: 120px;
+  border: none;
+  font-size: 1.2rem;
+  background-color: #00b7ff;
+  color: white;
+  font-family: "Zilla Slab";
+  font-weight: bold;
+}
+
+.howmanyhours-upload-button:hover {
+  cursor: pointer;
+}
+
+.howmanyhours-upload-button:focus,
+.howmanyhours-button:focus {
+  outline: none;
+}
+
+.dropzone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2em;
+  width: 550px;
+  height: 50px;
+  background-color: white;
+}
+
+.dropzone:hover {
+  cursor: pointer;
+}
+
+.hover {
+  color: white;
+  background-color: #282c34;
+}
+
+.hide {
+  display: none;
+}
+
+.howmanyhours span {
+  font-family: "Roboto Condensed";
+}
+
+.totalHours {
+  height: calc(100vh - 55px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: translateY(-55px);
+          transform: translateY(-55px);
+}
+
+.totalHours h1 {
+  font-size: 20rem;
+  text-shadow: 5px 5px 0px #cdcbfd;
+  font-family: "Open Sans";
+}
+
+.totalHours p {
+  font-size: 3rem;
+  font-family: "Zilla Slab";
+  font-weight: bold;
+}
+
+.totalHours img {
+  position: absolute;
+  bottom: 0;
+  text-shadow: 3px 3px 0px #cdcbfd;
+}
+
+.totalTvHours,
+.totalMovieHours {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  font-family: "Zilla Slab";
+  margin-top: 150px;
+}
+
+.totalTvHours h1,
+.totalMovieHours h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.totalTvHours h1 span,
+.totalMovieHours h1 span {
+  font-size: 10rem;
+}
+
+.totalTvHours p,
+.totalMovieHours p {
+  margin-top: 25px;
+  font-size: 2.75rem;
+}
+
+.totalTvHours p span,
+.totalMovieHours p span {
+  font-size: 8rem;
+}
+
+.totalTvHours p:first-of-type {
+  padding-right: 7px;
+}
+
+.totalMovieHours p {
+  text-align: center;
+  width: 100%;
+}
+
+.most {
+  margin-top: 150px;
+}
+
+.most p {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.most p span {
+  font-size: 7rem;
+}
+/*# sourceMappingURL=HowManyHours.css.map */

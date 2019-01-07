@@ -1,0 +1,96 @@
+In the first part of this course we looked at how to setup a basic html document and add some text to it (where we used a p for a paragraph). A paragraph is one of the most common elements that you will use whilst creating websites. Another one that you will use a lot is a header. A header is used for you guessed it, headings. The difference between headers and paragraphs isn't much, but the main reason to use them is so your html is semantic. Semantic is the use of html to reinforce the meaning or information of a website. It's good practice to use headers where necessary instead of always using paragraphs.
+
+<br>
+<br>
+
+Headers are denoted by a h1 tag (also h2, h3, h4, h5 and h6). Where h1 is the biggest and h6 is the smallest. We are going to add h1 tags to the website that we created in the first part of this course. We will add the h1 above the paragraph like so
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <body>
+        <h1>Learning HTML</h1>
+        <p>Text for a tutorial or anything you want</p>
+    </body>
+</html>
+<code>
+
+Ok cool, try changing the h1 tags to h6 tags and see the difference.
+
+<br>
+<br>
+
+Paragraphs and headers are great for showing lines of text, but what happens when we want a list of things - for example a shopping list. Luckily html comes with a list that you can add as many elements as you want to it. A list is denoted by a ul tag, which stands for unordered list. Inside of these ul tags we put li tags, which stands for list item. Now let’s add our list with 3 li's inside of it
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <body>
+        <h1>Learning HTML</h1>
+        <p>Text for a tutorial or anything you want</p>
+
+        <ul>
+            <li>List item 1</li>
+            <li>List item 2</li>
+            <li>List item 3</li>
+        </ul>
+    </body>
+</html>
+<code>
+
+As you can see I put my li's on a new line and indented each one of them using the TAB button on a keyboard. This makes it a lot more readable and allows you to quickly see what belongs where. If we were to leave everything on the same line, we would end up with this mess
+
+<code><pre><html>
+<ul><li>List item 1</li><li>List item 2</li><li>List item 3</li></ul>
+<code>
+
+So, keep that in mind when writing html, if you have more than one item inside of another item, its best to split them up onto their own lines and indent them.
+
+<br>
+<br>
+
+As well as unordered lists, we have ordered lists that are denoted by a ol tag. 
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <body>
+        <h1>Learning HTML</h1>
+        <p>Text for a tutorial or anything you want</p>
+
+        <ol>
+            <li>List item 1</li>
+            <li>List item 2</li>
+            <li>List item 3</li>
+        </ol>
+    </body>
+</html>
+<code>
+
+If you open the website on your browser (by drag and dropping the file) you'll see instead of bullet points, there are now numbers next to each list item.
+
+<br>
+<br>
+
+Inside of the li tags we can put more elements, such as a paragraph like so
+
+<code><html>
+<ol>
+    <li>
+        <p>paragraph in a list item!</p>
+    </li>
+</ol>
+<code>
+
+Again, I’m splitting the li's up into more than one line for readability.
+
+<br>
+<br>
+
+And that concludes part 2 of this course, thanks for reading!

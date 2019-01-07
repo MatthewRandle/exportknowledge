@@ -1,0 +1,161 @@
+In this part we are going to learn about giving our elements background colors and images. In
+ <a href="/course/html-the-building-block-of-the-web">HTML: The Building Block of the Web</a>
+ we looked at using img tags to put images onto our site using the src attribute. Another way we can put images on our site is a property called background-image.
+
+ <br>
+ <br>
+
+Firstly we will clear everything from the body and head of our html to return our site to blank. I'm doing this because we have a lot of unnecessary elements for this part, but you can keep everything if you want and just add to it. So I now just have this
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <body>
+    
+    </body>
+</html>
+<code>
+
+We will put an empty div inside of the body
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <body>
+        <div>
+            
+        </div>
+    </body>
+</html>
+<code>
+
+I want this div to have a pattern on it and the best way to do this is simply the background-image property. Before we add this lets find a pattern on google. I searched seamless pattern and will be using 
+ <a href="https://img.freepik.com/free-vector/abstract-geometric-pattern-background_1319-242.jpg?size=338&ext=jpg">this</a>
+ one. Copy the url as we will need it shortly.
+
+<br>
+<br>
+
+Now lets add the background-image to our div in our css file.
+
+<code><css>
+div {
+    background-image:
+}
+<code>
+
+The value we give to this property is a link to the image surrounded by url() like so
+
+<code><css>
+div {
+    background-image: url("https://img.freepik.com/free-vector/abstract-geometric-pattern-background_1319-242.jpg?size=338&ext=jpg");
+}
+<code>
+
+If we refresh our page we will see that the pattern is applied and automatically repeats across the entire div. To see the pattern better we will give the div a height of 300px
+
+<code><css>
+div {
+    background-image: url("https://img.freepik.com/free-vector/abstract-geometric-pattern-background_1319-242.jpg?size=338&ext=jpg");
+    height: 100px;
+}
+<code>
+
+We could leave it at this but a lot of the time certain images will look too small or not be positioned how we want. Thankfully we can control these aspects of any background image. To showcase the next properties I will be using 
+ <a href="https://upload.wikimedia.org/wikipedia/en/thumb/0/09/Circle_Logo.svg/1200px-Circle_Logo.svg.png">this</a>
+ image.
+
+<br>
+<br>
+
+If we put this new image as our background and refresh we will see that the image is very large and we cannot see the full picture. Firstly we will stop the image from repeating using background-repeat and giving it a value of no-repeat
+
+<code><css>
+div {
+    background-image: url("https://img.freepik.com/free-vector/abstract-geometric-pattern-background_1319-242.jpg?size=338&ext=jpg");
+    background-repeat: no-repeat;
+    height: 100px;
+}
+<code>
+
+This ensures that our image is only shown once. Next we will change the size so we can see the full image. To do this give our div a background-size of 10% (use any value you want as long as you can see the full image)
+
+<code><css>
+div {
+    background-image: url("https://img.freepik.com/free-vector/abstract-geometric-pattern-background_1319-242.jpg?size=338&ext=jpg");
+    background-repeat: no-repeat;
+    background-size: 10%;
+    height: 100px;
+}
+<code>
+
+Lastly we will make the image be directly in the center of our div using background-position. This can take a lot of different values but we will simply give it a value of center. To view all the values this property can take go 
+ <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-attachment">here</a>.
+
+<code><css>
+div {
+    background-image: url("https://developer.mozilla.org/en-US/docs/Web/CSS/background-position");
+    background-repeat: no-repeat;
+    background-size: 10%;
+    background-position: center;
+    height: 100px;
+}
+<code>
+
+And now our circle is directly in the center of our div as we wanted. There is another property that can be very useful that we will not be using but I would recommend going 
+ <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-attachment">here</a>
+  and messing around with it.
+
+<br>
+<br>
+
+Now lets give this div a background color so the image stands out. We do this using the background-color. The value this takes can be a simple word such as blue, a hexadecimal code such as #282c34, and rbg value formatted like this
+
+<code><pre><css>
+    background-color: rgb(255, 255, 255, 1);
+<code>
+
+Where the first 3 values are a range from 0-255 and the last one being the opacity of the color (how much of the color shows) from 0 (0%) to 1 (100%). Lets give our background a color of #282c34
+
+<code><css>
+div {
+    background-image: url("https://developer.mozilla.org/en-US/docs/Web/CSS/background-position");
+    background-repeat: no-repeat;
+    background-size: 10%;
+    background-position: center;
+    background-color: #282c34;
+    height: 100px;
+}
+<code>
+
+We can also give the background color a gradient. When setting gradients we dont use the background-color property, we use the background property. Its important to note that using a gradient and a background-image don't work together so whichever one you write last in your css will be the one that is used. We will be using a linear-gradient which is just a straight gradient. It's formatted like so
+
+<code><pre><css>
+    background: linear-gradient(direction, color1, color2, color3...);
+<code>
+
+We will give ours a direction of 'to right', and a color1 of blue and a color 2 of red, you can give it as many colors as you like
+
+<code><css>
+div {
+    background-image: url("https://developer.mozilla.org/en-US/docs/Web/CSS/background-position");
+    background-repeat: no-repeat;
+    background-size: 10%;
+    background-position: center;
+    background: linear-gradient(to right, blue, red);
+    height: 100px;
+}
+<code>
+
+We can instead use a radial-gradient if we want, which is formatted the same as the linear-gradient without the direction
+
+<code><pre><css>
+    background: radial-gradient(color1, color2, color3...);
+<code>
+
+And thats it for this part. On the next part which is the last, we will be putting together all of our new knowledge and making a navigation bar. Thanks for reading!
+

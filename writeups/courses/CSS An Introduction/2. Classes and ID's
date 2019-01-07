@@ -1,0 +1,189 @@
+In part 1 of this course we learned how to style a h1 using css. We learned that to specify what part of the html we want to style we first write the element identifier followed by the styling we want to give it
+
+<code><css>
+h1 {
+    color: red;
+    font-size: 50px;
+}
+<code>
+
+If we take the code from the first part, and add another h1 under the first one like so on line 11 and refresh your website you will notice that both h1's are red and big!
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./index.css" />
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <title>Dogs</title>
+    </head>
+
+    <body>
+        <h1>A website dedicated to dogs</h1>
+        <h1>Second h1</h1>
+
+        <p>A mans best friend!</p>
+
+        <a href="./page2.html">Go to page 2!</a>
+
+        <p>Facts about dogs</p>
+        <ol>
+            <li>They are as smart as a 2 year old toddler</li>
+            <li>They have a sense of time and miss us when we are gone</li>
+            <li>They have sweat glands in their paws</li>
+            <li>
+                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+            </li>
+        </ol>
+
+        <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/09/funny-dog-thoughts-tweets-1.jpg" />
+    </body>
+</html>
+<code>
+
+I didn't want this, when I wrote my css to make the h1 red, it was before I had 2 of them. How do I make it so only the first h1 is styled? This is where class names come in to play.
+
+<br>
+<br>
+
+A class name is a special kind of attribute that we can give to any html element. It looks like this
+
+<code><pre><html>
+<h1 class="title">I'm a h1 with the class 'title'</h1>
+<code>
+
+We first set the attribute 'class' equal to whatever we want the class to be called, in string format (surround by ""). We will go to our index.html file and give the h1 a class of title
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./index.css" />
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <title>Dogs</title>
+    </head>
+
+    <body>
+        <h1 class="title">A website dedicated to dogs</h1>
+        <h1>Second h1</h1>
+
+        <p>A mans best friend!</p>
+
+        <a href="./page2.html">Go to page 2!</a>
+
+        <p>Facts about dogs</p>
+        <ol>
+            <li>They are as smart as a 2 year old toddler</li>
+            <li>They have a sense of time and miss us when we are gone</li>
+            <li>They have sweat glands in their paws</li>
+            <li>
+                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+            </li>
+        </ol>
+
+        <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/09/funny-dog-thoughts-tweets-1.jpg" />
+    </body>
+</html>
+<code>
+
+Now instead of styling every h1 on our page, we will target the h1 with a class of title. To do this in css we first put a full stop followed by the class name like so
+
+<code><css>
+.title {
+    color: red;
+    font-size: 50px;
+}
+<code>
+
+Now if we refresh our page, we will see that only the first h1 is styled! This becomes very useful when styling lots of elements that are of the same type. Lets add a class to the second h1, call it whatever you want, I'm going to call mine small_header
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./index.css" />
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <title>Dogs</title>
+    </head>
+
+    <body>
+        <h1 class="title">A website dedicated to dogs</h1>
+        <h1 class="small_header>Second h1</h1>
+
+        <p>A mans best friend!</p>
+
+        <a href="./page2.html">Go to page 2!</a>
+
+        <p>Facts about dogs</p>
+        <ol>
+            <li>They are as smart as a 2 year old toddler</li>
+            <li>They have a sense of time and miss us when we are gone</li>
+            <li>They have sweat glands in their paws</li>
+            <li>
+                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+            </li>
+        </ol>
+
+        <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/09/funny-dog-thoughts-tweets-1.jpg" />
+    </body>
+</html>
+<code>
+
+It's important to note that your class name should not have a space in it, if you are using multiple words like I did, separate them with an underscore.
+
+<br>
+<br>
+
+Now we will add a new set of styles for our new class
+
+<code><css>
+.title {
+    color: red;
+    font-size: 50px;
+}
+
+.small_header {
+    color: green;
+    font-size: 15px;
+}
+<code>
+
+If we refresh our site we will see that the second h1 has a totally different style to the first! Classes of the same name can also be given to multiple elements, so that they can be given the same styling. For example in our list, we have 4 li's that we would presumably want to have the same styling, so we could just give all 4 li's the same class name.
+
+<br>
+<br>
+
+Another way we can target html elements for styling is using ID's. ID's are written the same way that classes are in html, but changing the attribute name from class to id
+
+<code><pre><html>
+<h1 id="title">I'm styled using an ID</h1>
+<code>
+
+And in our css we use a # before the id name to target It
+
+<code><css>
+#title {
+
+}
+<code>
+
+But whats the difference? We use classes when we want multiple elements to have the same styling, but we use ID's when we want only a single element to have a specific styling. An ID name has to be unique. For example this would not be allowed
+
+<code><html>
+<h1 id="title">Title</h1>
+<h1 id="title">Title 2</h1>
+<code>
+
+But this would
+
+<code><html>
+<h1 id="title">Title</h1>
+<h1 id="title_2">Title 2</h1>
+<code>
+
+So use ID's when you want 1 element on your site to have a certain style, and classes when you want to be able to share that styling between different elements.
+
+<br>
+<br>
+
+And that's it for part 2 of this course, thanks for reading!

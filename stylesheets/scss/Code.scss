@@ -1,0 +1,98 @@
+@import "_variables";
+
+.code_container {
+    font-size: .7rem;
+    @include gradientBorder($purple, $blue);    
+    display: flex;
+    background: $OneDarkBG; 
+
+    @include desktop-down() {
+        font-size: .6rem;
+    }
+
+    @include tablet-down() {
+        font-size: .5rem;
+    }
+}
+
+//The actual code
+.code_container pre span {
+    font-size: .7rem;
+
+    @include desktop-down() {
+        font-size: .6rem;
+    }
+
+    @include tablet-down() {
+        font-size: 0.5rem;
+    }
+}
+
+//snippets of code, not needed in a whole block
+.code_pre_container {
+    align-self: flex-start;
+    line-height: 1.05rem;
+    border: 2px solid transparent;
+    border-image: linear-gradient(to right, $purple, $blue);
+    border-image-slice: 1;
+}
+
+.code_gutter {
+    width: 50px;   
+    font-family: monospace;  
+    box-sizing: border-box;  
+    padding: 10px;
+    counter-reset: line;
+    display: flex;
+    flex-direction: column;
+    background: $OneDarkBG;    
+
+    @include tablet-down() {
+        width: 35px;
+    }
+    
+    span {
+        font-size: .7rem;
+        line-height: 1.05rem;
+        display: flex;
+        justify-content: flex-start;
+
+        @include desktop-down() {
+            font-size: .6rem;
+            line-height: .92rem;
+        }
+
+        @include tablet-down() {
+            font-size: .5rem;
+            line-height: .75rem;
+        }
+
+        &:before {
+            counter-increment: line;
+            content: counter(line);
+            color: #888;
+        }
+    }
+}
+
+.code {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    padding-left: 0;
+}
+
+.code_pre_container {
+    max-width: 100%;
+    font-size: 0.8rem;
+    
+    @include phone-down() {
+        font-size: 0.7rem;
+    }
+}
+
+.pre {
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}

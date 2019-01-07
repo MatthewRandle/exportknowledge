@@ -1,0 +1,248 @@
+.articleSearch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.articleSearch_title {
+  color: #282c34;
+  font-family: "Zilla Slab";
+}
+
+.articleSearch_title--loader {
+  width: 300px;
+  height: 44px;
+}
+
+@media only screen and (max-width: 480px) {
+  .articleSearch_title--loader {
+    width: 100%;
+  }
+}
+
+.articleSearch_panel {
+  font-family: "Zilla Slab";
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.articleSearch_top_bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .articleSearch_top_bar {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+.articleSearch_filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+@media only screen and (max-width: 480px) {
+  .articleSearch_filter {
+    width: 100%;
+  }
+}
+
+.articleSearch_searchBar--loader,
+.articleSearch_searchBar {
+  border: none;
+  border-radius: 2px;
+  background: #282c34;
+  color: white;
+  height: 30px;
+  outline: none;
+  padding-left: 10px;
+  width: 250px;
+}
+
+@media only screen and (max-width: 768px) {
+  .articleSearch_searchBar--loader,
+  .articleSearch_searchBar {
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .articleSearch_searchBar--loader,
+  .articleSearch_searchBar {
+    width: 50%;
+  }
+}
+
+.articleSearch_searchBar::-webkit-input-placeholder {
+  color: white;
+}
+
+.articleSearch_searchBar:-ms-input-placeholder {
+  color: white;
+}
+
+.articleSearch_searchBar::-ms-input-placeholder {
+  color: white;
+}
+
+.articleSearch_searchBar::placeholder {
+  color: white;
+}
+
+.articleSearch_select--loader,
+.articleSearch_select {
+  background: #282c34;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  height: 30px;
+  margin-right: 10px;
+  outline: none;
+  padding-left: 10px;
+  width: 100px;
+}
+
+@media only screen and (max-width: 768px) {
+  .articleSearch_select--loader,
+  .articleSearch_select {
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .articleSearch_select--loader,
+  .articleSearch_select {
+    width: 50%;
+  }
+}
+
+.articleSearch_searchBar--loader,
+.articleSearch_select--loader {
+  padding: 0;
+}
+
+.articleSearch_tags {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 768px) {
+  .articleSearch_tags {
+    margin-top: 20px;
+  }
+}
+
+.articleSearch_checkbox {
+  font-size: 0.65rem;
+  background: #00b7ff;
+  color: white;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 15px;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.articleSearch_checkbox:hover {
+  cursor: pointer;
+}
+
+.articleSearch_checkbox--loader {
+  width: 80px;
+  height: 30px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.articleSearch_checkbox p {
+  margin-left: 10px;
+  font-size: 0.5rem;
+  width: 5px;
+}
+
+.articleSearch_checkbox--checked {
+  background: #8950ff;
+}
+
+.articleSearch_articles {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 19.5vw;
+  grid-gap: 20px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .articleSearch_articles {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 27vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .articleSearch_articles {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 40vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .articleSearch_articles {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px;
+    grid-auto-rows: 81vw;
+  }
+}
+/*# sourceMappingURL=ArticleSearch.css.map */

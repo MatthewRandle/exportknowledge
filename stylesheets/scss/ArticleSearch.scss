@@ -1,0 +1,173 @@
+@import "_variables";
+
+.articleSearch {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.articleSearch_title {
+    color: $OneDarkBG;
+    font-family: "Zilla Slab";  
+}
+
+.articleSearch_title--loader {
+    width: 300px;
+    height: 44px;
+
+    @include phone-down() {
+        width: 100%;
+    }
+}
+
+.articleSearch_panel {
+    font-family: "Zilla Slab";
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.articleSearch_top_bar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-end;
+    width: 100%;
+
+    @include tablet-down() {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.articleSearch_filter {
+    display: flex; 
+    align-items: flex-end; 
+    
+    @include phone-down() {
+        width: 100%;
+    }
+}
+
+.articleSearch_searchBar--loader,
+.articleSearch_searchBar {
+    border: none;
+    border-radius: 2px;
+    background: $OneDarkBG;
+    color: white;
+    height: 30px;
+    outline: none;
+    padding-left: 10px;
+    width: 250px;
+
+    @include tablet-down() {
+        margin-top: 10px;
+    }
+
+    @include phone-down() {
+        width: 50%;
+    }
+}
+
+.articleSearch_searchBar::placeholder {
+    color: white;
+}
+
+.articleSearch_select--loader,
+.articleSearch_select {
+    background: $OneDarkBG;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    height: 30px;
+    margin-right: 10px;
+    outline: none;
+    padding-left: 10px;
+    width: 100px;
+
+    @include tablet-down() {
+        margin-top: 10px;
+    }
+
+    @include phone-down() {
+        width: 50%;
+    }
+}
+
+.articleSearch_searchBar--loader,
+.articleSearch_select--loader {
+    padding: 0;
+}
+
+.articleSearch_tags {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;    
+    flex-wrap: wrap;
+
+    @include tablet-down() {
+        margin-top: 20px;
+    }
+}
+
+.articleSearch_checkbox {
+    font-size: 0.65rem;
+    background: $blue;
+    color: white;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 15px;
+    border-radius: 20px;
+    display: flex;
+    user-select: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.articleSearch_checkbox--loader {
+    width: 80px;
+    height: 30px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+//the tick or cross symbol next to tag name
+.articleSearch_checkbox p {
+    margin-left: 10px;
+    font-size: 0.5rem;
+    width: 5px;
+}
+
+.articleSearch_checkbox--checked {
+    background: $purple;
+}
+
+.articleSearch_articles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 19.5vw;
+    grid-gap: 20px;
+    width: 100%;
+    margin-top: 10px;
+
+    @include desktop-down() {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 27vw;
+    }
+
+    @include tablet-down() {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 40vw;
+    }
+
+    @include phone-down() {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        grid-auto-rows: 81vw;
+    }
+}

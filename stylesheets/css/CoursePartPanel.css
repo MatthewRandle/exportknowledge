@@ -1,0 +1,117 @@
+.coursePartPanel_container {
+  background: #282c34;
+  width: 60vw;
+  height: 2vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  font-family: "Zilla Slab";
+  border: 3px solid #8950ff;
+  border-left: 6px solid #8950ff;
+  border-right: 6px solid #8950ff;
+  padding: 5px;
+  font-size: 1.5vw;
+  font-weight: bold;
+}
+
+.coursePartPanel_container:hover {
+  cursor: pointer;
+  background: #8950ff;
+}
+
+.coursePartPanel_container:hover .coursePartPanel_part {
+  background: #282c34;
+}
+
+@media only screen and (max-width: 1200px) {
+  .coursePartPanel_container {
+    width: 95%;
+    height: 2.5vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .coursePartPanel_container {
+    width: 100%;
+    border: 2px solid #8950ff !important;
+    border-left: 4px solid #8950ff;
+    border-right: 4px solid #8950ff;
+    padding: 4px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .coursePartPanel_container {
+    height: 3.25vw;
+  }
+}
+
+.coursePartPanel_part {
+  -ms-flex-preferred-size: 50px;
+      flex-basis: 50px;
+  background: #8950ff;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Open Sans";
+  font-size: 1.2vw;
+}
+
+@media only screen and (max-width: 768px) {
+  .coursePartPanel_part {
+    font-size: 1.5vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .coursePartPanel_part {
+    -ms-flex-preferred-size: 30px;
+        flex-basis: 30px;
+  }
+}
+
+.coursePartPanel_title {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media only screen and (max-width: 1200px) {
+  .coursePartPanel_title {
+    font-size: 2vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .coursePartPanel_title {
+    font-size: 2.6vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .coursePartPanel_title {
+    font-size: 3vw;
+  }
+}
+
+.coursePartPanel_open {
+  padding: 10px;
+}
+/*# sourceMappingURL=CoursePartPanel.css.map */
