@@ -68,7 +68,7 @@
     font-family: "Zilla Slab";
     font-weight: bold;
     font-size: 2.2rem;    
-    color: $darkGrey;
+    color: $OneDarkBG;
 
     @include desktop-down() {
         font-size: 1.5rem;
@@ -119,6 +119,7 @@
 
 .course_preface p {
     margin-top: 10px;
+    width: 65%;
 }
 
 .course_parts {
