@@ -45,6 +45,8 @@ class ReplyContainer extends Component {
                 partID={this.props.partID}
                 replyAdded={this.state.replyAdded}
                 submitReply={this.submitReply}
+                profile_picture={this.props.reply.profile_picture}
+                timestamp={this.props.reply.timestamp}
             />
         );
     }

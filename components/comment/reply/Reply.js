@@ -1,4 +1,5 @@
 import React from "react";
+import ta from "time-ago";
 
 import CommentSettings from "../CommentSettings";
 import "../../../stylesheets/css/CommentSection.css";
@@ -7,29 +8,17 @@ const Reply = (props) => {
     return (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
             <div className="comment_container">
-                <div className="comment_author">
-                    <p>{props.username}</p>
+                <img className="comment_profile_picture" src={props.profile_picture} />
+                {props.isOwner || props.isAdmin ? <CommentSettings commentID={props.commentID} articleID={props.articleID} partID={props.partID} /> : null}
 
-                    {props.isOwner || props.isAdmin ? 
-                        <CommentSettings 
-                            replyID={props.replyID} 
-                            articleID={props.articleID} 
-                            partID={props.partID} 
-                            reply={true}
-                        /> 
-                        : null
-                    }
+                <div className="comment_content">
+                    <div className="comment_topBar">
+                        <p className="comment_author">{props.username}</p>
+                        <p className="comment_timestamp">{ta.ago(new Date(props.timestamp))}</p>
+                    </div>
+
+                    <p className="comment">{props.reply}</p>
                 </div>
-
-                <div className="comment">
-                    <p>{props.reply}</p>
-                </div>
-
-
-            </div>
-
-            <div className="comment_buttons">
-                
             </div>
         </div>
     );

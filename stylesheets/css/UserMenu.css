@@ -10,8 +10,8 @@
 .userMenu {
   width: 225px;
   position: absolute;
-  -webkit-transform: translateX(-185px) translateY(70px);
-          transform: translateX(-185px) translateY(70px);
+  -webkit-transform: translateX(-185px) translateY(60px);
+          transform: translateX(-185px) translateY(60px);
   background: white;
   border: 1px solid gray;
   font-family: "Zilla Slab";

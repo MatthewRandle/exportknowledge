@@ -16,7 +16,7 @@ export const newArticleComment = (articleID, comment) => async dispatch => {
         dispatch(fetchArticlesComments(articleID)); 
     }
     catch (err) {
-        dispatch({ type: COMMENT_FAILURE, payload: err.response.data.error });
+        dispatch({ type: COMMENT_FAILURE, payload: { error: true, commentSent: true } });
     }
 };
 
@@ -28,14 +28,14 @@ export const newArticleReply = (articleID, commentID, comment) => async dispatch
         dispatch(fetchArticlesComments(articleID));
     }
     catch (err) {
-        dispatch({ type: COMMENT_FAILURE, payload: err.response.data.error });
+        dispatch({ type: COMMENT_FAILURE, payload: { error: true, replySent: true } });
     }
 };
 
 export const fetchArticlesComments = (articleID, req) => async dispatch => {
     try {
         const res = await axios.post(getRouteString("/api/get-articles-comments", req), { articleID });
-
+        console.log(res.data)
         let comments = sortCommentsAndReplies(res.data.comments);
 
         dispatch({ type: COMMENT_SUCCESS, payload: { error: null, articleComments: comments } });
@@ -143,7 +143,8 @@ function sortCommentsAndReplies(commentsData) {
             surname: comment.replier_surname,
             upvotes: comment.reply_upvotes,
             timestamp: comment.reply_timestamp,
-            oauthID: comment.replier_oauthID
+            oauthID: comment.replier_oauthID,
+            profile_picture: comment.replier_profile_picture
         }
 
         comments.forEach((existingComment) => {
@@ -154,33 +155,35 @@ function sortCommentsAndReplies(commentsData) {
         })
 
         if (!alreadyInCommentsArray) {
-            let newCommment
+            let newComment;
 
             //if this new comment has replies add a replies key to it
             if (comment.reply_id != null) {
-                newCommment = { ...comment, ...{ replies: [newReply] } }; //add an empty array with key replies if this is a new comment
+                newComment = { ...comment, ...{ replies: [newReply] } }; //add an empty array with key replies if this is a new comment
                 //remove replies from main comment since they are now in a replies array
-                delete newCommment.reply_id
-                delete newCommment.reply
-                delete newCommment.replier_forename
-                delete newCommment.replier_surname
-                delete newCommment.reply_upvotes
-                delete newCommment.reply_timestamp
-                delete newCommment.replier_oauthID
+                delete newComment.reply_id;
+                delete newComment.reply;
+                delete newComment.replier_forename;
+                delete newComment.replier_surname;
+                delete newComment.reply_upvotes;
+                delete newComment.reply_timestamp;
+                delete newComment.replier_oauthID;
+                delete newComment.replier_profile_picture;
             }
             //doesnt have replies so just add comment and delete all reply keys because they are null
             else {
-                newCommment = comment;
-                delete newCommment.reply_id
-                delete newCommment.reply
-                delete newCommment.replier_forename
-                delete newCommment.replier_surname
-                delete newCommment.reply_upvotes
-                delete newCommment.reply_timestamp
-                delete newCommment.replier_oauthID
+                newComment = comment;
+                delete newComment.reply_id;
+                delete newComment.reply;
+                delete newComment.replier_forename;
+                delete newComment.replier_surname;
+                delete newComment.reply_upvotes;
+                delete newComment.reply_timestamp;
+                delete newComment.replier_oauthID;
+                delete newComment.replier_profile_picture;
             }
 
-            comments.push(newCommment);
+            comments.push(newComment);
         }
     })
 

@@ -10,7 +10,7 @@ const getArticlesComments = `
         /* GET MAIN COMMENTS */ 
             articles_comments.comment, 
             articles_comments.timestamp, 
-            articles_comments.upvotes, 
+            articles_comments.upvotes,
             articles_comments.id,
         /* GET COMMENTS REPLIES */ 
             articles_comments_replies.comment as "reply", 
@@ -19,10 +19,12 @@ const getArticlesComments = `
             articles_comments_replies.id as "reply_id",
         /* GET COMMENTS AUTHOR */
             commenter.forename as "commenter_forename", 
-            commenter.surname as "commenter_surname", 
+            commenter.surname as "commenter_surname",
+            commenter.profile_picture as "commenter_profile_picture",
         /* GET REPLIES AUTHORS */
             replier.forename as "replier_forename", 
-            replier.surname as "replier_surname"
+            replier.surname as "replier_surname",
+            replier.profile_picture as "replier_profile_picture"
     FROM articles_comments
         LEFT JOIN articles_have_comments ON articles_have_comments.comments_id = articles_comments.id        
         LEFT JOIN articles_comments_have_replies ON articles_comments_have_replies.articles_comments_id = articles_comments.id

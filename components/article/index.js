@@ -93,18 +93,24 @@ class ArticleContainer extends Component {
     }    
 
     render() {
-        return (
-            <Article
-                title={this.getTitle()}
-                image={this.getImage()}
-                video={this.getVideo()}
-                videoPlaying={this.state.videoPlaying}
-                prerequisites={this.getPrerequisites()}
-                text={this.getText()}
-                furtherReading={this.getFurtherReading()}
-                id={this.props.article ? this.props.article.selectedArticle ? this.props.article.selectedArticle.id : null : null}
-            />
-        );            
+        if(this.props.article){
+            if (this.props.article.selectedArticle) {
+                return (
+                    <Article
+                        title={this.getTitle()}
+                        image={this.getImage()}
+                        video={this.getVideo()}
+                        videoPlaying={this.state.videoPlaying}
+                        prerequisites={this.getPrerequisites()}
+                        text={this.getText()}
+                        furtherReading={this.getFurtherReading()}
+                        id={this.props.article ? this.props.article.selectedArticle ? this.props.article.selectedArticle.id : null : null}
+                    />
+                ); 
+            }
+        }
+
+        return <div>HI</div>;
     }
 }
 

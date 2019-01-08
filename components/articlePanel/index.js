@@ -32,7 +32,6 @@ export class ArticlePanelContainer extends Component {
         if(this.props.timestamp) {
             let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-
             var date = new Date(this.props.timestamp);
             var month = months[date.getUTCMonth()]; //months from 1-12
             var day = date.getUTCDate();

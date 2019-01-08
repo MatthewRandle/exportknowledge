@@ -20,9 +20,11 @@ const getComments = `
         /* GET COMMENTS AUTHOR */
             commenter.forename as "commenter_forename", 
             commenter.surname as "commenter_surname", 
+            commenter.profile_picture as "commenter_profile_picture",
         /* GET REPLIES AUTHORS */
             replier.forename as "replier_forename", 
-            replier.surname as "replier_surname"
+            replier.surname as "replier_surname",
+            replier.profile_picture as "replier_profile_picture"
     FROM courses_comments
         LEFT JOIN courses_parts_have_comments ON courses_parts_have_comments.comments_id = courses_comments.id        
         LEFT JOIN courses_comments_have_replies ON courses_comments_have_replies.courses_comments_id = courses_comments.id

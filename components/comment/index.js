@@ -89,6 +89,7 @@ class CommentContainer extends Component {
             <Comment
                 username={this.getUserName()}
                 replies={this.getReplies()}
+                profile_picture={this.props.userComment.commenter_profile_picture}
                 isOwner={this.props.userComment.commenter_oauthID === this.props.user.id ? true : false}
                 isAdmin={this.props.admin ? this.props.admin.authorised === true ? true : false : false}
                 comment={this.props.userComment.comment}
@@ -101,6 +102,7 @@ class CommentContainer extends Component {
                 submitReply={this.submitReply}
                 replyError={this.state.replyError}
                 replySent={this.state.replySent}
+                timestamp={this.props.userComment.timestamp}
             />
         );
     }

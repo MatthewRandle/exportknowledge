@@ -2,6 +2,7 @@ import React from "react";
 import { Formik, Field } from "formik";
 import * as Yup from "yup";
 import isEmpty from 'lodash/isEmpty'
+import ta from "time-ago";
 
 import CommentSettings from "./CommentSettings";
 import "../../stylesheets/css/CommentSection.css";
@@ -94,21 +95,19 @@ const Comment = (props) => {
     return(
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
             <div className="comment_container">
-                <div className="comment_author">
-                    <p>{props.username}</p>
-                    
-                    {props.isOwner || props.isAdmin ? <CommentSettings commentID={props.commentID} articleID={props.articleID} partID={props.partID} /> : null}
-                </div>
+                <img className="comment_profile_picture" src={props.profile_picture} />
+                {props.isOwner || props.isAdmin ? <CommentSettings commentID={props.commentID} articleID={props.articleID} partID={props.partID} /> : null}  
 
-                <div className="comment">
-                    <p>{props.comment}</p>
-                </div>
+                <div className="comment_content">
+                    <div className="comment_topBar">
+                        <p className="comment_author">{props.username}</p>
+                        <p className="comment_timestamp">{ta.ago(new Date(props.timestamp))}</p>
+                    </div>
 
-                
-            </div>
+                    <p className="comment">{props.comment}</p>                        
 
-            <div className="comment_buttons">
-                <p onClick={props.toggleReplyBox}>Reply</p>
+                    <p className="comment_replyButton" onClick={props.toggleReplyBox}>REPLY</p>
+                </div>                            
             </div>
 
             <div className="comment_replies">

@@ -85,7 +85,7 @@ class CommentSettings extends Component {
     render() {
         return (
             <div className="commentSettings_container" ref={this.setWrapperRef}>
-                <div className="commentSettings_icon" onClick={this.toggleMenu.bind(this)} />
+                <img src="/static/ellipsis.svg" className="commentSettings_icon" onClick={this.toggleMenu.bind(this)} />
                 {this.renderMenu()}
             </div>
         );

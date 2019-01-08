@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import withRedux from "next-redux-wrapper";
 import reduxThunk from "redux-thunk";
 import Head from "next/head";
-/* const { detect } = require('detect-browser'); */
+const { detect } = require('detect-browser');
 
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
@@ -24,12 +24,12 @@ class MyApp extends App {
         this.state = { browserSupported: true };
     } 
 
-    /* componentDidMount() {
+    componentDidMount() {
         const browser = detect();
         if(browser.name === "ie") {
             this.setState({ browserSupported: false });
         }
-    } */
+    }
 
     render() {
         const { Component, pageProps, store } = this.props
