@@ -7,7 +7,7 @@ import "../../stylesheets/css/CoursePanel.css";
 const CoursePanel  = (props) => {
     if(props.exists === 1 || props.onAdminPage) {
         return (
-            <Link href={props.link}>
+            <Link href={{ pathname: "/course", query: { url: props.link } }} as={`/course/${props.link}`}>
                 <a className="coursePanel_container">
                     <div className="coursePanel_base">
                         <img src={props.image} alt={props.title} />

@@ -1,13 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document';
-const { detect } = require('detect-browser');
 
-export default class MyDocument extends Document {
-    componentDidMount() {
-        const browser = detect();
-
-        console.log(browser.name);
-    }
-
+class MyDocument extends Document {
     render() {
         return (
             <html>
@@ -22,3 +15,5 @@ export default class MyDocument extends Document {
         )
     }
 }
+
+export default MyDocument;

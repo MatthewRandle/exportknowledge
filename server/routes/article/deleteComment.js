@@ -24,6 +24,8 @@ const deleteComment = `
 
 const checkAdmin = "SELECT authority FROM users WHERE oauthID = ?;";
 
+const error = "Could not delete the comment. Please try again.";
+
 module.exports = app => {
     app.post("/api/delete-articles-comment", bodyCheck, (req, res, next) => {
         if (req.body.commentID == null || req.user == null) {

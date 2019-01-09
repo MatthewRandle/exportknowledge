@@ -19,8 +19,21 @@ const CoursesPage = () => {
 }
 
 CoursesPage.getInitialProps = async function ({ store, req }) {
-    await initialSetupFetch(store, req);
-    await store.dispatch(fetchAllCourses(req));
+    //if server side
+    if (req) {
+        await initialSetupFetch(store, req);
+    }
+    
+    const state = store.getState(); 
+
+    if(state.course == null) {
+        await store.dispatch(fetchAllCourses(req));
+    }
+    else if(state.course.all == null) {
+        await store.dispatch(fetchAllCourses(req));
+    }
+    
+
 
     return {};
 }

@@ -12,9 +12,7 @@ class CoursePartPanelContainer extends Component {
             return url;
         }
         else {
-            const url = `/course/${this.props.courseURL}/${this.props.URL}`;
-
-            return url;
+            return { courseURL: this.props.courseURL, partURL: this.props.URL };
         }        
     }
 

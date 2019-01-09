@@ -2,7 +2,6 @@ import axios from "axios";
 
 import getRouteString from "../../utils/getRouteString";
 import errorHandler from "../../utils/actionErrorHandler";
-import keys from "../../config/keys";
 
 export const FETCH_ARTICLE = "FETCH_ARTICLE";
 export const FETCH_ALL_ARTICLES = "FETCH_ALL_ARTICLES";
@@ -12,7 +11,7 @@ export const CLEAR_ARTICLE = "CLEAR_ARTICLE";
 export const FETCH_RECOMMENDED = "FETCH_RECOMMENDED";
 
 export const fetchArticle = (url, req) => async dispatch => {
-    try {
+    try {        
         const res = await axios.post(getRouteString("/api/get-article", req), { url });
 
         dispatch({

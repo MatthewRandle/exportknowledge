@@ -5,4 +5,6 @@ module.exports = app => {
     require("./article")(app);
     require("./admin")(app);
     require("./settings")(app);
+    require("./checkUserAllowsCookies")(app);
+    require("./setCookieChoice")(app);
 };

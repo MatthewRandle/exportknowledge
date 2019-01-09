@@ -8,6 +8,7 @@ import commentReducer from "../components/comment/CommentReducer";
 import adminReducer from "../components/admin/AdminReducer";
 import settingsReducer from "../components/settings/SettingReducer";
 import howManyHoursReducer from "../components/howmanyhours/HowManyHoursReducer";
+import cookieReducer from "../components/cookieCheck/CookieReducer";
 
 export default combineReducers({
     user: userReducer,
@@ -18,5 +19,6 @@ export default combineReducers({
     comment: commentReducer,
     admin: adminReducer,
     settings: settingsReducer,
-    statistics: howManyHoursReducer
+    statistics: howManyHoursReducer,
+    cookie: cookieReducer
 });

@@ -25,8 +25,20 @@ const CoursePartPage = (props) => {
 }
 
 CoursePartPage.getInitialProps = async function ({ store, req, query }) {
-    await initialSetupFetch(store, req);
-    await store.dispatch(fetchCoursePart(query.partUrl, query.courseUrl, req));
+    //if server side
+    if (req) {
+        await initialSetupFetch(store, req);
+    }
+
+    const state = store.getState(); 
+
+    if(state.course == null) {
+        await store.dispatch(fetchCoursePart(query.partURL, query.courseURL, req));
+    }
+    else if(state.course.selectedPart == null) {
+        await store.dispatch(fetchCoursePart(query.partURL, query.courseURL, req));
+    }
+    
     
     //if we have the course title return it
     if(store.getState().course != null) {

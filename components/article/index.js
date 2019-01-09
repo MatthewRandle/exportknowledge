@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import Link from "next/link";
+import { withRouter } from "next/router";
 
 import Article from "./Article";
-import { fetchArticle, clearArticle } from "./ArticleActions";
+import { clearArticle } from "./ArticleActions";
 import { clearComment } from "../comment/CommentActions";
 import ParseText from "../ParseText";
 
@@ -93,8 +94,8 @@ class ArticleContainer extends Component {
     }    
 
     render() {
-        if(this.props.article){
-            if (this.props.article.selectedArticle) {
+        if(this.props.article)            {
+            if(this.props.article.selectedArticle) {
                 return (
                     <Article
                         title={this.getTitle()}
@@ -106,11 +107,11 @@ class ArticleContainer extends Component {
                         furtherReading={this.getFurtherReading()}
                         id={this.props.article ? this.props.article.selectedArticle ? this.props.article.selectedArticle.id : null : null}
                     />
-                ); 
+                );  
             }
         }
 
-        return <div>HI</div>;
+        return <div>LOADING...</div>;
     }
 }
 
@@ -120,10 +121,9 @@ function mapStateToProps({ article }) {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchArticle: bindActionCreators(fetchArticle, dispatch),
         clearArticle: bindActionCreators(clearArticle, dispatch),
         clearComment: bindActionCreators(clearComment, dispatch)
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArticleContainer);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ArticleContainer));

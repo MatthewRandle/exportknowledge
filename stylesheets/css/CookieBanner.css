@@ -1,0 +1,82 @@
+.cookieBanner_container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #282c34;
+  opacity: .95;
+  height: 50px;
+  color: white;
+  font-family: "Open Sans";
+  font-size: 0.75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+}
+
+.cookieBanner {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cookieBanner p {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+@media only screen and (max-width: 1200px) {
+  .cookieBanner p {
+    font-size: 0.7rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .cookieBanner p {
+    font-size: 0.65rem;
+  }
+}
+
+.cookieBanner p span {
+  text-decoration: underline;
+}
+
+.cookieBanner_buttons button {
+  margin: 5px;
+  height: 30px;
+  width: 100px;
+  border: none;
+  background-color: #00b7ff;
+  color: white;
+  font-family: "Zilla Slab";
+  font-size: 0.8rem;
+}
+
+.cookieBanner_buttons button:hover {
+  background-color: #8950ff;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 480px) {
+  .cookieBanner_buttons button {
+    width: 60px;
+    height: 18px;
+  }
+}
+/*# sourceMappingURL=CookieBanner.css.map */

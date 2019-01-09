@@ -12,15 +12,26 @@ const Article = dynamic(import("../components/article"), { loading: () => <Artic
 
 const ArticlePage = () => {
     return(
-        <ErrorBoundary>
+        <ErrorBoundary>   
             <Article />
         </ErrorBoundary>
     );
 }
 
-ArticlePage.getInitialProps = async function ({ store, req, query }) {
-    await initialSetupFetch(store, req);
-    await store.dispatch(fetchArticle(query.url, req));
+ArticlePage.getInitialProps = async function ({ store, req, query, asPath }) {
+    //if server side
+    if(req) {
+        await initialSetupFetch(store, req);
+    }
+
+    const state = store.getState();    
+    
+    if(state.article == null) {
+        await store.dispatch(fetchArticle(query.url, req));
+    }
+    else if(state.article.selectedArticle == null) {
+        await store.dispatch(fetchArticle(query.url, req));
+    }
 
     return {};
 }

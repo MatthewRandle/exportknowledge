@@ -18,13 +18,36 @@ const Index = () => {
 }
 
 Index.getInitialProps = async function({ store, req }) {
+    //if server side
+    if (req) {
         await initialSetupFetch(store, req);
+    }
 
-        await store.dispatch(fetchLatestCourses(req));
+    const state = store.getState();
+
+    //if article state doesn't exist at all fetch both
+    if(state.article == null) {
         await store.dispatch(fetchAllTags(req));
         await store.dispatch(fetchAllArticles(req));
+    }
+    else {
+        if(state.article.tags == null)  {
+            await store.dispatch(fetchAllTags(req));
+        }
 
-        return {};
+        if (state.article.all == null) {
+            await store.dispatch(fetchAllArticles(req));
+        }
+    }
+    
+    if(state.course == null) {
+        await store.dispatch(fetchLatestCourses(req));
+    }
+    else if(state.course.latestCourses == null) {
+        await store.dispatch(fetchLatestCourses(req));
+    }
+
+    return {};
 }
 
 export default Index;

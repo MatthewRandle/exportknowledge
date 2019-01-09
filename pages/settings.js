@@ -18,8 +18,12 @@ const SettingsPage = () => {
     );
 }
 
-SettingsPage.getInitialProps = async function ({ store, req, query }) {
-    await initialSetupFetch(store, req);
+SettingsPage.getInitialProps = async function ({ store, req }) {
+    //if server side
+    if (req) {
+        await initialSetupFetch(store, req);
+    }
+
     await store.dispatch(getUserSettings(req));
 
     return {};

@@ -28,7 +28,9 @@ class CourseSearchContainer extends Component {
                         <h1>What Should I Know Before I Take This Course?</h1>
                         <p>{item.prerequisites}</p>
 
-                        <Link href={`/course/${item.url}`} prefetch><a>Start Course</a></Link>
+                        <Link href={{ pathname: "/course", query: { url: item.url } }} as={`/course/${item.url}`} prefetch>
+                            <a>Start Course</a>
+                        </Link>
                     </div>
                 </div>
             );

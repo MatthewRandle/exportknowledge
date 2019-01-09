@@ -1,5 +1,7 @@
 import axios from "axios";
 import getRouteString from "../utils/getRouteString";
+import { checkUserAllowsCookies } from "../components/cookieCheck/CookieActions";
+import { CHECK_USERS_ALLOWS_COOKIES } from "../components/cookieCheck/CookieActions";
 
 export default async function initialSetupFetch (store, req) {
     //only do this once per mount, i.e. server side
@@ -23,7 +25,14 @@ export default async function initialSetupFetch (store, req) {
                     });
 
                 store.dispatch({ type: "FETCH_USER_ICON", payload: { userIcon: userIconRes.data.icon } });
+                await store.dispatch(checkUserAllowsCookies(req));
             }
+            else {
+                store.dispatch({ type: CHECK_USERS_ALLOWS_COOKIES, payload: { userAllowsCookies: "unknown" } });
+            }
+        }
+        else {
+            store.dispatch({ type: CHECK_USERS_ALLOWS_COOKIES, payload: { userAllowsCookies: "unknown" } });
         }
     }
 }

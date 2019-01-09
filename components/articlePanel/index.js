@@ -9,23 +9,12 @@ export class ArticlePanelContainer extends Component {
     getLink() {
         //if this was not clicked on the admin dashboard push to article
         if(this.props.admin) {
-            if (this.props.url) {
-                const url = `/admin/edit/article/${this.props.url}`;
+            const url = `/admin/edit/article/${this.props.url}`;
 
-                return url;              
-            }
-        }
-        //if it was push to edit screen for that article
-        else
-        {
-            if (this.props.url) {
-                const url = `/article/${this.props.url}`;
-
-                return url;
-            }
+            return url;        
         }
 
-        return "/";
+        return this.props.url;
     }
 
     getDatePosted() {
@@ -56,7 +45,7 @@ export class ArticlePanelContainer extends Component {
     }
 
     render() {
-        if(this.props.title && (this.props.image || this.props.admin) && this.props.description && this.props.url && this.props.timestamp) {
+        if(this.props.title && (this.props.image || this.props.admin) && this.props.description && this.props.url && this.props.timestamp && this.props.url) {
             return (
                 <ArticlePanel
                     title={this.props.title}

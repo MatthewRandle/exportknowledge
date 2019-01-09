@@ -7,6 +7,8 @@ import reduxThunk from "redux-thunk";
 import Head from "next/head";
 const { detect } = require('detect-browser');
 
+import GoogleAnalytics, { init } from "../components/GoogleAnalytics";
+import CookieCheck from "../components/cookieCheck";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 
@@ -25,13 +27,14 @@ class MyApp extends App {
     } 
 
     componentDidMount() {
+        init();
         const browser = detect();
         if(browser.name === "ie") {
             this.setState({ browserSupported: false });
         }
     }
 
-    render() {
+    render() {        
         const { Component, pageProps, store } = this.props
 
         if(this.state.browserSupported) {
@@ -51,6 +54,7 @@ class MyApp extends App {
                             </Head>
 
                             <Navbar />
+                            <CookieCheck><GoogleAnalytics /></CookieCheck>
 
                             <Component {...pageProps} />
 

@@ -76,9 +76,9 @@ app.prepare()
             app.render(req, res, actualPage, queryParams);
         })
 
-        server.get('/course/:courseUrl/:partUrl', (req, res) => {
+        server.get('/course/:courseURL/:partURL', (req, res) => {
             const actualPage = '/course/part';
-            const queryParams = { courseUrl: req.params.courseUrl, partUrl: req.params.partUrl };
+            const queryParams = { courseURL: req.params.courseURL, partURL: req.params.partURL };
             app.render(req, res, actualPage, queryParams);
         })
 

@@ -35,7 +35,7 @@ export const newArticleReply = (articleID, commentID, comment) => async dispatch
 export const fetchArticlesComments = (articleID, req) => async dispatch => {
     try {
         const res = await axios.post(getRouteString("/api/get-articles-comments", req), { articleID });
-        console.log(res.data)
+
         let comments = sortCommentsAndReplies(res.data.comments);
 
         dispatch({ type: COMMENT_SUCCESS, payload: { error: null, articleComments: comments } });
