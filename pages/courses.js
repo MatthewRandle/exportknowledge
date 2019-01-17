@@ -1,5 +1,6 @@
 import React from "react";
 import dynamic from "next/dynamic";
+import Head from "next/head";
 
 import "../stylesheets/css/CourseSearch.css";
 
@@ -13,6 +14,10 @@ const CourseSearch = dynamic(import("../components/courseSearch"), { loading: ()
 const CoursesPage = () => {
     return(
         <ErrorBoundary>
+            <Head>
+                <title>Courses - export Knowledge;</title>
+            </Head>
+
             <CourseSearch />
         </ErrorBoundary>
     )

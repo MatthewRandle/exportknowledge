@@ -4,10 +4,12 @@ import { bindActionCreators } from "redux";
 
 import CoursePart from "./CoursePart";
 import { clearComment } from "../comment/CommentActions";
+import { clearCoursePart } from "../course/CourseActions";
 import ParseText from "../ParseText";
 
 class CoursePartContainer extends Component {
     componentWillUnmount() {
+        this.props.clearCoursePart();
         this.props.clearComment();
     }
 
@@ -41,7 +43,8 @@ function mapStateToProps({ course }) {
 
 const mapDispatchToProps = dispatch => {
     return {
-        clearComment: bindActionCreators(clearComment, dispatch)
+        clearComment: bindActionCreators(clearComment, dispatch),
+        clearCoursePart: bindActionCreators(clearCoursePart, dispatch)
     };
 };
 

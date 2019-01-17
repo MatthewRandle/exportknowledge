@@ -68,17 +68,20 @@ class UserMenuContainer extends Component {
 
     render() {
         if(this.props.userMenu) {
-            if(this.props.userMenu.userIcon) {
-                return <UserMenu
-                    refProp={this.setWrapperRef}
-                    toggleMenu={this.toggleUserMenu}
-                    userMenu={this.renderUserMenu()}
-                    userIcon={this.props.userMenu.userIcon}
-                />;
-            }
+            return <UserMenu
+                refProp={this.setWrapperRef}
+                toggleMenu={this.toggleUserMenu}
+                userMenu={this.renderUserMenu()}
+                userIcon={this.props.userMenu.userIcon}
+            />;
         }
 
-        return <div></div>;
+        return <UserMenu
+            refProp={this.setWrapperRef}
+            toggleMenu={this.toggleUserMenu}
+            userMenu={this.renderUserMenu()}
+            userIcon={null}
+        />;
     }
 }
 

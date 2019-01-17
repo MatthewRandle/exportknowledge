@@ -7,7 +7,10 @@ import "../../stylesheets/css/ArticlePanel.css";
 export const ArticlePanel = (props) => {
     if(props.exists === 1 || props.onAdminPage) {
         return (
-            <Link href={{ pathname: "/article", query: { url: props.link } }} as={`/article/${props.link}`}>
+            <Link 
+                href={props.onAdminPage ? { pathname: "/admin/edit/article", query: { url: props.link } } : { pathname: "/article", query: { url: props.link } }} 
+                as={props.onAdminPage ? `/admin/edit/article/${props.link}` : `/article/${props.link}` }
+            >
                 <a className="articlePanel_container">
                     <div className="articlePanel_base">
                         <img src={props.image} alt={props.title} />

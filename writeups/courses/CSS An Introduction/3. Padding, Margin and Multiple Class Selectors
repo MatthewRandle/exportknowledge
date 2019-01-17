@@ -3,7 +3,12 @@ When styling websites spacing is a very important thing. When I say spacing I me
 <br>
 <br>
 
-If we look at our website so far the list we have created is very squashed in. It makes it harder to read each of the list items! To fix this we will use padding and spacing. Firstly padding. Padding is the amount of space an element takes up. Think the fat on a human body - the more padding we give an element the more space it takes up just like the fatter someone is the more space they take up. Now unlike fat on a human body the padding we apply to an element will not always be visible. Lets look at an example of this. We will go into our css file and add a new style of padding for all li's on our page. We will add this under our existing code
+If we look at our website so far the list we have created is very squashed in. It makes it harder to read each of the list items! To fix this we will use padding and margins. 
+
+<br>
+<br>
+
+Padding is the amount of space an element takes up. Think the fat on a human body - the more padding we give an element the more space it takes up just like the fatter someone is the more space they take up. Now unlike fat on a human body the padding we apply to an element will not always be visible. Lets look at an example of this. We will go into our css file and add a new style of padding for all li's on our page. We will add this under our existing code
 
 <code><css>
 .title {
@@ -39,17 +44,17 @@ li {
 }
 <code>
 
-If we open up our page we will see that each of the list items now have some space around them. This helps keep the list readable - imagine if we had 100 items in this list without padding, it would be a nightmare to read.
+If we open up our page we will see that each of the list items now has some space around them. This helps keep the list readable - imagine if we had 100 items in this list without padding, it would be a nightmare to read.
 
 <br>
 <br>
 
-Now onto margins. Margins are very similar to paddings, we give them a value and some space is added around the element. The key difference is where that space is added. When we use padding the space is added onto the element (again think fat on a human), whereas margins are added to the outside of the element - imagine this as the air around a human. The more margin we give an element the more 'air' that is added around it, pushing things near it further away.
+Now onto margins. Margins are very similar to paddings, we give them a value and some space is added around the element. The key difference is where that space is added. When we use padding the space is added onto the element (again think fat on a human), whereas margins are added to the outside of the element - imagine this as an invisible force field around a human. The more margin we give an element the larger the force field, pushing things touching it further away.
 
 <br>
 <br>
 
-So lets add a margin of 10px to our li
+So lets add a margin of 10px to our li's
 
 <code><css>
 .title {
@@ -68,7 +73,7 @@ li {
 }
 <code>
 
-If we refresh our site we will see that again all of the list items get moved further away from each other, but apart from that there is no visible difference between the margin and the padding. Well there is and its actually quite important, and we will showcase this importance with buttons.
+If we refresh our site we will see that again all of the list items get moved further away from each other, but apart from that it may seem like there is no difference between the margin and the padding. Well there is and its actually quite important, and we will showcase this importance with buttons.
 
 <br>
 <br>
@@ -143,9 +148,9 @@ So keep in mind that we dont always need to set padding or margin on all sides, 
 <br>
 <br>
 
-This brings us onto our last topic of this part - multiple class selectors. If we look at our css, the styling for our li's and our button are the exact same. Instead of writing them separately we can join them together by simple adding the 2 selectors onto the same line like so
+This brings us onto our last topic of this part - multiple class selectors. If we look at our css, the styling for our li's and our button are the exact same. Instead of writing them separately we can join them together by simply adding the 2 selectors onto the same line like so
 
-<code><pre><css>
+<code><css>
 li button {
     padding: 10px;
     margin: 10px;

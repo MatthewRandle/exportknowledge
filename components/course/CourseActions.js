@@ -2,7 +2,6 @@ import axios from "axios";
 import getRouteString from "../../utils/getRouteString";
 
 import errorHandler from "../../utils/actionErrorHandler";
-import keys from "../../config/keys";
 
 export const FETCH_ALL_COURSES = "FETCH_ALL_COURSES";
 export const FETCH_COURSE = "FETCH_COURSE";

@@ -25,16 +25,16 @@ const editCoursePart = `
 
 module.exports = app => {
     app.post("/api/admin/edit-course-part", adminCheck, (req, res, next) => {
-        if (typeof req.body.courseURL == null ||
-            typeof req.body.partURL == null ||
-            typeof req.body.title == null ||
-            typeof req.body.description == null ||
-            typeof req.body.video == null ||
-            typeof req.body.url == null ||
-            typeof req.body.length == null ||
-            typeof req.body.part == null ||
-            typeof req.body.text == null ||
-            typeof req.body.exists == null) {
+        if (req.body.courseURL == null ||
+            req.body.partURL == null ||
+            req.body.title == null ||
+            req.body.description == null ||
+            req.body.video == null ||
+            req.body.url == null ||
+            req.body.length == null ||
+            req.body.part == null ||
+            req.body.text == null ||
+            req.body.exists == null) {
             res.send({ error: "No Body" });
             return;
         }

@@ -94,12 +94,6 @@ app.prepare()
             app.render(req, res, actualPage, queryParams);
         })
 
-        server.get('/admin/edit/course/:url', (req, res) => {
-            const actualPage = '/admin/edit/course';
-            const queryParams = { url: req.params.url };
-            app.render(req, res, actualPage, queryParams);
-        })
-
         server.get('/admin/edit/course/:courseUrl/:partUrl', (req, res) => {
             const actualPage = '/admin/edit/course/part';
             const queryParams = { courseUrl: req.params.courseUrl, partUrl: req.params.partUrl };

@@ -5,21 +5,6 @@ import { withRouter } from "next/router";
 import CoursePanel from "./CoursePanel";
 
 class CoursePanelContainer extends Component {
-    getLink() {
-        //if this was not clicked on the admin dashboard push to course
-        if (this.props.onAdminPage) {
-            const url = `/admin/edit/course/${this.props.url}`;
-
-            return url;
-        }
-        //if it was push to edit screen for that article
-        else {
-            return this.props.url;              
-        }
-
-        return "/";
-    }
-
     getTimestamp() {
         if (this.props.timestamp) {
             let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -57,7 +42,7 @@ class CoursePanelContainer extends Component {
                 timestamp={this.getTimestamp()}
                 description={this.props.description}
                 length={this.getLength()}
-                link={this.getLink()}
+                link={this.props.url}
                 onAdminPage={this.props.onAdminPage}
             />
         )

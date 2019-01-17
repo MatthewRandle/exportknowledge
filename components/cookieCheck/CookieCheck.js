@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 import "../../stylesheets/css/CookieBanner.css";
 
@@ -8,7 +9,7 @@ const CookieCheck = (props) => {
             <div className="cookieBanner">
                 <p>
                     This site uses cookies to provide you with the best experience. By accepting you agree
-                    to our <span>Cookie Policy</span> and <span>Privacy Policy</span>
+                    to our <Link href="/cookie-policy"><a>Cookie Policy</a></Link> and <Link href="/privacy-policy"><a>Privacy Policy</a></Link>
                 </p>
 
                 <div className="cookieBanner_buttons">

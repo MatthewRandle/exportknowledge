@@ -108,7 +108,7 @@ Now if we refresh our page, we will see that only the first h1 is styled! This b
 
     <body>
         <h1 class="title">A website dedicated to dogs</h1>
-        <h1 class="small_header>Second h1</h1>
+        <h1 class="small_header">Second h1</h1>
 
         <p>A mans best friend!</p>
 
@@ -148,7 +148,7 @@ Now we will add a new set of styles for our new class
 }
 <code>
 
-If we refresh our site we will see that the second h1 has a totally different style to the first! Classes of the same name can also be given to multiple elements, so that they can be given the same styling. For example in our list, we have 4 li's that we would presumably want to have the same styling, so we could just give all 4 li's the same class name.
+If we refresh our site we will see that the second h1 has a totally different style to the first! Classes of the same name can also be given to multiple elements, so that they can be given the same styling. For example in our list, we have 4 li's that we would presumably want to have the same styling, so we could just give all 4 li's the same class name (although there is a more practical way by just targeting all li's).
 
 <br>
 <br>

@@ -53,8 +53,9 @@
   }
 }
 
-.cookieBanner p span {
+.cookieBanner p a {
   text-decoration: underline;
+  color: white;
 }
 
 .cookieBanner_buttons button {

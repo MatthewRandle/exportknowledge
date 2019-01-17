@@ -34,6 +34,11 @@ const ArticleSearch = (props) => {
 
             <div className="articleSearch_articles">
                 {props.articles}
+                {props.articles}
+                {props.articles}
+                {props.articles}
+                {props.articles}
+                {props.articles}
             </div>
         </div>
     );

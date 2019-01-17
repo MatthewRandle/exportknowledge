@@ -5,20 +5,20 @@ One of the most important part of CSS is positioning. Positioning allows us to c
 
 The methods we will be learning today aren't all the methods that we will be using in the future, but are simple enough for this basic introduction course. If you are wanting to look at something a bit more advanced I would recommend
 
- <a href="/course/css-layout-with-flexbox">CSS: Layout with Flexbox<a>.
+ <a href="/course/css-layout-with-flexbox">CSS: Layout with Flexbox</a>.
 
 <br>
 <br>
 
-So getting started we have a way of defining our elements position using a 'position' property. This property can be given a value of static (which is the default value of all html elements), relative, absolute and fixed. We will start with relative.
+We have a way of defining our elements position using a 'position' property. This property can be given a value of static (which is the default value of all html elements), relative, absolute and fixed. We will start with relative.
 
 
 <br>
 <br>
 
-A position of relative is very similar to the default static position but we can use properties left, right, bottom and top to offset the element. We will go to our css file and add a position of relative to our li
+A position of relative is very similar to the default static position but we can use properties left, right, bottom and top to offset the element. We will go to our css file and add a position of relative to our li's
 
-<code><pre><css>
+<code><css>
 li {
     padding: 10px;
     margin: 10px;
@@ -28,7 +28,7 @@ li {
 
 If we refresh our site we will see that nothing has changed. What we have done is allowed all li's to be affected by the left, right, bottom and top properties. We will add the property 'left' and give it a value of 15px
 
-<code><pre><css>
+<code><css>
 li {
     padding: 10px;
     margin: 10px;
@@ -37,19 +37,19 @@ li {
 }
 <code>
 
-Refresh the page and you will now see that each of the list items has moved to right. This might be a bit confusing but giving a value of 15px to left tells the element to move 15px away from the left.
+Refresh the page and you will now see that each of the list items has moved to right. This might be a bit confusing but giving a value of 15px to left tells the element to move 15px away from the left. If we instead gave it a 'right' of 0px the li's would go to the right hand side.
 
 <br>
 <br>
 
-Moving onto 'fixed' positioning. Fixed positioning sticks our element to the page, so even if we scroll down the element will remain exactly still. You will have saw fixed positioning all over the internet and its safe to say 99% of sites use it. The most common use case is a navigation bar. Even here at export Knowledge we have one. You'll notice that if you scroll the navigation bar stays put, and that's what fixed positioning is.
+Moving onto 'fixed' positioning. Fixed positioning sticks our element to the page so even if we scroll down, the element would remain exactly still. You will have saw fixed positioning all over the internet. The most common use case is a navigation bar. You'll notice that if you scroll the navigation bar stays put, and that's what fixed positioning is.
 
 <br>
 <br>
 
 Now lets change our position property from relative to fixed
 
-<code><pre><css>
+<code><css>
 li {
     padding: 10px;
     margin: 10px;
@@ -68,7 +68,7 @@ And that brings us onto the last value that the position property can take - abs
 <br>
 <br>
 
-If we were to move the ol (parent) around our page the li's (children) would be stuck to it, and if we scrolled down the li's would remain still.
+If we were to move the ol (parent) around our page, the li's (children) would be stuck to it, and if we scrolled down the li's would remain still.
 
 <br>
 <br>
@@ -80,7 +80,7 @@ The use cases of these may seem a bit arbitrary right now, but as we build more 
 
 Another way we can affect the layout of elements is using the 'float' property. The float property determines where an element should be placed inside of its container (parent). We can give the float a value of either left or right. Lets test this out by adding a float of right to the ol 
 
-<code><pre><css>
+<code><css>
 ol {
     float: right;
 }

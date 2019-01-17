@@ -16,8 +16,8 @@ class EditCoursePartContainer extends Component {
     }
 
     componentDidMount() {
-        let part = this.props.router.query.partUrl;
-        let course = this.props.router.query.courseUrl;
+        let part = this.props.router.query.partURL;
+        let course = this.props.router.query.courseURL;
         
         this.props.fetchCoursePart(part, course, null);        
     }
@@ -27,8 +27,8 @@ class EditCoursePartContainer extends Component {
     }
 
     submit(title, video, description, url, text, length, part, exists) {        
-        let partURL = this.props.router.query.partUrl;
-        let courseURL = this.props.router.query.courseUrl;
+        let partURL = this.props.router.query.partURL;
+        let courseURL = this.props.router.query.courseURL;
 
         //cant edit courses part if we dont know what course the part is from
         if (courseURL.length <= 0) { return; }
@@ -48,7 +48,7 @@ class EditCoursePartContainer extends Component {
         if (this.props.admin) {
             if (this.props.admin.success) {
                 this.props.clearSuccess();
-                return <div onClick={this.props.router.push(`/admin/edit/course/${this.props.router.query.courseUrl}`)}></div>
+                return <div onClick={this.props.router.push(`/admin/edit/course/${this.props.router.query.courseURL}`)}></div>
             }
         }
 
