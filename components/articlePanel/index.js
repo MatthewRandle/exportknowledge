@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import ArticlePanel from "./ArticlePanel";
 import { withRouter } from "next/router";
 import PropTypes from "prop-types";
-import ScrollAnimation from "react-animate-on-scroll";
-
-import "../../stylesheets/css/Animate.css";
 
 import ArticlePanelErrorBoundary from "./ArticlePanelErrorBoundary";
 
@@ -39,19 +36,17 @@ export class ArticlePanelContainer extends Component {
     render() {
         if(this.props.title && (this.props.image || this.props.admin) && this.props.description && this.props.url && this.props.timestamp && this.props.url) {
             return (
-                <ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
-                    <ArticlePanel
-                        title={this.props.title}
-                        image={this.props.image}
-                        description={this.props.description}
-                        url={this.props.url}
-                        link={this.props.url}
-                        exists={this.props.exists}
-                        timestamp={this.getDatePosted()}
-                        onAdminPage={this.checkAdminPage()}
-                        commentCount={this.props.commentCount}
-                    />
-                </ScrollAnimation>
+                <ArticlePanel
+                    title={this.props.title}
+                    image={this.props.image}
+                    description={this.props.description}
+                    url={this.props.url}
+                    link={this.props.url}
+                    exists={this.props.exists}
+                    timestamp={this.getDatePosted()}
+                    onAdminPage={this.checkAdminPage()}
+                    commentCount={this.props.commentCount}
+                />
             );
         }
         
