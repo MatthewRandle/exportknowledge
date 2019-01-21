@@ -22,7 +22,7 @@ class ReplyContainer extends Component {
             return `${this.props.reply.forename} ${this.props.reply.surname}`;
         }
         else {
-            return "Anonymous";
+            return "Deleted";
         }
     }
 

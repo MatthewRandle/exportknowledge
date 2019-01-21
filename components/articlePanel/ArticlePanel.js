@@ -12,9 +12,9 @@ export const ArticlePanel = (props) => {
                 as={props.onAdminPage ? `/admin/edit/article/${props.link}` : `/article/${props.link}` }
             >
                 <a className="articlePanel_container">
-                    <div className="articlePanel_base">
-                        <img src={props.image} alt={props.title} />
+                    <img src={props.image} alt={props.title} />
 
+                    <div className="articlePanel_base">
                         <div className="articlePanel_content">
                             <p className="articlePanel_title">{props.title}</p>
                             <p className="articlePanel_description">{props.description}</p>

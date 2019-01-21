@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import Link from "next/link";
 
-import CoursePanel from "../coursePanel";
 import { fetchAllTags, fetchAllArticles } from "../article/ArticleActions";
 import Home from "./Home";
 
@@ -10,18 +10,18 @@ export class HomeContainer extends Component {
     getLatestCourses() {
         let latest = this.props.course.latestCourses.map((item, i) => {
             return (
-                <CoursePanel
-                    title={item.title}
-                    image={item.image}
-                    exists={1}
-                    timestamp={item.timestamp}
-                    description={item.description}
-                    admin={false}
-                    length={item.length}
-                    url={item.url}
-                    key={i}
-                    onAdminPage={false}
-                />
+                <div className="home_course" key={i}>
+                    <iframe
+                        className="home_course_video"
+                        src={`https://www.youtube-nocookie.com/embed/${item.video}`}
+                        title="course video"
+                    />
+
+                    <p className="home_course_title">{item.title}</p>
+                    <Link href={{ pathname: "/course", query: { url: item.url } }} as={`/course/${item.url}`}>
+                        <a className="home_course_button">Take Course</a>
+                    </Link>
+                </div>
             );
         });
 

@@ -7,7 +7,9 @@
     color: white;
     display: flex;
     flex-direction: column;
-    box-shadow: 10px 10px 31px -15px rgba(0,0,0,0.62);
+    box-shadow: 10px 10px 31px -15px rgba(0,0,0,0.5);
+    border: 1px solid rgba(black, 0.2);
+    transition: box-shadow 0.2s;
 
     &:hover {
         .articlePanel_bottomBar {
@@ -15,6 +17,7 @@
         }
 
         cursor: pointer;
+        box-shadow: 10px 10px 20px -15px rgba(0,0,0,0.5);
     }
 }
 
@@ -86,27 +89,18 @@
     }
 }
 
-.articlePanel_base img {
+.articlePanel_container img {
     width: 100%;
-    padding: 0.3vw;
     box-sizing: border-box;
-
-    @include desktop-down() {
-        padding: 0.1vw;
-    }
-
-    @include phone-down() {
-        padding: 0.4vw;
-    }
 }
 
 .articlePanel_bottomBar {
     font-family: "Open Sans";
     border-top: 2px solid white;
-    background: linear-gradient(to right, $purple, $purple, $OneDarkBG, $OneDarkBG);
+    background: linear-gradient(to right, $OneDarkBG, $OneDarkBG, $purple, $blue);
     background-size: 300%;
     background-position: 0%;
-    transition: background-position 0.35s;
+    transition: background-position 0.2s;
     height: 1.1vw;
     width: 100%;
     display: flex;

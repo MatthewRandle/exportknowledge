@@ -80,7 +80,6 @@
   }
 }
 
-.articleSearch_searchBar--loader,
 .articleSearch_searchBar {
   border: none;
   border-radius: 2px;
@@ -93,14 +92,12 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .articleSearch_searchBar--loader,
   .articleSearch_searchBar {
     margin-top: 10px;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  .articleSearch_searchBar--loader,
   .articleSearch_searchBar {
     width: 50%;
   }
@@ -122,7 +119,6 @@
   color: white;
 }
 
-.articleSearch_select--loader,
 .articleSearch_select {
   background: #282c34;
   border: none;
@@ -136,22 +132,15 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .articleSearch_select--loader,
   .articleSearch_select {
     margin-top: 10px;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  .articleSearch_select--loader,
   .articleSearch_select {
     width: 50%;
   }
-}
-
-.articleSearch_searchBar--loader,
-.articleSearch_select--loader {
-  padding: 0;
 }
 
 .articleSearch_tags {
@@ -171,7 +160,7 @@
 }
 
 .articleSearch_checkbox {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   background: #00b7ff;
   color: white;
   margin-right: 10px;
@@ -191,6 +180,15 @@
 
 .articleSearch_checkbox:hover {
   cursor: pointer;
+}
+
+.articleSearch_checkbox p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .articleSearch_checkbox--loader {

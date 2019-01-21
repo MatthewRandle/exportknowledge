@@ -5,9 +5,8 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { withRouter } from "next/router";
 
-import { updateUserSettings } from "./SettingsActions";
+import { updateUserSettings, deleteAccount } from "./SettingsActions";
 import Settings from "./Settings";
-import SettingsLoader from "./SettingsLoader";
 
 class SettingsContainer extends Component {
     constructor() {
@@ -70,46 +69,27 @@ class SettingsContainer extends Component {
     }
     
     submit(cookieChoice) {
-        this.props.updateUserSettings(cookieChoice);
+        this.props.updateUserSettings(cookieChoice, this.props.router);
     }
 
     deleteUser() {
-        
+        this.props.deleteAccount(this.props.router);
     }
 
-    render() {           
-        if(this.props.settings) {
-            if(this.props.settings.redirect === true) {
-                return (
-                    <Settings
-                        onClick={this.props.router.push("/")}
-                        delete={this.confirmDeleteUser}
-                        cookieChoice={!this.state.cookieChoice}
-                        toggleCookieChoice={this.toggleCookieChoice}
-                        submit={this.submit}
-                        forename={this.props.settings.userSettings.forename}
-                        surname={this.props.settings.userSettings.surname}
-                        email={this.props.settings.userSettings.email}
-                    />
-                )
-            }
-
-            if (this.props.settings.userSettings) {
-                return (
-                    <Settings
-                        delete={this.confirmDeleteUser}
-                        cookieChoice={this.state.cookieChoice}
-                        toggleCookieChoice={this.toggleCookieChoice}
-                        submit={this.submit}
-                        forename={this.props.settings.userSettings.forename}
-                        surname={this.props.settings.userSettings.surname}
-                        email={this.props.settings.userSettings.email}
-                    />
-                );
-            }           
-       }
-
-       return <SettingsLoader />;
+    render() {       
+        if (this.props.settings.userSettings) {
+            return (
+                <Settings
+                    delete={this.confirmDeleteUser}
+                    cookieChoice={this.state.cookieChoice}
+                    toggleCookieChoice={this.toggleCookieChoice}
+                    submit={this.submit}
+                    forename={this.props.settings.userSettings.forename}
+                    surname={this.props.settings.userSettings.surname}
+                    email={this.props.settings.userSettings.email}
+                />
+            );
+        }           
     }
 }
 
@@ -119,7 +99,8 @@ function mapStateToProps({ settings }) {
 
 const mapDispatchToProps = dispatch => {
     return {
-        updateUserSettings: bindActionCreators(updateUserSettings, dispatch)
+        updateUserSettings: bindActionCreators(updateUserSettings, dispatch),
+        deleteAccount: bindActionCreators(deleteAccount, dispatch)
     };
 }
 

@@ -2,13 +2,14 @@ const pool = require("../../services/db");
 const AppError = require("../../tools/applicationError");
 
 module.exports = app => {
-    app.get("/api/admin/check-admin", (req, res, next) => {        
-        if (!req.body || !req.user) {            
+    app.post("/api/admin/check-admin", (req, res, next) => {        
+        if (req.body == null || (req.body.user == null && req.user == null)) {            
             res.send({ error: "No Body and/or user" });
             return;
         }
 
-        pool.query("SELECT authority FROM users WHERE oauthID = ?", [req.user], (err, results) => {
+
+        pool.query("SELECT authority FROM users WHERE oauthID = ?", [req.user || req.body.user], (err, results) => {
             if (err) {
                 next(new AppError(err));
                 return;

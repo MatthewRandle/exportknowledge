@@ -24,7 +24,7 @@ class CommentContainer extends Component {
             return `${this.props.userComment.commenter_forename} ${this.props.userComment.commenter_surname}`;
         }
         else {
-            return "Anonymous";
+            return "Deleted";
         }
     }
 

@@ -2,6 +2,7 @@ import axios from "axios";
 import getRouteString from "../utils/getRouteString";
 import { checkUserAllowsCookies } from "../components/cookieCheck/CookieActions";
 import { CHECK_USERS_ALLOWS_COOKIES } from "../components/cookieCheck/CookieActions";
+import { isAdmin } from "../components/admin/AdminActions";
 
 export default async function initialSetupFetch (store, req) {
     //only do this once per mount, i.e. server side
@@ -15,6 +16,7 @@ export default async function initialSetupFetch (store, req) {
         if(userRes.data != null) {
             //load user into user state
             store.dispatch({ type: "FETCH_USER", payload: userRes.data });
+            store.dispatch(isAdmin(req));
 
             //if the user is logged in get profile picture
             if (userRes.data.id !== false || null) {

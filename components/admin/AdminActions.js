@@ -101,13 +101,18 @@ export const editCourse = (id, url, title, image, preview, video, exists, descri
 };
 
 
-export const isAdmin = () =>  async dispatch => {
-    const res = await axios.get("/api/admin/check-admin");
+export const isAdmin = (req) =>  async dispatch => {
+    try {
+        const res = await axios.post(getRouteString("/api/admin/check-admin", req), { user: req ? req.user : null });
 
-    if (res.data.authorised === true) {
-        dispatch({ type: IS_ADMIN, payload: { authorised: true } });
+        if (res.data.authorised === true) {
+            dispatch({ type: IS_ADMIN, payload: { authorised: true } });
+        }
+        else {
+            dispatch({ type: IS_ADMIN, payload: { authorised: false } })
+        }
     }
-    else {
+    catch(err) {
         dispatch({ type: IS_ADMIN, payload: { authorised: false } })
     }
 };

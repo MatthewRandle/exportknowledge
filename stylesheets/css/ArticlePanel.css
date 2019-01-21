@@ -10,12 +10,19 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-shadow: 10px 10px 31px -15px rgba(0, 0, 0, 0.62);
-          box-shadow: 10px 10px 31px -15px rgba(0, 0, 0, 0.62);
+  -webkit-box-shadow: 10px 10px 31px -15px rgba(0, 0, 0, 0.5);
+          box-shadow: 10px 10px 31px -15px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-transition: -webkit-box-shadow 0.2s;
+  transition: -webkit-box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
 }
 
 .articlePanel_container:hover {
   cursor: pointer;
+  -webkit-box-shadow: 10px 10px 20px -15px rgba(0, 0, 0, 0.5);
+          box-shadow: 10px 10px 20px -15px rgba(0, 0, 0, 0.5);
 }
 
 .articlePanel_container:hover .articlePanel_bottomBar {
@@ -124,34 +131,21 @@
   }
 }
 
-.articlePanel_base img {
+.articlePanel_container img {
   width: 100%;
-  padding: 0.3vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-@media only screen and (max-width: 1200px) {
-  .articlePanel_base img {
-    padding: 0.1vw;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .articlePanel_base img {
-    padding: 0.4vw;
-  }
 }
 
 .articlePanel_bottomBar {
   font-family: "Open Sans";
   border-top: 2px solid white;
-  background: -webkit-gradient(linear, left top, right top, from(#8950ff), color-stop(#8950ff), color-stop(#282c34), to(#282c34));
-  background: linear-gradient(to right, #8950ff, #8950ff, #282c34, #282c34);
+  background: -webkit-gradient(linear, left top, right top, from(#282c34), color-stop(#282c34), color-stop(#8950ff), to(#00b7ff));
+  background: linear-gradient(to right, #282c34, #282c34, #8950ff, #00b7ff);
   background-size: 300%;
   background-position: 0%;
-  -webkit-transition: background-position 0.35s;
-  transition: background-position 0.35s;
+  -webkit-transition: background-position 0.2s;
+  transition: background-position 0.2s;
   height: 1.1vw;
   width: 100%;
   display: -webkit-box;

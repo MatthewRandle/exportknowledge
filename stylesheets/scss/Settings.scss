@@ -7,7 +7,8 @@
 }
 
 .settings,
-.settings_buttons button {
+.settings_buttons button,
+.settings_buttons div {
     font-family: "Zilla Slab";
     font-weight: bold;
     color: white;
@@ -63,7 +64,8 @@
     flex-direction: column;
 }
 
-.settings_buttons button {
+.settings_buttons button,
+.settings_buttons div {
     height: 35px;
     border: none;
     font-size: 1rem;
@@ -73,6 +75,12 @@
     &:hover {
         cursor: pointer;
     }
+}
+
+.settings_buttons div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .settings_alert {

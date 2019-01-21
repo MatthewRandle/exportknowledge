@@ -60,9 +60,9 @@ const Settings = (props) => {
                                     Save
                                 </button>
 
-                                <button onClick={() => props.delete()}>
+                                <div onClick={() => props.delete()}>
                                     Delete Account
-                                </button>
+                                </div>
                             </div>
                         </form>
                     )}
