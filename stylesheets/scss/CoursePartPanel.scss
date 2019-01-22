@@ -8,74 +8,100 @@
     align-items: center;
     color: white;
     font-family: "Zilla Slab";    
-    border: 3px solid $purple;
-    border-left: 6px solid $purple;
-    border-right: 6px solid $purple;
-    padding: 5px;
-    font-size: 1.5vw;
+    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 1.85vw;
     font-weight: bold;
+    box-shadow: 6px 6px 0px 0px #cdcbfd;
+    margin-bottom: 15px;
+
+    position: relative;
+    transform: translateZ(0);
+    transition: color 1000ms;
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $blue;
+        transform: scaleY(0);
+        transform-origin: 50% 100%;
+        transition-property: transform;
+        transition: 300ms ease-out;
+    }
+    
+    &:hover:before {
+        transform: scaleY(1);
+    }
 
     &:hover {
         cursor: pointer;
         background: $purple;
+    }
 
-        .coursePartPanel_part {
-            background: $OneDarkBG;
-        }
+    &:active {
+        box-shadow: 4px 4px 0px 0px #cdcbfd;
     }
 
     @include desktop-down() {
-        width: 95%;
-        height: 2.5vw;
+        width: 85%;
     }
 
     @include tablet-down() {
         width: 100%;
-        border: 2px solid $purple !important;
-        border-left: 4px solid $purple;
-        border-right: 4px solid $purple;
-        padding: 4px;
-    }
-
-    @include phone-down() {
-        height: 3.25vw;
     }
 }
 
 .coursePartPanel_part {
-    flex-basis: 50px;
-    background: $purple;
+    width: 40px;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Open Sans";
-    font-size: 1.2vw;
+    font-family: "Roboto Condensed";
+    font-size: 2vw;
+    padding-right: 10px;
+    border-right: 1px solid white;
+
+    @include desktop-down() {
+        font-size: 2.25vw;
+        width: 30px;
+    }
 
     @include tablet-down() {
-        font-size: 1.5vw;
+        font-size: 3vw;
+        width: 20px;
     }
 
     @include phone-down() {
-        flex-basis: 30px;
+        width: 10px;
     }
 }
 
 .coursePartPanel_title {
-    flex: 1;
+    flex: 1; 
     display: flex;
-    justify-content: center;   
+    align-items: center;
+    margin-left: 30px;
+    transform: translateY(-1px);
 
     @include desktop-down()  {
-        font-size: 2vw;
+        font-size: 2.5vw;
+        margin-left: 20px;
     }
 
     @include tablet-down() {
-        font-size: 2.6vw;
+        font-size: 3.5vw;
+        margin-left: 15px;
     }
 
     @include phone-down() {
         font-size: 3vw;
+        margin-left: 10px;
     }
 }
 

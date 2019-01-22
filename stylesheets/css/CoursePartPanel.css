@@ -10,12 +10,45 @@
           align-items: center;
   color: white;
   font-family: "Zilla Slab";
-  border: 3px solid #8950ff;
-  border-left: 6px solid #8950ff;
-  border-right: 6px solid #8950ff;
-  padding: 5px;
-  font-size: 1.5vw;
+  padding: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 1.85vw;
   font-weight: bold;
+  -webkit-box-shadow: 6px 6px 0px 0px #cdcbfd;
+          box-shadow: 6px 6px 0px 0px #cdcbfd;
+  margin-bottom: 15px;
+  position: relative;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-transition: color 1000ms;
+  transition: color 1000ms;
+}
+
+.coursePartPanel_container:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #00b7ff;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition: 300ms ease-out;
+  transition: 300ms ease-out;
+}
+
+.coursePartPanel_container:hover:before {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
 }
 
 .coursePartPanel_container:hover {
@@ -23,37 +56,25 @@
   background: #8950ff;
 }
 
-.coursePartPanel_container:hover .coursePartPanel_part {
-  background: #282c34;
+.coursePartPanel_container:active {
+  -webkit-box-shadow: 4px 4px 0px 0px #cdcbfd;
+          box-shadow: 4px 4px 0px 0px #cdcbfd;
 }
 
 @media only screen and (max-width: 1200px) {
   .coursePartPanel_container {
-    width: 95%;
-    height: 2.5vw;
+    width: 85%;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .coursePartPanel_container {
     width: 100%;
-    border: 2px solid #8950ff !important;
-    border-left: 4px solid #8950ff;
-    border-right: 4px solid #8950ff;
-    padding: 4px;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .coursePartPanel_container {
-    height: 3.25vw;
   }
 }
 
 .coursePartPanel_part {
-  -ms-flex-preferred-size: 50px;
-      flex-basis: 50px;
-  background: #8950ff;
+  width: 40px;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -64,20 +85,29 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "Open Sans";
-  font-size: 1.2vw;
+  font-family: "Roboto Condensed";
+  font-size: 2vw;
+  padding-right: 10px;
+  border-right: 1px solid white;
+}
+
+@media only screen and (max-width: 1200px) {
+  .coursePartPanel_part {
+    font-size: 2.25vw;
+    width: 30px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
   .coursePartPanel_part {
-    font-size: 1.5vw;
+    font-size: 3vw;
+    width: 20px;
   }
 }
 
 @media only screen and (max-width: 480px) {
   .coursePartPanel_part {
-    -ms-flex-preferred-size: 30px;
-        flex-basis: 30px;
+    width: 10px;
   }
 }
 
@@ -88,26 +118,32 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 30px;
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
 }
 
 @media only screen and (max-width: 1200px) {
   .coursePartPanel_title {
-    font-size: 2vw;
+    font-size: 2.5vw;
+    margin-left: 20px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .coursePartPanel_title {
-    font-size: 2.6vw;
+    font-size: 3.5vw;
+    margin-left: 15px;
   }
 }
 
 @media only screen and (max-width: 480px) {
   .coursePartPanel_title {
     font-size: 3vw;
+    margin-left: 10px;
   }
 }
 

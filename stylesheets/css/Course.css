@@ -63,7 +63,8 @@
   width: 40vw;
   height: 22.5vw;
   border: 3px solid #282c34;
-  background: #282c34;
+  -webkit-box-shadow: 6px 6px 0px 0px #cdcbfd;
+          box-shadow: 6px 6px 0px 0px #cdcbfd;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -203,6 +204,7 @@
   font-family: "Zilla Slab";
   margin-top: 20px;
   font-size: 1.75rem;
+  text-align: center;
 }
 
 .course_preface p {
@@ -236,12 +238,11 @@
   }
 }
 
-.course_title--loading {
-  height: 50px;
+.course_parts .coursePartPanel_container:nth-child(1) {
+  border-top: 6px solid #8950ff;
 }
 
-.course_description--loading {
-  margin-top: 10px;
-  width: 100%;
+.course_parts .coursePartPanel_container:last-of-type {
+  border-bottom: 6px solid #8950ff;
 }
 /*# sourceMappingURL=Course.css.map */

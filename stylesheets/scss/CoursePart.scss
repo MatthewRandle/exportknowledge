@@ -120,14 +120,6 @@
     color: $blue;
 }
 
-.course_parts .coursePartPanel_container:nth-child(1) {
-    border-top: 6px solid $purple;
-}
-
-.course_parts .coursePartPanel_container:last-of-type {
-    border-bottom: 6px solid $purple;
-}
-
 //Loaders
 .coursePart_title--loading {
     height: 50px;

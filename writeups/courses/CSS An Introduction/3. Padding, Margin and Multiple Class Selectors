@@ -138,20 +138,21 @@ As you can see the elements around our button are now pushed away. So we use pad
 
 We can also set padding and margin on just one side of an element. If wanted to just have some padding on the top  we would do this
 
-<code><pre><css>
+<code><css>
 ol {
     padding-top: 10px;
 }
+<code>
 
 So keep in mind that we dont always need to set padding or margin on all sides, we can specify which side we want to be affected.
 
 <br>
 <br>
 
-This brings us onto our last topic of this part - multiple class selectors. If we look at our css, the styling for our li's and our button are the exact same. Instead of writing them separately we can join them together by simply adding the 2 selectors onto the same line like so
+This brings us onto our last topic of this part - multiple class selectors. If we look at our css, the styling for our li's and our button are the exact same. Instead of writing them separately we can join them together by simply adding the 2 selectors one after another, separated by a comma
 
 <code><css>
-li button {
+li, button {
     padding: 10px;
     margin: 10px;
 }

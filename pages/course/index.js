@@ -15,6 +15,7 @@ const CoursePage = ({ title }) => {
     return (
         <ErrorBoundary>
             <Head>
+                <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700" rel="stylesheet"></link>
                 <title>{title} - export Knowledge;</title>
             </Head>
 
