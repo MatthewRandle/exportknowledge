@@ -167,19 +167,10 @@ And in our css we use a # before the id name to target It
 }
 <code>
 
-But whats the difference? We use classes when we want multiple elements to have the same styling, but we use ID's when we want only a single element to have a specific styling. An ID name has to be unique. For example this would not be allowed
+But whats the difference? We use classes when we want multiple elements to have the same styling, but we use ID's when we want only a single element to have a specific styling. An id should be unique - If you were to name them the exact same thing as far as css is concerned nothing will be different and it will allow multiple id's to have the same name, but when you eventually move onto using JavaScript you will run into issues, so its best to get into the habit of using unique names for id's from the get go.
 
-<code><html>
-<h1 id="title">Title</h1>
-<h1 id="title">Title 2</h1>
-<code>
-
-But this would
-
-<code><html>
-<h1 id="title">Title</h1>
-<h1 id="title_2">Title 2</h1>
-<code>
+<br>
+<br>
 
 So use ID's when you want 1 element on your site to have a certain style, and classes when you want to be able to share that styling between different elements.
 

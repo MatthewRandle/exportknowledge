@@ -1,0 +1,78 @@
+.error_container {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Zilla Slab";
+  color: #282c34;
+  text-align: center;
+}
+
+.error_container h1 {
+  font-size: 20rem;
+  font-family: "Open Sans";
+  text-shadow: 10px 10px 0px #cdcbfd;
+}
+
+@media only screen and (max-width: 1200px) {
+  .error_container h1 {
+    font-size: 17rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .error_container h1 {
+    font-size: 12rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .error_container h1 {
+    font-size: 50vw;
+  }
+}
+
+.error_container p {
+  font-size: 1.6rem;
+  text-shadow: 2px 2px 0px #cdcbfd;
+}
+
+@media only screen and (max-width: 1200px) {
+  .error_container p {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .error_container p {
+    font-size: 1.1rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .error_container p {
+    font-size: 1rem;
+  }
+}
+
+.error_message {
+  width: 75%;
+}
+
+@media only screen and (max-width: 768px) {
+  .error_message {
+    width: 90%;
+  }
+}
+/*# sourceMappingURL=Error.css.map */

@@ -1,6 +1,8 @@
 import React from "react";
 import { Formik, Field } from "formik";
 
+import "../../../../stylesheets/css/EditCourse.css";
+
 const EditCoursePart = (props) => {
     return(
         <div className="editCourse_container">

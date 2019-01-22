@@ -74,7 +74,7 @@ So we have moved our inline styling over to a CSS file. If we view our index.htm
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="./index.css" />
+        <link rel="stylesheet" href="./Index.css" />
     </head>
 </html>
 <code>

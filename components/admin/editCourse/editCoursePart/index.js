@@ -18,7 +18,7 @@ class EditCoursePartContainer extends Component {
     componentDidMount() {
         let part = this.props.router.query.partURL;
         let course = this.props.router.query.courseURL;
-        
+
         this.props.fetchCoursePart(part, course, null);        
     }
 

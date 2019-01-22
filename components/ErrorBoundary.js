@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
+import "../stylesheets/css/Error.css";
+
 const clearError = () => dispatch => {
     dispatch({ type: "CLEAR_ERROR" });
 };
@@ -24,16 +26,18 @@ class ErrorBoundary extends Component {
     render() {
         if (this.state.hasError) {
             return (
-                <div style={{ height: "800px", display: "flex", justifyContent: "center", alignItems: "center" }}>
-                    <h1>OOPS! Looks like something went wrong. Please try again later.</h1>
+                <div className="error_container pushFooter">
+                    <p>OOPS! Looks like something went wrong.</p>
+                    <p>Please try again.</p>
                 </div>
             );
         }
         else if (this.props.error) {
             return (
-                <div style={{ height: "800px", display: "flex", flexDirection: "column" ,justifyContent: "center", alignItems: "center" }}>
-                    <h1>Request failed with status code {this.props.error.code}</h1>
-                    <h1>{this.props.error.customMessage || null}</h1>                    
+                <div className="error_container pushFooter">
+                    {/* {this.props.error.code} */}
+                    <h1>404</h1>
+                    <p className="error_message">{/* {this.props.error.customMessage || null} */}What you are looking for has either moved or never existed. Try going back and searching again.</p>                    
                 </div>
             );
         }

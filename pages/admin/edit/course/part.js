@@ -11,7 +11,7 @@ const EditCoursePartPage = (props) => {
 
 EditCoursePartPage.getInitialProps = async function ({ store, req, query }) {
     await initialSetupFetch(store, req);
-
+    
     return { };
 }
 
