@@ -1,6 +1,10 @@
 import React from "react";
 import dynamic from "next/dynamic";
 
+import "../stylesheets/css/ArticlePanel.css";
+import "../stylesheets/css/ArticleSearch.css";
+import "../stylesheets/css/Home.css";
+
 import ErrorBoundary from "../components/ErrorBoundary";
 import initialSetupFetch from "../utils/initialSetupFetch";
 import HomeLoader from "../components/home/HomeLoader";

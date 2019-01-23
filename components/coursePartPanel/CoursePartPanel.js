@@ -1,8 +1,6 @@
 import React from "react";
 import Link from "next/link";
 
-import "../../stylesheets/css/CoursePartPanel.css";
-
 const CoursePartPanel = (props) => {
     return(
         <Link 

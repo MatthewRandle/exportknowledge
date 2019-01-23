@@ -1,0 +1,88 @@
+Flexbox is a css layout module that makes it easy to distribute items evenly and create a fluid layout. We will first start by creating a html file with a div. Inside of this div we will place 5 paragraphs inside, each with a class of 1 through 5. We will also link a css file to this html file in head
+
+<code><html>
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="./Index.css">
+    </head>
+
+    <body>
+        <div>
+            <p class="paragraph_1">1</p>
+            <p class="paragraph_2">2</p>
+            <p class="paragraph_3">3</p>
+            <p class="paragraph_4">4</p>
+            <p class="paragraph_5">5</p>
+        </div>
+    </body>
+</html>
+<code>
+
+Inside this css file give the div a property display with value flex
+
+<code><css>
+div {
+    display: flex;
+}
+<code>
+
+I you view this page now on your browser (by dragging and dropping the html file) you will notice that each of the paragraphs sit on the same line, directly one after another. If we were to remove the display of flex the paragraphs would each go onto a new line - kind of like a list. By giving the div a display of flex we are making become what is called a flex container. Every item that is inside a flex container becomes a flex item. This allows us to modify both the flex container and the flex items separately.
+
+<br>
+<br>
+
+One way we can modify each flex item is with the order property. By default this property is 0. We will give the 3rd paragraph an order of 1 and see what happens
+
+<code><css>
+.paragraph_3 {
+    order: 1;
+}
+<code>
+
+Doing this causes the 3rd paragraph to get moved to the end. This is because by default all of the other paragraphs have an order of 0. Lets give the 1st paragraph an order of 2
+
+<code><css>
+.paragraph_1 {
+    order: 2;
+}
+<code>
+
+You will see that the 1st paragraph gets pushed to the end. What would happen if we gave the 1st paragraph an order of 1 as well? Would the 3rd come before or after the 1st? You can check for yourself if you wish, but the 1st will come first. This is because in our html the paragraph_1 comes first. So when flex items have the same order, it goes off of their original order in the html.
+
+<br>
+<br>
+
+Another way we can modify each of the flex items is using the flex-grow property. This property is given a unitless value (1, 2, 3..) which acts as a proportion to the flex container (our div). Will we give a flex-grow of 1 to all of our paragraphs and a border of '1px solid red'. We will also give our div a width of 500px and a border of '1px solid blue' to our div - this is so we can see the effect of the flex-grow property
+
+<code><css>
+div {
+    display: flex;
+    width: 500px;
+    border: 1px solid blue;
+}
+
+p {
+    flex-grow: 1;
+    border: 1px solid red;
+}
+<code>
+
+Now each of the flex items are taking up an equal amount of space within the div. Lets remove the order from the 1st and 3rd paragraphs and give the 3rd paragraph a flex-grow of 2
+
+<code><css>
+p {
+    border: 1px solid red;
+    flex-grow: 1;
+}
+
+.paragraph_3 {
+    flex-grow: 2;
+}
+<code>
+
+Now our middle paragraph is taking up exactly double the width of the other paragraphs. This allows us to do all sorts of magic with our page layouts. Imagine on a mobile we wanted some panels to show in a certain order and size, but on desktop a different order and size - flex would be the solution.
+
+<br>
+<br>
+
+Thats it for part 1. Thanks for reading!

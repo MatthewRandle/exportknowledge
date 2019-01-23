@@ -74,6 +74,7 @@
 
     @include tablet-down() {
         font-size: 1.8rem;
+        text-align: center;
     }
 
     @include phone-down() {
@@ -90,6 +91,10 @@
 
     @include desktop-down() {
         width: auto;
+    }
+
+    @include tablet-down() {
+        text-align: center;
     }
 }
 

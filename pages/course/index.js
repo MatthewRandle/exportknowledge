@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 
 import "../../stylesheets/css/Course.css";
+import "../../stylesheets/css/CoursePartPanel.css";
 
 import ErrorBoundary from "../../components/ErrorBoundary";
 import initialSetupFetch from "../../utils/initialSetupFetch";

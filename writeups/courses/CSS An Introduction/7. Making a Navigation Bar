@@ -1,1 +1,176 @@
-We are going to put all the things we have learned throughout the last 6 parts and make a navigation bar to wrap things up.
+In this part we are going to put all the things we have learned throughout the last 6 parts and make a navigation bar.
+
+<br>
+<br>
+
+To get started lets create a div inside our index.html file, and inside that div put a paragraph with the title of our website in it. I will also give the navbar a class of 'navbar'
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./Index.css">
+    </head>
+
+    <body>
+        <div class="navbar">
+            <p>Dogs</p>
+        </div>
+    </body>
+</html>
+<code>
+
+Next, in the css file we will add a background color to the div
+
+<code><css>
+navbar {
+    background-color: #5194ff;
+}
+<code>
+
+If we view our site now we will see that the navigation bar is not filling up the top of the screen fully. This is because by default html element have some margin and padding. We can remove this on every element by targeting every element on our page using '*' where we would normally put h1 or div
+
+<code><css>
+* {
+    padding: 0;
+    margin: 0;
+}
+<code>
+
+Now the navbar should fully fill the intended space. Next we will give the navbar a height - I will use 55px, use whatever you like. I will also add some padding to the left so the paragraph isn't touching the side of the screen
+
+<code><css>
+.navbar {
+    background-color: #5194ff;
+    height: 55px;
+    padding-left: 20px;
+}
+<code>
+
+The color of the paragraph is a problem against the navbar background color I chose, so I will add the color property to the paragraph and give it a value of white. When targeting this paragraph we will add the navbar class before the p, this is to ensure that only paragraphs inside of the navbar get affected
+
+<code><css>
+.navbar p {
+    color: white;
+}
+<code>
+
+If you view the navbar as is, you will notice that the paragraph is at the very top, to fix this we will use a layout module called flexbox. Flexbox is a course within itself and I would highly recommend learning it (and CSS Grid). We will give the navbar a display of flex
+
+<code><css>
+.navbar {
+    background-color: #5194ff;
+    height: 55px;
+    padding-left: 20px;
+    display: flex;
+}
+<code>
+
+This makes our navbar a flex container, and every item within is a flex item. To align all the elements inside the flex container vertically, we will use the align-items property and give it a value of center.
+
+<code><css>
+.navbar {
+    background-color: #5194ff;
+    height: 55px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+<code>
+
+Our text inside of the navbar will now be perfectly centered. We will add 2 links using the a tag to our navbar, one linking to the homepage ('./index.html') and the other to page2 ('./page2.html')
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./Index.css">
+    </head>
+
+    <body>
+        <div class="navbar">
+            <p>Dogs</p>
+            <a href="./index.html">Home</a>
+            <a href="./page2.html">Page 2</a>
+        </div>
+    </body>
+</html>
+<code>
+
+Next I will change the color of the links and remove the underline using the property text-decoration with value of none, and add a margin-left of 10px to split up the words. I will also give the paragraph a font-weight of bold and a font-size of 1.5rem (we looked at the use of different units such as rem on part 4) so it stands out.
+
+<code><css>
+.navbar p {
+    color: white;
+    font-weight: bold;
+}
+
+.navbar a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+}
+<code>
+
+If you remember in part 4 we looked at making an element fixed to the page. We want our navbar to always be at the top of the page, so we will add a property position to our navbar and give it a value of fixed
+
+<code><css>
+.navbar {
+    background-color: #5194ff;
+    height: 55px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+}
+<code>
+
+If you view this change you will notice that the navbar get squished horizontally and only takes up the space that the paragraphs and links are. To fix this add a width of 100% to the navbar
+
+<code><css>
+.navbar {
+    background-color: #5194ff;
+    height: 55px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+}
+<code>
+
+And thats it for our navbar. In the next part we will put some content to the site and make it look appealing. Thanks for reading!
+
+<br>
+<br>
+
+Below is the final css file
+
+<code><css>
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    background-color: #5194ff;
+    height: 55px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+}
+
+.navbar p {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+}
+<code>

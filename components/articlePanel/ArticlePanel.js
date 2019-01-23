@@ -2,8 +2,6 @@ import React from "react";
 import Link from "next/link";
 import PropTypes from "prop-types";
 
-import "../../stylesheets/css/ArticlePanel.css";
-
 export const ArticlePanel = (props) => {
     if(props.exists === 1 || props.onAdminPage) {
         return (

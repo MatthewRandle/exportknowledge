@@ -204,7 +204,12 @@
   font-family: "Zilla Slab";
   margin-top: 20px;
   font-size: 1.75rem;
-  text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+  .course_preface h1 {
+    text-align: center;
+  }
 }
 
 .course_preface p {
@@ -216,6 +221,12 @@
   .course_preface p {
     width: 90%;
     text-align: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .course_preface p {
+    width: 100%;
   }
 }
 

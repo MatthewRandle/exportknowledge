@@ -124,7 +124,10 @@
     font-family: "Zilla Slab";
     margin-top: 20px;
     font-size: 1.75rem;
-    text-align: center;
+
+    @include desktop-down() {
+        text-align: center;
+    }
 }
 
 .course_preface p {
@@ -134,6 +137,10 @@
     @include desktop-down() {
         width: 90%;
         text-align: center;
+    }
+
+    @include tablet-down() {
+        width: 100%;
     }
 }
 

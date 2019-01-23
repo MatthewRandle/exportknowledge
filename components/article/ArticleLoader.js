@@ -1,10 +1,6 @@
 import React from "react";
 import ContentLoader from "react-content-loader";
 
-import "../../stylesheets/css/Article.css";
-import "../../stylesheets/css/Container.css";
-import "../../stylesheets/css/Code.css";
-
 const Loader = (props) => {
     return(
         <ContentLoader className={props.className} height={"100%"} width={"100%"}>

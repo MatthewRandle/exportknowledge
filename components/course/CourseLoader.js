@@ -1,8 +1,6 @@
 import React from "react";
 import ContentLoader from "react-content-loader";
 
-import "../../stylesheets/css/Course.css";
-
 const Loader = (props) => {
     return (
         <ContentLoader className={props.className} height={"100%"} width={"100%"} style={props.style}>

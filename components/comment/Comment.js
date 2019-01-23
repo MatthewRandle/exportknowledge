@@ -5,7 +5,6 @@ import isEmpty from 'lodash/isEmpty'
 import ta from "time-ago";
 
 import CommentSettings from "./CommentSettings";
-import "../../stylesheets/css/CommentSection.css";
 
 class NewReply extends React.Component {
     constructor() {

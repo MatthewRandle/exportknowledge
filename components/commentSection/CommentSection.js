@@ -3,8 +3,6 @@ import { Formik, Field } from "formik";
 import * as Yup from "yup";
 import isEmpty from 'lodash/isEmpty'
 
-import "../../stylesheets/css/CommentSection.css";
-
 class CommentSection extends React.Component {
     constructor() {
         super();

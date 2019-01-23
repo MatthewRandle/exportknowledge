@@ -2,8 +2,6 @@ import React from "react";
 import Link from "next/link";
 import PropTypes from "prop-types";
 
-import "../../stylesheets/css/CoursePanel.css";
-
 const CoursePanel  = (props) => {
     return (
         <Link 

@@ -1,8 +1,26 @@
-div {
-    background-image: url("https://upload.wikimedia.org/wikipedia/en/thumb/0/09/Circle_Logo.svg/1200px-Circle_Logo.svg.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 10%;
-    background: radial-gradient(blue, red, green);
-    height: 300px;
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    background-color: #5194ff;
+    height: 55px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+}
+
+.navbar p {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
 }

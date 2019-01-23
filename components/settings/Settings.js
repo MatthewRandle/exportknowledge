@@ -1,8 +1,6 @@
 import React from "react";
 import { Formik, Field } from "formik";
 
-import "../../stylesheets/css/Settings.css";
-
 const Settings = (props) => {
     return(
         <div className="settings_container pushFooter">

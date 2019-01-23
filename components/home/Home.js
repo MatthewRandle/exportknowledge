@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 
 import ArticleSearch from "../articleSearch";
-import "../../stylesheets/css/Home.css";
 
 const Home = (props) => {   
     return (                

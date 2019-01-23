@@ -2,6 +2,8 @@ import React from "react";
 import dynamic from "next/dynamic";
 
 import "../stylesheets/css/Article.css";
+import "../stylesheets/css/Code.css";
+import "../stylesheets/css/CommentSection.css";
 
 import ErrorBoundary from "../components/ErrorBoundary";
 import initialSetupFetch from "../utils/initialSetupFetch";

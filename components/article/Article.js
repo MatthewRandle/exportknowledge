@@ -3,9 +3,6 @@ import PropTypes from "prop-types";
 import Head from "next/head";
 
 import CommentSection from "../commentSection";
-import "../../stylesheets/css/Article.css";
-import "../../stylesheets/css/Container.css";
-import "../../stylesheets/css/Code.css";
 
 const Article = (props) => {    
     return(        

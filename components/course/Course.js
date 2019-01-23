@@ -1,7 +1,5 @@
 import React from "react";
 
-import "../../stylesheets/css/Course.css";
-
 const Course = (props) => {
     return(
         <div className="course_container pushFooter">

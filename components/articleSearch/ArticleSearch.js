@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "../../stylesheets/css/ArticleSearch.css";
-
 const ArticleSearch = (props) => {
     return(
         <div className="articleSearch">       

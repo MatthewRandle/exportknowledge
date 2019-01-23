@@ -1,7 +1,6 @@
 import React from "react";
 
 import CommentSection from "../commentSection";
-import "../../stylesheets/css/CoursePart.css";
 
 const CoursePart = (props) => {
     return(

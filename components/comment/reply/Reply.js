@@ -2,7 +2,6 @@ import React from "react";
 import ta from "time-ago";
 
 import CommentSettings from "../CommentSettings";
-import "../../../stylesheets/css/CommentSection.css";
 
 const Reply = (props) => {
     return (

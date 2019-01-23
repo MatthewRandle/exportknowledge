@@ -2,8 +2,9 @@ import React from "react";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 
-import "../../stylesheets/css/CoursePart.css";
 import "../../stylesheets/css/Code.css";
+import "../../stylesheets/css/CommentSection.css";
+import "../../stylesheets/css/CoursePart.css";
 
 import ErrorBoundary from "../../components/ErrorBoundary";
 import initialSetupFetch from "../../utils/initialSetupFetch";

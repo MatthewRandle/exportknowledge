@@ -18,7 +18,7 @@ Firstly we will clear everything from the body and head of our html to return ou
 </html>
 <code>
 
-We will put an empty div inside of the body
+We are going to be using an element we haven't looked at yet - a div. A div is a html element that can act as a group or container for one or more elements - If you remember a container is the same as a parent, where whatever is inside the div is a child. We are going to use an empty div here to showcase the background-color and background-image properties.
 
 <code><html>
 <!DOCTYPE html>
@@ -157,5 +157,7 @@ We can instead use a radial-gradient if we want, which is formatted the same as 
     background: radial-gradient(color1, color2, color3...);
 <code>
 
-And thats it for this part. On the next part which is the last, we will be putting together all of our new knowledge and making a navigation bar. Thanks for reading!
+And thats it for this course, I hope you had a good time learning the basics of CSS. Moving forward I would check out
+ <a href="/course/css-layout-with-flexbox">CSS: Layout with Flexbox</a> and
+ <a href="/course/css-layout-with-grid">CSS: Layout with Grid</a>. Thanks for reading!
 
