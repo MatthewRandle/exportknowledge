@@ -1,0 +1,141 @@
+When writing css we may reuse a lot of styles across different classes - such as a color. You may get to a point when we want to change this color throughout all of your css, which would result in a lot of tedious copy and pasting. SCSS gives us a way to handle things like this very easily - variables.
+
+<br>
+<br>
+
+If you have used a programming language such as JavaScript or C++ you will know what a variable is. We use variables to store information to later be used and referenced. We could give a variable a value of blue and then use this variable throughout our scss and if later we wanted to change this color all we would do is change the variable, instead of all the places we used this color.
+
+<br>
+<br>
+
+A variable in scss looks like this
+
+<code><pre><scss>
+$variableName: value;
+<code>
+
+We first use the $ symbol which denotes a variable, and straight after the name we which to give the variable - which can be anything. We then set the variable equal to a value. This value can be anything, from a color to an amount of pixels (e.g. 100px). Any value that we give to a css property we can store as a variable.
+
+<br>
+<br>
+
+Let's create a variable called mainColor and give it a value of blue
+
+<code><scss>
+$mainColor: blue;
+<code>
+
+We will then pretend we have a h1 and a paragraph to style. We will the h1 a color, and the paragraph a border with the same color. Using variables makes this very simple
+
+<code><scss>
+$mainColor: blue;
+
+h1 {
+    color: $mainColor;
+}
+
+p {
+    border: 5px solid $mainColor;
+}
+<code>
+
+When we save this scss file and it gets compiled into a css file, it would simply turn into this
+
+<code><scss>
+h1 {
+    color: blue;
+}
+
+p {
+    border: 5px solid blue;
+}
+<code>
+
+Imagine after months of developing our website and we realise that the mainColor of blue just doesn't look great. All we would have to do is change this one variable and it would change the color everywhere that we used it.
+
+<br>
+<br>
+
+Another great with we can do with scss is import variables (and other things that we will learn about in the next part) from another file. Lets create a file name variables.scss. Inside this new file move over our mainColor variable. Now whenever we want to use this variable in any scss file, all we have to do is import that file and all the variables are able to be used. We write the import at the very top of the file like so
+
+<code><scss>
+@import "variables";
+
+h1 {
+    color: $mainColor;
+}
+
+p {
+    border: 5px solid $mainColor;
+}
+<code>
+
+Since I don't intend to use any actual styling in the variables.scss file, I can do what is called a partial import. This means that the variables file won't be compiled into css, but we can still use whatever variables it contains. To turn this variables file into a partial file we simply add an underscore to the begging of the file name. So variables.scss becomes _variables.css. And when we import it we also want to add the underscore
+
+<code><pre><scss>
+@import "_variables";
+<code>
+
+Finally, we have what is called nesting. When styling with css it is very common to want to style multiple elements that are nested within each other. Let's pretend that we had this html that we wanted to be styled
+
+<code><html>
+<div>
+    <ul>
+        <li>
+            <a>Hey</a>
+        </li>
+    </ul>
+</div>
+<code>
+
+When targeting the li we could just simply do this
+
+<code><scss>
+li {
+
+}
+<code>
+
+But we run into problems when we only want li's in this specific section of the website to be styled a certain way. So to only target this specific li we could write
+
+<code><scss>
+div ul li {
+
+}
+<code>
+
+Which says find the div, then the ul and then finally the li. What nesting allows us to do is write our scss in a parent child relationship. What I mean by this is that the div above is the parent to the ul which is the child, and the ul is the parent to the li which is its child. We can write our scss using this same kind of relationship, like we do in html, like this
+
+<code><scss>
+div {
+    ul {
+        li {
+
+        }
+    }
+}
+<code>
+
+This makes our scss extremely readable and makes it clear that these elements belong together. Another very useful way to use nesting is when using selectors such as hover. If we had a button and we wanted some different styling when hovering we would normally have to do this
+
+<code><css>
+button {
+
+}
+
+button:hover {
+
+}
+<code>
+
+But with nesting we can now do this instead
+
+<code><scss>
+button {
+    &:hover {
+
+    }
+}
+<code>
+
+And thats it for part 2. Thanks for reading!

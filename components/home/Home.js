@@ -10,11 +10,12 @@ const Home = (props) => {
                 <div className="home_jumbotron">                        
                     <p className="jumbotron_title">Use our in depth courses to learn and become a full stack web developer for free.</p>                   
 
-                    <div className="home_courses">
+                    <div className="jumbotron_courses">
                         {props.latestCourses}
                     </div>  
 
-                    <Link prefetch href="/courses"><a className="jumbotron_button">View All Courses</a></Link>
+
+                    <Link prefetch href="/courses"><a className="jumbotron_button">Start Learning</a></Link>
                 </div>                 
             </div>
 

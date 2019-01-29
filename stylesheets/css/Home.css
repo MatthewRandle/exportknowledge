@@ -58,9 +58,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: radial-gradient(#1a1d22 3px, transparent 4px), radial-gradient(#1a1d22 3px, transparent 4px), linear-gradient(#282c34 4px, transparent 0), linear-gradient(45deg, transparent 74px, transparent 75px, #1a1d22 75px, #1a1d22 76px, transparent 77px, transparent 109px), linear-gradient(-45deg, transparent 75px, transparent 76px, #1a1d22 76px, #1a1d22 77px, transparent 78px, transparent 109px), #282c34;
-  background-size: 109px 109px, 109px 109px, 100% 6px, 109px 109px, 109px 109px;
-  background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+  background: -webkit-gradient(linear, left top, right top, from(#8950ff), to(#00b7ff));
+  background: linear-gradient(to right, #8950ff, #00b7ff);
 }
 
 .home_jumbotron {
@@ -91,11 +90,10 @@
   }
 }
 
-.jumbotron_button,
-.home_course_button {
+.jumbotron_button {
   text-align: center;
   color: white;
-  background: #00b7ff;
+  background: #282c34;
   font-family: "Zilla Slab";
   padding: 10px;
   padding-left: 20px;
@@ -109,10 +107,13 @@
 }
 
 @media only screen and (max-width: 480px) {
-  .jumbotron_button,
-  .home_course_button {
+  .jumbotron_button {
     width: 90%;
   }
+}
+
+.jumbotron_button:hover {
+  background: #00b7ff;
 }
 
 .jumbotron_title {
@@ -122,7 +123,7 @@
   font-size: 1.5rem;
   text-align: center;
   margin-bottom: 20px;
-  text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5);
   width: 50%;
 }
 
@@ -138,41 +139,41 @@
   }
 }
 
-.jumbotron_title--loader {
-  width: 750px;
-  height: 66px;
-}
-
-.home_courses {
+.jumbotron_courses {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 85%;
+  width: 100%;
   margin-top: 20px;
   color: white;
   font-family: "Zilla Slab";
 }
 
 .home_course {
-  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  width: 50%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
+.jumbotron_courses .home_course:first-of-type {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 50px;
+}
+
+.jumbotron_courses .home_course:last-of-type {
+  margin-left: 50px;
+}
+
 .home_course_video {
-  width: 27vw;
-  height: 15.1875vw;
+  width: 37vw;
+  height: 20.8125vw;
+  background-color: #282c34;
   -webkit-box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.5);
           box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.5);
 }
@@ -182,14 +183,6 @@
   font-size: 1.75vw;
   margin-top: 20px;
   text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
-}
-
-.home_course_button {
-  margin-top: 20px;
-  font-size: 0.85rem;
-  background-color: #8950ff;
-  padding-top: 5px;
-  padding-bottom: 5px;
 }
 
 .home_articles {

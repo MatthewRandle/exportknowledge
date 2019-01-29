@@ -1,0 +1,78 @@
+When creating layouts on our website it very common to want to align/distribute items - be it vertically or horizontally. Flexbox allows us to do this with ease using align-items and justify-content.
+
+<br>
+<br>
+
+A very important part of flexbox is the way in which items are laid out. There are 2 axis that are called row and column. We can tell a flex container how to layout its flex items using these axis: justify-content for the row axis and align-items for the column axis. We will start with this code
+
+<code><css>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./Index.css">
+    </head>
+
+    <body>
+        <div>
+            <p class="paragraph_1">1</p>
+            <p class="paragraph_2">2</p>
+            <p class="paragraph_3">3</p>
+            <p class="paragraph_4">4</p>
+            <p class="paragraph_5">5</p>
+        </div>
+    </body>
+</html>
+<code>
+
+<code><css>
+div {
+    width: 500px;
+    border: 1px solid blue;
+    display: flex;
+}
+
+p {
+    border: 1px solid red;
+    flex-basis: 50px;
+}
+<code>
+
+So, we can use justify-content to distribute flex items across the row axis, where it can take a few values. This property justify-content is given to the flex container (our div). Let's add a justify-content of center to our flex container
+
+<code><css>
+div {
+    width: 500px;
+    border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+}
+<code>
+
+This will cause all of our flex items to be centered in the container. The other values justify-content can take are: flex-start, flex-end, baseline, space-between, space-around and space-evenly. Either play around with these values or go
+ <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content">here</a> to see them. As well as justify-content you can use align-content. This works the same way as justify-content but on the column axis.
+
+<br>
+<br>
+
+Similar to align-content, align-items tells the flex container how to distribute its flex items on the column axis. Right now our div is only taking up the height necessary so using align-items wouldn't actually change anything. Lets add a height of 300px to our div and a align-items of flex-end
+
+<code><css>
+div {
+    width: 500px;
+    border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 300px;
+}
+<code>
+
+You will see that all the flex items are now pushed to the bottom of the div, this is also working with the justify-content which is making them centered along the row axis.
+ <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items">Here</a> are the values align-items can take.
+
+<br>
+<br>
+
+Thats it for part 3. Thanks for reading!
+
+

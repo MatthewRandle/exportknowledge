@@ -1,0 +1,37 @@
+There are countless different ways that SCSS can be setup. In my opinion the easiest way is by using an extension in Visual Studio Code (VSC). If you do not use VSC then there are lots of tutorials for getting setup in your environment on the internet - none of them should be hard so don't worry.
+
+<br>
+<br>
+
+Open up VSC and click on the extension button on the left hand side. Search for 'Live Sass Compiler' and choose the one one created by Ritwick Dey, you should be taken to a screen about the extension, simply click on the little install button and restart VSC when prompted.
+
+<br>
+<br>
+
+Create a folder called .vscode at the root of your project and inside create a file called settings.json. We will use this file to tell the live compiler where to save the compiled files. I will simply save mine in a file called 'css'. To do that we will use the string '/css'. This tells the compiler to go to the root file of our project (/) then into a folder called css. Simply copy this code into the settings.json file and change the 'savePath' string to your intended location
+
+<code><json>
+{
+    "liveSassCompile.settings.formats": [
+        {
+            "extensionName": ".css",
+            "savePath": "/css"
+        }
+    ]
+}
+<code>
+
+We will then create a .scss file and inside write some css. This css can be anything, we just need to be able to compile the scss file into a css file - which requires changes made to a file. So lets just put this for now
+
+<code><css>
+* {
+
+}
+<code>
+
+At the bottom of VSC you will see a bar that has some icons on it. If you look towards the rights hand side you will see a button that says 'Watch Sass'. Click it and the file will automatically be converted into a css file and saved in our desired location specified earlier. Now any time we make a change to this scss file, once we save it will be re-compiled into a css file.
+
+<br>
+<br>
+
+Now we've got the boring stuff out of the way lets look at using scss!

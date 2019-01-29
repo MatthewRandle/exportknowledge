@@ -8,24 +8,22 @@
     width: 100%;
     font-family: "Zilla Slab";
     color: white;
-    background: linear-gradient(to right, $purple, $blue, $OneDarkBG, $OneDarkBG);
-    background-size: 400% 400%;
-}
-
-.navbar {
-    @extend %container;
-    display: flex;
-}
-
-.navbar_left {
-    display: flex;
-    height: 55px;
-    align-items: center;
+    background: linear-gradient(to right, $purple, $blue);
 }
 
 .navbar_logo {
     display: flex;
     align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 235px;
+    background: $OneDarkBG;
+    position: absolute;
+    left: 0;
+
+    @include tablet-down() {
+        width: 55px;
+    }
 }
 
 .navbar_logo img {
@@ -43,35 +41,72 @@
     width: 150px;
     padding-left: 10px;
 
-    @include phone-down() {
+    @include tablet-down() {
         display: none;
+    }
+}
+
+.navbar_logo_block {
+    width: 235px;
+
+    @include tablet-down() {
+        width: 55px;
     }
 }
 
 .navbar_links {    
     display: flex;
-    font-size: 0.85rem;
-    margin-left: 30px;
+    align-items: center;
+    height: 55px;
+    font-size: 0.85rem;    
+    box-sizing: border-box;
 
     @include desktop-down() {
-        margin-left: 20px;
+        
     }
 
     @include tablet-down() {
-        margin-left: 0px;
+       
     }
 
     @include phone-down() {
-        margin-left: 20px;
-        margin-top: 5px;
         font-size: 1rem;
     }
 }
 
-.navbar_links li a {
+.navbar_links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: white;
-    padding-right: 15px; 
-    font-family: "Zilla Slab";  
+    font-family: "Zilla Slab";   
+    height: 100%;
+    width: 100px;
+
+    position: relative;
+    transform: translateZ(0);
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $OneDarkBG;
+        transform: scaleY(0);
+        transform-origin: 50% 0%;
+        transition-property: transform;
+        transition: 200ms ease-out;
+    }
+    
+    &:hover:before {
+        transform: scaleY(1);
+    }    
+
+    @include tablet-down() {
+        width: 75px;
+    }
 }
 
 
@@ -84,11 +119,12 @@
 }
 
 .accountSection { 
-    right: 0;
+    right: 10px;
     height: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    position: absolute;
 }
 
 .accountSection > * {

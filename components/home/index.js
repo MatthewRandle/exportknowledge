@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import Link from "next/link";
 
 import { fetchAllTags, fetchAllArticles } from "../article/ArticleActions";
 import Home from "./Home";
@@ -16,11 +15,6 @@ export class HomeContainer extends Component {
                         src={`https://www.youtube-nocookie.com/embed/${item.video}`}
                         title="course video"
                     />
-
-                    <p className="home_course_title">{item.title}</p>
-                    <Link href={{ pathname: "/course", query: { url: item.url } }} as={`/course/${item.url}`}>
-                        <a className="home_course_button">Take Course</a>
-                    </Link>
                 </div>
             );
         });

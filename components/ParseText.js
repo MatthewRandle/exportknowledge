@@ -4,6 +4,8 @@ import ReactHtmlParser from "react-html-parser";
 
 import Prism from "prismjs";
 import "prismjs/components/prism-jsx.min";
+import "prismjs/components/prism-json.min";
+import "prismjs/components/prism-scss.min";
 import "../stylesheets/css/OneDark.css";
 
 import CodeGutter from "./CodeGutter.js";
@@ -32,6 +34,14 @@ export default class ParseText extends Component {
                 else if (pre.substring(1, 4) === "css") {
                     type = "css";
                     sliceLength = 5;
+                }
+                else if (pre.substring(1, 5) === "scss") {
+                    type = "scss";
+                    sliceLength = 6;
+                }
+                else if (pre.substring(1, 5) === "json") {
+                    type = "json";
+                    sliceLength = 6; //<json>
                 }
                 else if (pre.substring(1, 3) === "js") {
                     type = "javascript";
@@ -66,6 +76,14 @@ export default class ParseText extends Component {
                 else if(item.substring(1, 4) === "css") {
                     type = "css";
                     sliceLength = 5;
+                }
+                else if (item.substring(1, 5) === "scss") {
+                    type = "scss";
+                    sliceLength = 6;
+                }
+                else if (item.substring(1, 5) === "json") {
+                    type = "json";
+                    sliceLength = 6; //<json>
                 }
                 else if(item.substring(1, 3) === "js") {
                     type = "javascript";

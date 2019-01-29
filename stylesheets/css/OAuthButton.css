@@ -1,4 +1,7 @@
 .oauthButton_container {
+  position: absolute;
+  right: 0;
+  width: 210px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8,12 +11,21 @@
   text-decoration: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background: #3c3c3c;
-  height: 75%;
+  background: #282c34;
+  height: 100%;
 }
 
 .oauthButton_container:hover {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .oauthButton_container {
+    width: 55px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .oauthButton_logo {
@@ -25,7 +37,7 @@
 
 .oauthButton_text {
   font-family: "Open Sans";
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   color: white;
   margin-right: 20px;
 }

@@ -1,0 +1,86 @@
+In part 2 we looked at distributing flex items inside of a flex container. We learned that if the flex items dont have enough space in their container we can size them accordingly using flex-grow and flex-shrink. But what happens when we really want the flex-items to remain their intended size? You may want them to start a new row automatically. Thankfully flexbox allows you to do just that with flex-wrap.
+
+<br>
+<br>
+
+Below is the code we will be starting with, we will give each paragraph a width of 225px
+
+<code><css>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./Index.css">
+    </head>
+
+    <body>
+        <div>
+            <p class="paragraph_1">1</p>
+            <p class="paragraph_2">2</p>
+            <p class="paragraph_3">3</p>
+            <p class="paragraph_4">4</p>
+            <p class="paragraph_5">5</p>
+        </div>
+    </body>
+</html>
+<code>
+
+<code><css>
+div {
+    width: 500px;
+    border: 1px solid blue;
+    display: flex;
+}
+
+p {
+    border: 1px solid red;
+    width: 225px;
+}
+<code>
+
+If you right click and inspect on the paragraphs you will see that each of them has a width of 100px. We want to make it so the flex items always have a width of 225px, and start a new line if there isn't enough room. We can do this by adding a flex-wrap with a value of wrap to the flex container (div)
+
+<code><css>
+div {
+    width: 500px;
+    border: 1px solid blue;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+p {
+    border: 1px solid red;
+    width: 225px;
+}
+<code>
+
+Now all of the paragraphs are a size of 225px. There are two other values this flex-wrap property can take. The first is the default value which is no-wrap and the second is a value of wrap-reverse. This causes the rows to be in reverse order, not each flex item.
+
+<br>
+<br>
+
+Finally, we have flex-direction. We know that when we give a flex container a display of flex, all flex items go onto the same horizontal line. We can then align/distribute these flex items using the row and column axis. Another useful thing we can do is alter the way in which the axis are layed out.
+
+<br>
+<br>
+
+The flex-direction property has a default value of row. We will change this to be column
+
+<code><css>
+div {
+    width: 500px;
+    border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 300px;
+    flex-direction: column;
+}
+<code>
+
+This causes the column to become the main axis, which swaps the axis around - so the horizontal axis is now the column axis and the vertical is now the row axis. If we were to now use align-items on the div each of the flex items would be aligned to the horizontal axis - basically justify-content and align-items get swapped around.
+
+<br>
+<br>
+
+And thats it for Flexbox! Have fun making easy layouts with your new found skills. Moving on I would recommend learning
+ <a href="/course/css-layout-with-grid">CSS: Layout with Grid</a>. Thanks for reading!

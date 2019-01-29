@@ -1,15 +1,23 @@
 @import "_variables";
 
-.oauthButton_container {    
+.oauthButton_container {  
+    position: absolute;  
+    right: 0;
+    width: 210px;
     display: flex;
     align-items: center;
     text-decoration: none;
     box-sizing: border-box;
-    background: $darkGrey;
-    height: 75%;
+    background: $OneDarkBG;
+    height: 100%;
 
     &:hover {
         cursor: pointer;
+    }
+
+    @include tablet-down() {
+        width: 55px;
+        justify-content: center;
     }
 }
 
@@ -22,7 +30,7 @@
 
 .oauthButton_text {
     font-family: "Open Sans";  
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     color: white;  
     margin-right: 20px;
 

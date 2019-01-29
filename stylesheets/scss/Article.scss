@@ -23,26 +23,14 @@
 .article_jumbotron,
 .article_image,
 .article_title_container {
-    border: 3px solid $blue;
+    border: 4px solid $OneDarkBG;
 }
 
 .article_jumbotron {
-    $color2: $OneDarkBG;
-    $color3: #24282f;
-    $color1: #20242a;
-
     display: flex;
     justify-content: center;
     width: 100%;
-    background: 
-        radial-gradient(#1a1d22 3px, transparent 4px),
-        radial-gradient(#1a1d22 3px, transparent 4px),
-        linear-gradient($OneDarkBG 4px, transparent 0),
-        linear-gradient(45deg, transparent 74px, transparent 75px, #1a1d22 75px, #1a1d22 76px, transparent 77px, transparent 109px),
-        linear-gradient(-45deg, transparent 75px, transparent 76px, #1a1d22 76px, #1a1d22 77px, transparent 78px, transparent 109px),
-        $OneDarkBG;
-    background-size: 109px 109px, 109px 109px, 100% 6px, 109px 109px, 109px 109px;
-    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+    background: linear-gradient(to right, $purple, $blue);
     margin-top: 0;
     border-right: 0;
     border-left: 0;
@@ -78,7 +66,7 @@
     text-align: center;        
     margin-top: auto;
     border-bottom: none;
-    transform: translateY(3px); //move title down to cover article_contents border
+    transform: translateY(4px); //move title down to cover article_contents border
 }
 
 .article_title {

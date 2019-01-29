@@ -1,0 +1,144 @@
+This is the code we will be starting with for this part
+
+<code><html>
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="./Index.css">
+    </head>
+
+    <body>
+        <div>
+            <p class="paragraph_1">1</p>
+            <p class="paragraph_2">2</p>
+            <p class="paragraph_3">3</p>
+            <p class="paragraph_4">4</p>
+            <p class="paragraph_5">5</p>
+        </div>
+    </body>
+</html>
+<code>
+
+<code><css>
+div {
+    display: flex;
+}
+<code>
+
+On the first part of this course we learned that when an element is given a display of flex, that element becomes a flex container, and that elements children a flex item. We then looked at modifying the flex items by changing their order.
+
+Another way we can modify each of the flex items is using the flex-grow property. This property is given a unitless value (1, 2, 3..) which acts as a proportion to the flex container (our div). Will we give a flex-grow of 1 to all of our paragraphs and a border of '1px solid red'. We will also give our div a width of 500px and a border of '1px solid blue' to our div - this is so we can see the effect of the flex-grow property
+
+<code><css>
+div {
+    display: flex;
+    width: 500px;
+    border: 1px solid blue;
+}
+
+p {
+    flex-grow: 1;
+    border: 1px solid red;
+}
+<code>
+
+Giving each of the paragraphs a flex-grow of 1 causes each of them to fill up the flex containers width (the div) equally. Lets give the 3rd paragraph a flex-grow of 2 and see what happens
+
+<code><css>
+.paragraph_3 {
+    flex-grow: 2;
+}
+<code>
+
+If you view this change you will see that the 3rd paragraph becomes exactly double the rest of them. This happens because the other paragraphs have a flex-grow of 1, which is half of 2, so the 3rd paragraph knows to take up double the amount of space. If we were to give it a flex-grow of 4, it would be exactly 4 times as big.
+
+<br>
+<br>
+
+So the way flex-grow works is it distributes space according to the proportion given. As one more example lets give the 1st paragraph a flex-grow of 2 and the 3rd a flex-grow of 4
+
+<code><css>
+.paragraph_1 {
+    flex-grow: 2;
+}
+
+.paragraph_3 {
+    flex-grow: 4;
+}
+<code>
+
+This causes the 1st paragraph to be double the others with flex-grow of 1, and the 3rd to be double the 1st (or 4 times the others). So using flex-grow we can create some cool layouts on our pages.
+
+<br>
+<br>
+
+Opposite to flex-grow, there is a property called flex-shrink. Flex shrink tells a flex item how much it should shrink - but only when there isn't enough room in the flex container for it. To show this, lets give all of our paragraphs a width of 150px. We could do this with the width property, but flex comes with its own way of sizing elements: flex-basis. We will give all our paragraphs a flex-basis of 150px. We will also remove all flex-grow declarations from all the paragraphs
+
+<code><css>
+p {
+    flex-basis: 150px;
+    border: 1px solid red;
+}
+<code>
+
+Flex-basis does not always mean width (we will learn about that in the next part). We know that our flex container has a width of 500px and that our 5 paragraphs a width of 150px. This means our flex items are taking up more space (5 x 150px = 750px) than is available. If we look at our page as is, you will notice that each of the flex items remains the same width and they dont overflow the flex container. Remember, this is because by default all flex items have a flex-grow of 1, so they are all keeping themselves proportionate to each other.
+
+<br>
+<br>
+
+The flex-shrink property tells a flex item how much it is allowed to shrink by if there is not enough space in the container. Lets give the 1st paragraph a flex-shrink of 2
+
+<code><css>
+.paragraph_1 {
+    flex-shrink: 2;
+}
+<code>
+
+This causes the 1st paragraph to be half the size of the others. Another thing we can do with flex-shrink is give it a value of less than 1. If we give the 1st paragraph instead a flex-shrink of 0.5 it would be double the size of the others - but only when there is not enough room in the container for all the items.
+
+<br>
+<br>
+
+Looking back at flex-grow, what would happen if we did have enough room in our flex container, what would happen then? Lets quickly give each of our paragraphs a flex-basis of 50px
+
+<code><css>
+p {
+    flex-basis: 50px;
+    border: 1px solid red;
+}
+<code>
+
+And our 1st paragraph a flex-grow of 2
+
+<code><css>
+.paragraph_1 {
+    flex-grow: 2;
+}
+<code>
+
+You will see that the 1st paragraph is now a lot more than double the others. This is because flex-grow causes all of the room in the container to be filled up. So by giving the 1st paragraph a flex-grow of 2 we are telling it to fill the space. We can also give the flex-grow a value of less than 1. If we were to give the 1st paragraph a flex-grow of 0.5 instead of 2, it would still fill space up, but only half of what is available.
+
+<br>
+<br>
+
+Lastly we can combine all of these properties (flex-grow, flex-shrink, flex-basis) into one using the flex property
+
+<br>
+<br>
+
+<code><css>
+.paragraph_1 {
+    flex: 2 4 200px;
+}
+<code>
+
+This is shorthand for
+
+<code><css>
+.paragraph_1 {
+    flex-grow: 2;
+    flex-shrink: 4;
+    flex-basis: 200px;
+}
+<code>
+
+Thats it for part 2. These may seem a bit confusing when learning (specifically the way they take up space) so I would suggest playing around with the values a bit so you get used to and understand them. Thanks for reading!

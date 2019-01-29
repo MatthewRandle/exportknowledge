@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../../stylesheets/css/CoursePanel.css";
+
 import initialSetupFetch from "../../utils/initialSetupFetch";
 import Admin from "../../components/admin";
 

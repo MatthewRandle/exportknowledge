@@ -15,22 +15,10 @@
 }
 
 .home_jumbotron_container {
-    $dot-size: 2px;
-    $dot-space: 20px;
-    $dot-color: #1a1d22;
-
     width: 100%;
     display: flex;
     justify-content: center;
-    background: 
-        radial-gradient(#1a1d22 3px, transparent 4px),
-        radial-gradient(#1a1d22 3px, transparent 4px),
-        linear-gradient($OneDarkBG 4px, transparent 0),
-        linear-gradient(45deg, transparent 74px, transparent 75px, #1a1d22 75px, #1a1d22 76px, transparent 77px, transparent 109px),
-        linear-gradient(-45deg, transparent 75px, transparent 76px, #1a1d22 76px, #1a1d22 77px, transparent 78px, transparent 109px),
-        $OneDarkBG;
-    background-size: 109px 109px, 109px 109px, 100% 6px, 109px 109px, 109px 109px;
-    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+    background: linear-gradient(to right, $purple, $blue);
 }
 
 .home_jumbotron {
@@ -51,11 +39,10 @@
     }
 }
 
-.jumbotron_button,
-.home_course_button {
+.jumbotron_button {
     text-align: center;
     color: white;
-    background: $blue;
+    background: $OneDarkBG;
     font-family: "Zilla Slab";
     padding: 10px;
     padding-left: 20px;
@@ -69,6 +56,10 @@
     @include phone-down() {
         width: 90%;
     }
+
+    &:hover {
+        background: $blue;
+    }
 }
 
 .jumbotron_title {
@@ -78,7 +69,7 @@
     font-size: 1.5rem;
     text-align: center;
     margin-bottom: 20px;
-    text-shadow: 5px 5px 0px rgba(0,0,0,0.5);
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.5);
     width: 50%;
 
     @include desktop-down() {
@@ -90,30 +81,34 @@
     }
 }
 
-.jumbotron_title--loader {
-    width: 750px;
-    height: 66px;
-}
-
-.home_courses {
+.jumbotron_courses {
     display: flex;
-    justify-content: space-between;
-    width: 85%;
+    width: 100%;
     margin-top: 20px;
     color: white;
     font-family: "Zilla Slab";
 }
 
 .home_course {
-    width: 50%;
     display: flex;
-    flex-direction: column;
+    width: 50%;
     align-items: center;
 }
 
+.jumbotron_courses .home_course:first-of-type {
+    justify-content: flex-end;
+    margin-right: 50px;
+}
+
+.jumbotron_courses .home_course:last-of-type {
+    margin-left: 50px;
+}
+
+
 .home_course_video {
-    width: 27vw;
-    height: 15.1875vw;
+    width: 37vw;
+    height: 20.8125vw;
+    background-color: $OneDarkBG;
     box-shadow: 6px 6px 0px 0px rgba(0,0,0,0.5);
 }
 
@@ -122,14 +117,6 @@
     font-size: 1.75vw;
     margin-top: 20px;
     text-shadow: 5px 5px 0px rgba(0,0,0,0.5);
-}
-
-.home_course_button {
-    margin-top: 20px;
-    font-size: 0.85rem;
-    background-color: $purple;
-    padding-top: 5px;
-    padding-bottom: 5px;
 }
 
 .home_articles {

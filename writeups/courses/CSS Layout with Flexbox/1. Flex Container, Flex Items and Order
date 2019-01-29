@@ -52,37 +52,4 @@ You will see that the 1st paragraph gets pushed to the end. What would happen if
 <br>
 <br>
 
-Another way we can modify each of the flex items is using the flex-grow property. This property is given a unitless value (1, 2, 3..) which acts as a proportion to the flex container (our div). Will we give a flex-grow of 1 to all of our paragraphs and a border of '1px solid red'. We will also give our div a width of 500px and a border of '1px solid blue' to our div - this is so we can see the effect of the flex-grow property
-
-<code><css>
-div {
-    display: flex;
-    width: 500px;
-    border: 1px solid blue;
-}
-
-p {
-    flex-grow: 1;
-    border: 1px solid red;
-}
-<code>
-
-Now each of the flex items are taking up an equal amount of space within the div. Lets remove the order from the 1st and 3rd paragraphs and give the 3rd paragraph a flex-grow of 2
-
-<code><css>
-p {
-    border: 1px solid red;
-    flex-grow: 1;
-}
-
-.paragraph_3 {
-    flex-grow: 2;
-}
-<code>
-
-Now our middle paragraph is taking up exactly double the width of the other paragraphs. This allows us to do all sorts of magic with our page layouts. Imagine on a mobile we wanted some panels to show in a certain order and size, but on desktop a different order and size - flex would be the solution.
-
-<br>
-<br>
-
-Thats it for part 1. Thanks for reading!
+Thats it for this first part. Thanks for watching!

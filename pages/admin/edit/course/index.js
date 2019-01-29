@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../../../../stylesheets/css/CoursePartPanel.css";
+
 import initialSetupFetch from "../../../../utils/initialSetupFetch";
 import EditCourse from "../../../../components/admin/editCourse";
 
