@@ -65,7 +65,7 @@
 }
 
 .howmanyhours-steps a {
-  background: #00b7ff;
+  background: #00A6ED;
   text-shadow: none;
   padding-right: 5px;
   padding-left: 5px;
@@ -94,13 +94,13 @@
   border-radius: 5px;
   font-size: 1.2rem;
   margin-bottom: 20px;
-  background-color: #00b7ff;
+  background-color: #00A6ED;
   color: white;
   font-family: "Zilla Slab";
   font-weight: bold;
   -webkit-box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.75);
           box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.75);
-  border: 2px solid #00b7ff;
+  border: 2px solid #00A6ED;
 }
 
 .howmanyhours-button:hover {
@@ -118,7 +118,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 2px solid #00b7ff;
+  border: 2px solid #00A6ED;
   border-radius: 5px;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -132,7 +132,7 @@
   width: 120px;
   border: none;
   font-size: 1.2rem;
-  background-color: #00b7ff;
+  background-color: #00A6ED;
   color: white;
   font-family: "Zilla Slab";
   font-weight: bold;

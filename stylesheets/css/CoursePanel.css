@@ -8,7 +8,7 @@
 }
 
 .coursePanel_container:hover .coursePanel_bottomBar {
-  background-color: #00b7ff;
+  background-color: #00A6ED;
 }
 
 .coursePanel_base {
@@ -109,7 +109,7 @@
 }
 
 .coursePanel_bottomBar {
-  background: #8950ff;
+  background: #181e34;
   width: 100%;
   height: 15px;
   color: white;

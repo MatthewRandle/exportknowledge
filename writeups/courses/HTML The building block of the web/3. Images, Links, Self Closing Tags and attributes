@@ -70,7 +70,7 @@ Now let’s add this image to our website. To stick to the theme of dogs I chang
 Next, we will learn about links. A links tag is denoted by 'a' which stands for anchor. Like an image an 'a' tag has a very important attribute, called the href. The href is where we will be sent to when we click on the link. This can be another page on your site, or to anywhere on the internet (a URL). This is what the 'a' tag looks like
 
 <code><pre><html>
-<a href="link to somewhere">Click Me!</a>
+<a target="_blank" rel="noopener noreferrer" href="link to somewhere">Click Me!</a>
 <code>
 
 Inside of the a tags we put anything we want. I used 'For more facts about dogs click me!' for obvious reasons. I'm going to add a link at the end of our list like this
@@ -90,7 +90,7 @@ Inside of the a tags we put anything we want. I used 'For more facts about dogs 
             <li>They have a sense of time and miss us when we are gone</li>
             <li>They have sweat glands in their paws</li>
             <li>
-                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
             </li>
         </ol>
 

@@ -52,7 +52,7 @@ Now go back to our index.html file. We want to have a button that when clicked, 
         <h1 style="color:red; font-size:50px; font-family: Oswald">A website dedicated to dogs</h1>
         <p>A mans best friend!</p>
 
-        <a href="">Go to page 2!</a> <!-- RIGHT HERE -->
+        <a target="_blank" rel="noopener noreferrer" href="">Go to page 2!</a> <!-- RIGHT HERE -->
 
         <p>Facts about dogs</p>
         <ol>
@@ -60,7 +60,7 @@ Now go back to our index.html file. We want to have a button that when clicked, 
             <li>They have a sense of time and miss us when we are gone</li>
             <li>They have sweat glands in their paws</li>
             <li>
-                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
             </li>
         </ol>
 
@@ -83,7 +83,7 @@ But if we click this link as is, we won’t be taken anywhere! Remember the last
         <h1 style="color:red; font-size:50px; font-family: Oswald">A website dedicated to dogs</h1>
         <p>A mans best friend!</p>
 
-        <a href="./page2.html">Go to page 2!</a>
+        <a target="_blank" rel="noopener noreferrer" href="./page2.html">Go to page 2!</a>
 
         <p>Facts about dogs</p>
         <ol>
@@ -91,7 +91,7 @@ But if we click this link as is, we won’t be taken anywhere! Remember the last
             <li>They have a sense of time and miss us when we are gone</li>
             <li>They have sweat glands in their paws</li>
             <li>
-                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
             </li>
         </ol>
 
@@ -110,7 +110,7 @@ Now if we click on this link, we will be taken to the new page! But how do we ge
     <body>
         <h1>Welcome to page 2</h1>
 
-        <a href="./index.html">Back to Homepage</a>
+        <a target="_blank" rel="noopener noreferrer" href="./index.html">Back to Homepage</a>
     </body>
 </html>
 <code>

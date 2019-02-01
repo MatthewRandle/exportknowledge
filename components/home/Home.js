@@ -14,8 +14,9 @@ const Home = (props) => {
                         {props.latestCourses}
                     </div>  
 
-
-                    <Link prefetch href="/courses"><a className="jumbotron_button">Start Learning</a></Link>
+                    <Link prefetch href="/courses">
+                        <a className="jumbotron_button"><p>Start Learning</p></a>
+                    </Link>                    
                 </div>                 
             </div>
 

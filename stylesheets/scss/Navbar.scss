@@ -8,7 +8,7 @@
     width: 100%;
     font-family: "Zilla Slab";
     color: white;
-    background: linear-gradient(to right, $purple, $blue);
+    background: $darkBlue;
 }
 
 .navbar_logo {
@@ -17,7 +17,7 @@
     justify-content: center;
     height: 100%;
     width: 235px;
-    background: $OneDarkBG;
+    background: $gold;
     position: absolute;
     left: 0;
 
@@ -33,7 +33,7 @@
 }
 
 .navbar_logo_title {
-    color: white;
+    color: $darkBlue;
     font-family: "Zilla Slab";
     font-weight: bold;   
     font-size: .8rem;
@@ -61,48 +61,31 @@
     font-size: 0.85rem;    
     box-sizing: border-box;
 
-    @include desktop-down() {
-        
-    }
-
-    @include tablet-down() {
-       
-    }
-
     @include phone-down() {
         font-size: 1rem;
     }
 }
 
-.navbar_links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.navbar_link {
+    width: 100px;
+    height: 100%;  
+    @include backgroundTransition($gold, 200ms, "down");
+    @include textTransition(p, white, $darkBlue, 300ms, "down");  
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.navbar_link p {    
     color: white;
     font-family: "Zilla Slab";   
     height: 100%;
-    width: 100px;
-
-    position: relative;
-    transform: translateZ(0);
-    &:before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: $OneDarkBG;
-        transform: scaleY(0);
-        transform-origin: 50% 0%;
-        transition-property: transform;
-        transition: 200ms ease-out;
-    }
-    
-    &:hover:before {
-        transform: scaleY(1);
-    }    
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    font-weight: bold; 
 
     @include tablet-down() {
         width: 75px;

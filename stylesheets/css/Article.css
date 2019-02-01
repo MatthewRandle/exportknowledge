@@ -65,8 +65,8 @@
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#8950ff), to(#00b7ff));
-  background: linear-gradient(to right, #8950ff, #00b7ff);
+  background: -webkit-gradient(linear, left top, right top, from(#181e34), to(#00A6ED));
+  background: linear-gradient(to right, #181e34, #00A6ED);
   margin-top: 0;
   border-right: 0;
   border-left: 0;
@@ -151,12 +151,12 @@
 
 .article_prerequisites_available {
   font-weight: bold;
-  color: #00b7ff;
+  color: #00A6ED;
 }
 
 .article_prerequisites_available:hover {
   cursor: pointer;
-  color: #8950ff;
+  color: #181e34;
 }
 
 .article_lineBreak {
@@ -183,7 +183,7 @@
 }
 
 .article_text_container a {
-  color: #00b7ff;
+  color: #00A6ED;
 }
 
 .article_commentSection {

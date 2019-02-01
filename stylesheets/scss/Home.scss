@@ -18,7 +18,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    background: linear-gradient(to right, $purple, $blue);
+    background: $darkBlue;
 }
 
 .home_jumbotron {
@@ -40,26 +40,29 @@
 }
 
 .jumbotron_button {
-    text-align: center;
-    color: white;
-    background: $OneDarkBG;
-    font-family: "Zilla Slab";
+    display: flex;
+    justify-content: center;
     padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
     margin-top: 30px;
-    border: 1px solid white;
     box-shadow: 6px 6px 0px 0px rgba(0,0,0,0.5);
-    font-weight: bold;
-    font-size: 1.2rem;
+    width: 270px;
+    background: $lightBlue;
+    @include backgroundTransition($gold, 150ms, "up");
+    @include textTransition(p, white, $darkBlue, 250ms, "up");
+
+    &:hover {
+        cursor: pointer;
+    }
 
     @include phone-down() {
         width: 90%;
     }
+}
 
-    &:hover {
-        background: $blue;
-    }
+.jumbotron_button p {  
+    font-family: "Zilla Slab";    
+    font-weight: bold;
+    font-size: 1.6rem;
 }
 
 .jumbotron_title {
@@ -108,7 +111,7 @@
 .home_course_video {
     width: 37vw;
     height: 20.8125vw;
-    background-color: $OneDarkBG;
+    background-color: $darkBlue;
     box-shadow: 6px 6px 0px 0px rgba(0,0,0,0.5);
 }
 

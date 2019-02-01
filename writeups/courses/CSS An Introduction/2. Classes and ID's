@@ -24,7 +24,7 @@ If we take the code from the first part, and add another h1 under the first one 
 
         <p>A mans best friend!</p>
 
-        <a href="./page2.html">Go to page 2!</a>
+        <a target="_blank" rel="noopener noreferrer" href="./page2.html">Go to page 2!</a>
 
         <p>Facts about dogs</p>
         <ol>
@@ -32,7 +32,7 @@ If we take the code from the first part, and add another h1 under the first one 
             <li>They have a sense of time and miss us when we are gone</li>
             <li>They have sweat glands in their paws</li>
             <li>
-                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
             </li>
         </ol>
 
@@ -69,7 +69,7 @@ We first set the attribute 'class' equal to whatever we want the class to be cal
 
         <p>A mans best friend!</p>
 
-        <a href="./page2.html">Go to page 2!</a>
+        <a target="_blank" rel="noopener noreferrer" href="./page2.html">Go to page 2!</a>
 
         <p>Facts about dogs</p>
         <ol>
@@ -77,7 +77,7 @@ We first set the attribute 'class' equal to whatever we want the class to be cal
             <li>They have a sense of time and miss us when we are gone</li>
             <li>They have sweat glands in their paws</li>
             <li>
-                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
             </li>
         </ol>
 
@@ -112,7 +112,7 @@ Now if we refresh our page, we will see that only the first h1 is styled! This b
 
         <p>A mans best friend!</p>
 
-        <a href="./page2.html">Go to page 2!</a>
+        <a target="_blank" rel="noopener noreferrer" href="./page2.html">Go to page 2!</a>
 
         <p>Facts about dogs</p>
         <ol>
@@ -120,7 +120,7 @@ Now if we refresh our page, we will see that only the first h1 is styled! This b
             <li>They have a sense of time and miss us when we are gone</li>
             <li>They have sweat glands in their paws</li>
             <li>
-                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
             </li>
         </ol>
 

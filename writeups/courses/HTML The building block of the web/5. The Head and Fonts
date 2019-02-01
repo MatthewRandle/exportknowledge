@@ -28,7 +28,7 @@ We're going to put this code inside the head of our website, I'm going to title 
             <li>They have a sense of time and miss us when we are gone</li>
             <li>They have sweat glands in their paws</li>
             <li>
-                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
             </li>
         </ol>
 
@@ -43,7 +43,7 @@ Now if you load your website in your browser you should see that the document ti
 <br>
 
 We are going to put a link to a font in the head. This font can be locally on your computer or hosted somewhere online. For this tutorial we are going to load the font from Google Fonts. So go  
-<a href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer">here</a>
+<a target="_blank" rel="noopener noreferrer" href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer">here</a>
  and pick a nice font.
 
 <br>
@@ -80,7 +80,7 @@ So now inside of the head paste this code, like so
             <li>They have a sense of time and miss us when we are gone</li>
             <li>They have sweat glands in their paws</li>
             <li>
-                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
             </li>
         </ol>
 
@@ -115,7 +115,7 @@ If we add this to our already styled h1 on our website we get this
             <li>They have a sense of time and miss us when we are gone</li>
             <li>They have sweat glands in their paws</li>
             <li>
-                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
             </li>
         </ol>
 

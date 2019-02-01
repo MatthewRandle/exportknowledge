@@ -30,7 +30,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    background: linear-gradient(to right, $purple, $blue);
+    background: linear-gradient(to right, $darkBlue, $lightBlue);
     margin-top: 0;
     border-right: 0;
     border-left: 0;
@@ -102,12 +102,12 @@
 
 .article_prerequisites_available {
     font-weight: bold;
-    color: $blue;
+    color: $lightBlue;
 }
 
 .article_prerequisites_available:hover {
     cursor: pointer;
-    color: $purple;
+    color: $darkBlue;
 }
 
 .article_lineBreak {
@@ -130,7 +130,7 @@
 }
 
 .article_text_container a {
-    color: $blue;
+    color: $lightBlue;
 }
 
 .article_commentSection {

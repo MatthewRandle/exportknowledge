@@ -37,7 +37,7 @@
     padding-bottom: 40px;
     padding-top: 40px;
     display: flex;
-    border-bottom: 1px solid $OneDarkBG;
+    border-bottom: 1px solid white;
     border-style: dashed;
 
     @include desktop-down() {
@@ -58,7 +58,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: $OneDarkBG;
 
     @include desktop-down() {
         width: 100%;
@@ -66,15 +65,17 @@
 }
 
 .courseSearch_video,
-.courseSearch_details a {
-    box-shadow: 6px 6px 0px 0px #cdcbfd;
+.courseSearch_button {
+    box-shadow: 5px 5px 0px 0px rgba($darkBlue, 0.4);
 }
 
 .courseSearch_video_and_title h1 {
     font-size: 2.5vw;
-    text-shadow: 3px 3px 0px #cdcbfd;
+    text-shadow: 3px 3px 0px $darkBlue;
     margin-top: 20px;
     text-align: center;
+    color: $gold;
+    color: white;
 
     @include desktop-down() {
         font-size: 2rem;
@@ -88,7 +89,8 @@
 .courseSearch_video {
     width: 39vw;
     height: 21.9375vw;
-    background: $OneDarkBG;
+    background: $darkBlue;
+    border: 2px solid $gold;
 
     @include desktop-down() {
         width: 60vw;
@@ -107,21 +109,26 @@
     }
 }
 
-//Start Course button
-.courseSearch_details a {
-    text-decoration: none;
-    color: white;
-    background: $OneDarkBG;
-    width: 300px;
-    text-align: center;
-    padding: 15px;
-    font-weight: bold;
-    font-size: 1.25rem;
+.courseSearch_button {
+    width: 250px;
+    padding: 10px;
     margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: $gold;
+    @include backgroundTransition($lightBlue, 200ms, "up");
+    @include textTransition(p, $darkBlue, white, 300ms, "up");
 
     &:hover {
-        background-color: $blue;
+        cursor: pointer;
     }
+}
+
+//Start Course button
+.courseSearch_button p {
+    text-decoration: none;     
+    font-weight: bold;
+    font-size: 1.5rem;
 
     @include desktop-down() {
         margin-top: 20px;
@@ -129,9 +136,10 @@
 }
 
 .courseSearch_details h1 {
+    text-shadow: 3px 3px 0px $darkBlue;
     font-size: 1.8vw;
     text-align: center;
-    color: $OneDarkBG;
+    color: white;
     margin-top: 10px;
 
     @include desktop-down() {
@@ -139,13 +147,15 @@
     }
 }
 
-.courseSearch_details p {
+.courseSearch_details_p {
+    color: white;
     text-align: center;
     margin-top: 5px;
     margin-bottom: 10px;
     font-family: "Open Sans";
     font-size: 0.8rem;
     line-height: 1.3em;
+    text-shadow: 2px 2px 0px $darkBlue;
 
     @include desktop-down() {
         font-size: 1rem;

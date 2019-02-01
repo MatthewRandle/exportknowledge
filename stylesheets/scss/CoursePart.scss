@@ -16,7 +16,8 @@
     display: flex;
     margin-top: 20px;
     margin-bottom: 20px;
-    border-bottom: 2px solid $darkGrey;
+    border-bottom: 1px solid white;
+    border-style: dashed;
     padding-bottom: 20px;
 
     @include desktop-down() {
@@ -28,8 +29,9 @@
 .coursePart_video {
     width: 640px;
     height: 360px;
-    border: 6px solid $OneDarkBG;
-    background: $OneDarkBG;
+    background: $darkBlue;
+    border: 2px solid $gold;
+    box-shadow: 7px 7px 0px 0px rgba($darkBlue, 0.4);
 
     @include desktop-down() {
         width: 75vw;
@@ -65,8 +67,9 @@
 .coursePart_title {
     font-family: "Zilla Slab";
     font-weight: bold;
-    font-size: 2.3rem;
-    color: $darkGrey;
+    font-size: 2rem;
+    color: white;
+    text-shadow: 3px 3px 0px $darkBlue;
 
     @include desktop-down() {
         font-size: 2rem;
@@ -88,6 +91,8 @@
     margin-top: 10px;
     line-height: 1.5em;
     font-size: 0.9rem;
+    color: white;
+    text-shadow: 2px 2px 0px $darkBlue;
 
     @include desktop-down() {
         width: auto;
@@ -109,6 +114,8 @@
     font-family: "Open Sans";
     padding-bottom: 20px;
     word-wrap: break-word;
+    color: white;
+    text-shadow: 2px 2px 0px $darkBlue;
 
     @include desktop-down() {
         width: 100%;
@@ -122,7 +129,7 @@
 }
 
 .coursePart_text a {
-    color: $blue;
+    color: $lightBlue;
 }
 
 //Loaders

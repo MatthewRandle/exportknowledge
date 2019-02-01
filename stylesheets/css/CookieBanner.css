@@ -63,14 +63,14 @@
   height: 30px;
   width: 100px;
   border: none;
-  background-color: #00b7ff;
+  background-color: #00A6ED;
   color: white;
   font-family: "Zilla Slab";
   font-size: 0.8rem;
 }
 
 .cookieBanner_buttons button:hover {
-  background-color: #8950ff;
+  background-color: #181e34;
   cursor: pointer;
 }
 

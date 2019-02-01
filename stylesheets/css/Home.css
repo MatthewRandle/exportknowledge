@@ -58,8 +58,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: -webkit-gradient(linear, left top, right top, from(#8950ff), to(#00b7ff));
-  background: linear-gradient(to right, #8950ff, #00b7ff);
+  background: #181e34;
 }
 
 .home_jumbotron {
@@ -91,19 +90,65 @@
 }
 
 .jumbotron_button {
-  text-align: center;
-  color: white;
-  background: #282c34;
-  font-family: "Zilla Slab";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
   margin-top: 30px;
-  border: 1px solid white;
   -webkit-box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.5);
           box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.5);
-  font-weight: bold;
-  font-size: 1.2rem;
+  width: 270px;
+  background: #00A6ED;
+  position: relative;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+}
+
+.jumbotron_button:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #e2c13d;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition: 150ms ease-out;
+  transition: 150ms ease-out;
+}
+
+.jumbotron_button:hover:before {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
+.jumbotron_button p {
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(white), color-stop(#181e34), to(#181e34));
+  background-image: linear-gradient(white, white, #181e34, #181e34);
+  background-size: auto 400%;
+  -webkit-transition: background 250ms ease-out;
+  transition: background 250ms ease-out;
+}
+
+.jumbotron_button:hover p {
+  background-position-y: 100%;
+}
+
+.jumbotron_button:hover {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 480px) {
@@ -112,8 +157,10 @@
   }
 }
 
-.jumbotron_button:hover {
-  background: #00b7ff;
+.jumbotron_button p {
+  font-family: "Zilla Slab";
+  font-weight: bold;
+  font-size: 1.6rem;
 }
 
 .jumbotron_title {
@@ -173,7 +220,7 @@
 .home_course_video {
   width: 37vw;
   height: 20.8125vw;
-  background-color: #282c34;
+  background-color: #181e34;
   -webkit-box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.5);
           box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.5);
 }

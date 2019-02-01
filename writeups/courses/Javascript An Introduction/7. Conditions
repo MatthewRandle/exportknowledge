@@ -1,0 +1,9 @@
+using booleans if(hasFood)
+chaining if statements, matters order 
+switch
+== vs ===
+!= VS !===
+Math operators >, <...
+|| and &&
+inverting condition if(!(i == 2 + x == 3))
+ternary   x === y ? this : fine this

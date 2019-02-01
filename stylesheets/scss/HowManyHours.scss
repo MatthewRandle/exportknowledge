@@ -30,7 +30,7 @@
 }
 
 .howmanyhours-steps a {
-    background: $blue;
+    background: $lightBlue;
     text-shadow: none;
     padding-right: 5px;
     padding-left: 5px;
@@ -59,12 +59,12 @@
     border-radius: 5px;
     font-size: 1.2rem;
     margin-bottom: 20px;
-    background-color: $blue;
+    background-color: $lightBlue;
     color: white;
     font-family: "Zilla Slab";
     font-weight: bold;
     box-shadow: 6px 6px 0px 0px rgba(0,0,0,0.75);
-    border: 2px solid $blue;
+    border: 2px solid $lightBlue;
 
     &:hover {
         cursor: pointer;
@@ -78,7 +78,7 @@
 .howmanyhours-upload {
     display: flex;
     align-items: center;
-    border: 2px solid $blue;
+    border: 2px solid $lightBlue;
     border-radius: 5px;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -91,7 +91,7 @@
     width: 120px;
     border: none;
     font-size: 1.2rem; 
-    background-color: $blue;
+    background-color: $lightBlue;
     color: white;  
     font-family: "Zilla Slab";
     font-weight: bold;

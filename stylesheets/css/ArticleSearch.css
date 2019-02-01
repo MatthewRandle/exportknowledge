@@ -11,7 +11,7 @@
 }
 
 .articleSearch_title {
-  color: #282c34;
+  color: white;
   font-family: "Zilla Slab";
 }
 
@@ -83,7 +83,7 @@
 .articleSearch_searchBar {
   border: none;
   border-radius: 2px;
-  background: #282c34;
+  background: #00A6ED;
   color: white;
   height: 30px;
   outline: none;
@@ -120,7 +120,7 @@
 }
 
 .articleSearch_select {
-  background: #282c34;
+  background: #00A6ED;
   border: none;
   border-radius: 2px;
   color: white;
@@ -161,14 +161,14 @@
 
 .articleSearch_checkbox {
   font-size: 0.75rem;
-  background: #00b7ff;
+  background: #00A6ED;
   color: white;
   margin-right: 10px;
   margin-bottom: 5px;
   padding: 5px;
   padding-left: 10px;
   padding-right: 15px;
-  border-radius: 20px;
+  border-radius: 2px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -205,7 +205,8 @@
 }
 
 .articleSearch_checkbox--checked {
-  background: #8950ff;
+  background: #e2c13d;
+  color: #181e34;
 }
 
 .articleSearch_articles {

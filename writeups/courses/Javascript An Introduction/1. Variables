@@ -1,0 +1,14 @@
+This course is meant to teach JavaScript as a programming language, we will not look at using it with web development. I would still strongly urge you to go through this course first, but if you are looking for JavaScript with web development then go through my course
+ <a target="_blank" rel="noopener noreferrer" href="/course/javascript-for-the-web">JavaScript: For The Web</a>.
+<br>
+<br>
+
+The first key concept of any programming language is variables. Variables allow us to store data for later use and modification. The first form of data we can use a variable to store is a string. A string is a sequence of characters surrounded by quotation marks ('' or ""), the following are example of strings
+
+<code><js><filename>
+
+<code>
+
+; or not
+var, let, const (stick with let over var, keeps local)
+all basic variable types

@@ -90,8 +90,8 @@ Our text inside of the navbar will now be perfectly centered. We will add 2 link
     <body>
         <div class="navbar">
             <p>Dogs</p>
-            <a href="./index.html">Home</a>
-            <a href="./page2.html">Page 2</a>
+            <a target="_blank" rel="noopener noreferrer" href="./index.html">Home</a>
+            <a target="_blank" rel="noopener noreferrer" href="./page2.html">Page 2</a>
         </div>
     </body>
 </html>

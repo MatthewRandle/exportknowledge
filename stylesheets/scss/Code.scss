@@ -2,9 +2,10 @@
 
 .code_container {
     font-size: .7rem;
-    @include gradientBorder($purple, $blue);    
+    border: 2px solid $gold;
     display: flex;
-    background: $OneDarkBG; 
+    box-shadow: 7px 7px 0px 0px rgba($darkBlue, 0.4);
+    position: relative;
 
     @include desktop-down() {
         font-size: .6rem;
@@ -32,9 +33,8 @@
 .code_pre_container {
     align-self: flex-start;
     line-height: 1.05rem;
-    border: 2px solid transparent;
-    border-image: linear-gradient(to right, $purple, $blue);
-    border-image-slice: 1;
+    border: 2px solid $gold;
+    box-shadow: 7px 7px 0px 0px rgba($darkBlue, 0.4);
 }
 
 .code_gutter {
@@ -45,7 +45,7 @@
     counter-reset: line;
     display: flex;
     flex-direction: column;
-    background: $OneDarkBG;    
+    background: $darkBlue;    
 
     @include tablet-down() {
         width: 35px;
@@ -70,7 +70,7 @@
         &:before {
             counter-increment: line;
             content: counter(line);
-            color: #888;
+            color: rgb(165, 165, 165);
         }
     }
 }
@@ -80,6 +80,14 @@
     height: 100%;
     padding: 10px;
     padding-left: 0;
+}
+
+.code_filename {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    color: #5C6370;
+    font-family: monospace;
 }
 
 .code_pre_container {

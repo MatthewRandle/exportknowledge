@@ -1,14 +1,12 @@
 .code_container {
   font-size: .7rem;
-  border: 3px solid transparent;
-  -o-border-image: linear-gradient(to right, #8950ff, #00b7ff);
-     border-image: -webkit-gradient(linear, left top, right top, from(#8950ff), to(#00b7ff));
-     border-image: linear-gradient(to right, #8950ff, #00b7ff);
-  border-image-slice: 1;
+  border: 2px solid #e2c13d;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: #282c34;
+  -webkit-box-shadow: 7px 7px 0px 0px rgba(24, 30, 52, 0.4);
+          box-shadow: 7px 7px 0px 0px rgba(24, 30, 52, 0.4);
+  position: relative;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -43,11 +41,9 @@
   -ms-flex-item-align: start;
       align-self: flex-start;
   line-height: 1.05rem;
-  border: 2px solid transparent;
-  -o-border-image: linear-gradient(to right, #8950ff, #00b7ff);
-     border-image: -webkit-gradient(linear, left top, right top, from(#8950ff), to(#00b7ff));
-     border-image: linear-gradient(to right, #8950ff, #00b7ff);
-  border-image-slice: 1;
+  border: 2px solid #e2c13d;
+  -webkit-box-shadow: 7px 7px 0px 0px rgba(24, 30, 52, 0.4);
+          box-shadow: 7px 7px 0px 0px rgba(24, 30, 52, 0.4);
 }
 
 .code_gutter {
@@ -64,7 +60,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: #282c34;
+  background: #181e34;
 }
 
 @media only screen and (max-width: 768px) {
@@ -101,7 +97,7 @@
 .code_gutter span:before {
   counter-increment: line;
   content: counter(line);
-  color: #888;
+  color: #a5a5a5;
 }
 
 .code {
@@ -109,6 +105,14 @@
   height: 100%;
   padding: 10px;
   padding-left: 0;
+}
+
+.code_filename {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: #5C6370;
+  font-family: monospace;
 }
 
 .code_pre_container {

@@ -1,0 +1,12 @@
+how to access data array[5] and modify
+nested array, [[], [], []]
+multi dimensional array, xyz eg.. [[1,2,3], [1,2,3], [1,2,3]]
+
+.length
+.includes()
+.join()
+.reverse()
+.pop()
+.push()
+.filter()
+.forEach

@@ -1,7 +1,7 @@
 @import "_variables";
 
 .coursePartPanel_container {
-    background: $OneDarkBG;
+    background: $darkBlue;
     width: 60vw;
     height: 2vw;
     display: flex;
@@ -13,38 +13,22 @@
     padding-bottom: 15px;
     font-size: 1.85vw;
     font-weight: bold;
-    box-shadow: 6px 6px 0px 0px #cdcbfd;
+    box-shadow: 5px 5px 0px 0px rgba($darkBlue, 0.4);
     margin-bottom: 15px;
-
-    position: relative;
-    transform: translateZ(0);
-    transition: color 1000ms;
-    &:before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: $blue;
-        transform: scaleY(0);
-        transform-origin: 50% 100%;
-        transition-property: transform;
-        transition: 300ms ease-out;
-    }
-    
-    &:hover:before {
-        transform: scaleY(1);
-    }
+    @include backgroundTransition($gold, 200ms, "up");
+    @include textTransition(p, white, $darkBlue, 250ms, "up");
 
     &:hover {
         cursor: pointer;
-        background: $purple;
+        background: $darkBlue;
+
+        .coursePartPanel_part {
+            border-right: 1px solid $darkBlue;
+        }
     }
 
     &:active {
-        box-shadow: 4px 4px 0px 0px #cdcbfd;
+        box-shadow: 3px 3px 0px 0px rgba($darkBlue, 0.4);
     }
 
     @include desktop-down() {

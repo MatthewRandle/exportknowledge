@@ -8,7 +8,7 @@
 }
 
 .articleSearch_title {
-    color: $OneDarkBG;
+    color: white;
     font-family: "Zilla Slab";  
 }
 
@@ -53,7 +53,7 @@
 .articleSearch_searchBar {
     border: none;
     border-radius: 2px;
-    background: $OneDarkBG;
+    background: $lightBlue;
     color: white;
     height: 30px;
     outline: none;
@@ -75,7 +75,7 @@
 
 
 .articleSearch_select {
-    background: $OneDarkBG;
+    background: $lightBlue;
     border: none;
     border-radius: 2px;
     color: white;
@@ -107,14 +107,14 @@
 
 .articleSearch_checkbox {
     font-size: 0.75rem;
-    background: $blue;
+    background: $lightBlue;
     color: white;
     margin-right: 10px;
     margin-bottom: 5px;
     padding: 5px;
     padding-left: 10px;
     padding-right: 15px;
-    border-radius: 20px;
+    border-radius: 2px;
     display: flex;
     user-select: none;
 
@@ -143,7 +143,8 @@
 }
 
 .articleSearch_checkbox--checked {
-    background: $purple;
+    background: $gold;
+    color: $darkBlue;
 }
 
 .articleSearch_articles {

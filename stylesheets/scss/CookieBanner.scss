@@ -47,13 +47,13 @@
     height: 30px;
     width: 100px;
     border: none;
-    background-color: $blue;
+    background-color: $lightBlue;
     color: white;
     font-family: "Zilla Slab";
     font-size: 0.8rem;
 
     &:hover {
-        background-color: $purple;
+        background-color: $darkBlue;
         cursor: pointer;
     }
 

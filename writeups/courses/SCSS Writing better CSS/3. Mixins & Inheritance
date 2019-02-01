@@ -1,0 +1,241 @@
+Mixins are a very useful part of scss, they allow you to define re-usable styles. We define a mixin like so
+
+<code><scss>
+@minin name {
+
+}
+<code>
+
+Where 'name' can be given any value. Imagine that we are creating a site that uses the exact same button styles for every button across all its pages. Without scss we would probably define the styles of this button...
+
+<code><css>
+button {
+    background: blue;
+    border: 2px solid white;
+    color: white;
+    padding: 10px;
+}
+<code>
+
+...and then copy and paste these properties across all our buttons, across multiple css files. This as it stands is bad practice, because for one we have the exact same code scattered around multiple places, but what happens when we want to change the button style for our site. We would have to change all of these occurrences.
+
+<br>
+<br>
+
+But with scss all we would have to do is define a mixin somewhere (I prefer to keep mixins in an _variables file) and then re-use that mixin. The mixin would look like this
+
+<code><scss>
+@mixin reusableButton {
+    background: blue;
+    border: 2px solid white;
+    color: white;
+    padding: 10px;
+}
+<code>
+
+To actually use this mixin in different files we would first have to import the file at the top of the intended file
+
+<code><scss>
+@import "_variables";
+<code>
+
+And then @include the mixin on our button class
+
+<code><scss>
+@import "_variables";
+
+button {
+    @import reusableButton;
+}
+<code>
+
+We can also use selectors inside of a mixin. Imagine we now want every button to change color when hovered, well we can simply do this inside of the mixin
+
+<code><scss>
+@mixin reusableButton {
+    background: blue;
+    border: 2px solid white;
+    color: white;
+    padding: 10px;
+
+    &:hover {
+        background: red;
+    }
+}
+<code>
+
+Or if we had a paragraph inside of this button, we could also style that inside of the mixin
+
+<code><scss>
+@mixin reusableButton {
+    background: blue;
+    border: 2px solid white;
+    color: white;
+    padding: 10px;
+
+    p {
+        color: purple;
+    }
+}
+<code>
+
+We can give a mixin some variable arguments to make our mixin customizable when used. When using arguments in our mixins we write it like this
+
+<code><scss>
+@mixin reusableButton ($variable) {
+    background: blue;
+    border: 2px solid white;
+    color: white;
+    padding: 10px;
+
+    p {
+        color: purple;
+    }
+}
+<code>
+
+An example of its use is image that our button on our site has all the same styling except for the border, where we want it to be a different color for each button. We could do this by passing in a variable and giving that variable to the border like so
+
+<code><scss>
+@mixin reusableButton ($borderColor) {
+    border: 2px solid $borderColor;
+}
+<code>
+
+We would use this like so
+
+<code><scss>
+@import "_variables";
+
+button {
+    @import reusableButton(blue);
+}
+<code>
+
+But now imagine that we only want a few of the buttons to have a custom border color and the rest to be white. We can give our mixin arguments a default value like so
+
+<code><scss>
+@mixin reusableButton ($borderColor : red) {
+    border: 2px solid $borderColor;
+}
+<code>
+
+Now all button by default have a red border unless otherwise specified.
+
+<br>
+<br>
+
+Finally, lets pretend that our site also has lists everywhere. We want each list to have the exact same styling, but each list can have a number of different text elements inside: such as a paragraph, multiple headers and an anchor. We want all of these to also have the same styling. We could simply make a mixin and define 3 lots of styling for each of these like this
+
+<code><scss>
+@mixin reusableList {
+    p {
+        color: red;
+        background: blue;
+    }
+
+    h1 {
+        color: red;
+        background: blue;
+    }
+
+    h2 {
+        color: red;
+        background: blue;
+    }
+
+    h3 {
+        color: red;
+        background: blue;
+    }
+}
+<code>
+
+But as you can see that would make our mixin very big and unreadable. We would instead pass in an argument that would just be the element we want to style
+
+<code><scss>
+@mixin reusableList ($element) {
+    
+}
+<code>
+
+We then write this element variable in a set of curly braces starting with a # like so
+
+<code><scss>
+@mixin reusableList ($element) {
+    #{$element} {
+        color: red;
+        background: blue;
+    }
+}
+<code>
+
+Now everytime we style a list we would import the mixin and then pass in whatever text element the list has (p, h1, a...)
+
+<code><scss>
+@import "_variables";
+
+button {
+    @import reusableList(p);
+}
+<code>
+
+
+As well as mixins we also have another way we can do something very similar, using inheritance with 'extend'. Say we have 2 buttons, where 1 is our main style and the second a error warning button that turns red. We would simply do this
+
+<code><scss>
+.normalButton {
+    color: black;
+    background-color: blue;
+}
+
+.errorButton {
+    @extend .normalButton;
+    border: 2px solid red;
+}
+<code>
+
+You have to be very careful when using extend, as it can create lots of unwanted code which can bog your site down. If we had 2 classes that we wanted to extend onto a third like so...
+
+<code><scss>
+.class1 {
+    color: black;
+    background-color: blue;
+}
+
+.class2 {
+    background-color: blue;
+}
+
+.class3 {
+    @extend .class1;
+    @extend .class2;
+    border: 1px solid red;
+}
+<code>
+
+When complied this would turn into...
+
+<code><scss>
+.class1, .class3 {
+    color: black;
+    background-color: blue;
+}
+
+.class2, .class3 {
+    background-color: blue;
+}
+
+.class3 {
+    @extend .class1;
+    @extend .class2;
+    border: 1px solid red;
+}
+<code>
+
+...where you might of thought they would all just merge into once nice class. Because of this I stay well clear of inheritance with extend and just stick to mixins. So be warned and use at your own risk.
+
+<br>
+<br>
+
+Thats it for part 3, thanks for reading!

@@ -1,0 +1,144 @@
+If you have ever used a programming language such as JavaScript, you may know about statements. Statements are bits of code that we can use to do certain things under certain conditions. In scss we a write a statement like things
+
+<code><scss>
+@if condition {
+
+}
+<code>
+
+Where the condition can be any condition that we wish to check. A good way to use if statements is in a mixin, lets create a mixin for a button which takes an argument called type.
+
+<code><scss>
+@mixin customButton($type) {
+
+}
+<code>
+
+We want to be able to pass different values to this mixin and based on their values, change the buttons styling appropriate. The first type we wish for our button to have is error. We will create an if statement that checks if the variable $type is equal to "error". When comparing values in scss we use two equal signs (==)
+
+<code><scss>
+@mixin customButton($type) {
+    @if $type == "error" {
+        background-color: red;
+    }
+}
+<code>
+
+We also want the button to have a second type of "success" that changes the background-color to green instead. We could create another separate if statement, or use the else if statement, this looks the exact same as before with the word else before the if
+
+<code><scss>
+@mixin customButton($type) {
+    @if $type == "error" {
+        background-color: red;
+    }
+    @else if $type == "success" {
+        background-color: green;
+    }
+}
+<code>
+
+We also can use just the else statement which we put at the end (we could have multiple else if) which means 'if none of the conditions above were true then do this' - so in other words it acts as a default value
+
+<code><scss>
+@mixin customButton($type) {
+    @if $type == "error" {
+        background-color: red;
+    }
+    @else if $type == "success" {
+        background-color: green;
+    }
+    @else {
+        background-color: blue;
+    }
+}
+<code>
+
+Lets add another argument to the mixin called errorType. If the type of button is "error" we also want to check if the errorType (which could be 'warning' or 'severe'). We only want to check this errorType value if the type of the button is error, so we can put another if statement inside of the first type check for "error"
+
+<code><scss>
+@mixin customButton($type, $errorType) {
+    @if $type == "error" {
+        background-color: red;
+
+        @if $errorType == "warning" {
+            border: 3px solid white;
+        }
+        @else if $errorType == "severe" {
+            border: 3px solid yellow;
+        }
+    }
+    @else if $type == "success" {
+        background-color: green;
+    }
+    @else {
+        background-color: blue;
+    }
+}
+<code>
+
+Lastly we can use loops to do something a certain amount of times. Lets say we had 4 paragraphs that each had a class name of "paragraph-1" to "paragraph-4" in order and we wanted each of these paragraphs font size to get bigger the bigger their number. We could use a for loop to do this quickly, the for loops is written like this
+
+<code><scss>
+.paragraphs {
+    @for $i from X through Y {
+    
+    }
+}
+<code>
+
+Where i is a variable to tells us which iteration we are at, X is the number we want to start at, and Y the number we want to end at. So since we have 4 paragraphs going from 1 to 4 we can set X to 1 and Y to 4
+
+<code><scss>
+.paragraphs {
+    @for $i from 1 through 4 {
+        
+    }
+}
+<code>
+
+So this loop runs the code inside it 4 times (we dont have any code inside yet). We each paragraph to have a bigger font size than the last. To target each paragraph inside of the for loop we can write 
+
+<code><scss>
+.paragraph-#{$i} {
+    
+}
+<code>
+
+Just like we would normally select a class in css we start with a . followed by the class name. Since we want the number in our class name to go from 1 to 4 we can use the $i variable that the for loops gives to us - to use a variable in a selector we surround it by #{}. So on the first iteration when $i is 1 we get ".paragraph-1" and so on. Putting this in our code we get this
+
+<code><scss>
+.paragraphs {
+    @for $i from 1 through 4 {
+        .paragraph-#{$i} {
+            
+        }
+    }
+}
+<code>
+
+We want to set the font-size to be bigger than the paragraph before it. To do this we can simply multiple a value by our $if
+
+<code><scss>
+.paragraphs {
+    @for $i from 1 through 4 {
+        .paragraph-#{$i} {
+            font-size: 1em * $i;
+        }
+    }
+}
+<code>
+
+Finally for scss and the most simple are comments. In normal css we can use comment blocks to comment our code
+
+<code><css>
+/* COMMENT */
+<code>
+
+Scss allows us to use inline comments, which i find a lot more useful
+
+<code><scss>
+//INLINE COMMENT
+<code>
+
+And thats it for scss! What we have went through isn't everything scss has to offer, but in my opinion the most useful. if you wish to learn more about what scss has to offer then go to their offical documentation
+ <a target="_blank" rel="noopener noreferrer" href="https://sass-lang.com/documentation/file.SASS_REFERENCE.html" target="_blank" rel="noopener noreferrer">here.</a>

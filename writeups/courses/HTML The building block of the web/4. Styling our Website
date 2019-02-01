@@ -27,7 +27,7 @@ So I'm giving the h1 a color of red. So on our website we had this
             <li>They have a sense of time and miss us when we are gone</li>
             <li>They have sweat glands in their paws</li>
             <li>
-                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
             </li>
         </ol>
 
@@ -54,7 +54,7 @@ The h1 tag at the top of the body is what we are going to update. Which turns in
             <li>They have a sense of time and miss us when we are gone</li>
             <li>They have sweat glands in their paws</li>
             <li>
-                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
             </li>
         </ol>
 
@@ -92,7 +92,7 @@ This allows us to add multiple styles to elements. Adding this to our site we ha
             <li>They have a sense of time and miss us when we are gone</li>
             <li>They have sweat glands in their paws</li>
             <li>
-                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
             </li>
         </ol>
 
@@ -102,7 +102,7 @@ This allows us to add multiple styles to elements. Adding this to our site we ha
 <code>
 
 This concludes part 4 of this course. This was only an introduction to styling. Styling will not be a main focus of this course. For styling look at the 'CSS' courses that I have created. If you would simply like to learn a few more styles that you can add to our website in the meantime, look 
- <a href="http://www.stylinwithcss.com/resources_css_properties.php" target="_blank"h rel="noopener noreferrer">here</a>.
+ <a target="_blank" rel="noopener noreferrer" href="http://www.stylinwithcss.com/resources_css_properties.php" target="_blank"h rel="noopener noreferrer">here</a>.
 
 <br>
 <br>

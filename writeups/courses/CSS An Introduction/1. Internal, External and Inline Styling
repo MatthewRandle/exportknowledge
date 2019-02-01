@@ -1,12 +1,12 @@
 CSS, which stands for Cascading Style Sheets is a way in which we can style and format our html. If you went through my course 
-<a href="/course/html-the-building-block-of-the-web">HTML: The Building Block of the Web</a>
+<a target="_blank" rel="noopener noreferrer" href="/course/html-the-building-block-of-the-web">HTML: The Building Block of the Web</a>
  we used styling to make a header on our website red. CSS is just as common as html and you will use it everyday as a web developer.
 
 <br>
 <br>
 
 We are going to be styling the code from
- <a href="/course/html-the-building-block-of-the-web">HTML: The Building Block of the Web</a>, 
+ <a target="_blank" rel="noopener noreferrer" href="/course/html-the-building-block-of-the-web">HTML: The Building Block of the Web</a>, 
 if you do not have that code here it is
 
 <code><html>
@@ -21,7 +21,7 @@ if you do not have that code here it is
         <h1 style="color:red">A website dedicated to dogs</h1>
         <p>A mans best friend!</p>
 
-        <a href="./page2.html">Go to page 2!</a>
+        <a target="_blank" rel="noopener noreferrer" href="./page2.html">Go to page 2!</a>
 
         <p>Facts about dogs</p>
         <ol>
@@ -29,7 +29,7 @@ if you do not have that code here it is
             <li>They have a sense of time and miss us when we are gone</li>
             <li>They have sweat glands in their paws</li>
             <li>
-                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
             </li>
         </ol>
 
@@ -94,7 +94,7 @@ Firstly we have a 'rel' attribute that is used to specify the relation between t
         <h1>A website dedicated to dogs</h1>
         <p>A mans best friend!</p>
 
-        <a href="./page2.html">Go to page 2!</a>
+        <a target="_blank" rel="noopener noreferrer" href="./page2.html">Go to page 2!</a>
 
         <p>Facts about dogs</p>
         <ol>
@@ -102,7 +102,7 @@ Firstly we have a 'rel' attribute that is used to specify the relation between t
             <li>They have a sense of time and miss us when we are gone</li>
             <li>They have sweat glands in their paws</li>
             <li>
-                <a href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.cesarsway.com/dog-behavior/innocuous-behaviors/10-facts-about-dogs">For more facts about dogs click me!</a>
             </li>
         </ol>
 

@@ -1,5 +1,5 @@
 .coursePartPanel_container {
-  background: #282c34;
+  background: #181e34;
   width: 60vw;
   height: 2vw;
   display: -webkit-box;
@@ -15,14 +15,12 @@
   padding-bottom: 15px;
   font-size: 1.85vw;
   font-weight: bold;
-  -webkit-box-shadow: 6px 6px 0px 0px #cdcbfd;
-          box-shadow: 6px 6px 0px 0px #cdcbfd;
+  -webkit-box-shadow: 5px 5px 0px 0px rgba(24, 30, 52, 0.4);
+          box-shadow: 5px 5px 0px 0px rgba(24, 30, 52, 0.4);
   margin-bottom: 15px;
   position: relative;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
-  -webkit-transition: color 1000ms;
-  transition: color 1000ms;
 }
 
 .coursePartPanel_container:before {
@@ -33,17 +31,17 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: #00b7ff;
+  background: #e2c13d;
   -webkit-transform: scaleY(0);
           transform: scaleY(0);
-  -webkit-transform-origin: 50% 100%;
-          transform-origin: 50% 100%;
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
   -webkit-transition-property: -webkit-transform;
   transition-property: -webkit-transform;
   transition-property: transform;
   transition-property: transform, -webkit-transform;
-  -webkit-transition: 300ms ease-out;
-  transition: 300ms ease-out;
+  -webkit-transition: 200ms ease-out;
+  transition: 200ms ease-out;
 }
 
 .coursePartPanel_container:hover:before {
@@ -51,14 +49,32 @@
           transform: scaleY(1);
 }
 
+.coursePartPanel_container p {
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(white), color-stop(#181e34), to(#181e34));
+  background-image: linear-gradient(white, white, #181e34, #181e34);
+  background-size: auto 400%;
+  -webkit-transition: background 250ms ease-out;
+  transition: background 250ms ease-out;
+}
+
+.coursePartPanel_container:hover p {
+  background-position-y: 100%;
+}
+
 .coursePartPanel_container:hover {
   cursor: pointer;
-  background: #8950ff;
+  background: #181e34;
+}
+
+.coursePartPanel_container:hover .coursePartPanel_part {
+  border-right: 1px solid #181e34;
 }
 
 .coursePartPanel_container:active {
-  -webkit-box-shadow: 4px 4px 0px 0px #cdcbfd;
-          box-shadow: 4px 4px 0px 0px #cdcbfd;
+  -webkit-box-shadow: 3px 3px 0px 0px rgba(24, 30, 52, 0.4);
+          box-shadow: 3px 3px 0px 0px rgba(24, 30, 52, 0.4);
 }
 
 @media only screen and (max-width: 1200px) {

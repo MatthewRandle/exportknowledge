@@ -1,0 +1,9 @@
+new object
+object.propertyName
+nested keys
+object.keys
+object.values
+object.assign 2 objects together
+default of object.poop is undefinded
+this references object even in function: e.g.    key: () => { this.firstName }
+...spread

@@ -10,7 +10,7 @@ class Navbar extends Component {
                 <div className="navbar_container">
                         <Link prefetch href="/">
                             <a className="navbar_logo">
-                                <img src="/static/Logo.svg" alt="export Knowledge logo" />
+                                <img src="/static/Logo_dark.svg" alt="export Knowledge logo" />
                                 <p className="navbar_logo_title">export Knowledge;</p>
                             </a>
                         </Link>    
@@ -18,8 +18,12 @@ class Navbar extends Component {
                         <div className="navbar_logo_block" />
 
                         <div className="navbar_links">                            
-                            <Link prefetch href="/"><a>home</a></Link>
-                            <Link prefetch href="/courses"><a>courses</a></Link>
+                            <Link prefetch href="/">
+                                <a className="navbar_link"><p>home</p></a>
+                            </Link>
+                            <Link prefetch href="/courses">
+                                <a className="navbar_link"><p>courses</p></a>
+                            </Link>
                         </div>
 
                         <div className="accountSection_container" style={{ height: "55px" }}>

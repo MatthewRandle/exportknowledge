@@ -82,7 +82,7 @@ Finally, we have what is called nesting. When styling with css it is very common
 <div>
     <ul>
         <li>
-            <a>Hey</a>
+            <a target="_blank" rel="noopener noreferrer">Hey</a>
         </li>
     </ul>
 </div>

@@ -1,5 +1,5 @@
 In this part we are going to learn about giving our elements background colors and images. In
- <a href="/course/html-the-building-block-of-the-web">HTML: The Building Block of the Web</a>
+ <a target="_blank" rel="noopener noreferrer" href="/course/html-the-building-block-of-the-web">HTML: The Building Block of the Web</a>
  we looked at using img tags to put images onto our site using the src attribute. Another way we can put images on our site is a property called background-image.
 
  <br>
@@ -34,7 +34,7 @@ We are going to be using an element we haven't looked at yet - a div. A div is a
 <code>
 
 I want this div to have a pattern on it and the best way to do this is simply the background-image property. Before we add this lets find a pattern on google. I searched 'seamless pattern' and will be using 
- <a href="https://img.freepik.com/free-vector/abstract-geometric-pattern-background_1319-242.jpg?size=338&ext=jpg">this</a>
+ <a target="_blank" rel="noopener noreferrer" href="https://img.freepik.com/free-vector/abstract-geometric-pattern-background_1319-242.jpg?size=338&ext=jpg">this</a>
  one. Copy the url as we will need it shortly.
 
 <br>
@@ -66,7 +66,7 @@ div {
 <code>
 
 We could leave it at this but a lot of the time certain images will look too small or not be positioned how we want. Thankfully we can control these aspects of any background image. To showcase the next properties I will be using 
- <a href="https://upload.wikimedia.org/wikipedia/en/thumb/0/09/Circle_Logo.svg/1200px-Circle_Logo.svg.png">this</a>
+ <a target="_blank" rel="noopener noreferrer" href="https://upload.wikimedia.org/wikipedia/en/thumb/0/09/Circle_Logo.svg/1200px-Circle_Logo.svg.png">this</a>
  image.
 
 <br>
@@ -94,7 +94,7 @@ div {
 <code>
 
 Lastly we will make the image be directly in the center of our div using background-position. This can take a lot of different values but we will simply give it a value of center. To view all the values this property can take go 
- <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-attachment">here</a>.
+ <a target="_blank" rel="noopener noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-attachment">here</a>.
 
 <code><css>
 div {
@@ -107,7 +107,7 @@ div {
 <code>
 
 And now our circle is directly in the center of our div as we wanted. There is another property called background-attachment that can be very useful that we will not be using but I would recommend going 
- <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-attachment">here</a>
+ <a target="_blank" rel="noopener noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-attachment">here</a>
   and messing around with it.
 
 <br>
@@ -158,6 +158,6 @@ We can instead use a radial-gradient if we want, which is formatted the same as 
 <code>
 
 And thats it for this course, I hope you had a good time learning the basics of CSS. Moving forward I would check out
- <a href="/course/css-layout-with-flexbox">CSS: Layout with Flexbox</a> and
- <a href="/course/css-layout-with-grid">CSS: Layout with Grid</a>. Thanks for reading!
+ <a target="_blank" rel="noopener noreferrer" href="/course/css-layout-with-flexbox">CSS: Layout with Flexbox</a> and
+ <a target="_blank" rel="noopener noreferrer" href="/course/css-layout-with-grid">CSS: Layout with Grid</a>. Thanks for reading!
 

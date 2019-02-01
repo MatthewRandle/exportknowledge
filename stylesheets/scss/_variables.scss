@@ -1,7 +1,8 @@
 $desktopContainer: 1100px;
 $articleContainer: 980px;
-$purple: #8950ff;
-$blue: #00b7ff;
+$darkBlue: #181e34;
+$lightBlue: #00A6ED;
+$gold: #e2c13d;
 $navbarHeight: 55px;
 $darkGrey: #3c3c3c;
 $OneDarkBG: #282c34;
@@ -48,3 +49,66 @@ $OneDarkBG: #282c34;
     border-image: linear-gradient(to right, $color1, $color2);
     border-image-slice: 1;
 }
+
+@mixin backgroundTransition($backgroundColor, $time, $direction) {
+    position: relative;
+    transform: translateZ(0);
+
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $backgroundColor;
+        transform: scaleY(0);
+
+        @if $direction == "up" {
+            transform-origin: 0% 100%;
+        }
+        @else if $direction == "down" {
+            transform-origin: 100% 0%;
+        }
+        
+        transition-property: transform;
+        transition: $time ease-out;
+    }
+    
+    &:hover:before {
+        transform: scaleY(1);
+    }   
+}
+
+@mixin textTransition($textElement, $textColor, $newTextColor, $time, $direction) {
+    //set texts properties
+    #{$textElement} {
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        @if $direction == "up" {
+            background-image: linear-gradient($textColor, $textColor, $newTextColor, $newTextColor);
+        }
+        @else if $direction == "down" {
+            background-image: linear-gradient($newTextColor, $newTextColor, $textColor, $textColor);
+            background-position-y: 100%;
+        }
+
+        
+        background-size: auto 400%;
+        transition: background $time ease-out;
+    }
+
+    &:hover {
+        //when parent is hovered (e.g. a button) set text background
+        #{$textElement} {
+            @if $direction == "up" {
+                background-position-y: 100%;
+            }
+            @else if $direction == "down" {
+                background-position-y: 0%;
+            }
+            
+        }
+    }
+}   

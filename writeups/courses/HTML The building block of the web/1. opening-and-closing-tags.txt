@@ -1,5 +1,5 @@
 To kick things off, we are going to download Visual Studio Code, which is what we call a text editor. If you would prefer to use another be free but note that I will be using Visual Studio Code. So, go
- <a href="https://code.visualstudio.com/Download" target="_blank" rel="noopener noreferrer">here</a>
+ <a target="_blank" rel="noopener noreferrer" href="https://code.visualstudio.com/Download" target="_blank" rel="noopener noreferrer">here</a>
  and install the editor. Once its downloaded and installed open it, press the 'Explorer' button on the left-hand side, or press Ctrl+Shift+E. Next press the open folder button and choose a folder for the website we are going to create. Then go to where it says 'New Folder' under 'Open Editors' and press the new file button. Call it 'index.html'. 
 
 <br>
@@ -31,7 +31,8 @@ Now that you understand what an opening and closing tag is lets setup our html d
 
 We put this at the very top of our file. We then add a set of html opening and closing tags
 
-<code><html>
+<code><html><filename>
+index.html
 <!DOCTYPE html>
 <html>
 

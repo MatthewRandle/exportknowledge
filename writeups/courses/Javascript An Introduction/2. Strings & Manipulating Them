@@ -1,0 +1,6 @@
+Important string functions
+concatenation, +=
+escaping
+`` template literals
+Creating string using variables, console.log("Hey my name is: " + name);
+string[2] for character

@@ -49,7 +49,7 @@ div {
 <code>
 
 This will cause all of our flex items to be centered in the container. The other values justify-content can take are: flex-start, flex-end, baseline, space-between, space-around and space-evenly. Either play around with these values or go
- <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content">here</a> to see them. As well as justify-content you can use align-content. This works the same way as justify-content but on the column axis.
+ <a target="_blank" rel="noopener noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content">here</a> to see them. As well as justify-content you can use align-content. This works the same way as justify-content but on the column axis.
 
 <br>
 <br>
@@ -68,7 +68,7 @@ div {
 <code>
 
 You will see that all the flex items are now pushed to the bottom of the div, this is also working with the justify-content which is making them centered along the row axis.
- <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items">Here</a> are the values align-items can take.
+ <a target="_blank" rel="noopener noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items">Here</a> are the values align-items can take.
 
 <br>
 <br>

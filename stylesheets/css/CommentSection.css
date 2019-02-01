@@ -110,8 +110,8 @@
   cursor: pointer;
   outline: none;
   border-top: none;
-  background: -webkit-gradient(linear, left top, right top, from(#8950ff), color-stop(#00b7ff), color-stop(#282c34), to(#282c34));
-  background: linear-gradient(to right, #8950ff, #00b7ff, #282c34, #282c34);
+  background: -webkit-gradient(linear, left top, right top, from(#181e34), color-stop(#00A6ED), color-stop(#282c34), to(#282c34));
+  background: linear-gradient(to right, #181e34, #00A6ED, #282c34, #282c34);
   background-size: 400%;
   background-position: 0%;
   -webkit-transition: background-position 0.75s;
@@ -221,7 +221,7 @@
   -ms-flex-item-align: end;
       align-self: flex-end;
   margin-top: auto;
-  background-color: #00b7ff;
+  background-color: #00A6ED;
   font-family: "Zilla Slab";
   font-weight: bold;
   color: white;
