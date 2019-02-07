@@ -6,6 +6,10 @@ $gold: #e2c13d;
 $navbarHeight: 55px;
 $darkGrey: #3c3c3c;
 $OneDarkBG: #282c34;
+$headerShadow: 3px 3px 0px $darkBlue;
+$textShadow: 2px 2px 0px $darkBlue;
+$boxShadow: 5px 5px 0px 0px rgba($darkBlue, 0.4);
+$textColor: #e6ebff;
 
 @mixin desktop-down() {@media only screen and (max-width: 1200px) { @content; }}
 

@@ -68,7 +68,7 @@
     font-family: "Zilla Slab";
     font-weight: bold;
     font-size: 2rem;
-    color: white;
+    color: $textColor;
     text-shadow: 3px 3px 0px $darkBlue;
 
     @include desktop-down() {
@@ -91,7 +91,7 @@
     margin-top: 10px;
     line-height: 1.5em;
     font-size: 0.9rem;
-    color: white;
+    color: $textColor;
     text-shadow: 2px 2px 0px $darkBlue;
 
     @include desktop-down() {
@@ -114,7 +114,7 @@
     font-family: "Open Sans";
     padding-bottom: 20px;
     word-wrap: break-word;
-    color: white;
+    color: $textColor;
     text-shadow: 2px 2px 0px $darkBlue;
 
     @include desktop-down() {
@@ -129,7 +129,11 @@
 }
 
 .coursePart_text a {
-    color: $lightBlue;
+    color: $gold;
+
+    &:hover {
+        color: $lightBlue;
+    }
 }
 
 //Loaders

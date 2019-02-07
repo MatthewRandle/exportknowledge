@@ -6,6 +6,7 @@ $iconWidth: 40px;
 .userMenu_container {
     display: flex;
     align-items: center;
+    transform: translateX(-10px);
 }
 
 .userMenu {

@@ -80,7 +80,7 @@ class CommentSection extends React.Component {
                                 disabled={!this.props.commentSent || !isEmpty(errors) }
                                 className={!this.props.commentSent ? "commentSection_submit commentSection_submit--disabled" : "commentSection_submit" }
                             >
-                                SUBMIT
+                                <p>SUBMIT</p>
                             </button>
                         </form>
                     )}

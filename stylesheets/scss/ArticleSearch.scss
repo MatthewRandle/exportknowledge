@@ -8,8 +8,8 @@
 }
 
 .articleSearch_title {
-    color: white;
     font-family: "Zilla Slab";  
+    color: $textColor;
 }
 
 .articleSearch_title--loader {
@@ -54,7 +54,7 @@
     border: none;
     border-radius: 2px;
     background: $lightBlue;
-    color: white;
+    color: $textColor;
     height: 30px;
     outline: none;
     padding-left: 10px;
@@ -70,7 +70,7 @@
 }
 
 .articleSearch_searchBar::placeholder {
-    color: white;
+    color: $textColor;
 }
 
 
@@ -78,7 +78,7 @@
     background: $lightBlue;
     border: none;
     border-radius: 2px;
-    color: white;
+    color: $textColor;
     height: 30px;
     margin-right: 10px;
     outline: none;
@@ -108,7 +108,7 @@
 .articleSearch_checkbox {
     font-size: 0.75rem;
     background: $lightBlue;
-    color: white;
+    color: $textColor;
     margin-right: 10px;
     margin-bottom: 5px;
     padding: 5px;

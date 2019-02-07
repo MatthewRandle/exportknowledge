@@ -1,0 +1,45 @@
+When we are creating websites using JavaScript, we most likely don't want to keep all of our code in one file (especially if we have a lot of it). We can import and export from different files to keep our code controlled and organized.
+
+<br>
+<br>
+
+Let's say we have a function in a file that we want to be able to use in a lot of different files
+
+<code><js>
+function helper() {
+    //do something
+}
+<code>
+
+To use this function in other files we first have to specify that we want to export this function. To do this we need to modify the way we write our function
+
+<code><js>
+exports.helper = function () {
+    //do something
+}
+<code>
+
+Now this allows this function to be re-used in other files. To do so, we have to import the function into said file. Let's pretend our function is in a file called functions.js. To import all function that are in the file functions.js we would do this
+
+<code><js>
+const functions = require("./functions");
+<code>
+
+Then we can access any exported function like this
+
+<code><js>
+const functions = require("./functions");
+
+functions.helper();
+<code>
+
+If we only wanted to import the one function, we can add the function name to the end of the import like so
+
+<code><js>
+const helper = require("./functions").helper;
+
+helper();
+<code>
+
+And that's it for this course! Moving on I would suggest looking at
+ <a target="_blank" rel="noopener noreferrer" href="/course/javascript-for-the-web">JavaScript: For The Web</a> where we will look at using the things we learned this course the alter a website and make it interactive. Thanks for reading!

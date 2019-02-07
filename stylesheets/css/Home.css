@@ -136,8 +136,8 @@
 .jumbotron_button p {
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(white), color-stop(#181e34), to(#181e34));
-  background-image: linear-gradient(white, white, #181e34, #181e34);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e6ebff), color-stop(#e6ebff), color-stop(#181e34), to(#181e34));
+  background-image: linear-gradient(#e6ebff, #e6ebff, #181e34, #181e34);
   background-size: auto 400%;
   -webkit-transition: background 250ms ease-out;
   transition: background 250ms ease-out;
@@ -161,12 +161,13 @@
   font-family: "Zilla Slab";
   font-weight: bold;
   font-size: 1.6rem;
+  color: #e6ebff;
 }
 
 .jumbotron_title {
   font-family: "Zilla Slab";
   font-weight: bold;
-  color: white;
+  color: #e6ebff;
   font-size: 1.5rem;
   text-align: center;
   margin-bottom: 20px;
@@ -192,7 +193,7 @@
   display: flex;
   width: 100%;
   margin-top: 20px;
-  color: white;
+  color: #e6ebff;
   font-family: "Zilla Slab";
 }
 

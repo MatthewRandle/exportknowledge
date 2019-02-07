@@ -127,7 +127,7 @@
   font-family: "Zilla Slab";
   font-weight: bold;
   font-size: 2rem;
-  color: white;
+  color: #e6ebff;
   text-shadow: 3px 3px 0px #181e34;
 }
 
@@ -156,7 +156,7 @@
   margin-top: 10px;
   line-height: 1.5em;
   font-size: 0.9rem;
-  color: white;
+  color: #e6ebff;
   text-shadow: 2px 2px 0px #181e34;
 }
 
@@ -190,7 +190,7 @@
   font-family: "Open Sans";
   padding-bottom: 20px;
   word-wrap: break-word;
-  color: white;
+  color: #e6ebff;
   text-shadow: 2px 2px 0px #181e34;
 }
 
@@ -207,6 +207,10 @@
 }
 
 .coursePart_text a {
+  color: #e2c13d;
+}
+
+.coursePart_text a:hover {
   color: #00A6ED;
 }
 

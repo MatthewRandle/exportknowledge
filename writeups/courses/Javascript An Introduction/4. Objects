@@ -1,9 +1,88 @@
-new object
-object.propertyName
-nested keys
-object.keys
-object.values
-object.assign 2 objects together
-default of object.poop is undefinded
-this references object even in function: e.g.    key: () => { this.firstName }
-...spread
+Objects in JavaScript are like cars, humans, dogs, phones and anything that has multiple properties that are (mostly) always the same. A human as 2 feet, legs, arms, hands and phones have buttons and screens. We can use objects to create a representation of these things.
+
+<br>
+<br>
+
+We can create an object like so
+
+<code><js>
+let human = {};
+<code>
+
+This creates an empty object. We give an object what are called keys, which represent some attribute an object has. We can create an object with some default keys and values
+
+<code><js>
+let human = { hairColor: "Brown", eyeColor: "Blue", Height: 196, Weight: 210 };
+<code>
+
+To access a value we first write the object name, followed by a full stop, and then the key name
+
+<code><js>
+let human = { hairColor: "Brown", eyeColor: "Blue", Height: 196, Weight: 210 };
+
+let hairColor = human.hairColor;
+<code>
+
+Just like we can have nested arrays, we can also have nested keys where we can give a key a value of another object
+
+<code><js>
+let humans = { human1: { hairColor: "Red", eyeColor: "Purple" }, human2: { hairColor: "Black", eyeColor: "Green" } };
+<code>
+
+If using nested objects its useful to split each key up onto a new line for readability
+
+<code><js>
+let humans = { 
+    human1: { 
+        hairColor: "Red", 
+        eyeColor: "Purple" 
+    }, 
+    human2: { 
+        hairColor: "Black", 
+        eyeColor: "Green" 
+    }};
+<code>
+
+To access the hairColor on human1 we would simply do this
+
+<code><js>
+let humans = { 
+    human1: { 
+        hairColor: "Red", 
+        eyeColor: "Purple" 
+    }, 
+    human2: { 
+        hairColor: "Black", 
+        eyeColor: "Green" 
+    }};
+
+let hairColor = humans.human1.hairColor;
+<code>
+
+We can also get all of the values using Object.values() and passing in the object whose values we wish to get inside the parenthesis, and all of the keys using Object.keys()
+
+<code><js>
+let human = { hairColor: "Brown", eyeColor: "Blue", Height: 196, Weight: 210 };
+let values = Object.values(human);
+let keys = Object.keys(human);
+
+console.log(values); //[ 'Brown', 'Blue', 196, 210 ]
+console.log(keys); //[ 'hairColor', 'eyeColor', 'Height', 'Weight' ]
+<code>
+
+We can give an object an new key with any value
+
+<code><js>
+let human = { hairColor: "Brown", eyeColor: "Blue", Height: 196, Weight: 210 };
+human.newKey = value;
+human.anotherNewKey = anotherValue;
+<code>
+
+If we wanted to add a lot of new keys to an object this might get a bit tedious, luckily there is a way we can add multiple keys to an object at once, using Object.assign({values}, object)
+
+<code><js>
+let human = { hairColor: "Brown", eyeColor: "Blue", Height: 196, Weight: 210 };
+Object.assign({ shoeSize: 12, age: 20 }, human);
+<code>
+
+And thats it for part 4, thanks for reading!

@@ -1,0 +1,71 @@
+When creating responsive websites we use media queries with breakpoints to give elements different styling on different screen sizes. Doing this in css we normally have a section in each css file dedicated to this
+
+<code><css>
+@media only screen and (max-width: 1200px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 480px) {
+
+}
+<code>
+
+Personally, I think this ends up making my code feel clumpy, and files larger than they have to be. Using scss we can incorporate our responsiveness at the same place we define a classes default styling. This allows us to keep our css organized and easy to see a classes styling without having to jump around a file looking at all the different places we have changed its styling.
+
+<br>
+<br>
+
+If you have never used scss before, I recommend looking at my course
+ <a href="/course/scss-writing-better-css">SCSS: Writing Better CSS</a>. The first thing we will do is define our media queries in a separate file. I like to keep mine in an _variables file, which creates a partial file (again, look at the course to learn what this is). We want these media queries to be re-usable so we write them like so
+
+<code><scss>
+@mixin query-name() {@media only screen and (max-width: breakpoint) { @content; }}
+<code>
+
+Where the query-name is anything we want, and the breakpoint is the screen width at which we want this query to affect. I normally use three different breakpoints for small desktops, tablets and mobiles
+
+<code><scss><filename>_variables.scss
+@mixin desktop-down() {@media only screen and (max-width: 1200px) { @content; }}
+
+@mixin tablet-down() {@media only screen and (max-width: 768px) { @content; }}
+
+@mixin phone-down() {@media only screen and (max-width: 480px) { @content; }}
+<code>
+
+To use these breakpoints in a different file we first import the _variables file
+
+<code><scss>
+@import "_variables";
+<code>
+
+Then to use them we simply @include them and place the code we want to happen on the respective screen width inside
+
+<code><scss>
+@import "_variables";
+
+button {
+    width: 100px;
+    height  30px;
+
+    @include desktop-down() {
+        width: 80px;
+        height: 25px;
+    }
+
+    @include tablet-down() {
+        width: 60px;
+        height: 15px;
+    }
+
+    @include phone-down() {
+        width: 40px;
+        height: 10px;
+    }
+}
+<code>
+
+Now we can look at a classes styling and also see its styling across different resolutions, keeping everything modular and organized.

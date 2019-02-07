@@ -3,12 +3,108 @@ This course is meant to teach JavaScript as a programming language, we will not 
 <br>
 <br>
 
-The first key concept of any programming language is variables. Variables allow us to store data for later use and modification. The first form of data we can use a variable to store is a string. A string is a sequence of characters surrounded by quotation marks ('' or ""), the following are example of strings
+Before we get started writing some code, we need to be able to run the code that we create. You can do this in many different ways, but using Visual Studio Code go to the left hand site and click on the 'Extensions Button'. Search for 'Code Runner' and install it and then reload Visual Studio Code. Next, go to File > Preferences > Settings, open the 'Extensions' tab and go to 'Run Code Configuration'. In the default language box type 'javascript', at the top check 'Clear previous output'. Now every time you wish to run your javascript file simply press Ctrl + Alt + N.
 
-<code><js><filename>
+<br>
+<br>
 
+If you found the instructions above hard to follow I would recommend watching the video version at the top of this page.
+
+<br>
+<br>
+
+The first key concept of any programming language is variables. Variables allow us to store data for later use and modification. The first form of data we can use a variable to store is a string. A string is a sequence of characters surrounded by apostrophes ('' or ""), the following are examples of strings
+
+<code><js>
+"I am a string with double apostrophes"
+'Im a string with single apostrophes'
+"345342029rfmnmkaa09292"
+"/d2e21--0o012-"
+"Any Character"
 <code>
 
-; or not
-var, let, const (stick with let over var, keeps local)
-all basic variable types
+The next type of data a variable can hold is an integer, and integer is simply a whole number
+
+<code><js>
+1
+1231312
+-2139123
+<code>
+
+Similar to integer there are floats that are decimal numbers
+
+<code><js>
+1.323213
+0.0330
+-3.45
+<code>
+
+Another type of data we can store are booleans. Booleans represent a binary number 0 or 1 denoted by the words false and true respectively
+
+<code><js>
+false //0
+true  //1
+<code>
+
+Create a file called variables.js so we can a look at how to use these data types with variables. On the very first line we will create a variable, we do so by first starting with the word 'let' followed by the name we wish to give the variable - which can be anything
+
+<code><js>
+let newVariable;
+<code>
+
+I end every one of my lines with a semi-colon, in JavaScript you don't have too, but if you've used other languages like me and are used to it go ahead, otherwise this works the exact same
+
+<code><js>
+let newVariable
+<code>
+
+We haven't given this newVariable a value yet, so it gets a default value of undefined (which is important so remember this). We can prove this by doing what is called a console log. A console log is very helpful when developing as it allows us to 'print' values so we can see what they are at certain points in an application. We can print to the console by writing
+
+<code><js><pre> 
+console.log();
+<code>
+
+...and inside of the parenthesis we put what we want to log - in our case the newVariable
+
+<code><js>
+let newVariable;
+
+console.log(newVariable);
+<code>
+
+Run this (Ctrl + Alt + N) and you will see a value of "undefined". To give a variable a value we simple follow the variables name by the equal sign, then follow that by the value we want to give it (string, int, float, boolean...). We will give our newVariable a string
+
+<code><js>
+let newVariable = "I'm a string!";
+
+console.log(newVariable);
+<code>
+
+If we run this we will see a value of "I'm a string!" in the console. Once we have declared a variable we can modify it further within our program. To change a variable we start with the variable name followed by an equal sign, followed by the new value we wish to give it
+
+<code><js>
+let newVariable = "I'm a string!";
+newVariable = "I'm an updated string";
+
+console.log(newVariable);
+<code>
+
+So we can change the value a variable holds anywhere in an application. This can be very useful but what if you want a variable to always have the same value that can never be changed? Well, JavaScript allows us to use what are called constants. We can give a value to a constant, and it will always be that value. To declare a constant we to exactly what we did to declare a variable, but instead of they keyword 'let' we use 'const'
+
+<code><js><pre>
+const newVariable = "I'm a constant, I can never be changed!";
+<code>
+
+If we now try and change this constant and run the code, we will get an error saying something like "ERROR: Assignment to constant variable"
+
+<code><js>
+const newVariable = "I'm a constant, I can never be changed!";
+newVariable = "This won't do anything!";
+<code>
+
+So, using constants we have to be careful that we never try to change them, or it could cause unwanted errors in our application. 
+
+<br>
+<br>
+
+That's it for part 1, thanks for reading!

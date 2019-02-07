@@ -1,6 +1,145 @@
-Important string functions
-concatenation, +=
-escaping
-`` template literals
-Creating string using variables, console.log("Hey my name is: " + name);
-string[2] for character
+In part 1 we looked at variables and one of the data type we use variables to store were strings. A string is any number of characters surrounded by apostrophes ('' or ""). We can do lots of different things with strings, and we will look at the most important/useful in this part.
+
+<br>
+<br>
+
+A string by default comes with functions that we can use to modify it. We access these functions by simply adding a full stop after the string, followed by the function name
+
+<code><js>
+"Some string".functionName();
+<code>
+
+We can also do this same thing using a variable
+
+<code><js>
+let someString = "Some string";
+let newString = someString.functionName();
+<code>
+
+One useful function that we can use is the substring function. When using this function we give it 2 values inside its parenthesis like someString
+
+<code><js>
+let someString = "Some string";
+let substring = someString.substring(value1, value2);
+<code>
+
+Where value1 is an integer that determines where to start the substring from, and value2 an integer that determines where to end it. If we were to give value1 a value of 0 it would start the substring and the very beginning of the "someString" string, if we started it at 1 it would start after the first character and so on. Lets get the first part of the someString - we want just the word 'Some'. So we will give the value1 a value of 0, and value2 a value of 4
+
+<code><js>
+let someString = "Some string";
+let substring = someString.substring(0, 4);
+
+console.log(substring);
+<code>
+
+If we print this substring variable using console.log() and run the code (Ctrl + Alt + N, which we looked at setting up in part 1) we will see a value of 'Some' in the console. Another useful function that strings come with is the includes() function. This function allows us to check if one string includes another string. Inside of the parenthesis we place the string we want to check. Inside of the console.log() we will use this includes method to check if the substring is in the someString (which obviously it is)
+
+<code><js>
+let someString = "Some string";
+let substring = someString.substring(0, 4);
+
+console.log(someString.includes(substring));
+<code>
+
+Running this code will print a value of 'true' to the console. There are a lot more helpful functions that we can use with strings, but now youknow how to use them, we will not go through them all. if you wish to look at the rest go
+ <a target="_blank" rel="noopener noreferrer" href="https://www.w3schools.com/jsref/jsref_obj_string.asp">here</a>.
+
+<br>
+<br>
+
+Another thing we can do with string is called concatenation. Concatenation allows us to merge multiple string together. We simply do this by using the + symbol
+
+<code><js>
+let forename = "Albert";
+let surname = "Einstein";
+
+let fullName = forename + surname;
+
+console.log(fullName);
+<code>
+
+If we run this, we will see 'AlbertEinstein' printed with no space between, this is because neither of our forename or surname had any space before or after. To add a space between the forename and surname we can simply concatenate another string that is just a space (" ") like so
+
+<code><js>
+let forename = "Albert";
+let surname = "Einstein";
+
+let fullName = forename + " " + surname;
+
+console.log(fullName);
+<code>
+
+Now our console log will read "Albert Einstein". Adding in some whitespace between every word can get quite tediious. There is another way that we can construct strings called template literals/string. Template strings allows us to use variables inside of the string. We denote a template string using `` instead of apostrophes
+
+<code><js><pre>
+let templateString = `I'm a template string`;
+<code>
+
+To use variables inside of the string we write ${} and inside of the curled brackets we place the variable. 
+
+<code><js>
+let forename = "Albert";
+let surname = "Einstein";
+
+let fullName = `Name is: ${forename} ${surname}`;
+
+console.log(fullName);
+<code>
+
+This makes it much easier to use variables inside of string as we dont need to do lots of + and worry about spaces between words.
+
+<br>
+<br>
+
+We know that we can use substring() to get a string out of another string. Similarly there is a we that we can access just one character out of a string. If we wanted to access the first character of a string, we would simply add squared brackets after this string name, and inside the location of the character we want to access
+
+<code><js>
+let forename = "Albert";
+let initial = forename[0];
+
+console.log(initial);
+<code>
+
+To access the last character things get a little bit trickier. We need to know how many characters the string has first. We can do this with the function length() which returns an integer value representing the amount of character a string has
+
+<code><js>
+let forename = "Albert";
+
+console.log(forename.length); //prints 6
+<code>
+
+We can now use this to access the last character
+
+<code><js>
+let forename = "Albert";
+let lastCharacter = forename[forename.length]
+
+console.log(lastCharacter);
+<code>
+
+But if we run this we get a value of undefined, why? Earlier when we used the substring method, we used 0 to start at the beginning of the string. So when we get the length of the string, we are simply just getting the amount of characters in the string. If we had a string of length 1, and got its length it would be 1
+
+<code><js>
+let forename = "A";
+
+console.log(forename.length); //1
+<code>
+
+And to access the first character we would use a 0 as we did with substring
+
+<code><js>
+let forename = "A";
+
+console.log(forename[0]); //A
+<code>
+
+So we know to access the first character we use 0, to access the second we would use 1 and so on. So to access the last character, we simply need to take 1 away from its length
+
+<code><js>
+let forename = "Albert";
+let lastCharacter = forename[forename.length - 1]
+
+console.log(lastCharacter);  //t
+<code>
+
+And thats its for part 2, thanks for reading!

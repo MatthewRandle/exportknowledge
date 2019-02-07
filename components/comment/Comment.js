@@ -105,7 +105,9 @@ const Comment = (props) => {
 
                     <p className="comment">{props.comment}</p>                        
 
-                    <p className="comment_replyButton" onClick={props.toggleReplyBox}>REPLY</p>
+                    <div className="comment_replyButton" onClick={props.toggleReplyBox}>
+                        <p>REPLY</p>
+                    </div>
                 </div>                            
             </div>
 

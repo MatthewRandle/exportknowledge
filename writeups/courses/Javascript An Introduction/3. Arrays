@@ -1,12 +1,90 @@
-how to access data array[5] and modify
-nested array, [[], [], []]
-multi dimensional array, xyz eg.. [[1,2,3], [1,2,3], [1,2,3]]
+Arrays are another way that we can store data, they are a variable that allows us to store multi-dimensional data. If we had for example a list of food that a shops has in stock we could store all of the items in one array. There are two different ways that we can create an array
 
-.length
-.includes()
-.join()
-.reverse()
-.pop()
-.push()
-.filter()
-.forEach
+<code><js>
+let firstArray = new Array();
+let secondArray = [];
+<code>
+
+Both of these arrays hold the exact same value - An empty array, if you want try console.log() on them both and see for yourself. We can store any datatype inside of an array such as strings, integers and booleans - we can even store multiple of each. To create an array with some values, we place the wanted values inside of the parenthesis or square brackets (depending on which way you use), separating each with a comma
+
+<code><js>
+let shoppingList = ["Coke", "Bread", "Butter"];
+<code>
+
+This creates an array of size three. A very important note on arrays is that the first element is placed at position 0. We can access each element in the same way we can access a character in a string like we looked at last parenthesis
+
+<code><js>
+let shoppingList = ["Coke", "Bread", "Butter"];
+let firstItem = shoppingList[0];
+
+console.log(firstItem); //Coke
+<code>
+
+We can use a similar method to alter the data at a certain index
+
+<code><js>
+let shoppingList = ["Coke", "Bread", "Butter"];
+shoppingList[0] = "Pepsi";
+
+let firstItem = shoppingList[0];
+
+console.log(firstItem); //Pepsi
+<code>
+
+This array right now is one-dimensional, but remember I said that arrays can be multi-dimensional. Imagine we were going shopping to three shops and wanted lists for each shop. We could create three different arrays, or we could create a multi-dimensional array with all three lists combined. We create and multi-dimensional array my simply putting [] inside an already existing array
+
+<code><js>
+let oneDimensional = ["X", "Y", "Z"];
+let twoDimensional = [[X, Y, Z], [X, Y, Z], [X, Y, Z]];
+//...
+let tenDimensional = [[[[[[[[[[]]]]]]]]]]; //although this is very impractical, it still works
+<code>
+
+Back to our shopping list, let's keep it two dimensional
+
+<code><js>
+let shoppingList = [["Coke", "Bread", "Butter"], ["Toilet Roll"], ["Sweets", "Ice Cream"]];
+<code>
+
+We can check what size an array is with the length property
+
+<code><js>
+let shoppingList = [["Coke", "Bread", "Butter"], ["Toilet Roll"], ["Sweets", "Ice Cream"]];
+
+console.log(shoppingList.length); //3
+<code>
+
+If we wanted to find out how many items is in our 2nd store list we would do this
+
+<code><js>
+let shoppingList = [["Coke", "Bread", "Butter"], ["Toilet Roll"], ["Sweets", "Ice Cream"]];
+
+console.log(shoppingList[1].length); //1
+<code>
+
+Lets pretend we remembered that we want to go to four shops and have already made the list for three shops. We can add data to an array using the push() function. We use it by passing in the values we want to add to the end of the array inside the parenthesis
+
+<code><js>
+let shoppingList = [["Coke", "Bread", "Butter"], ["Toilet Roll"], ["Sweets", "Ice Cream"]];
+
+shoppingList.push(["Remote", "TV"]);
+<code>
+
+To remove the last item in an array we can use the pop() function
+
+<code><js>
+let shoppingList = [["Coke", "Bread", "Butter"], ["Toilet Roll"], ["Sweets", "Ice Cream"]];
+
+shoppingList.push(["Remote", "TV"]);
+shoppingList.pop();
+
+console.log(shoppingList); //[["Coke", "Bread", "Butter"], ["Toilet Roll"], ["Sweets", "Ice Cream"]]
+<code>
+
+If you're interested in looking at the rest of the functions an Array can perform look
+ <a target="_blank" rel="noopener noreferrer" href="">here</a>.
+
+<br>
+<br>
+
+That's it for part 3, thanks for reading!

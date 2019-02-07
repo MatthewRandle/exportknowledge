@@ -1,6 +1,80 @@
-reusable code
-passing values
-function scope with variables inside
-return
-return variables from functions
-arrow functions
+Functions are blocks of code that we can reuse as many times as we want. We write a JavaScript function by first writing the keyword 'function' and then declaring its name (which can be anything) followed by parenthesis and then a set of curled brackets
+
+<code><js>
+function name() {
+    //code goes here
+}
+<code>
+
+Inside of the parenthesis we can pass arguments (as many as we like) which are values, and they can be used inside of the function
+
+<code><js>
+function name(value1, value2, ...) {
+    //code goes here
+}
+<code>
+
+Lets look at using a function in a real world example. Going back to our shopping list array we had in part 3, let imagine we had set up some way for a user to add some more items to the list. The user types in the item name and submits it and its our job to update the array with the new item. Functions are extremely helpful in situations like this as we can make one function that can handle any amount of new items being added.
+
+<br>
+<br>
+
+Let's create a function called addItem and give it an argument of newItem
+
+<code><js>
+let shoppingList = ["Coke", "Bread", "Butter"];
+
+function addItem(newItem) {
+    
+}
+<code>
+
+Inside of the function we want to add the newItem to the array, we can do this using the push() function
+
+<code><js>
+let shoppingList = ["Coke", "Bread", "Butter"];
+
+function addItem(newItem) {
+    shoppingList.push(newItem);
+}
+<code>
+
+The code inside of the function now can be used as many times as we want. To actually use the function and run the code it hold we do what is called invoking. We invoke a function by writing the function name followed by parenthesis (and if the function we are calling has arguments, we pass the arguments we want to it). An important note about functions is that they the function doesn't have to come first in the code, we can have it at the very end. So lets pretend somewhere in our application a user submitted a value of 'Cake' and another a value of "Apples", we simply write addItem("Cake") and addItem("Apples")
+
+<code><js>
+let shoppingList = ["Coke", "Bread", "Butter"];
+
+addItem("Cake");
+addItem("Apples");
+
+function addItem(newItem) {
+    shoppingList.push(newItem);
+}
+<code>
+
+We can create variables inside of a function just as we can anywhere else in our code, but the variable will only be accessible inside of the function, this is called scope (specifically local scope). So remember when creating variables inside a function, you can only use it in that function.
+
+<br>
+<br>
+
+We can return values from a function using the return keyword
+
+<code><js>
+function squareNumber(number) {
+    return number * number;
+}
+<code>
+
+This is useful as we can use the returned value to set a variable
+
+<code><js>
+let fourSquared = squareNumber(4);
+
+console.log(fourSquared); //16
+
+function squareNumber(number) {
+    return number * number;
+}
+<code>
+
+Thats it for part 5, thanks for reading!

@@ -48,6 +48,7 @@
     padding: 25px;
     padding-bottom: 0;
     flex: 1;
+    color: $textColor;
 
     @include desktop-down() {
         align-items: center;        
@@ -70,7 +71,7 @@
     font-weight: bold;
     font-size: 2.9vw;    
     text-align: center;
-    color: white;
+    color: $textColor;
     text-shadow: 3px 3px 0px $darkBlue;
 
     @include desktop-down() {
@@ -93,7 +94,7 @@
     line-height: 1.5em;
     font-size: 1.2vw;
     text-align: center;
-    color: white;
+    color: $textColor;
     text-shadow: 2px 2px 0px $darkBlue;
 
     @include desktop-down() {
@@ -123,7 +124,7 @@
 }
 
 .course_preface h1 {
-    color: white;
+    color: $textColor;
     font-family: "Zilla Slab";
     margin-top: 20px;
     font-size: 1.75rem;
@@ -137,7 +138,7 @@
 .course_preface p {
     margin-top: 10px;
     width: 65%;
-    color: white;
+    color: $textColor;
     text-shadow: 2px 2px 0px $darkBlue;
 
     @include desktop-down() {

@@ -1,0 +1,50 @@
+Iterators are a way in which we can repeat code for a specified amount of time. The first type of iterator we use is called a for loop. A for loop looks like this
+
+<code><js>
+for(let i = 0; i < amountOfLoops; i++) {
+    //do something
+}
+<code>
+
+The part inside the parenthesis may look a bit confusing right now but its simple. First we create a variable and set it to 0. This is where we want our loop to start - at 0. This is very common and you will most likely always start at 0, but you dont have to. Next, we specify how many times we want our loop to iterate (in place of amountOfLoops), by saying we want i to be less than x (where x can be any number). Lastly we are saying what we want to happen at the end of every loop. We just want i to get 1 added to it (i++ is the same as i + 1).
+
+<br>
+<br>
+
+Lets modify our loop to log numbers 0 to 20
+
+<code><js>
+for(let i = 0; i <= 20; i++) {
+    console.log(i);
+}
+<code>
+
+We can also use for loops inside of for loops. When doing so, we have to use a different variable other than i. The example below logs numbers from 1 to 20 including decimal places
+
+<code><js>
+for(let i = 0; i <= 20; i++) {
+    console.log(i);
+
+    for(let j = 0; j < 10; j++) {
+        console.log(i + "." + j);
+    }
+}
+<code>
+
+The next type of iterator we can use is called a while loop. A while loop is used to repeatably run code whilst a condition is true. Imagine we had some application that tracked a user continuously unless the user had specified otherwise. We could use a while loop to do this
+
+<code><js>
+while(userAllowsTracking) {
+    //track user code here
+}
+<code>
+
+Finally we have the do while loop. This do while loop is the exact same as the while loop with one key difference - It always runs the code at least once, even if the condition is not true
+
+<code><js>
+do {
+    //track user code here, always do it at least once
+} while(userAllowsTracking);
+<code>
+
+That's it for part 7, thanks for reading!

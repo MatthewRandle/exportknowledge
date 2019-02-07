@@ -1,0 +1,187 @@
+Conditions are a way in which we can run some code when a certain rule applies. The first way we can write conditions is using if statements
+
+<code><js>
+if(condition) {
+    //do this
+}
+<code>
+
+Let's imagine that we have a variable testScore that is given a value of a students score in a test ranging from 0 to 100. If the student has gained at least 40 marks then they have passed, we can do this by using the math operators that you learned when you were a child (>, <, >=, <=)
+
+<code><js>
+let testScore = 45;
+
+if(testScore >= 40) {
+    console.log("Passed");
+}
+<code>
+
+When using if statements we can chain multiple if's together using 'else if'. Lets add an else if, checking if the student got more than 70 marks
+
+<code><js>
+let testScore = 45;
+
+if(testScore >= 40) {
+    console.log("Passed");
+}
+else if(testScore >= 70) {
+    console.log("First");
+}
+<code>
+
+If the student got less than 40 marks we want to log 'Failed'. We could add another else if and check if testScore is less than 40, but there is an easier way. An 'else' exists that we can use that we always put last in the chain. The else statement means if none of the prior conditions occurred then default to this. Since we have all values above 40 check we can use the else here, as it will only happen if the testScore < 40
+
+<code><js>
+let testScore = 45;
+
+if(testScore >= 40) {
+    console.log("Passed");
+}
+else if(testScore >= 70) {
+    console.log("First");
+}
+else {
+    console.log("Failed");
+}
+<code>
+
+Test this out by changing the testScore value. Lets look at using booleans as a condition. Change the testScore variable to hasMoreThan40 and set it to true
+
+<code><js>
+let hasMoreThan40 = true;
+<code>
+
+When using booleans in the if statement we dont need to check if it is equal to true or false we can simply just put the boolean name
+
+<code><js>
+let hasMoreThan40 = true;
+
+if(hasMoreThan40) {
+    console.log("Passed");
+}
+else if(!hasMoreThan40) {
+    console.log("Failed");
+}
+<code>
+
+On the second if condition I used the ! before the boolean name. Using the ! mark inverts the condition, so before without it, the condition is checking if its true but with it if its false since true and false are opposites. 
+
+<br>
+<br>
+
+We can use == to check two values to see if they are the same
+
+<code><js>
+let value1 = 20;
+let value2 = 20;
+
+if(value1 == value2) {
+    //do something
+}
+<code>
+
+If checking between two values like above you have to be very careful this would still pass even though one is an integer and the other a string
+
+<code><js>
+let value1 = 20;
+let value2 = "20";
+
+if(value1 == value2) {
+    //would happen
+}
+<code>
+
+To check two values and make sure their types are the same, we use ===
+
+<code><js>
+let value1 = 20;
+let value2 = "20";
+
+if(value1 === value2) {
+    //would not happen
+}
+<code>
+
+We can also check if two values are not the same using != or !== (where !== checks type like ===)
+
+<code><js>
+let value1 = 20;
+let value2 = "20";
+
+if(value1 !== value2) {
+    //would happen as they aren't the same
+}
+else if(value1 != value2) {
+    //would not happen as it sees them as the same since we aren't checking type (!= vs !==)
+}
+<code>
+
+We can also check if multiple conditions are true in the same statement using the && and || operators. We use && when we want the condition before and after to be true and we use || when we only need one of the conditions to be true
+
+<code><js>
+let value1 = 2;
+let value2 = 4;
+
+if(value1 === 2 && value2 === 4) {
+    //true
+}
+else if(value1 === 2 || value2 === 4) {
+    //true
+}
+<code>
+
+If we changed value1 to be 1, only the second would apply
+
+<code><js>
+let value1 = 1;
+let value2 = 4;
+
+if(value1 === 2 && value2 === 4) {
+    //false
+}
+else if(value1 === 2 || value2 === 4) {
+    //true since one of the conditions is true
+}
+<code>
+
+Another type of statement we can use to check a condition is a switch statement. A switch statement is used to check only one value. We write a switch like so
+
+<code><js>
+switch(something) {
+    case 1:
+        //code
+        break;
+    case 2:
+        //code
+        break;
+    default:
+        //default code if none other cases happen
+}
+<code>
+
+We cant use math operators in the case, we can only simply specify a value that the thing we are checking might take. Lets imagine we were checking the day of the week using an integer, switch statements could be used like so
+
+<code><js>
+switch(number) {
+    case 1:
+        console.log("Sunday");
+        break;
+    case 2:
+        console.log("Monday");
+        break;
+}
+<code>
+
+Since we can't have a 'default' day, we can just remove it from the statement.
+
+<br>
+<br>
+
+Finally we have a very useful way of writing a simple if statement in shorthand using the ternary operator
+
+<code><js>
+let testScore = 60;
+let passed = testScore >= 40 ? "Passed" : "Failed";
+<code>
+
+And that's it for part 6, thanks for reading!

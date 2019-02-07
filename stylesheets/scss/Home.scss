@@ -48,7 +48,7 @@
     width: 270px;
     background: $lightBlue;
     @include backgroundTransition($gold, 150ms, "up");
-    @include textTransition(p, white, $darkBlue, 250ms, "up");
+    @include textTransition(p, $textColor, $darkBlue, 250ms, "up");
 
     &:hover {
         cursor: pointer;
@@ -63,12 +63,13 @@
     font-family: "Zilla Slab";    
     font-weight: bold;
     font-size: 1.6rem;
+    color: $textColor;
 }
 
 .jumbotron_title {
     font-family: "Zilla Slab";
     font-weight: bold;
-    color: white;
+    color: $textColor;
     font-size: 1.5rem;
     text-align: center;
     margin-bottom: 20px;
@@ -88,7 +89,7 @@
     display: flex;
     width: 100%;
     margin-top: 20px;
-    color: white;
+    color: $textColor;
     font-family: "Zilla Slab";
 }
 

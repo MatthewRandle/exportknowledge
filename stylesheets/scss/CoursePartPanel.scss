@@ -6,7 +6,6 @@
     height: 2vw;
     display: flex;
     align-items: center;
-    color: white;
     font-family: "Zilla Slab";    
     padding: 10px;
     padding-top: 15px;
@@ -16,7 +15,7 @@
     box-shadow: 5px 5px 0px 0px rgba($darkBlue, 0.4);
     margin-bottom: 15px;
     @include backgroundTransition($gold, 200ms, "up");
-    @include textTransition(p, white, $darkBlue, 250ms, "up");
+    @include textTransition(p, $textColor, $darkBlue, 250ms, "up");
 
     &:hover {
         cursor: pointer;
@@ -49,7 +48,7 @@
     font-family: "Roboto Condensed";
     font-size: 2vw;
     padding-right: 10px;
-    border-right: 1px solid white;
+    border-right: 1px solid $textColor;;
 
     @include desktop-down() {
         font-size: 2.25vw;

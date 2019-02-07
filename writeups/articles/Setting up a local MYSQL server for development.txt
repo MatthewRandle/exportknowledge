@@ -1,0 +1,8 @@
+When developing an application that uses a database it's good to have that database setup locally. We will be looking at setting up a local MYSQL database, so lets first go to the MYSQL website and download the 
+ <a href="https://dev.mysql.com/downloads/windows/installer/">MYSQL Installer</a>.
+
+
+
+
+
+Waiting to do this when website up and running since need pictures for installation walk through

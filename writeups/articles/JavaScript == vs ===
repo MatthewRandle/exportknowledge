@@ -1,0 +1,55 @@
+We've all used comparison equal operators in JavaScript, but did you know that there is a difference between == and === ? Well there is, and its very important. They actually have different names: == is called equality operator and === the identity operator.
+
+<h1>The Equality Operator (==)</h1>
+
+We use the equality operator when checking to values so see if they are equal. We can values of the same type against each other
+
+<code><js>
+if("String" == "String") {
+    //true
+}
+
+if(2 == "2") {
+    //true
+}
+<code>
+
+or values of different types against each other
+
+<code><js>
+if(2 == "2") {
+    //true
+}
+<code>
+
+But the integer 2 and the string "2" aren't actually the same, so why does the equality operator allow this to pass? The equality operator checks values against each other after they have been converted to the necessary type. So in the example above, the string is converted to an integer and then the values are checked.
+
+<h1>The Identity Operator</h1>
+
+Unlike the equality operator, the identity operator checks values before they have been converted to the same type. This is very useful in a large app where data could be in many different types and we want to ensure that we only perform certain tasks when they are the exact same. Below are examples of using the identity operator
+
+<code><js>
+if(2 === "2") {
+    //false
+}
+
+if(2 === 2) {
+    //true
+}
+<code>
+
+A good example of using one over the other is when checking if a variables has a value. You might check that it is not null and undefined like so
+
+<code><js>
+if(variable !== null && variable !== undefined) {
+    //variables has a value
+}
+<code>
+
+With the equality operator we can simply check that the value is not null. Since the equality operator check after a type conversion, it will be the same as checking for both null and undefined
+
+<code><js>
+if(variable != null) { //notice != instead of !==
+    //variables has a value
+}
+<code>

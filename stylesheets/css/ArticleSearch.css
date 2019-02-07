@@ -11,8 +11,8 @@
 }
 
 .articleSearch_title {
-  color: white;
   font-family: "Zilla Slab";
+  color: #e6ebff;
 }
 
 .articleSearch_title--loader {
@@ -84,7 +84,7 @@
   border: none;
   border-radius: 2px;
   background: #00A6ED;
-  color: white;
+  color: #e6ebff;
   height: 30px;
   outline: none;
   padding-left: 10px;
@@ -104,26 +104,26 @@
 }
 
 .articleSearch_searchBar::-webkit-input-placeholder {
-  color: white;
+  color: #e6ebff;
 }
 
 .articleSearch_searchBar:-ms-input-placeholder {
-  color: white;
+  color: #e6ebff;
 }
 
 .articleSearch_searchBar::-ms-input-placeholder {
-  color: white;
+  color: #e6ebff;
 }
 
 .articleSearch_searchBar::placeholder {
-  color: white;
+  color: #e6ebff;
 }
 
 .articleSearch_select {
   background: #00A6ED;
   border: none;
   border-radius: 2px;
-  color: white;
+  color: #e6ebff;
   height: 30px;
   margin-right: 10px;
   outline: none;
@@ -162,7 +162,7 @@
 .articleSearch_checkbox {
   font-size: 0.75rem;
   background: #00A6ED;
-  color: white;
+  color: #e6ebff;
   margin-right: 10px;
   margin-bottom: 5px;
   padding: 5px;

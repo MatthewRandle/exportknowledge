@@ -1,3 +1,3 @@
-var i = 2;
-
-console.log(i + 1);
+exports.helper = function () {
+    console.log("HI")
+}

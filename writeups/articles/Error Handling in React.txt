@@ -1,0 +1,99 @@
+When writing apps in React error are bound to occur and we may never be able to help this, but we can stop our app from breaking due to these errors and display a nice error page.
+
+<h1>Error Boundary</h1>
+
+Error boundaries are what we use to wrap our React components, they will wait for an error to occur and display an error screen. To get started let's create a file called 'ErrorBoundary' and setup the default React boilerplate
+
+<code><jsx><filename>ErrorBoundary.js
+import React, { Component } from "react";
+
+class ErrorBoundary extends Component {
+    render() {
+        return(
+            
+        )
+    }
+}
+<code>
+
+We want our ErrorBoundary component to have some state that will be changed when it receives an error. We will call this state 'hasError' and give it a default value of false
+
+<code><jsx><filename>ErrorBoundary.js
+import React, { Component } from "react";
+
+class ErrorBoundary extends Component {
+    constructor() {
+        super();
+        this.state = { hasError: false };
+    }
+
+    render() {
+        return(
+            
+        )
+    }
+}
+<code>
+
+Now, we want our hasError state to change to true when we catch an error, but how do we get a component to catch an error? We can use what is called a lifecycle method - specifically the componentDidCatch method. Inside this method we will change the hasError state to true
+
+<code><jsx><filename>ErrorBoundary.js
+import React, { Component } from "react";
+
+class ErrorBoundary extends Component {
+    constructor() {
+        super();
+        this.state = { hasError: false };
+    }
+
+    componentDidCatch(error) {
+        //do something with the error if you want
+        this.setState({ hasError: true });
+    }
+
+    render() {
+        return(
+            
+        )
+    }
+}
+<code>
+
+Now our ErrorBoundary component will catch any errors that occur in its children. To tie things up we simply need to check the value of hasError in the render function and display an error if true, or just display the children if false. If you don't know what I mean by children, hold on and we'll get to it. So, let's change the render function
+
+<code><jsx><filename>ErrorBoundary.js
+import React, { Component } from "react";
+
+class ErrorBoundary extends Component {
+    constructor() {
+        super();
+        this.state = { hasError: false };
+    }
+
+    componentDidCatch(error) {
+        //do something with the error if you want
+        this.setState({ hasError: true });
+    }
+
+    render() {
+        if (this.state.hasError) {
+            return (
+                <h1>Some Error Message Here!</h1>
+            );
+        }
+
+        return this.props.children;
+    }
+}
+<code>
+
+Now whenever we use a component, we will wrap that component inside of this ErrorBoundary
+
+<code><jsx><filename>someFile.js
+<ErrorBoundary>
+    <SomeComponent />
+</ErrorBoundary>
+<code>
+
+If you were confused earlier why the use of the word 'child', here the child is simply the SomeComponent, so if an error doesn't occur in the ErrorBoundary we simply move onto the children - so display the SomeComponent component.
+
