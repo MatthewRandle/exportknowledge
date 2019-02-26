@@ -8,11 +8,11 @@ export default class Footer extends Component {
         return(
             <div className="footer_container">
                 <div className="footer">
-                    <div style={{ display: "flex", alignItems: "center", width: "100%" }} >  
+                    <div style={{ display: "flex", alignItems: "center", width: "100%" }} className="footer_logoAndText">  
                         <img src="/static/Logo.svg" className="footer_logo_image" alt="export Knowledge logo"/>  
                         
-                        <div style={{ width: "100%" }}>
-                            <p className="footer_logo">export Knowledge;</p>
+                        <div className="footer_text">
+                            <p className="footer_title">export Knowledge;</p>
 
                             <div className="footer_links">
                                 <Link href="/terms-and-conditions"><a>Terms & Conditions</a></Link>
@@ -22,7 +22,7 @@ export default class Footer extends Component {
                         </div>
                     </div>
 
-                    <div>
+                    <div className="footer_social_links_container">
                         <div className="footer_social_links">
                             <a href="https://github.com/exportknowledge" target="_blank" rel="noopener noreferrer">
                                 <img src="/static/github-logo.png" alt="Follow us on Github" className="footer_github" />

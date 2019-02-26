@@ -25,6 +25,10 @@
 .article_image,
 .article_title_container {
     border: 4px solid $gold;
+
+    @include tablet-down() {
+        border: 3px solid $gold;
+    }
 }
 
 .article_jumbotron {
@@ -43,7 +47,7 @@
 }
 
 .article_content {
-    @extend %articleContainer;
+    //@extend %articleContainer;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,8 +61,8 @@
     background-color: $OneDarkBG;
 
     @include tablet-down() {
-        width: 95vw;
-        height: 53.4375vw; //keeps aspect ratio    95 / (16/9) = 53.4375
+        width: 85vw;
+        height: 47.8125vw; //keeps aspect ratio    95 / (16/9) = 53.4375
     }
 }
 
@@ -68,6 +72,10 @@
     margin-top: auto;
     border-bottom: none;
     transform: translateY(4px); //move title down to cover article_contents border
+
+    @include tablet-down() {
+        transform: translateY(3px);
+    }
 }
 
 .article_title {
@@ -146,7 +154,6 @@
 }
 
 .article_commentSection {
-    margin-top: 30px;
     width: 100%;
     display: flex; 
     justify-content: center; 

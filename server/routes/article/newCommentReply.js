@@ -23,7 +23,7 @@ module.exports = app => {
         if (typeof req.body.commentID == null ||
             typeof req.body.comment == null ||
             typeof req.user == null) {
-            res.status(400).send({ error });
+            res.sendStatus(400);
             return;
         }
 
@@ -99,7 +99,7 @@ module.exports = app => {
                             }
 
                             connection.release();
-                            res.status(401).send({ error });
+                            res.sendStatus(401);
                         })
                     }
                 })

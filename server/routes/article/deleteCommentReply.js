@@ -20,7 +20,7 @@ const checkAdmin = "SELECT authority FROM users WHERE oauthID = ?;";
 module.exports = app => {
     app.post("/api/delete-articles-comment-reply", bodyCheck, (req, res, next) => {
         if (typeof req.body.replyID == null || typeof req.user == null) {
-            res.status(400).send({ error })
+            res.sendStatus(400);
             return;
         }
 
@@ -64,7 +64,7 @@ module.exports = app => {
                         //if no admin exists
                         if (results[0].authority === 0) {
                             connection.release();
-                            res.status(401).send({ error });
+                            res.sendStatus(401);
                             return;
                         }
                         else {

@@ -99,8 +99,15 @@ const Comment = (props) => {
 
                 <div className="comment_content">
                     <div className="comment_topBar">
-                        <p className="comment_author">{props.username}</p>
-                        <p className="comment_timestamp">{ta.ago(new Date(props.timestamp))}</p>
+                        <div style={{ display: "flex", alignItems: "center" }}>
+                            <img className="comment_profile_picture--tablet" src={props.profile_picture} />
+                            <p className="comment_author">{props.username}</p>
+                        </div>
+
+                        <div style={{ display: "flex", alignItems: "center" }}>
+                            <p className="comment_timestamp">{ta.ago(new Date(props.timestamp))}</p>
+                            {props.isOwner || props.isAdmin ? <CommentSettings className="commentSettings_container--tablet" commentID={props.commentID} articleID={props.articleID} partID={props.partID} /> : null} 
+                        </div>
                     </div>
 
                     <p className="comment">{props.comment}</p>                        

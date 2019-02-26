@@ -75,6 +75,10 @@
     &:hover {
         cursor: pointer;
     }
+
+    @include tablet-down() {
+        width: 75px;
+    }
 }
 
 .navbar_link p {    
@@ -86,10 +90,6 @@
     align-items: center;
     justify-content: center;   
     font-weight: bold; 
-
-    @include tablet-down() {
-        width: 75px;
-    }
 }
 
 

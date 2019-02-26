@@ -84,7 +84,7 @@ class CommentSettings extends Component {
 
     render() {
         return (
-            <div className="commentSettings_container" ref={this.setWrapperRef}>
+            <div className={this.props.className == null ? "commentSettings_container" : this.props.className} ref={this.setWrapperRef}>
                 <img src="/static/ellipsis.svg" className="commentSettings_icon" onClick={this.toggleMenu.bind(this)} />
                 {this.renderMenu()}
             </div>

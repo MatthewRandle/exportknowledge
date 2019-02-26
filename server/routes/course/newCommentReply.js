@@ -99,7 +99,7 @@ module.exports = app => {
                             }
 
                             connection.release();
-                            res.status(401).send({ error });
+                            res.sendStatus(401);
                         })
                     }
                 })

@@ -13,22 +13,32 @@ const CourseLoader = (props) => {
     return (
         <div className="course_container pushFooter">
             <div className="course">
-                <div className="course_preface">
-                    <Loader
-                        className="course_video"
-                        style={{ border: "0" }}
-                    />
+                <div className="course_info">
+                    <Loader className="course_video" />
 
                     <div className="course_text">
-                        <div>
-                            <Loader className="course_title--loading" />
-                            <Loader className="course_description--loading" />
-                        </div>
+                        <Loader className="course_title--loader"/>
+                        <Loader className="course_description--loader"/>
                     </div>
                 </div>
 
+                <div className="course_preface">
+                    <Loader className="course_preface_h1_whoFor--loader"/>
+                    <Loader className="course_preface_p--loader"/>
+
+                    <Loader className="course_preface_h1_whatLearn--loader"/>
+                    <Loader className="course_preface_p--loader"/>
+
+                    <Loader className="course_preface_h1_prerequisites--loader"/>
+                    <Loader className="course_preface_p--loader" />
+                </div>
+
                 <div className="course_parts">
-                    <Loader className="coursePanel_container" />
+                    <Loader className="coursePartPanel_container--loader" />
+                    <Loader className="coursePartPanel_container--loader" />
+                    <Loader className="coursePartPanel_container--loader" />
+                    <Loader className="coursePartPanel_container--loader" />
+                    <Loader className="coursePartPanel_container--loader" />
                 </div>
             </div>
         </div>

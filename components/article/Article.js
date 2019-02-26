@@ -60,9 +60,7 @@ const Article = (props) => {
             {/* Only render comments section when we have article */}
             {props.id ?
                 <div className="article_commentSection">
-                    <div className="container" >
-                        <CommentSection articleID={props.id} courseID={null} />
-                    </div>
+                    <CommentSection articleID={props.id} courseID={null} />
                 </div>
                 : null
             }

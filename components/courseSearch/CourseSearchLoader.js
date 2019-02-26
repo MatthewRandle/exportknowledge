@@ -9,45 +9,39 @@ const Loader = (props) => {
     );
 }
 
-const CoursePanelLoader = (props) => {
-    return(
-        <div className="coursePanel_container">
-            <Loader className="coursePanel_base" />
-            <Loader className="coursePanel_bottomBar" style={{ background: "none", padding: 0 }} />
+const CourseSearchLoader = () => {
+    return (
+        <div className="courseSearch_container pushFooter">
+            <div className="courseSearch">
+                <div className="courseSearch_courses">
+                    <CourseLoader />
+                    <CourseLoader />
+                    <CourseLoader />
+                </div>
+            </div>
         </div>
     )
 }
 
-const CourseSearchLoader = (props) => {
-    return (
-        <div className="courseSearch_container pushFooter">
-            <div className="courseSearch">
-                <div className="courseSearch_section">
-                    <Loader className="courseSearch_sectionTitle" />
-                    <div className="courseSearch_courses">
-                        <CoursePanelLoader />
-                        <CoursePanelLoader />
-                        <CoursePanelLoader />
-                    </div>
-                </div>
+const CourseLoader = () => {
+    return(
+        <div className="courseSearch_course">
+            <div className="courseSearch_video_and_title">
+                <Loader className="courseSearch_video" />
+                <Loader className="courseSearch_title--loader" />
+            </div>
 
-                <div className="courseSearch_section">
-                    <Loader className="courseSearch_sectionTitle" />
-                    <div className="courseSearch_courses">
-                        <CoursePanelLoader />
-                        <CoursePanelLoader />
-                        <CoursePanelLoader />
-                    </div>
-                </div>
+            <div className="courseSearch_details">
+                <Loader className="courseSearch_header--loader" />
+                <Loader className="courseSearch_text--loader" />
 
-                <div className="courseSearch_section">
-                    <Loader className="courseSearch_sectionTitle" />
-                    <div className="courseSearch_courses">
-                        <CoursePanelLoader />
-                        <CoursePanelLoader />
-                        <CoursePanelLoader />
-                    </div>
-                </div>
+                <Loader className="courseSearch_header--loader" />
+                <Loader className="courseSearch_text--loader" />
+
+                <Loader className="courseSearch_header--loader" />
+                <Loader className="courseSearch_text--loader" />
+
+                <Loader className="courseSearch_button--loader" />
             </div>
         </div>
     )

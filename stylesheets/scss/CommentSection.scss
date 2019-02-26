@@ -1,12 +1,16 @@
 @import "_variables";
 
 .commentSection_container {
-    margin-top: 75px;
+    margin-top: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 850px;
     @extend %containerPadding;
+
+    @include desktop-down() {
+        width: 745px;
+    }
 
     @include tablet-down() {
         width: 100%;
@@ -67,9 +71,9 @@
     cursor: pointer;
     outline: none;
     border-top: none;
-    background: $lightBlue;
-    @include backgroundTransition($gold, 150ms, "up");
-    @include textTransition(p, white, $darkBlue, 300ms, "up");
+    background: $gold;
+    @include backgroundTransition($lightBlue, 150ms, "up");
+    @include textTransition(p, $darkBlue, white, 300ms, "up");
 
     &:hover {        
         background-position: 100%;
@@ -117,11 +121,30 @@
     padding-top: 30px;
     position: relative;
     background-color: $darkBlue;
+
+    @include tablet-down() {
+        padding: 15px;
+    }
 }
 
 .comment_profile_picture {
     width: 100px;
     border: 1px solid $gold;
+
+    @include tablet-down() {
+        display: none;
+    }
+}
+
+.comment_profile_picture--tablet {
+    display: none;
+
+    @include tablet-down() {
+        display: inline;
+        width: 25px;
+        border: 1px solid $gold;
+        margin-right: 10px;
+    }
 }
 
 
@@ -132,6 +155,11 @@
     margin-left: 15px;
     width: 100%;
     min-height: 100px;
+
+    @include tablet-down() {
+        min-height: 75px;
+        margin-left: 0;
+    }
 }
 
 .comment_topBar {
@@ -143,7 +171,7 @@
 
 .comment_timestamp {
     font-size: 0.6rem;
-    color: $textColor;
+    color: $textColor;    
 }
 
 .comment_author {
@@ -160,6 +188,11 @@
     color: $textColor;
     padding-top: 10px;
     line-height: 1.3em;
+
+    @include tablet-down() {
+        margin-top: 5px;
+        font-size: 0.9rem;
+    }
 }
 
 .comment_replyButton {
@@ -179,6 +212,13 @@
     &:hover {
         cursor: pointer;
     }
+
+    @include tablet-down() {
+        margin-top: 10px;
+        width: 75px;
+        padding: 3px;
+        font-size: 0.7rem;
+    }
 }
 
 
@@ -189,6 +229,10 @@
     flex-direction: column;
     margin-left: auto;
     width: 85%;
+
+    @include tablet-down() {
+        width: 90%;
+    }
 }
 
 .comment_newReply {
@@ -200,6 +244,19 @@
     position: absolute;
     top: 5px;
     right: 20px;
+
+    @include tablet-down() {
+        display: none;
+    }
+}
+
+.commentSettings_container--tablet {
+    display: none;
+
+    @include tablet-down() {
+        display: inline;
+        margin-left: 10px;
+    }
 }
 
 .commentSettings {

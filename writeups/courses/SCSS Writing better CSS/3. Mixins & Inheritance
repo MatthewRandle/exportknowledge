@@ -6,14 +6,23 @@ Mixins are a very useful part of scss, they allow you to define re-usable styles
 }
 <code>
 
-Where 'name' can be given any value. Imagine that we are creating a site that uses the exact same button styles for every button across all its pages. Without scss we would probably define the styles of this button...
+Where 'name' can be given any value. Imagine that we are creating a site that uses the exact same button styles for every button across all its pages, but each button can build upon this base style. Without scss we would probably define the styles of this button...
 
-<code><css>
+<code><scss>
 button {
     background: blue;
     border: 2px solid white;
     color: white;
     padding: 10px;
+}
+
+.anotherButton {
+    background: blue;
+    border: 2px solid white;
+    color: white;
+    padding: 10px;
+
+    box-shadow: 10px 10px 5px 0px red; //this button has default styling and a shadow
 }
 <code>
 
@@ -45,7 +54,7 @@ And then @include the mixin on our button class
 @import "_variables";
 
 button {
-    @import reusableButton;
+    @include reusableButton;
 }
 <code>
 
@@ -83,14 +92,7 @@ We can give a mixin some variable arguments to make our mixin customizable when 
 
 <code><scss>
 @mixin reusableButton ($variable) {
-    background: blue;
-    border: 2px solid white;
-    color: white;
-    padding: 10px;
 
-    p {
-        color: purple;
-    }
 }
 <code>
 
@@ -108,7 +110,7 @@ We would use this like so
 @import "_variables";
 
 button {
-    @import reusableButton(blue);
+    @include reusableButton(blue);
 }
 <code>
 
@@ -129,22 +131,7 @@ Finally, lets pretend that our site also has lists everywhere. We want each list
 
 <code><scss>
 @mixin reusableList {
-    p {
-        color: red;
-        background: blue;
-    }
-
-    h1 {
-        color: red;
-        background: blue;
-    }
-
-    h2 {
-        color: red;
-        background: blue;
-    }
-
-    h3 {
+    p, h1, h2, h3 {
         color: red;
         background: blue;
     }
@@ -175,8 +162,8 @@ Now everytime we style a list we would import the mixin and then pass in whateve
 <code><scss>
 @import "_variables";
 
-button {
-    @import reusableList(p);
+.someList {
+    @include reusableList(p);
 }
 <code>
 

@@ -43,7 +43,7 @@ module.exports = app => {
     app.post("/api/get-articles-comments",  bodyCheck,(req, res, next) => {
 
         if (typeof req.body.articleID == null) {
-            res.status(400).send({ error })
+            res.sendStatus(400);
             return;
         }
 

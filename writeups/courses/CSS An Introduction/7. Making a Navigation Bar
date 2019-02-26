@@ -1,4 +1,4 @@
-In this part we are going to put all the things we have learned throughout the last 6 parts and make a navigation bar.
+In this last part we are going to put all the things we have learned throughout the last 6 parts and make a navigation bar.
 
 <br>
 <br>
@@ -139,7 +139,7 @@ If you view this change you will notice that the navbar get squished horizontall
 }
 <code>
 
-And thats it for our navbar. In the next part we will put some content to the site and make it look appealing. Thanks for reading!
+And thats it for this introductory look at css. There are a lot more things that can be done with css, but now you know the basics and how to use it, learning new stuff will be natural and easy. Thanks for reading!
 
 <br>
 <br>

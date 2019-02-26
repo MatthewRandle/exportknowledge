@@ -141,6 +141,12 @@
   cursor: pointer;
 }
 
+@media only screen and (max-width: 768px) {
+  .navbar_link {
+    width: 75px;
+  }
+}
+
 .navbar_link p {
   color: white;
   font-family: "Zilla Slab";
@@ -156,12 +162,6 @@
       -ms-flex-pack: center;
           justify-content: center;
   font-weight: bold;
-}
-
-@media only screen and (max-width: 768px) {
-  .navbar_link p {
-    width: 75px;
-  }
 }
 
 .accountSection_container {

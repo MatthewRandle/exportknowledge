@@ -12,7 +12,7 @@ module.exports = app => {
     //need one for admin because we want all prerequisites wether they exist or not
     app.post("/api/admin/get-articles-prerequisites", bodyCheck, (req, res, next) => {
         if (req.body.id == null) {
-            res.send({ error });
+            res.send({ error: "No ID" });
             return;
         }
 

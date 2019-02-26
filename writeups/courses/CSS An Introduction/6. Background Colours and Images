@@ -10,7 +10,9 @@ Firstly we will clear everything from the body and head of our html to return ou
 <code><html>
 <!DOCTYPE html>
 <html>
-    <head></head>
+    <head>
+        <link rel="stylesheet" href="Index.css">
+    </head>
 
     <body>
     
@@ -23,7 +25,9 @@ We are going to be using an element we haven't looked at yet - a div. A div is a
 <code><html>
 <!DOCTYPE html>
 <html>
-    <head></head>
+    <head>
+        <link rel="stylesheet" href="Index.css">
+    </head>
 
     <body>
         <div>
@@ -116,10 +120,10 @@ And now our circle is directly in the center of our div as we wanted. There is a
 Now lets give this div a background color so the image stands out. We do this using the background-color property. The value this takes can be a simple word such as blue, a hexadecimal code such as #282c34 or a RBG value formatted like this
 
 <code><pre><css>
-    background-color: rgb(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 1);
 <code>
 
-Where the first 3 values are a range from 0-255 and the last one being the opacity of the color (how much of the color shows) from 0 (0%) to 1 (100%). Lets give our background a color of #282c34
+Where the first 3 values are a range from 0-255 and the last one being the opacity of the color (how much of the color shows) from 0 (0%) to 1 (100%). Lets give our background a hexadecimal color of #282c34
 
 <code><css>
 div {

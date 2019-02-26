@@ -1,9 +1,9 @@
-When we've have been giving elements styles such as padding and margin, we have been setting them to a value of px (pixel). A px is a unit that we give to certain properties to set the value. There are many more units that we use and understanding them is important.
+When we've been giving elements styles such as padding and margin, we have been setting them to a value of px (pixel). A px is a unit that we give to certain properties to set the value. There are many more units that we use and understanding them is important.
 
 <br>
 <br>
 
-To showcase how the different units affect elements we will add a button to our html, right at the top above our h1
+To showcase how the different units affect elements we will add a button to our html at the top, above our h1
 
 <code><html>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ To showcase how the different units affect elements we will add a button to our 
         <button>Im a button!</button>
 
         <h1 class="title">A website dedicated to dogs</h1>
-        <h1 class="small_header>Second h1</h1>
+        <h1 class="small_header">Second h1</h1>
 
         <p>A mans best friend!</p>
 

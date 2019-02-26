@@ -111,24 +111,14 @@ export class ArticleSearchContainer extends Component {
     }
 
     render() {
-        if(this.props.article) {
-            if(this.props.article.tags && this.props.article.all) {
-                return(
-                    <ArticleSearch
-                        articles={this.getArticles()}
-                        handleSearch={this.handleSearch}
-                        searchQuery={this.state.searchQuery}
-                        tags={this.getTags()}
-                        handleFilterChange={this.handleFilterChange}
-                    />
-                );
-            }
-        }
-
         return(
-            <ArticleSearchLoader 
-            
-            />               
+            <ArticleSearch
+                articles={this.getArticles()}
+                handleSearch={this.handleSearch}
+                searchQuery={this.state.searchQuery}
+                tags={this.getTags()}
+                handleFilterChange={this.handleFilterChange}
+            />
         );
     }
 }

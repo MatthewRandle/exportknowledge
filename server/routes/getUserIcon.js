@@ -11,7 +11,7 @@ const getUserIcon = `
 module.exports = app => {
     app.post("/api/get-user-icon", bodyCheck, (req, res, next) => {
         if (req.body.user == null || false) {
-            res.send({ error });
+            res.sendStatus(401);
             return;
         }
 

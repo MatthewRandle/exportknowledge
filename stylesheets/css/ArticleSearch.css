@@ -13,6 +13,7 @@
 .articleSearch_title {
   font-family: "Zilla Slab";
   color: #e6ebff;
+  text-shadow: 2px 2px 0px #181e34;
 }
 
 .articleSearch_title--loader {
@@ -89,6 +90,8 @@
   outline: none;
   padding-left: 10px;
   width: 250px;
+  -webkit-box-shadow: 5px 5px 0px 0px rgba(24, 30, 52, 0.4);
+          box-shadow: 5px 5px 0px 0px rgba(24, 30, 52, 0.4);
 }
 
 @media only screen and (max-width: 768px) {
@@ -129,6 +132,8 @@
   outline: none;
   padding-left: 10px;
   width: 100px;
+  -webkit-box-shadow: 5px 5px 0px 0px rgba(24, 30, 52, 0.4);
+          box-shadow: 5px 5px 0px 0px rgba(24, 30, 52, 0.4);
 }
 
 @media only screen and (max-width: 768px) {
@@ -164,7 +169,7 @@
   background: #00A6ED;
   color: #e6ebff;
   margin-right: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   padding: 5px;
   padding-left: 10px;
   padding-right: 15px;
@@ -176,6 +181,8 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-box-shadow: 5px 5px 0px 0px rgba(24, 30, 52, 0.4);
+          box-shadow: 5px 5px 0px 0px rgba(24, 30, 52, 0.4);
 }
 
 .articleSearch_checkbox:hover {
@@ -189,13 +196,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.articleSearch_checkbox--loader {
-  width: 80px;
-  height: 30px;
-  margin-right: 10px;
-  margin-bottom: 5px;
 }
 
 .articleSearch_checkbox p {

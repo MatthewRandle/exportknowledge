@@ -95,8 +95,8 @@
     border: 2px solid $gold;
 
     @include desktop-down() {
-        width: 60vw;
-        height: 33.75vw;
+        width: 55vw;
+        height: 30.9375vw;
     }
 
     @include tablet-down() {
@@ -161,7 +161,7 @@
 
     @include desktop-down() {
         font-size: 1rem;
-        width: 90%;
+        width: 80%;
     }
 
     @include tablet-down() {
@@ -171,4 +171,45 @@
     @include phone-down() {
         width: 100%;
     }
+}
+
+
+
+
+//Loaders
+
+.courseSearch_title--loader {
+    height: 40px;
+    margin-top: 10px;
+
+    @include desktop-down() {
+        height: 50px;
+        width: 60%;
+        margin-top: 20px;
+    }
+}
+
+.courseSearch_header--loader {
+    height: 20px;
+    margin-bottom: 10px;
+
+    @include desktop-down() {
+        height: 30px;
+        width: 40%;
+    }
+}
+
+.courseSearch_text--loader {
+    height: 50px;
+    margin-bottom: 20px;
+    width: 75%;
+
+    @include desktop-down() {
+        width: 65%;
+    }
+}
+
+.courseSearch_button--loader {
+    width: 270px;
+    height: 53px;
 }

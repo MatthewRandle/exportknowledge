@@ -25,7 +25,7 @@ Let's create a variable called mainColor and give it a value of blue
 $mainColor: blue;
 <code>
 
-We will then pretend we have a h1 and a paragraph to style. We will the h1 a color, and the paragraph a border with the same color. Using variables makes this very simple
+We will then pretend we have a h1 and a paragraph to style. We will give the h1 a color, and the paragraph a border with the same color. Using variables makes this very simple
 
 <code><scss>
 $mainColor: blue;

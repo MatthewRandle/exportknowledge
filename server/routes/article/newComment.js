@@ -20,11 +20,11 @@ const getUserID = `
 
 module.exports = app => {
     app.post("/api/new-article-comment", bodyCheck, (req, res, next) => {
-        if (typeof req.body.articleID == null || 
-            typeof req.body.comment == null || 
-            typeof req.user == null) 
+        if (req.body.articleID == null || 
+            req.body.comment == null || 
+            req.user == null) 
         {
-            res.status(400).send({ error });
+            res.sendStatus(400);
             return;
         }
 
@@ -101,7 +101,7 @@ module.exports = app => {
                             }
 
                             connection.release();
-                            res.status(401).send({ error });
+                            res.sendStatus(401);
                         })
                     }                    
                 })

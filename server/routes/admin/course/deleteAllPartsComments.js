@@ -21,7 +21,7 @@ const deleteAllComments = `
 module.exports = app => {
     app.post("/api/admin/delete-all-courses-parts-comments", bodyCheck, adminCheck, (req, res, next) => {
         if (req.body.partID == null || req.user == null) {
-            res.status(400).send({ error })
+            res.sendStatus(400);
             return;
         }
 

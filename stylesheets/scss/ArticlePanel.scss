@@ -63,6 +63,7 @@
 
     @include tablet-down() {
         font-size: 3vw;
+        margin-bottom: 5px;
     }
 
     @include phone-down() {

@@ -9,7 +9,8 @@
 
 .coursePart {
     @extend %container;
-    border-bottom: 2px solid $darkGrey;
+    border-bottom: 1px solid white;
+    border-style: dashed;
 }
 
 .coursePart_preface {
@@ -24,23 +25,27 @@
         flex-direction: column;
         align-items: center;
     }
+
+    @include tablet-down() {
+        margin-bottom: 0;
+    }
 }
 
 .coursePart_video {
-    width: 640px;
-    height: 360px;
+    width: 45vw;
+    height: 25.3125vw;
     background: $darkBlue;
     border: 2px solid $gold;
     box-shadow: 7px 7px 0px 0px rgba($darkBlue, 0.4);
 
     @include desktop-down() {
-        width: 75vw;
-        height: 42.1875vw;
+        width: 57vw;
+        height: 32.0625vw;
     }
 
     @include tablet-down() {
-        width: 93vw;
-        height: 52.3125vw;
+        width: 85vw;
+        height: 47.8125vw;
     }
 }
 
@@ -76,7 +81,7 @@
     }
 
     @include tablet-down() {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         text-align: center;
     }
 
@@ -96,6 +101,7 @@
 
     @include desktop-down() {
         width: auto;
+        text-align: center;
     }
 
     @include tablet-down() {
@@ -144,6 +150,10 @@
 .coursePart_description--loading {
     margin-top: 10px;
     width: 100%;
+
+    @include desktop-down() {
+        height: 75px;
+    }
 }
 
 .coursePart_text--loading {
@@ -151,4 +161,5 @@
     line-height: 1.5em;
     font-family: "Open Sans";
     height: 1200px;
+    margin-bottom: 20px;
 }

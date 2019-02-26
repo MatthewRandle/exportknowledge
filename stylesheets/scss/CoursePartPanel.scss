@@ -71,6 +71,8 @@
     align-items: center;
     margin-left: 30px;
     transform: translateY(-1px);
+    white-space: nowrap;
+    overflow: hidden;
 
     @include desktop-down()  {
         font-size: 2.5vw;
@@ -83,11 +85,41 @@
     }
 
     @include phone-down() {
-        font-size: 3vw;
+        font-size: 5vw;
         margin-left: 10px;
     }
 }
 
 .coursePartPanel_open {
     padding: 10px;
+
+    @include tablet-down() {
+        padding-right: 0;
+    }
+}
+
+.coursePartPanel_open p {
+    @include desktop-down() {
+        font-size: 3vw;
+    }
+
+    @include tablet-down() {
+        font-size: 5vw;
+    }
+}
+
+.coursePartPanel_container--loader {
+    width: 61vw;
+    height: 4vw;
+    margin-bottom: 15px;
+
+    @include desktop-down() {
+        width: 90%;
+        height: 6vw;
+    }
+
+    @include tablet-down() {
+        width: 100%;
+        height: 8vw;
+    }
 }

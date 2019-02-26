@@ -21,7 +21,7 @@ module.exports = app => {
 
         pool.getConnection((err, connection) => {
             if (err) {
-                res.status(500);
+                res.sendStatus(500);
                 return;
             }
 
@@ -48,7 +48,7 @@ module.exports = app => {
                 }
                 else {
                     connection.release();
-                    res.status(401);
+                    res.sendStatus(401);
                 }
             })
         })     
