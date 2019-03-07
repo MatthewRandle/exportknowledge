@@ -1,4 +1,4 @@
-Arrays are another way that we can store data, they are a variable that allows us to store multi-dimensional data. If we had for example a list of food that a shops has in stock we could store all of the items in one array. There are two different ways that we can create an array
+Arrays are another way that we can store data. They are variables that allow us to store multi-dimensional data. If we had for example a list of food that a shop has in stock, we could store all of the items in one array. There are two different ways that we can create an array
 
 <code><js>
 let firstArray = new Array();

@@ -70,7 +70,7 @@ console.log(values); //[ 'Brown', 'Blue', 196, 210 ]
 console.log(keys); //[ 'hairColor', 'eyeColor', 'Height', 'Weight' ]
 <code>
 
-We can give an object an new key with any value
+We can give an object a new key with any value like so
 
 <code><js>
 let human = { hairColor: "Brown", eyeColor: "Blue", Height: 196, Weight: 210 };
@@ -82,7 +82,7 @@ If we wanted to add a lot of new keys to an object this might get a bit tedious,
 
 <code><js>
 let human = { hairColor: "Brown", eyeColor: "Blue", Height: 196, Weight: 210 };
-Object.assign({ shoeSize: 12, age: 20 }, human);
+Object.assign( human, { shoeSize: 12, age: 20 });
 <code>
 
 And thats it for part 4, thanks for reading!

@@ -15,7 +15,7 @@ export const ArticlePanel = (props) => {
                     <div className="articlePanel_base">
                         <div className="articlePanel_content">
                             <p className="articlePanel_title">{props.title}</p>
-                            <p className="articlePanel_description">{props.description}</p>
+                            {/* <p className="articlePanel_description">{props.description}</p> */}
                         </div>
                     </div>
 

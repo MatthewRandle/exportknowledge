@@ -1,4 +1,4 @@
-Iterators are a way in which we can repeat code for a specified amount of time. The first type of iterator we use is called a for loop. A for loop looks like this
+Iterators are a way in which we can repeat code a specified amount of times. The first type of iterator we use is called a for loop. A for loop looks like this
 
 <code><js>
 for(let i = 0; i < amountOfLoops; i++) {

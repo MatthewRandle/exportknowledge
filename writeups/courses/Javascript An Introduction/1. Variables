@@ -1,5 +1,4 @@
-This course is meant to teach JavaScript as a programming language, we will not look at using it with web development. I would still strongly urge you to go through this course first, but if you are looking for JavaScript with web development then go through my course
- <a target="_blank" rel="noopener noreferrer" href="/course/javascript-for-the-web">JavaScript: For The Web</a>.
+In this course we will look at using vanilla JavaScript, we will not look at using it with web development. I would still strongly urge you to go through this course first and then learning how to use JavaScript for the web.
 <br>
 <br>
 
@@ -52,7 +51,7 @@ Create a file called variables.js so we can a look at how to use these data type
 let newVariable;
 <code>
 
-I end every one of my lines with a semi-colon, in JavaScript you don't have too, but if you've used other languages like me and are used to it go ahead, otherwise this works the exact same
+I end every one of my lines with a semi-colon. In JavaScript you don't have too, but I prefer it. Feel free to use what you prefer
 
 <code><js>
 let newVariable
@@ -60,7 +59,7 @@ let newVariable
 
 We haven't given this newVariable a value yet, so it gets a default value of undefined (which is important so remember this). We can prove this by doing what is called a console log. A console log is very helpful when developing as it allows us to 'print' values so we can see what they are at certain points in an application. We can print to the console by writing
 
-<code><js><pre> 
+<code><pre><js>
 console.log();
 <code>
 
@@ -72,7 +71,7 @@ let newVariable;
 console.log(newVariable);
 <code>
 
-Run this (Ctrl + Alt + N) and you will see a value of "undefined". To give a variable a value we simple follow the variables name by the equal sign, then follow that by the value we want to give it (string, int, float, boolean...). We will give our newVariable a string
+Run this (Ctrl + Alt + N) and you will see a value of "undefined". To give a variable a value we simply follow the variables name with the equal sign, then follow that by the value we want to give it (string, int, float, boolean...). We will give our newVariable a string
 
 <code><js>
 let newVariable = "I'm a string!";
@@ -80,7 +79,7 @@ let newVariable = "I'm a string!";
 console.log(newVariable);
 <code>
 
-If we run this we will see a value of "I'm a string!" in the console. Once we have declared a variable we can modify it further within our program. To change a variable we start with the variable name followed by an equal sign, followed by the new value we wish to give it
+If we run this we will see a value of "I'm a string!" in the console. Once we have declared a variable we can modify its value further within our code. To change a variable we start with the variable name followed by an equal sign, followed by the new value we wish to give it
 
 <code><js>
 let newVariable = "I'm a string!";
@@ -91,7 +90,7 @@ console.log(newVariable);
 
 So we can change the value a variable holds anywhere in an application. This can be very useful but what if you want a variable to always have the same value that can never be changed? Well, JavaScript allows us to use what are called constants. We can give a value to a constant, and it will always be that value. To declare a constant we to exactly what we did to declare a variable, but instead of they keyword 'let' we use 'const'
 
-<code><js><pre>
+<code><pre><js>
 const newVariable = "I'm a constant, I can never be changed!";
 <code>
 

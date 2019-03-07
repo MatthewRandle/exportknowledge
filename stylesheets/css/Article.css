@@ -147,7 +147,6 @@
 @media only screen and (max-width: 768px) {
   .article_title {
     font-size: 1.6rem;
-    text-shadow: 0.5px 0.5px 0.5px #3c3c3c;
   }
 }
 

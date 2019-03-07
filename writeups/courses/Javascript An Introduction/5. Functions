@@ -14,7 +14,7 @@ function name(value1, value2, ...) {
 }
 <code>
 
-Lets look at using a function in a real world example. Going back to our shopping list array we had in part 3, let imagine we had set up some way for a user to add some more items to the list. The user types in the item name and submits it and its our job to update the array with the new item. Functions are extremely helpful in situations like this as we can make one function that can handle any amount of new items being added.
+Lets look at using a function in a real world example. Going back to our shopping list array we had in part 3, lets imagine we had set up some way for a user to add some more items to the list. The user types in the item name and submits it, and its our job to update the array with the new item. Functions are extremely helpful in situations like this as we can make one function that can handle any amount of new items being added.
 
 <br>
 <br>
@@ -39,7 +39,7 @@ function addItem(newItem) {
 }
 <code>
 
-The code inside of the function now can be used as many times as we want. To actually use the function and run the code it hold we do what is called invoking. We invoke a function by writing the function name followed by parenthesis (and if the function we are calling has arguments, we pass the arguments we want to it). An important note about functions is that they the function doesn't have to come first in the code, we can have it at the very end. So lets pretend somewhere in our application a user submitted a value of 'Cake' and another a value of "Apples", we simply write addItem("Cake") and addItem("Apples")
+The code inside of the function now can be used as many times as we want. To actually use the function and run the code it holds we do what is called invoking. We invoke a function by writing the function name followed by parenthesis (and if the function we are calling has arguments, we pass the arguments we want to it). An important note about functions is that the function doesn't have to come first in the code, we can have it at the very end. So lets pretend somewhere in our application a user submitted a value of 'Cake' and another a value of "Apples", we simply write addItem("Cake") and addItem("Apples")
 
 <code><js>
 let shoppingList = ["Coke", "Bread", "Butter"];
@@ -57,7 +57,7 @@ We can create variables inside of a function just as we can anywhere else in our
 <br>
 <br>
 
-We can return values from a function using the return keyword
+Finally we can return values from a function using the return keyword
 
 <code><js>
 function squareNumber(number) {

@@ -1,0 +1,20 @@
+When creating responsive websites we use breakpoints in our css to create different layouts and styles on different screen sizes. There are a lot of different approaches that people take to this - the most common being mobile first design.
+
+<br>
+<br>
+
+Mobile first design consists of first designing your sites layout on the smallest resolution and making your way up the screen sizes. This has many benefits, the best one being that it allows you to fill in space when designing instead of having to remove it. What I mean by that is when designing for desktop screen sizes first you will make your elements fill up the page, but when you get down to smaller resolutions you have to removes some elements or totally reposition everything. 
+
+<br>
+<br>
+
+Whereas with mobile first design you create only what can fit and then when moving on to larger resolutions you have freedom to add new elements. This makes the UI feel a lot more natural as every element is placed with thought and not just squished in to fit the smaller screen.
+
+<h1>So which should you do?</h1>
+
+The answer to this question really depends on what you're creating. if you're creating an application that will most likely be used on mobile (such as an app like FaceBook) then obviously mobile first is the way to go as it will be your main focus. If you're creating a site that really doesn't have any uses on mobile then desktop first can work with a little bit of playing around with the UI on smaller resolutions.
+
+<br>
+<br>
+
+When creating this site I went with the desktop first approach as I thought most people will likely be using this type of site on a desktop where they will be able to code and follow along, but when creating it I ran into a few problems that were a little tricky to get just right - and maybe mobile first would have been better. I would recommend mobile first, but if you put enough planning into your screen layout and UI then either can work.

@@ -35,9 +35,8 @@ class ErrorBoundary extends Component {
         else if (this.props.error) {
             return (
                 <div className="error_container pushFooter">
-                    {/* {this.props.error.code} */}
-                    <h1>404</h1>
-                    <p className="error_message">{/* {this.props.error.customMessage || null} */}What you are looking for has either moved or never existed. Try going back and searching again.</p>                    
+                    {this.props.error.code}
+                    <p className="error_message">{this.props.error.customMessage || null}</p>                    
                 </div>
             );
         }

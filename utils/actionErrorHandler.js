@@ -1,10 +1,8 @@
 const ERROR = "ERROR";
 
 const errorHandler = (err) => dispatch => {
-    console.log(err)
-
     if (err.response != null) {
-        if (err.response.data != null && err.response.status != null) {
+        if (err.response.status != null) {
             if (err.response.status === 404) {
                 dispatch({ type: ERROR, payload: { code: 404, customMessage: "What you are looking for has either moved or never existed. Try going back and searching again." } });
                 return;

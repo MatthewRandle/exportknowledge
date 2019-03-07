@@ -1,0 +1,151 @@
+Error handling in React can be quite straight forward but once Redux is thrown into the mix things start to get a bit more tricky. When developing with Redux I use action creators that perform one simple task - such as get the comments for a page. One of these action creators may look like so
+
+<code><js>
+export const FETCH_COMMENTS = "FETCH_COMMENTS";
+
+export const fetchArticle = (url, req) => async dispatch => {      
+    const res = //get some comments from an API
+    dispatch({ type: FETCH_ARTICLE, payload: { /* Some comments */ }}); 
+};
+<code>
+
+To first safeguard our action creators we will wrap each on in a try catch statement
+
+<code><js>
+export const FETCH_COMMENTS = "FETCH_COMMENTS";
+
+export const fetchArticle = (url, req) => async dispatch => {      
+    try {        
+        const res = //get some comments from an API
+        dispatch({ type: FETCH_ARTICLE, payload: { /* Some comments */ }}); 
+    } 
+    catch(err) {
+        
+    }
+};
+<code>
+
+This prevents errors such as the API not being available and throwing an error back in the form of status codes (404, 401, 501...). Next we want the catch statement to do something with this error, but we want this logic to be universal and work throughout all of our action creators. The best way to do this is create a helper function that handles the different types of errors we receive. 
+
+<br>
+<br>
+
+We will create this helper function in a new file for later reuse 
+
+<code><js><filename>actionErrorHandling.js
+const ERROR = "ERROR";
+
+const errorHandler = (err) => dispatch => {
+    if (err.response != null) {
+        
+    }
+
+    dispatch({ type: ERROR, payload: { code: 520, customMessage: "Unknown error" } });
+    return;
+};
+
+export default errorHandler;
+<code>
+
+We will first check if the error actually has a response by checking its value against null. If this isn't the case we will send a default value (line 8) that has a code which will be the status code. By default I chose this value to be 520 which means "Unknown Error" as it seems fitting.
+
+<br>
+<br>
+
+Next, inside of the if statement we will do another check to make sure our error's response has a status
+
+<code><js><filename>actionErrorHandling.js
+const ERROR = "ERROR";
+
+const errorHandler = (err) => dispatch => {
+    if (err.response != null) {
+        if(err.response.status != null) {
+
+        }
+    }
+
+    dispatch({ type: ERROR, payload: { code: 520, customMessage: "Unknown error" } });
+    return;
+};
+
+export default errorHandler;
+<code>
+
+Now inside of here we can check all of the different status codes we want our app to produce custom errors for
+
+<code><js><filename>actionErrorHandling.js
+const ERROR = "ERROR";
+
+const errorHandler = (err) => dispatch => {
+    if (err.response != null) {
+        if(err.response.status != null) {
+            if (err.response.status === 404) {
+                dispatch({ type: ERROR, payload: { code: 404, customMessage: "What you are looking for has either moved or never existed. Try going back and searching again." };
+                return;
+            }
+            else if (err.response.status === 429) {
+                dispatch({ type: ERROR, payload: { code: 429, customMessage: "You have performed too many requests recently. Wait a few minutes and try again." } });
+                return;
+            }
+            //and so on
+        }
+    }
+
+    dispatch({ type: ERROR, payload: { code: 520, customMessage: "Unknown error" } });
+    return;
+};
+
+export default errorHandler;
+<code>
+
+We then use this function in all of our action creators, when we get an error
+
+<code><js>
+export const fetchArticle = (url, req) => async dispatch => {      
+    try {        
+        const res = //get some comments from an API
+        dispatch({ type: FETCH_ARTICLE, payload: { /* Some comments */ }}); 
+    } 
+    catch(err) {
+        errorHandler(err);
+    }
+};
+<code>
+
+This makes it so all of our error handling logic in one place, contained. We can add as many checks as we want to the errorHandler function and add more functionality such as checking an errors message and passing that instead - I chose not to do this because in an app I would want the message to be simple for the user, whereas an actual error message may be useful to log to the console for developing.
+
+<br>
+<br>
+
+We would then connect an error reducer up to our ErrorBoundary class that we looked at in
+ <a href="/article/error-handling-in-react">Error Handling in React</a> the way would would any other reducer in Redux (using connect and mapStateToProps). Then in our ErrorBoundary class we could check this state in the render function like so
+
+<code><js>
+class ErrorBoundary extends Component {
+    /* All the code to check for errors on a React level  */
+
+    render() {
+        if (this.state.hasError) {
+            return (
+                <div>
+                    <p>OOPS! Looks like something went wrong.</p>
+                    <p>Please try again.</p>
+                </div>
+            );
+        }
+        //THIS is what we would check for to do with redux (if you called your reducer 'error')
+        else if (this.props.error) {
+            return (
+                <div>
+                    <h1>{this.props.error.code}</h1>
+                    <p >{this.props.error.customMessage || null}</p>                    
+                </div>
+            );
+        }
+
+        return this.props.children;
+    }
+}
+<code>
+
+And thats it, we now have error handling setup for Redux and React. Thanks for reading!

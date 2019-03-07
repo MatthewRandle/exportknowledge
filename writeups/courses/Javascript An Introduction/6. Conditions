@@ -51,7 +51,7 @@ Test this out by changing the testScore value. Lets look at using booleans as a 
 let hasMoreThan40 = true;
 <code>
 
-When using booleans in the if statement we dont need to check if it is equal to true or false we can simply just put the boolean name
+When using booleans in the if statement we can simply just put the boolean name. This says 'if this boolean is true do this'
 
 <code><js>
 let hasMoreThan40 = true;
@@ -80,7 +80,7 @@ if(value1 == value2) {
 }
 <code>
 
-If checking between two values like above you have to be very careful this would still pass even though one is an integer and the other a string
+If checking between two values like above you have to be very careful as this would still pass even though one is an integer and the other a string
 
 <code><js>
 let value1 = 20;

@@ -1,4 +1,4 @@
-When writing apps in React error are bound to occur and we may never be able to help this, but we can stop our app from breaking due to these errors and display a nice error page.
+When writing apps in React errors are bound to occur and we may never be able to help this, but we can stop our app from breaking due to these errors and display a nice error page.
 
 <h1>Error Boundary</h1>
 
@@ -95,5 +95,5 @@ Now whenever we use a component, we will wrap that component inside of this Erro
 </ErrorBoundary>
 <code>
 
-If you were confused earlier why the use of the word 'child', here the child is simply the SomeComponent, so if an error doesn't occur in the ErrorBoundary we simply move onto the children - so display the SomeComponent component.
+If you were confused earlier by the use of the word 'child', here the child is simply the SomeComponent, so if an error doesn't occur in the ErrorBoundary we simply move onto the children - so display the SomeComponent component.
 

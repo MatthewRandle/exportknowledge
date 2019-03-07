@@ -1,0 +1,29 @@
+If you've used React before or are in the process of learning it, it's likely that you are using something like create-react-app (CRA) to quickly create a single page app (SPA) as they make it easy to just jump straight in and start coding. But one place CRA falls behind compared to other solutions is server side rendering.
+
+<h1>What is server side rendering?</h1>
+
+Server side rendering (SSR) is when a normally single page, client side app (SPA) is first rendered on the server before sending it off to the client. After this first render of the application is given to the client side, the client side then takes over control of the app and runs as if a normal SPA.
+
+<br>
+<br>
+
+You may be thinking whats the point of this if once the client receives the app it just runs as a normal SPA. You would be right in thinking that, but with one key benefit. That initial rendering of the app speeds up performance as an already loaded app is send off to the client. Imagine we had a website that loaded a list of the 100 newest films. A normal SPA would send the bundled JavaScript off to the client and then the client would see a loading state whilst the 100 films are gathered from an API. With a SSR app when the user first requests the page that displays the movies, the server will be responsible for collecting the data from the API first before sending the bundled JavaScript off to the client. So when the app loads for the very first time for the client they see the site with all the movies already loaded! Then from there on the app acts as if a normal SPA - with all the interactivity and benefits an SPA provides.
+
+<h1>SEO and SSR apps</h1>
+
+Search engine optimization is a very important thing we must take into account when creating websites. If a site we create has bad SEO we may not get any hits and our site will struggle to attract new users - be it coming from Google or Bing. When a search engine crawls our site to index it into their system they create a 'view' of our site that their crawlers use to look for information. 
+
+<br>
+<br>
+
+If we used something like CRA to create an SPA, when the crawlers search through our site they will find nothing. This is because that first view is all the crawlers see, they don't wait for the JavaScript to fetch some information from an API. Google is on track to making SPA's friendly to their crawlers but for the forseeable future your site will show with no content at all. This is where SSR apps come into play, they allow crawlers to access all the information on our site as the first view of our site is already loaded with data.
+
+<h1>When to make your React app an SSR app?</h1>
+
+If the app you are creating is locked behind a login (such as a forum) then you probably don't need to worry about the benefits of converting your app to an SSR app, but if you are creating something that you wish to be seen and gain traction and users then it is very important to make your app into an SSR app. There are many different solutions that exist out there but the most popular for React is
+ <a href="https://nextjs.org/" rel="noopener noreferrer">Next.js</a>, in fact this site you are reading right now was build using Next.js. Next.js is great and an easy transition if you are coming from something like CRA. There are of course other solutions that may be a better fit for you and your project. 
+
+<br>
+<br>
+
+Thanks for reading!

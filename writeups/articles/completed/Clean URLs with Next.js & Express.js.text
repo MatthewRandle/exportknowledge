@@ -1,0 +1,123 @@
+When developing a site we want to keep our URLs clean and readable. Not only for the users but for search engine optimization as well. Describing what your page does in the URL can lead to a better SEO score.
+
+<br>
+<br>
+
+Let's say in our pretend Next.js app we have a page called "article.js" that we want to load all of our articles through. We need this article page to be able to get some identifier so that it can then use it to fetch the article from the backend. The other alternative is having instead an "article" folder in our pages folder that holds lots of different articles in it - for example inside it we could have a "learning-html.js" file.
+
+<br>
+<br>
+
+Doing this would be very bad practice for a large application - We would need a new file for every article we create, which would not only take a lot more time but would mean we would just be copy pasting our logic repeatedly for every new article. So, we want to fetch our article from a database using the an id in the url. For the article "learning-html" we want the route to look like this
+
+<code><pre><js>
+"/article/learning-html"
+<code>
+
+But the way Next.js works with routes would cause our application to look for a folder named "article" then a file name "learning-html", but that doesn't exist. We need to tell Next.js that when we go to the url "/article/learning-html" to go to the article file and give it the "learning-html" for use as an id. We would then use this id to lookup our article in a database.
+
+<br>
+<br>
+
+In our express index file we need to set up route masking. Let's say our index.js file for our backend looks something like this
+
+<code><js><filename>index.js
+const express = require("express");
+const next = require("next");
+
+const app = next({ dev });
+
+app.prepare()
+    .then(() => {
+        const server = express();       
+
+        //our route masking will go here 
+    })
+    .catch((err) => {
+        console.log(err);
+    }); 
+<code>
+
+The route masking code is simply just a normal express route handler
+
+<code><js><filename>index.js (snippet)
+server.get('/article/:id', (req, res) => {
+    
+})
+<code>
+
+We give it a route of what we are expecting to get. So for every article I know I want to have "/article/" followed by the article name. Since this article name will be different for each article we write ":id" which basically creates a variable from our url (this can be called anything, e.g. :articleName). Inside of this route we want to first create a variable that states what the actual page we want to go to is called - so for our example "article"
+
+<code><js><filename>index.js (snippet)
+server.get('/article/:id', (req, res) => {
+    const actualPage = '/article';
+})
+<code>
+
+Then we want to grab the queryParams (our url variables) from the url
+
+<code><js><filename>index.js (snippet)
+server.get('/article/:id', (req, res) => {
+    const actualPage = '/article';
+    const queryParams = { url: req.params.url };
+})
+<code>
+
+And then finally send our route off to our actual page with our queryParams
+
+<code><js><filename>index.js (snippet)
+server.get('/article/:id', (req, res) => {
+    const actualPage = '/article';
+    const queryParams = { url: req.params.url };
+    app.render(req, res, actualPage, queryParams);
+})
+<code>
+
+Putting this in our index.js file we have this
+
+<code><js><filename>index.js
+const express = require("express");
+const next = require("next");
+
+const app = next({ dev });
+
+app.prepare()
+    .then(() => {
+        const server = express();       
+
+        server.get('/article/:id', (req, res) => {
+            const actualPage = '/article';
+            const queryParams = { url: req.params.url };
+            app.render(req, res, actualPage, queryParams);
+        })
+    })
+    .catch((err) => {
+        console.log(err);
+    }); 
+<code>
+
+Now in our article page, we will use the getInitialProps that Next.js provides to access these queryParams.
+
+<code><js><filename>article.js
+import React from "react";
+
+import Article from "./components/article"; //This is our React component for our article
+
+const ArticlePage = () => {
+    return( 
+        <Article />
+    );
+}
+
+ArticlePage.getInitialProps = async function ({ query }) {
+    let articleUrl = query.url; //or whatever your route param is called (:id, :articleName...)
+
+    //use this articleUrl to fetch the article from the database however you see fit
+
+    return {};
+}
+
+export default ArticlePage;
+<code>
+
+And thats it! Using Next.js we have create clean URLs that not only help make our site more readable, they also make our site more SEO friendly! Thanks for reading!

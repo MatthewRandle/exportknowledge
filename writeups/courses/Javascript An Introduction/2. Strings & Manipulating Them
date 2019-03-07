@@ -1,4 +1,4 @@
-In part 1 we looked at variables and one of the data type we use variables to store were strings. A string is any number of characters surrounded by apostrophes ('' or ""). We can do lots of different things with strings, and we will look at the most important/useful in this part.
+In part 1 we looked at variables and learned that one of the data types that we use variables to store are strings. A string is any number of characters surrounded by apostrophes ('' or ""). We can do lots of different things with strings, and we will look at the most important/useful in this part.
 
 <br>
 <br>
@@ -16,14 +16,14 @@ let someString = "Some string";
 let newString = someString.functionName();
 <code>
 
-One useful function that we can use is the substring function. When using this function we give it 2 values inside its parenthesis like someString
+One useful function that we can use is the substring function. When using this function we give it 2 values inside its parenthesis
 
 <code><js>
 let someString = "Some string";
 let substring = someString.substring(value1, value2);
 <code>
 
-Where value1 is an integer that determines where to start the substring from, and value2 an integer that determines where to end it. If we were to give value1 a value of 0 it would start the substring and the very beginning of the "someString" string, if we started it at 1 it would start after the first character and so on. Lets get the first part of the someString - we want just the word 'Some'. So we will give the value1 a value of 0, and value2 a value of 4
+Where value1 is an integer that determines where to start the substring from, and value2 an integer that determines where to end it. If we were to give value1 a value of 0 it would start the substring at the very beginning of the "someString" string, if we started it at 1 it would start after the first character and so on. Lets get the first part of the someString - we want just the word 'Some'. So we will give the value1 a value of 0, and value2 a value of 4
 
 <code><js>
 let someString = "Some string";
@@ -32,7 +32,7 @@ let substring = someString.substring(0, 4);
 console.log(substring);
 <code>
 
-If we print this substring variable using console.log() and run the code (Ctrl + Alt + N, which we looked at setting up in part 1) we will see a value of 'Some' in the console. Another useful function that strings come with is the includes() function. This function allows us to check if one string includes another string. Inside of the parenthesis we place the string we want to check. Inside of the console.log() we will use this includes method to check if the substring is in the someString (which obviously it is)
+If we print this substring variable using console.log() and run the code (Ctrl + Alt + N, which we looked at setting up in part 1) we will see a value of 'Some' in the console. Another useful function that strings come with is the includes() function. This function allows us to check if one string includes another string. Inside of the parenthesis we place the string we want to check for. Inside of the console.log() we will use this includes method to check if the substring is in the someString (which obviously it is)
 
 <code><js>
 let someString = "Some string";
@@ -41,13 +41,13 @@ let substring = someString.substring(0, 4);
 console.log(someString.includes(substring));
 <code>
 
-Running this code will print a value of 'true' to the console. There are a lot more helpful functions that we can use with strings, but now youknow how to use them, we will not go through them all. if you wish to look at the rest go
+Running this code will print a value of 'true' to the console. There are a lot more helpful functions that we can use with strings, but now you know how to use them we will not go through them all. If you wish to look at the rest go
  <a target="_blank" rel="noopener noreferrer" href="https://www.w3schools.com/jsref/jsref_obj_string.asp">here</a>.
 
 <br>
 <br>
 
-Another thing we can do with string is called concatenation. Concatenation allows us to merge multiple string together. We simply do this by using the + symbol
+Another thing we can do with strings is called concatenation. Concatenation allows us to merge multiple strings together. We simply do this by using the + symbols
 
 <code><js>
 let forename = "Albert";
@@ -69,9 +69,9 @@ let fullName = forename + " " + surname;
 console.log(fullName);
 <code>
 
-Now our console log will read "Albert Einstein". Adding in some whitespace between every word can get quite tediious. There is another way that we can construct strings called template literals/string. Template strings allows us to use variables inside of the string. We denote a template string using `` instead of apostrophes
+Now our console log will read "Albert Einstein". Adding in some whitespace between every word can get quite tediious. There is another way that we can construct strings called template literals/string. Template strings allows us to use variables inside of strings. We denote a template string using `` instead of apostrophes
 
-<code><js><pre>
+<code><pre><js>
 let templateString = `I'm a template string`;
 <code>
 

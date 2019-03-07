@@ -19,7 +19,7 @@ exports.helper = function () {
 }
 <code>
 
-Now this allows this function to be re-used in other files. To do so, we have to import the function into said file. Let's pretend our function is in a file called functions.js. To import all function that are in the file functions.js we would do this
+Now this allows this function to be re-used in other files. To do so, we have to import the function into said file. Let's pretend our function is in a file called functions.js. To import all functions that are in the file functions.js we would do this
 
 <code><js>
 const functions = require("./functions");

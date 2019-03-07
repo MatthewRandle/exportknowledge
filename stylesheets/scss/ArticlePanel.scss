@@ -56,14 +56,14 @@
     width: 95%;
     line-height: 1em;
     color: $textColor;
+    margin-bottom: 5px;
 
     @include desktop-down() {
         font-size: 1.8vw;
     }
 
     @include tablet-down() {
-        font-size: 3vw;
-        margin-bottom: 5px;
+        font-size: 3vw;        
     }
 
     @include phone-down() {
