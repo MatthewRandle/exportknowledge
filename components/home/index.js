@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import Video from "../Video";
 import Home from "./Home";
 
 export class HomeContainer extends Component {
@@ -8,10 +9,10 @@ export class HomeContainer extends Component {
         let latest = this.props.course.latestCourses.map((item, i) => {
             return (
                 <div className="home_course" key={i}>
-                    <iframe
+                    <Video
                         className="home_course_video"
-                        src={`https://www.youtube-nocookie.com/embed/${item.video}`}
-                        title="course video"
+                        video={item.video}
+                        image={item.image}
                     />
                 </div>
             );

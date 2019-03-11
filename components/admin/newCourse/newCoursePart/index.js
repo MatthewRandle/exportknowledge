@@ -13,13 +13,13 @@ class NewCoursePartContainer extends Component {
         this.submit = this.submit.bind(this);
     }
 
-    submit(title, video, description, url, text, length, exists) {
+    submit(title, video, description, url, text, length, exists, image) {
         let courseURL = this.props.router.query.courseUrl;
 
         //cant edit courses part if we dont know what course the part is from
         if (courseURL.length <= 0) { return; }
 
-        this.props.newCoursePart(courseURL, title, video, description, url, text, length, exists);
+        this.props.newCoursePart(courseURL, title, video, description, url, text, length, exists, image);
     }
 
     render() {

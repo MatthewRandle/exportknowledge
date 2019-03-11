@@ -15,21 +15,21 @@ const newCoursePartLink = `
 
 const newCoursePart = `
     INSERT INTO courses_parts
-        (part, title, timestamp, video, length, description, url, text, courses_parts.exists)
-        VALUES (?, ?, NOW(), ?, ?, ?, ?, ?, ?);`
+        (part, title, timestamp, video, length, description, url, text, courses_parts.exists, image)
+        VALUES (?, ?, NOW(), ?, ?, ?, ?, ?, ?, ?);`
 
 const error = "Cannot create new course part";
 
 module.exports = app => {
     app.post("/api/admin/new-course-part", adminCheck, (req, res, next) => {
-        if (typeof req.body.courseURL == null ||
-            typeof req.body.url == null ||
-            typeof req.body.title == null ||
-            typeof req.body.text == null ||
-            typeof req.body.video == null ||
-            typeof req.body.exists == null ||
-            typeof req.body.length == null ||
-            typeof req.body.description == null) {
+        if (req.body.courseURL == null ||
+            req.body.url == null ||
+            req.body.title == null ||
+            req.body.text == null ||
+            req.body.video == null ||
+            req.body.exists == null ||
+            req.body.length == null ||
+            req.body.description == null) {
             res.send({ error: "No Body" });
             return;
         }
@@ -61,7 +61,7 @@ module.exports = app => {
                         const courseID = results[0].id;
                         const parts = results[0].parts;
 
-                        connection.query(newCoursePart, [parts + 1, req.body.title, req.body.video, req.body.length, req.body.description, req.body.url, req.body.text, req.body.exists], (err, results) => {
+                        connection.query(newCoursePart, [parts + 1, req.body.title, req.body.video, req.body.length, req.body.description, req.body.url, req.body.text, req.body.exists, req.body.image], (err, results) => {
                             if (err) {
                                 return connection.rollback(function () {
                                     connection.release();

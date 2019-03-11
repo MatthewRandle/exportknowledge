@@ -32,6 +32,7 @@ class CourseContainer extends Component {
             <Course
                 parts={this.getParts()}
                 video={this.props.course.selectedCourse.video}
+                image={this.props.course.selectedCourse.image}
                 title={this.props.course.selectedCourse.title}
                 description={this.props.course.selectedCourse.description}
                 courseID={this.props.course.selectedCourse.id}

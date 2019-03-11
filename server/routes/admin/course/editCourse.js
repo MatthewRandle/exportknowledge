@@ -25,7 +25,6 @@ module.exports = app => {
             req.body.description == null || 
             req.body.preview == null || 
             req.body.video == null || 
-            req.body.image == null || 
             req.body.url == null || 
             req.body.exists == null || 
             req.body.category == null ||

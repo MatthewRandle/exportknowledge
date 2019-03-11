@@ -1,14 +1,16 @@
 import React from "react";
 
+import Video from "../Video";
+
 const Course = (props) => {
     return(
         <div className="course_container pushFooter">
             <div className="course">
                 <div className="course_info">
-                    <iframe
+                    <Video
                         className="course_video"
-                        src={`https://www.youtube-nocookie.com/embed/${props.video}`}
-                        title="course video"
+                        video={props.video}
+                        image={props.image}
                     />
 
                     <div className="course_text">

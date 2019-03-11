@@ -1,5 +1,6 @@
 import React from "react";
 
+import Video from "../Video";
 import CommentSection from "../commentSection";
 
 const CoursePart = (props) => {
@@ -7,10 +8,10 @@ const CoursePart = (props) => {
         <div className="coursePart_container pushFooter">
             <div className="coursePart">
                 <div className="coursePart_preface">
-                    <iframe
+                    <Video
                         className="coursePart_video"
-                        src={`https://www.youtube-nocookie.com/embed/${props.video}`}
-                        title="course part video"
+                        video={props.video}
+                        image={props.image}
                     />
 
                     <div className="coursePart_information">

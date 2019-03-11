@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Link from "next/link";
 
+import Video from "../Video";
 import CourseSearch from "./CourseSearch";
 
 class CourseSearchContainer extends Component {
@@ -10,10 +11,10 @@ class CourseSearchContainer extends Component {
             return (
                 <div className="courseSearch_course" key={i}>
                     <div className="courseSearch_video_and_title">
-                        <iframe
+                        <Video
                             className="courseSearch_video"
-                            src={`https://www.youtube-nocookie.com/embed/${item.video}`}
-                            title="article video"
+                            video={item.video}
+                            image={item.image}
                         />
                         <h1>{item.title}</h1>
                     </div>

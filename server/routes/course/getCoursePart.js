@@ -8,7 +8,7 @@ const getCourseID = `
     LIMIT 1;`;
 
 const getCoursePart = `
-    SELECT part, title, video, description, length, url, text, id, courses_parts.exists
+    SELECT part, title, video, description, length, url, text, id, courses_parts.exists, image
     FROM courses_parts
         JOIN courses_have_parts ON courses_have_parts.courses_parts_id = courses_parts.id
     WHERE url = ? AND courses_id = ?

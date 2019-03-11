@@ -26,7 +26,7 @@ class EditCoursePartContainer extends Component {
         this.props.clearCoursePart();
     }
 
-    submit(title, video, description, url, text, length, part, exists) {        
+    submit(title, video, description, url, text, length, part, exists, image) {        
         let partURL = this.props.router.query.partURL;
         let courseURL = this.props.router.query.courseURL;
 
@@ -34,7 +34,7 @@ class EditCoursePartContainer extends Component {
         if (courseURL.length <= 0) { return; }
         
         if(partURL.length > 0) {
-            this.props.editCoursesPart(courseURL, partURL, title, video, description, url, text, length, part, exists);
+            this.props.editCoursesPart(courseURL, partURL, title, video, description, url, text, length, part, exists, image);
         }
     }
 

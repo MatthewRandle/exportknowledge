@@ -20,7 +20,8 @@ const editCoursePart = `
         description = ?,
         url = ?,
         text = ?,
-        courses_parts.exists = ?
+        courses_parts.exists = ?,
+        image = ?
     WHERE id = ?;`
 
 module.exports = app => {
@@ -64,6 +65,7 @@ module.exports = app => {
                         req.body.url,  
                         req.body.text,
                         req.body.exists,
+                        req.body.image,
                         coursePartID 
                     ], (err, results) => {
 

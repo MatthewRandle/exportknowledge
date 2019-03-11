@@ -2,7 +2,7 @@ const AppError = require("../../tools/applicationError");
 const pool = require("../../services/db");
 
 const getLatestCourses = `
-    SELECT courses.url, courses.title, courses.preview_description as "description", courses.video
+    SELECT courses.url, courses.title, courses.preview_description as "description", courses.video, courses.image
     FROM courses
     WHERE courses.exists = 1
     ORDER BY courses.timestamp DESC

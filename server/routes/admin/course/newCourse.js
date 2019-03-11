@@ -11,7 +11,6 @@ module.exports = app => {
     app.post("/api/admin/new-course", adminCheck, (req, res, next) => {
         if (req.body.url == null || 
             req.body.title == null || 
-            req.body.image == null || 
             req.body.preview == null || 
             req.body.video == null || 
             req.body.exists == null || 

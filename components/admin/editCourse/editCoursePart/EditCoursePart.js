@@ -19,6 +19,7 @@ const EditCoursePart = (props) => {
                             length: props.part ? props.part.length : "",
                             part: props.part ? props.part.part : "",
                             exists: props.part ? props.part.exists : 0,
+                            image: props.part ? props.part.image : ""
                         }}
                         onSubmit={(values) => {
                             props.submit(
@@ -29,7 +30,8 @@ const EditCoursePart = (props) => {
                                 values.text,
                                 values.length,
                                 values.part,
-                                values.exists
+                                values.exists,
+                                values.image
                             );
                         }}
                         render={({
@@ -65,6 +67,13 @@ const EditCoursePart = (props) => {
                                         type="text"
                                         name="video"
                                         value={values.video}
+                                    />
+
+                                    <p>Image</p>
+                                    <Field
+                                        type="text"
+                                        name="image"
+                                        value={values.image}
                                     />
 
                                     <p>Length</p>

@@ -16,6 +16,7 @@ const NewCoursePart = (props) => {
                             text: "",
                             length: "",
                             exists: 0,
+                            image: ""
                         }}
                         onSubmit={(values) => {
                             props.submit(
@@ -25,7 +26,8 @@ const NewCoursePart = (props) => {
                                 values.url,
                                 values.text,
                                 values.length,
-                                values.exists
+                                values.exists,
+                                values.image
                             );
                         }}
                         render={({
@@ -53,6 +55,13 @@ const NewCoursePart = (props) => {
                                         type="text"
                                         name="video"
                                         value={values.video}
+                                    />
+
+                                    <p>Image</p>
+                                    <Field
+                                        type="text"
+                                        name="image"
+                                        value={values.image}
                                     />
 
                                     <p>Length</p>

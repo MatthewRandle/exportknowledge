@@ -56,8 +56,8 @@ export const newCourse = (url, title, image, preview, video, exists, description
     }
 };
 
-export const newCoursePart = (courseURL, title, video, description, url, text, length, exists) => async dispatch => {
-    const res = await axios.post("/api/admin/new-course-part", { courseURL, title, video, description, url, text, length, exists });
+export const newCoursePart = (courseURL, title, video, description, url, text, length, exists, image) => async dispatch => {
+    const res = await axios.post("/api/admin/new-course-part", { courseURL, title, video, description, url, text, length, exists, image });
 
     if (res.data.error) {
         dispatch({ type: NEW_COURSE_ERROR, payload: { error: res.data.error, success: false, courseAdded: false } });
@@ -67,8 +67,8 @@ export const newCoursePart = (courseURL, title, video, description, url, text, l
     }
 };
 
-export const editCoursesPart = (courseURL, partURL, title, video, description, url, text, length, part, exists) => async dispatch => {
-    const res = await axios.post("/api/admin/edit-course-part", { courseURL, partURL, title, video, description, url, text, length, part, exists });
+export const editCoursesPart = (courseURL, partURL, title, video, description, url, text, length, part, exists, image) => async dispatch => {
+    const res = await axios.post("/api/admin/edit-course-part", { courseURL, partURL, title, video, description, url, text, length, part, exists, image });
 
     if (res.data.error) {
         dispatch({ type: NEW_COURSE_ERROR, payload: { error: res.data.error, success: false, coursePartAdded: false } });

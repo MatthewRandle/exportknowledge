@@ -58,7 +58,6 @@
     width: 640px;
     height: 360px;
     z-index: 1;
-    background-color: $OneDarkBG;
 
     @include tablet-down() {
         width: 85vw;

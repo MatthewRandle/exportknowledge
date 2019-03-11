@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 
+import Video from "../Video";
 import CommentSection from "../commentSection";
 
 const Article = (props) => {    
@@ -14,10 +15,10 @@ const Article = (props) => {
             <div className="article_jumbotron">
                 <div className="article_content">
                     {props.video !== null ? 
-                        <iframe 
+                        <Video 
                             className="article_image" 
-                            src= {`https://www.youtube-nocookie.com/embed/${props.video}`}
-                            title="article video"
+                            video= {props.video}
+                            image={props.image}
                         />
                         : <img className="article_image" src={props.image} alt="" />
                     }
