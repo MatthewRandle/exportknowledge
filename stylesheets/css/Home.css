@@ -254,22 +254,23 @@
   }
 }
 
-.home_course_video {
+.home_course_image {
   width: 37vw;
   height: 20.8125vw;
   -webkit-box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.5);
           box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {
-  .home_course_video {
+  .home_course_image {
     width: 60vw;
     height: 33.75vw;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  .home_course_video {
+  .home_course_image {
     width: 85vw;
     height: 47.8125vw;
   }

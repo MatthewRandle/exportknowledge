@@ -130,10 +130,11 @@
 }
 
 
-.home_course_video {
+.home_course_image {
     width: 37vw;
     height: 20.8125vw;
     box-shadow: 6px 6px 0px 0px rgba(0,0,0,0.5);
+    cursor: pointer;
 
     @include tablet-down() {
         width: 60vw;

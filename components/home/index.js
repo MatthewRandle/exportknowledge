@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import Link from "next/link";
 
-import Video from "../Video";
 import Home from "./Home";
 
 export class HomeContainer extends Component {
@@ -9,11 +9,14 @@ export class HomeContainer extends Component {
         let latest = this.props.course.latestCourses.map((item, i) => {
             return (
                 <div className="home_course" key={i}>
-                    <Video
-                        className="home_course_video"
-                        video={item.video}
-                        image={item.image}
-                    />
+                    <Link href={`/course/${item.url}`} prefetch>
+                        <a>
+                            <img
+                                className="home_course_image"
+                                src={item.image}
+                            />
+                        </a>
+                    </Link>
                 </div>
             );
         });
