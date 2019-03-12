@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Link from "next/link";
 
-import Video from "../Video";
 import CourseSearch from "./CourseSearch";
 
 class CourseSearchContainer extends Component {
@@ -11,11 +10,14 @@ class CourseSearchContainer extends Component {
             return (
                 <div className="courseSearch_course" key={i}>
                     <div className="courseSearch_video_and_title">
-                        <Video
-                            className="courseSearch_video"
-                            video={item.video}
-                            image={item.image}
-                        />
+                        <Link href={`/course/${item.url}`} prefetch>
+                            <a>
+                                <img
+                                    className="courseSearch_video"
+                                    src={item.image}
+                                />
+                            </a>
+                        </Link>
                         <h1>{item.title}</h1>
                     </div>
 
