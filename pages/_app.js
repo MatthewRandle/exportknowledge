@@ -66,7 +66,26 @@ class MyApp extends App {
         }
         else {
             return(
-                <div>hnotrgjesoifhnieso</div>
+                <div className="app">
+                    {process.env.NODE_ENV !== 'production' && (
+                        <link rel="stylesheet" type="text/css" href={'/_next/static/css/styles.chunk.css?v=' + Date.now()} />
+                    )}
+
+                    <Head>
+                        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Zilla+Slab:400,700" rel="stylesheet" />
+                        <meta name="google-site-verification" content="LvIOdKgCzT_ISjQsQi-NWphkCMSMS4rRmN_cN5qPHUI" />
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <title>export Knowledge;</title>
+                    </Head>
+
+                    <Navbar />
+
+                    <div className="pushFooter error_container">
+                        <p>Please switch to another browser, the one you're using is not supported by this site.</p>
+                    </div>
+
+                    <Footer />
+                </div>
             )
         }
     }

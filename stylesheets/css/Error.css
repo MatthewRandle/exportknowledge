@@ -15,7 +15,8 @@
       -ms-flex-pack: center;
           justify-content: center;
   font-family: "Zilla Slab";
-  color: #282c34;
+  color: white;
+  text-shadow: 3px 3px 0px #181e34;
   text-align: center;
 }
 
@@ -44,8 +45,8 @@
 }
 
 .error_container p {
-  font-size: 1.6rem;
-  text-shadow: 2px 2px 0px #cdcbfd;
+  font-size: 3rem;
+  text-shadow: 3px 3px 0px #181e34;
 }
 
 @media only screen and (max-width: 1200px) {

@@ -95,6 +95,7 @@ const Comment = (props) => {
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
             <div className="comment_container">
                 <img className="comment_profile_picture" src={props.profile_picture} />
+
                 {props.isOwner || props.isAdmin ? <CommentSettings commentID={props.commentID} articleID={props.articleID} partID={props.partID} /> : null}  
 
                 <div className="comment_content">
@@ -102,6 +103,7 @@ const Comment = (props) => {
                         <div style={{ display: "flex", alignItems: "center" }}>
                             <img className="comment_profile_picture--tablet" src={props.profile_picture} />
                             <p className="comment_author">{props.username}</p>
+                            <img title="Admin" style={{ marginLeft: "10px", height: "15px" }} src={"/static/verified.svg"}/>
                         </div>
 
                         <div style={{ display: "flex", alignItems: "center" }}>

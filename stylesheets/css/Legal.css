@@ -31,18 +31,27 @@
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 15px;
+  padding-bottom: 60px;
 }
 
 .legal h2 {
   font-family: "Zilla Slab";
   font-size: 2rem;
-  color: #3c3c3c;
+  color: white;
+  text-shadow: 3px 3px 0px #181e34;
   margin-bottom: 10px;
   margin-top: 10px;
 }
 
-.legal p, li, a {
+.legal p,
+.legal li,
+.legal a {
   font-family: "Open Sans";
   line-height: 1.3em;
+  text-shadow: 2px 2px 0px #181e34;
+}
+
+.legal a {
+  color: #e2c13d;
 }
 /*# sourceMappingURL=Legal.css.map */

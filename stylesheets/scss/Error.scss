@@ -8,7 +8,8 @@
     align-items: center;
     justify-content: center;
     font-family: "Zilla Slab";
-    color: $OneDarkBG;
+    color: white;
+    text-shadow: $headerShadow;
     text-align: center;
 }
 
@@ -31,8 +32,8 @@
 }
 
 .error_container p {
-    font-size: 1.6rem;
-    text-shadow: 2px 2px 0px #cdcbfd;   
+    font-size: 3rem;
+    text-shadow: $headerShadow;  
     
 
     @include desktop-down() {

@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     margin-top: 15px;
+    padding-bottom: 60px;
 }
 
 .legal {
@@ -13,12 +14,20 @@
 .legal h2 {
     font-family: "Zilla Slab";
     font-size: 2rem;
-    color: $darkGrey;
+    color: white;
+    text-shadow: 3px 3px 0px $darkBlue;
     margin-bottom: 10px;
     margin-top: 10px;
 }
 
-.legal p, li, a {
+.legal p, 
+.legal li, 
+.legal a {
     font-family: "Open Sans";
     line-height: 1.3em;
+    text-shadow: 2px 2px 0px $darkBlue;
+}
+
+.legal a {
+    color: $gold;
 }
