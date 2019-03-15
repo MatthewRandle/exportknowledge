@@ -6,7 +6,8 @@ const getAmountOfPartsAndID = `
     SELECT count(courses_have_parts.courses_parts_id) as "parts", id
     FROM courses
         LEFT JOIN courses_have_parts ON courses.id = courses_have_parts.courses_id
-    WHERE url = ?;`
+    WHERE url = ?
+    GROUP BY id;`
 
 const newCoursePartLink = `
     INSERT INTO courses_have_parts
