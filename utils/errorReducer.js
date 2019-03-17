@@ -1,11 +1,14 @@
-import { ERROR, CLEAR_ERROR, NOT_FOUND, TOO_MANY_REQUESTS } from "./actions";
+import { CLEAR_ERROR } from "./actions";
+import { databaseError, fatalError } from "./errorTypes";
 
 export default function (state = null, action) {
     switch (action.type) {
-        case ERROR:
-            return { ...state, ...action.payload };
+        case fatalError:
+            return { ...state, fatalError: { ...action.payload } };
         case CLEAR_ERROR:
             return null;
+        case databaseError: 
+            return { ...state, databaseError: { ...action.payload } };
         default:
             return state;
     }

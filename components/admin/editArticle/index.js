@@ -71,7 +71,7 @@ class EditArticleContainer extends Component {
     submitArticle(id, url, title, image, text, video, exists, description) {
         //if we dont have url we are making a new article
         if (this.props.url == null) {
-            this.props.newArticle(url, title, image, text, video, this.state.selectedTags, exists, this.state.selectedPrerequisites, description);            
+            this.props.newArticle(url, title, image, text, video, this.state.selectedTags, exists, this.state.selectedPrerequisites, description, this.props.router);            
         }
         else {
             this.props.editArticle(id, url, title, image, text, video, this.state.selectedTags, exists, this.state.selectedPrerequisites, description);
@@ -131,7 +131,7 @@ class EditArticleContainer extends Component {
                     adminError={this.props.admin ? this.props.admin.error : null}
                     article={this.props.admin ? this.props.admin.selectedArticle : null}
                     delete={this.deleteArticle}
-                    error={this.props.error}
+                    error={this.props.error ? this.props.error.databaseError ? this.props.error.databaseError.sqlMessage : null : null }
                 />
             </AdminCheck>
         );        

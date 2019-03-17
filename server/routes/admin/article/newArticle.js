@@ -1,5 +1,4 @@
 const pool = require("../../../services/db");
-const AppError = require("../../../tools/applicationError");
 const adminCheck = require("../../../middleware/adminCheck");
 const bodyCheck = require("../../../middleware/bodyCheck");
 
@@ -24,14 +23,14 @@ module.exports = app => {
 
         pool.getConnection((err, connection) => {
             if (err) {
-                next(new AppError(err));
+                next(err);
                 return;
             }
 
             connection.beginTransaction((err) => {
                 if(err) {
                     connection.release();
-                    next(new AppError(err));
+                    next(err);
                     return;
                 }
 
@@ -40,7 +39,7 @@ module.exports = app => {
                     if (err) {
                         return connection.rollback(function () {
                             connection.release();
-                            next(new AppError(err));
+                            next(err);
                             return;
                         });                        
                     }
@@ -53,7 +52,7 @@ module.exports = app => {
                         if (err) {
                             return connection.rollback(function () {
                                 connection.release();
-                                next(new AppError(err));
+                                next(err);
                                 return;
                             }); 
                         }
@@ -68,7 +67,7 @@ module.exports = app => {
                                 if (err) {
                                     return connection.rollback(function () {
                                         connection.release();
-                                        next(new AppError(err));
+                                        next(err);
                                         return;
                                     });
                                 }
@@ -77,7 +76,7 @@ module.exports = app => {
                                     if (err) {
                                         return connection.rollback(function () {
                                             connection.release();
-                                            next(new AppError(err));
+                                            next(err);
                                             return;
                                         });
                                     }
@@ -93,7 +92,7 @@ module.exports = app => {
                                 if (err) {
                                     return connection.rollback(function () {
                                         connection.release();
-                                        next(new AppError(err));
+                                        next(err);
                                         return;
                                     });
                                 }

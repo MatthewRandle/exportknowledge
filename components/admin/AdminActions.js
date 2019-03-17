@@ -1,5 +1,6 @@
 import axios from "axios";
 import getRouteString from "../../utils/getRouteString";
+import { clearError } from "../../utils/ErrorActions";
 
 export const ERROR = "ERROR";
 export const NEW_ARTICLE_SUCCESS = "NEW_ARTICLE_SUCCESS";
@@ -34,14 +35,16 @@ export const fetchArticle = (url, req) => async dispatch => {
     dispatch({ type: FETCH_ARTICLE_ADMIN, payload: { selectedArticle: articleRes.data.article, selectedArticlesTags: tagRes.data.tags, selectedArticlesPrerequisites: prerequisiteRes.data.prerequisites } });
 };
 
-export const newArticle = (url, title, image, text, video, tags, exists, prerequisites, description) => async dispatch => {
+export const newArticle = (url, title, image, text, video, tags, exists, prerequisites, description, router) => async dispatch => {
     const res = await axios.post("/api/admin/new-article", { url, title, image, text, video, tags, exists, prerequisites, description });
 
     if(res.data.error) {
-        dispatch({ type: NEW_ARTICLE_ERROR, payload: { error: res.data.error, success: false, articleAdded: false } });
+        console.log(res.data.error)
+        dispatch({ type: res.data.error.type, payload: { ...res.data.error } });
     }    
     else {
-        dispatch({ type: NEW_ARTICLE_SUCCESS, payload: { error: null, success: true, articleAdded: false }});
+        dispatch(clearError());
+        router.push("/admin/articles");
     }
 };
 

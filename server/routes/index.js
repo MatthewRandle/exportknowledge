@@ -7,4 +7,5 @@ module.exports = app => {
     require("./settings")(app);
     require("./checkUserAllowsCookies")(app);
     require("./setCookieChoice")(app);
+    require("./databaseErrorHandler")(app);
 };

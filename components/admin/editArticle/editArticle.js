@@ -5,6 +5,7 @@ import Select from "react-select";
 import "../../../stylesheets/css/EditArticle.css";
 
 const EditArticle = (props) => {
+    console.log(props.error)
     return(
         <div className="editArticle_container">
             <div className="editArticle_form">
@@ -130,6 +131,8 @@ const EditArticle = (props) => {
                             <button onClick={() => props.delete(props.article ? props.article.id : null)}>
                                 Delete
                             </button>
+
+                            {props.error ? props.error.databaseError ? <p>{props.error.databaseError.sqlMessage}</p> : null : null}
 
                             <div className="editArticle_error">
                                 <p>{props.adminError || props.error}</p>

@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server/index.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server/index.js -p $PORT",
-    "heroku-postbuild": "next build"
+    "start": "NODE_ENV=production node server/index.js -p $PORT"
   },
   "author": "Matthew Randle",
   "license": "ISC",

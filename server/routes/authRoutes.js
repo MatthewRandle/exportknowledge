@@ -18,11 +18,19 @@ module.exports = app => {
     });
 
     app.post("/api/current_user", (req, res) => {
-        if (req.body.user != null) {
-            res.send({ id: req.body.user });
+        if (req.body != null) {
+            if(req.body.user != null) {
+                res.send({ id: req.body.user });
+                res.end();
+            }
+            else {
+                res.send({ id: false });
+                res.end();
+            }
         }
         else {
             res.send({ id: false });
-        }    
-    });    
+            res.end();
+        }
+    });
 };

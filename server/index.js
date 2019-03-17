@@ -16,7 +16,7 @@ const PORT = parseInt(process.env.PORT, 10) || 3000;
 
 const commentLimiter = new RateLimit({
     windowMs: 30 * 1000, //30 seconds
-    max: 3,
+    max: 10,
     delayMs: 0
 });
 

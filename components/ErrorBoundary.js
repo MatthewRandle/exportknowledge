@@ -33,12 +33,14 @@ class ErrorBoundary extends Component {
             );
         }
         else if (this.props.error) {
-            return (
-                <div className="error_container pushFooter">
-                    {this.props.error.code}
-                    <p className="error_message">{this.props.error.customMessage || null}</p>                    
-                </div>
-            );
+            if(this.props.error.fatalError) {
+                return (
+                    <div className="error_container pushFooter">
+                        {this.props.error.code}
+                        <p className="error_message">{this.props.error.customMessage || null}</p>
+                    </div>
+                );
+            }
         }
 
         return this.props.children;
