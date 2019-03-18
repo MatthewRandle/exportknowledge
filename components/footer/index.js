@@ -24,7 +24,7 @@ export default class Footer extends Component {
 
                     <div className="footer_social_links_container">
                         <div className="footer_social_links">
-                            <a href="https://github.com/exportknowledge" target="_blank" rel="noopener noreferrer">
+                            <a href="https://github.com/MatthewRandle" target="_blank" rel="noopener noreferrer">
                                 <img src="/static/github-logo.png" alt="Follow us on Github" className="footer_github" />
                             </a>
                             <a href="https://www.youtube.com/channel/UC3iSlUY21jsuKvDnosFYYUg?view_as=subscriber" target="_blank" rel="noopener noreferrer">
