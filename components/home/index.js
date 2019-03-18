@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { withRouter } from "next/router";
+import Link from "next/link";
 
 import Home from "./Home";
 
@@ -9,12 +9,14 @@ export class HomeContainer extends Component {
         let latest = this.props.course.latestCourses.map((item, i) => {
             return (
                 <div className="home_course" key={i}>
-                        <a onClick={(() => setTimeout(() => this.props.router.push(`/course/${item.url}`), 100))}>
+                    <Link href={`/course/${item.url}`}>
+                        <a>
                             <img
                                 className="home_course_image"
                                 src={item.image}
                             />
                         </a>
+                    </Link>
                 </div>
             );
         });
@@ -35,4 +37,4 @@ function mapStateToProps({ course, article }) {
     return { course, article };
 }
 
-export default withRouter(connect(mapStateToProps)(HomeContainer));
+export default connect(mapStateToProps)(HomeContainer);

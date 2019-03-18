@@ -8,7 +8,6 @@ import Article from "./Article";
 import { clearArticle } from "./ArticleActions";
 import { clearComment } from "../comment/CommentActions";
 import ParseText from "../ParseText";
-import ArticleLoader from "./ArticleLoader";
 
 class ArticleContainer extends Component {
     constructor(props) {
