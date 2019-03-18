@@ -10,7 +10,7 @@ class CourseSearchContainer extends Component {
             return (
                 <div className="courseSearch_course" key={i}>
                     <div className="courseSearch_video_and_title">
-                        <Link href={`/course/${item.url}`} prefetch>
+                        <Link href={`/course/${item.url}`}>
                             <a>
                                 <img
                                     className="courseSearch_video"
@@ -31,7 +31,7 @@ class CourseSearchContainer extends Component {
                         <h1>What Should I Know Before I Take This Course?</h1>
                         <p className="courseSearch_details_p">{item.prerequisites}</p>
 
-                        <Link href={{ pathname: "/course", query: { url: item.url } }} as={`/course/${item.url}`} prefetch>
+                        <Link href={{ pathname: "/course", query: { url: item.url } }} as={`/course/${item.url}`}>
                             <a className="courseSearch_button"><p>Start Course</p></a>
                         </Link>                        
                     </div>

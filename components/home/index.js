@@ -9,7 +9,7 @@ export class HomeContainer extends Component {
         let latest = this.props.course.latestCourses.map((item, i) => {
             return (
                 <div className="home_course" key={i}>
-                    <Link href={`/course/${item.url}`} prefetch>
+                    <Link href={`/course/${item.url}`}>
                         <a>
                             <img
                                 className="home_course_image"
