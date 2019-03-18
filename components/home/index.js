@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { withRouter } from "next/router";
 
 import Home from "./Home";
 
@@ -34,4 +35,4 @@ function mapStateToProps({ course, article }) {
     return { course, article };
 }
 
-export default connect(mapStateToProps)(HomeContainer);
+export default withRouter(connect(mapStateToProps)(HomeContainer));
