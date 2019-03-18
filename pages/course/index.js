@@ -32,7 +32,6 @@ CoursePage.getInitialProps = async function ({ store, req, query }) {
     }
     
     const state = store.getState();  
-    console.log(state)
 
     if(state.course == null) {
         await store.dispatch(fetchCourse(query.url, req));

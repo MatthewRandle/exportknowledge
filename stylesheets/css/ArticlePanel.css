@@ -136,6 +136,7 @@
 
 .articlePanel_container img {
   width: 100%;
+  height: 62%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
