@@ -8,7 +8,7 @@ const Home = (props) => {
         <div className="home_container pushFooter">    
             <div className="home_jumbotron_container">
                 <div className="home_jumbotron">                        
-                    <p className="jumbotron_title">Use our in depth courses to learn and become a full stack web developer for free.</p>                   
+                    <p className="jumbotron_title">Learn how to become a full stack web developer for <span>free</span></p>                   
 
                     <div className="jumbotron_courses">
                         {props.latestCourses}

@@ -172,7 +172,7 @@
   text-align: center;
   margin-bottom: 20px;
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5);
-  width: 50%;
+  width: 40%;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -185,6 +185,10 @@
   .jumbotron_title {
     width: 100%;
   }
+}
+
+.jumbotron_title span {
+  color: #e2c13d;
 }
 
 .jumbotron_courses {

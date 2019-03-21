@@ -1,66 +1,222 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  <url>
-    <loc>https://exportknowledge.herokuapp.com/</loc>
-  </url>
-  <url>
-    <loc>https://exportknowledge.herokuapp.com/privacy-policy</loc>
-  </url>
-  <url>
-    <loc>https://exportknowledge.herokuapp.com/cookie-policy</loc>
-  </url>
-  <url>
-    <loc>https://exportknowledge.herokuapp.com/courses</loc>
-  </url>
-  <url>
-    <loc>https://exportknowledge.herokuapp.com/terms-and-conditions</loc>
-  </url>
-  <url>
-    <loc>https://exportknowledge.herokuapp.com/article/error-handling-in-react</loc>
-  </url>
-  <url>
-    <loc>https://exportknowledge.herokuapp.com/article/making-font-sizes-responsive</loc>
-  </url>
-  <url>
-    <loc>https://exportknowledge.herokuapp.com/course/react-from-zero-to-hero</loc>
-  </url>
-  <url>
-    <loc>https://exportknowledge.herokuapp.com/</loc>
-  </url>
-  <url>
-    <loc>https://exportknowledge.herokuapp.com/course/making-yesi-coursesd</loc>
-  </url>
-  <url>
-    <loc>https://exportknowledge.herokuapp.com/course/test-2</loc>
-  </url>
-  <url>
-    <loc>https://exportknowledge.herokuapp.com/login?client_id=af8d80fc582984605926&amp;return_to=/login/oauth/authorize?client_id=af8d80fc582984605926&amp;redirect_uri=https%3A%2F%2Fexportknowledge.herokuapp.com%2Fauth%2Fgithub%2Fcallback&amp;response_type=code&amp;scope=user%3Aemail</loc>
-  </url>
-  <url>
-    <loc>https://exportknowledge.herokuapp.com/course/css-an-introduction</loc>
-  </url>
-  <url>
-    <loc>https://exportknowledge.herokuapp.com/course/html-the-building-block-of-the-web</loc>
-  </url>
-  <url>
-    <loc>https://exportknowledge.herokuapp.com/course/react-from-zero-to-hero/gesgfsg</loc>
-  </url>
-  <url>
-    <loc>https://exportknowledge.herokuapp.com/course/react-from-zero-to-hero/getting-started</loc>
-  </url>
-  <url>
-    <loc>https://exportknowledge.herokuapp.com/course/test-2/getting-started</loc>
-  </url>
-  <url>
-    <loc>https://exportknowledge.herokuapp.com/course/react-from-zero-to-hero/2222222</loc>
-  </url>
-  <url>
-    <loc>https://exportknowledge.herokuapp.com/course/making-yesi-coursesd/fiowejnfiow</loc>
-  </url>
-  <url>
-    <loc>https://exportknowledge.herokuapp.com/course/html-the-building-block-of-the-web/the-head-and-fonts</loc>
-  </url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://exportknowledge.com/</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/courses</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/javascript-an-introduction</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/scss-writing-better-css</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/article/why-you-should-make-your-react-app-server-side-rendered</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/article/using-scss-to-create-responsive-websites</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/article/mobile-first-design-or-not</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/article/making-font-sizes-responsive</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/article/javascript-==-vs-===</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/article/error-handling-with-react-and-redux</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/article/error-handling-with-react</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/article/clean-urls-with-nextjs-and-expressjs</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/terms-and-conditions</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/privacy-policy</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/cookie-policy</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/css-an-introduction</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/html-the-building-block-of-the-web</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/javascript-an-introduction/variables</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/javascript-an-introduction/strings-and-manipulating-them</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/javascript-an-introduction/arrays</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/javascript-an-introduction/objects</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/javascript-an-introduction/functions</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/javascript-an-introduction/conditions</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/javascript-an-introduction/iterators</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/javascript-an-introduction/import-and-export</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/scss-writing-better-css/setting-up-scss</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/scss-writing-better-css/variables-imports-and-nesting</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/scss-writing-better-css/mixins-and-inheritance</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/scss-writing-better-css/statements-and-loops</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/css-an-introduction/internal-external-and-inline-styling</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/css-an-introduction/classes-and-ids</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/css-an-introduction/padding-margin-and-multiple-class-selectors</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/css-an-introduction/positioning-elements</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/css-an-introduction/units-and-sizing-elements</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/css-an-introduction/background-colours-and-images</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/css-an-introduction/making-a-navigation-bar</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/html-the-building-block-of-the-web/opening-and-closing-tags</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/html-the-building-block-of-the-web/headers-and-lists</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/html-the-building-block-of-the-web/images-links-self-closing-tags-and-attributes</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/html-the-building-block-of-the-web/styling-our-website</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/html-the-building-block-of-the-web/the-head-and-fonts</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://exportknowledge.com/course/html-the-building-block-of-the-web/a-new-page-for-our-website</loc>
+  <lastmod>2019-03-21T11:00:20+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
 </urlset>
-<!--<guid value="5d16b398-75ee-466a-80b0-882424bb2657" />-->
-<!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->

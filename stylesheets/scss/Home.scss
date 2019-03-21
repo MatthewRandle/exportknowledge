@@ -74,7 +74,7 @@
     text-align: center;
     margin-bottom: 20px;
     text-shadow: 3px 3px 0px rgba(0,0,0,0.5);
-    width: 50%;
+    width: 40%;
 
     @include desktop-down() {
         width: 80%;
@@ -83,6 +83,10 @@
     @include tablet-down() {
         width: 100%;
     }
+}
+
+.jumbotron_title span {
+    color: $gold;
 }
 
 .jumbotron_courses {
