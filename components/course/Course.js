@@ -7,10 +7,10 @@ const Course = (props) => {
         <div className="course_container pushFooter">
             <div className="course">
                 <div className="course_info">
-                    <Video
+                    <img
                         className="course_video"
-                        video={props.video}
-                        image={props.image}
+                        src={props.image}
+                        alt={props.title}
                     />
 
                     <div className="course_text">

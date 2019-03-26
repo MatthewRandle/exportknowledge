@@ -14,7 +14,6 @@ class Video extends Component {
     }
 
     render() {
-        console.log(this.props.image)
         //if we have an image
         if (this.props.image != null && !this.state.playVideo) {
             return(

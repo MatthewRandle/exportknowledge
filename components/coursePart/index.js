@@ -32,6 +32,7 @@ class CoursePartContainer extends Component {
                 part={this.props.course.selectedPart.part}
                 text={this.getText()}
                 partID={this.props.course.selectedPart.id}
+                image={this.props.course.selectedPart.image}
             />
         )
     }
