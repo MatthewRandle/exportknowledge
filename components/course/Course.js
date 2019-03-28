@@ -1,7 +1,5 @@
 import React from "react";
 
-import Video from "../Video";
-
 const Course = (props) => {
     return(
         <div className="course_container pushFooter">

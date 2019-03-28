@@ -45,7 +45,7 @@ app.prepare()
                 maxAge: 30 * 24 * 60 * 60 * 1000,
                 keys: [keys.cookieKey],
                 sameSite: "lax",
-                //secure: true  TODO: Add when on https
+                secure: true
             })
         );
         server.use(passport.initialize());
