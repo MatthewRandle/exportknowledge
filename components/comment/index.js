@@ -90,7 +90,7 @@ class CommentContainer extends Component {
                 username={this.getUserName()}
                 replies={this.getReplies()}
                 profile_picture={this.props.userComment.commenter_profile_picture}
-                isOwner={this.props.userComment.commenter_oauthID === this.props.user.id ? true : false}
+                isOwner={this.props.userComment.commenter_oauthID === this.props.user ? this.props.user.id : null ? true : false}
                 isAdmin={this.props.admin ? this.props.admin.authorised === true ? true : false : false}
                 comment={this.props.userComment.comment}
                 commentID={this.props.userComment.id}

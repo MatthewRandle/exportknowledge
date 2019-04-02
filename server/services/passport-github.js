@@ -4,7 +4,7 @@ const keys = require("../../config/keys");
 const pool = require("./db");
 
 const checkUserExists = `
-    SELECT forename, surname, email
+    SELECT forename, surname, email, users.id
     FROM users
         JOIN users_settings ON users.users_settings_id = users_settings.id
     WHERE oauthID = ?
@@ -31,12 +31,24 @@ const editUser = `
         WHERE users.oauthID = ?
     );`;
 
-passport.serializeUser((id, done) => {
-    done(null, id);
+passport.serializeUser((user, done) => {
+    done(null, user);
 });
 
 passport.deserializeUser((id, done) => {
-    done(null, id);
+    pool.query("SELECT * FROM users WHERE oauthID = ?", [ id ], (err, results) => {
+        if(err) {
+            done(err, false);
+            return;
+        }
+        
+        if(results.length === 0) {
+            done(null, false);
+        }
+        else {
+            done(null, results[0].oauthID);
+        }
+    })
 });
 
 passport.use(
@@ -59,7 +71,7 @@ passport.use(
                 forename = null;
                 surname = null;
             }
-            
+
             var email = profile._json.email || null;
             var profilePicture = profile.photos[0].value || null;
 
@@ -105,6 +117,8 @@ passport.use(
                                             return;
                                         });
                                     }
+
+                                    console.log(results);
                                 
                                     connection.commit((err) => {
                                         if (err) {
@@ -140,12 +154,14 @@ passport.use(
 
                                     connection.commit((err) => {
                                         if (err) {
+                                            console.log(err)
                                             return connection.rollback(function () {
                                                 connection.release();
                                                 done(null, false);
                                                 return;
                                             });
                                         }
+                                        console.log("DONE")
 
                                         connection.release();
                                         done(null, profile.id);
@@ -161,7 +177,6 @@ passport.use(
                                             return;
                                         });
                                     }
-
                                     connection.release();
                                     done(null, profile.id);
                                 });

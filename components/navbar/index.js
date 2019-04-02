@@ -7,15 +7,13 @@ import UserMenu from "../userMenu";
 
 class NavbarContainer extends Component {
     getAccountSection() {
-        if (this.props.user) {
-            switch (this.props.user.id) {
-                case null:
-                    return;
-                case false:
-                    return <OAuthButton />
-                default:
-                    return <UserMenu />;
-            }
+        switch (this.props.user) {
+            case null:
+                return <OAuthButton />;
+            case false:
+                return <OAuthButton />;
+            default:
+                return <UserMenu />;
         }
     }
 

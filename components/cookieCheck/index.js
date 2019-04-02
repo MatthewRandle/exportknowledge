@@ -25,7 +25,15 @@ class CookieCheckContainer extends Component {
                 this.setState({ showBanner: true, allowCookies: false });
             }
         }
-
+        else {
+            var match = document.cookie.match(new RegExp('(^| )' + "acceptsEKCookies" + '=([^;]+)'));
+            if (match) {
+                this.setState({ showBanner: false, allowCookies: true });
+            }
+            else {
+                this.setState({ showBanner: true, allowCookies: false });
+            }
+        }
     }
 
     decline() {
