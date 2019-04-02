@@ -91,6 +91,9 @@ class NewReply extends React.Component {
 }
 
 const Comment = (props) => { 
+    const timestamp = new Date(props.timestamp) 
+    const timezoneOffset = timestamp.getTimezoneOffset();
+    
     return(
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
             <div className="comment_container">
@@ -107,7 +110,7 @@ const Comment = (props) => {
                         </div>
 
                         <div style={{ display: "flex", alignItems: "center" }}>
-                            <p className="comment_timestamp">{ta.ago(new Date(props.timestamp))}</p>
+                            <p className="comment_timestamp">{ta.ago(new Date(props.timestamp) + (timezoneOffset/60000))}</p>
                             {props.isOwner || props.isAdmin ? <CommentSettings className="commentSettings_container--tablet" commentID={props.commentID} articleID={props.articleID} partID={props.partID} /> : null} 
                         </div>
                     </div>
