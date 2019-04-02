@@ -91,7 +91,7 @@ class NewReply extends React.Component {
 }
 
 const Comment = (props) => { 
-    
+    const timestamp = ta.ago(new Date(props.timestamp));
     return(
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
             <div className="comment_container">
@@ -108,7 +108,7 @@ const Comment = (props) => {
                         </div>
 
                         <div style={{ display: "flex", alignItems: "center" }}>
-                            <p className="comment_timestamp">{ta.ago(new Date(props.timestamp))}</p>
+                            <p className="comment_timestamp">{timestamp.indexOf("ms") !== -1 ? "Just Now" : timestamp}</p>
                             {props.isOwner || props.isAdmin ? <CommentSettings className="commentSettings_container--tablet" commentID={props.commentID} articleID={props.articleID} partID={props.partID} /> : null} 
                         </div>
                     </div>
