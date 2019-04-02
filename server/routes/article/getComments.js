@@ -1,6 +1,7 @@
 const AppError = require("../../tools/applicationError");
 const pool = require("../../services/db");
 const bodyCheck = require("../../middleware/bodyCheck");
+const ta = require("time-ago");
 
 const getArticlesComments = `
     SELECT 
@@ -52,6 +53,11 @@ module.exports = app => {
                 next(new AppError(err));
                 return;
             }
+
+            results.forEach(comment => {
+                comment.timestamp = ta.ago(new Date(comment.timestamp));
+                console.log(comment.timestamp);
+            })
 
             res.send({ comments: results });
         })

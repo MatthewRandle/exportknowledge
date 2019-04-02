@@ -2,7 +2,6 @@ import React from "react";
 import { Formik, Field } from "formik";
 import * as Yup from "yup";
 import isEmpty from 'lodash/isEmpty'
-import ta from "time-ago";
 
 import CommentSettings from "./CommentSettings";
 
@@ -91,8 +90,6 @@ class NewReply extends React.Component {
 }
 
 const Comment = (props) => { 
-    const timestamp = new Date(props.timestamp) 
-    const timezoneOffset = timestamp.getTimezoneOffset();
     
     return(
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
@@ -110,7 +107,7 @@ const Comment = (props) => {
                         </div>
 
                         <div style={{ display: "flex", alignItems: "center" }}>
-                            <p className="comment_timestamp">{ta.ago(new Date(props.timestamp) + (timezoneOffset/60000))}</p>
+                            <p className="comment_timestamp">{props.timestamp}</p>
                             {props.isOwner || props.isAdmin ? <CommentSettings className="commentSettings_container--tablet" commentID={props.commentID} articleID={props.articleID} partID={props.partID} /> : null} 
                         </div>
                     </div>
