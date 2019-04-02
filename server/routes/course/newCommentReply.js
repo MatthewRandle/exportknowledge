@@ -1,11 +1,12 @@
 const AppError = require("../../tools/applicationError");
 const pool = require("../../services/db");
 const bodyCheck = require("../../middleware/bodyCheck");
+const moment = require("moment");
 
 const newReply = `
     INSERT INTO courses_comments_replies
         (comment, timestamp, users_id, upvotes)
-        VALUES (?, NOW(), ?, 0);`
+        VALUES (?, ?, ?, 0);`
 
 const newReplyLink = `
     INSERT INTO courses_comments_have_replies
@@ -20,9 +21,9 @@ const getUserID = `
 
 module.exports = app => {
     app.post("/api/new-courses-comment-reply", bodyCheck, (req, res, next) => {
-        if (typeof req.body.commentID == null ||
-            typeof req.body.comment == null ||
-            typeof req.user == null) {
+        if (req.body.commentID == null ||
+            req.body.comment == null ||
+            req.user == null) {
             res.sendStatus(400);
             return;
         }
@@ -52,7 +53,7 @@ module.exports = app => {
                     //if we got a user
                     if (results.length === 1) {
                         //Make comment into articles_comments table
-                        connection.query(newReply, [req.body.comment, results[0].id], (err, results) => {
+                        connection.query(newReply, [req.body.comment, moment().format(), results[0].id], (err, results) => {
                             if (err) {
                                 return connection.rollback(function () {
                                     connection.release();

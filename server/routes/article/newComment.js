@@ -1,11 +1,12 @@
 const AppError = require("../../tools/applicationError");
 const pool = require("../../services/db");
 const bodyCheck = require("../../middleware/bodyCheck");
+const moment = require("moment");
 
 const newComment = `
     INSERT INTO articles_comments
         (comment, timestamp, users_id, upvotes)
-        VALUES (?, NOW(), ?, 0);`
+        VALUES (?, ?, ?, 0);`
 
 const newCommentLink = `
     INSERT INTO articles_have_comments
@@ -53,7 +54,7 @@ module.exports = app => {
                     //if we got a user
                     if(results.length === 1) {
                         //Make comment into articles_comments table
-                        connection.query(newComment, [req.body.comment, results[0].id], (err, results) => {
+                        connection.query(newComment, [req.body.comment, moment().format(), results[0].id], (err, results) => {
                             if (err) {
                                 return connection.rollback(function () {
                                     connection.release();
