@@ -55,7 +55,7 @@ module.exports = app => {
             }
 
             results.forEach(comment => {
-                comment.timestamp = ta.ago(new Date(comment.timestamp) + 3600000);
+                comment.timestamp = ta.ago(new Date(comment.timestamp) - 3600000);
                 console.log(comment.timestamp);
             })
 
