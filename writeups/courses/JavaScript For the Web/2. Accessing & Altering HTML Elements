@@ -1,0 +1,59 @@
+A very useful thing that we can do with JavaScript is access and alter HTML elements. We can search for specific elements using the document, where can can search for multiple elements by their class name
+
+<code><pre><js>
+let items = document.getElementsByClassName("item");
+<code>
+
+The above will store all HTML elements that have a class of 'item' into the items variable. It's important to note that this will always store our HTML elements inside of a collection (sort of an array) - even if there is only one element with the class name.
+
+<br>
+<br>
+
+If we want to get all elements by tag name, such as all div's we can simply do this
+
+<code><pre><js>
+let divs = document.getElementsByTagName("div");
+<code>
+
+Finally, we can get an element by its id. Since we should never give more than one element the same id we can use this to get one specific element. Looking at our HTML we want to target the id of shoppingCart_itemCount
+
+<code><js>
+let shoppingCartValueElement = document.getElementById("shoppingCart_itemCount");
+<code>
+
+Let's make it so when we click the 'Add to cart' button on the first product, the amount of items increases by 1 each time. To do this we need to get access to the text inside of the HTML element. Right now the shoppingCartValueElement holds the HTML element. To get the text within it, we can simply use innerText like so
+
+<code><js>
+let shoppingCartValueElement = document.getElementById("shoppingCart_itemCount");
+let shoppingCartValue = shoppingCartValueElement.innerText;
+<code>
+
+As a side note, there also exists innerHTML. This will return the HTML nested in our element. Obviously we don't have any within the shoppingCartValueElement so innerText is used. 
+
+<br>
+<br>
+
+Using our knowledge from the first part we can create a function that update the shoppingCartValue when pressed
+
+<code><js>
+let shoppingCartValueElement = document.getElementById("shoppingCart_itemCount");
+let shoppingCartValue = shoppingCartValueElement.innerText;
+
+function updateShoppingCart() {
+    shoppingCartValue++;
+    shoppingCartValueElement.innerText = shoppingCartValue;
+}
+<code>
+
+We first increment the shoppingCartValue by one, then set the text equal to the new value. We can now add this as an event to our button like so
+
+<code><pre><html>
+<button onclick="updateShoppingCart()" class="item_button">Add to cart</button>
+<code>
+
+If we test this in our browser we will see that the items value increases after every click!
+
+<br>
+<br>
+
+And thats it for part 2, thanks for reading!

@@ -1,0 +1,179 @@
+In the last 2 parts we used the onclick event within our HTML code to call a function within our JavaScript file. Looking at the last part when we created a function that updated the items count each time the button was pressed, to get the function working for both buttons we have (for both products), we would have had to add this onclick event to both of them. You can image if we had 100 items in our store, adding this onclick event to each of them would get very tedious - and also very bad practice.
+
+<br>
+<br>
+
+This is where event listeners come in handy. We can create an event listener in our JavaScript file that will listen for certain events occurring. We will change up what we are doing, and instead update the total price. We want to add an event listener to every button with class name 'item_button'. So, we first need to get these elements in our JavaScript. We looked at this in the last part, using getElementsByClassName
+
+<code><js>
+let buttons = document.getElementsByClassName("item_button");
+<code>
+
+To add an event listener to a singular element (one given by getElementById) we do this
+
+<code><js>
+let someElement = document.getElementById("elementID");
+someElement.addEventListener("eventName", functionName);
+<code>
+
+Since we have multiple elemets stored in our buttons variable, we cannot simply do this. We must iterate over each of the elements that buttons holds. 
+
+<br>
+<br>
+
+Right now, our buttons variable is a HTML collection. To iterate over the buttons, we will first need to convert it to an array
+
+<code><js>
+let buttons = document.getElementsByClassName("item_button");
+let buttonsArray = Array.prototype.slice.call(buttons);
+<code>
+
+Now we can iterate over this buttonsArray variable using the Array.forEach method, adding an event listener to each button in the array
+
+<code><js>
+let buttons = document.getElementsByClassName("item_button");
+let buttonsArray = Array.prototype.slice.call(buttons);
+
+buttonsArray.forEach(button => {
+    button.addEventListener("click", updateTotal);
+})
+
+function updateTotal() {
+
+}
+<code>
+
+So now when any of the buttons is clicked, our updateTotal function is called.
+
+<br>
+<br>
+
+We want to update the total price whenever this function is called. If we look at our HTML all of our items have a paragraph that hold the price of the item_button
+
+<code><pre><html>
+<p class="item_price" value="10">Price: £10</p>
+<code>
+
+When our function is called, we need to get this value and add it to the total price. To do this we can pass in an argument called event to our updateTotal function
+
+<code><js>
+//rest of our code above
+
+function updateTotal(event) {
+
+}
+<code>
+
+This event holds some information about the thing that called the function. We can use event.target to grab the element that called the function. We know this a button, so lets create a variable called button and give it a value of event.target
+
+<code><js>
+//rest of our code above
+
+function updateTotal(event) {
+    let button = event.target;
+}
+<code>
+
+So, we want to access the price value of the paragraph. The easiest way to do this is by first getting the whole item itself. We can do this using parentElement
+
+<code><js>
+//rest of our code above
+
+function updateTotal(event) {
+    let button = event.target;
+    let item = button.parentElement;
+}
+<code>
+
+This item variable now holds everything to do with the item that was added to the cart. So we can use it to access the paragraph of class name 'item_price'
+
+<code><js>
+//rest of our code above
+
+function updateTotal(event) {
+    let button = event.target;
+    let item = button.parentElement;
+    let price = parent.getElementsByClassName("item_price")[0];
+}
+<code>
+
+We add the [0] to the end because we know that getElementsByClassName returns a collection, and we know that there will only be one element with class name 'item_price', so simply get the first element from the collection.
+
+<br>
+<br>
+
+If we were to console.log the price variable we would see that we get the entire paragraph. We only need the 'price' value that it holds. To get attribute (such as style and src) we can use the getAttribute function, passing in the name of the attribute we wish to get
+
+<code><js>
+//rest of our code above
+
+function updateTotal(event) {
+    let button = event.target;
+    let item = button.parentElement;
+    let price = parent.getElementsByClassName("item_price")[0].getAttribute("value");
+}
+<code>
+
+To update the total price will need to get the element that holds it. Looking at our HTMl we have this line in the shopping cart section
+
+<code><pre><html>
+<p id="shoppingCartTotal">0</p>
+<code>
+
+So lets create a variable that holds this element
+
+<code><js>
+//rest of our code above
+
+let totalPrice = 0;
+let totalPriceElement = document.getElementById("shoppingCartTotal");
+
+function updateTotal(event) {
+    let button = event.target;
+    let item = button.parentElement;
+    let price = parent.getElementsByClassName("item_price")[0].getAttribute("value");
+}
+<code>
+
+Now inside of our function we will update the totalPrice variable by the price, and set the totalPriceElement's innerText to this value
+
+<code><js>
+//rest of our code above
+
+let totalPrice = 0;
+let totalPriceElement = document.getElementById("shoppingCartTotal");
+
+function updateTotal(event) {
+    let button = event.target;
+    let item = button.parentElement;
+    let price = parent.getElementsByClassName("item_price")[0].getAttribute("value");
+
+    totalPrice += price;
+    totalPriceElement.innerText = totalPrice;
+}
+<code>
+
+If we run this code and try clicking a button you will notice that the total price does get added, but not in the expected way. This is because the price value is a string. We need to convert the price to an integer before adding it to the totalPrice. We can do this using the parseInt function
+
+<code><js>
+//rest of our code above
+
+let totalPrice = 0;
+let totalPriceElement = document.getElementById("shoppingCartTotal");
+
+function updateTotal(event) {
+    let button = event.target;
+    let item = button.parentElement;
+    let price = parseInt(parent.getElementsByClassName("item_price")[0].getAttribute("value"));
+
+    totalPrice += price;
+    totalPriceElement.innerText = totalPrice;
+}
+<code>
+
+Now running this everything should work as expected!
+
+<br>
+<br>
+
+And that's it for part 3, thanks for reading!

@@ -1,0 +1,193 @@
+If you have never used a programming language before, I highly advise that you first go through my course
+ <a href="/course/javascript-an-introduction">JavaScript: An Introduction</a>.
+
+<br>
+<br>
+
+Getting started lets set up our project with some base HTML and CSS. Create a file named index.html and paste this code inside
+
+<code><html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./index.css">
+    </head>
+
+    <body>
+        <div class="navbar">
+            ECommerce
+
+            <div class="shoppingCart">
+                <p>Items:</p>
+                <p id="shoppingCart_itemCount">0</p>
+
+                <p style="padding-left: 20px">Total: £</p>
+                <p id="shoppingCartTotal">0</p>
+            </div>
+        </div>
+
+        <div class="items_container">
+            <div class="items">
+                <div class="item">
+                    <p class="item_wishlist">Add to wishlist</p>
+                    <p class="item_name">Inception</p>
+                    <p class="item_price" value="10">Price: £10</p>
+                    <p class="item_description">A god damn good movie.</p>
+                    <button class="item_button">Add to cart</button>
+                </div>
+
+                <div class="item">
+                    <p class="item_wishlist">Add to wishlist</p>
+                    <p class="item_name">Interstellar</p>
+                    <p class="item_price" value="15">Price: £15</p>
+                    <p class="item_description">Another god damn good movie.</p>
+                    <button class="item_button">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<code>
+
+And in the same directory create a file named index.css and paste this code inside
+
+<code><css>
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: #f49242;
+    width: 100%;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;    
+    color: white;
+    position: fixed;
+}
+
+.shoppingCart {
+    display: flex;
+}
+
+.items_container {
+    padding-top: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+.items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 70%;
+}
+
+.item {
+    border: 1px solid rgba(0,0,0,0.2);
+    width: 500px;
+    height: 200px;
+    box-shadow: 0px 0px 23px -8px rgba(0,0,0,0.3);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin: 15px;
+    background-color: lightgray;
+}
+
+.item_name {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.item_price {
+    margin-top: 5px;
+}
+
+.item_description {
+    margin-top: 30px;
+}
+
+.item_button {
+    margin-top: auto;
+    padding: 5px;
+    width: 170px;
+    background-color: #f49242;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.item_wishlist {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+<code>
+
+Now thats out of the way lets load this up in our browser by dragging and dropping the index.html file. You will see that we have a basic site with 2 boxes that will act as a product. On the navbar we have an area for the amount of items we have and the total cost of all of the items. Throughout this course we will look at implementing JavaScript to add interactivity to this site.
+
+<br>
+<br>
+
+Let's get started writing some JavaScript. Create a file called index.js and inside we will add a function that simply logs something to the console
+
+<code><js>
+function doSomething() {
+    console.log("Do Something");
+}
+<code>
+
+To use JavaScript with our HTML we have to connect the two files together. We do this by using script tags at the very bottom of the body. A script tag simply looks like this
+
+<code><pre><js>
+<script src="file"></script>
+<code>
+
+Where the src attribute is the file location. So, let's add this to the very bottom of the body in our index.html and link it to our index.js file
+
+<code><js>
+<body>
+    <!-- All of our elements here -->
+
+    <script src="./index.js"></script>
+</body>
+<code>
+
+Now we have our JavaScript file linked to our HTML lets look at using the function we created. We can invoke (call) this function many different ways, but we will do it when we click on a button. Let's first add a button right above our script tags
+
+<code><js>
+<body>
+    <!-- All of our elements here -->
+
+    <button>Do Something</button>
+    <script src="./index.js"></script>
+</body>
+<code>
+
+We want to call our function when this button is clicked. We can do this using events, specifically the onclick event. We add events to HTML elements by simply putting their name in the opening tags of the desired element - in the same way we do with src or style.
+
+<code><pre><js>
+<button onclick="">Do Something</button>
+<code>
+
+To call our function with this onclick event we pass it the function name followed by a set of parenthesis
+
+<code><pre><js>
+<button onclick="doSomething()">Do Something</button>
+<code>
+
+Let's test this out. In your browser open up the developer console (in chrome this is F12) and open the console window. Now click on the button that we just created and you should see the console.log in the console (remember to refresh your page when you add changes). 
+
+<br>
+<br>
+
+And that's it for part 1, thanks for reading!

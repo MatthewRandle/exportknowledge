@@ -34,6 +34,7 @@ class Video extends Component {
             <iframe
                 className={this.props.className}
                 src={`https://www.youtube-nocookie.com/embed/${this.props.video}?autoplay=1&mute=1`}
+                allowFullScreen
             />
         );
     }
