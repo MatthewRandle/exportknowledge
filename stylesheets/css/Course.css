@@ -83,8 +83,22 @@
           flex: 1;
   display: -ms-grid;
   display: grid;
-  grid-auto-rows: 16.6666667%;
-  overflow-y: scroll;
+  grid-auto-rows: calc(14.325%);
+  grid-gap: 10px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.course_panel_parts::-webkit-scrollbar {
+  width: 10px;
+}
+
+.course_panel_parts::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.course_panel_parts::-webkit-scrollbar-thumb {
+  background: #FF8E79;
 }
 
 .part_panel {
@@ -96,7 +110,6 @@
           align-items: center;
   background-color: #7c7ccf;
   color: white;
-  margin-bottom: 10px;
   cursor: pointer;
   position: relative;
   -webkit-transform: translateZ(0);
@@ -154,6 +167,7 @@
 .course_text h1 {
   text-align: center;
   font-family: "Zilla Slab";
+  color: #1d1d1d;
 }
 
 .course_text li {

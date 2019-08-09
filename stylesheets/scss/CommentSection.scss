@@ -5,25 +5,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 850px;
-    @extend %containerPadding;
-
-    @include desktop-down() {
-        width: 745px;
-    }
+    width: 768px;
 
     @include tablet-down() {
         width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
 
 .commentSection_greeting {
     font-family: "Zilla Slab";
     font-weight: bold;
-    font-size: 1.75rem;
-    color: #d3dcff;
+    font-size: 1.5rem;
+    color: $darkGrey;
     text-align: center;
-    text-shadow: $headerShadow;
 
     @include tablet-down() {
         font-size: 1.6rem;
@@ -36,12 +32,11 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    box-shadow: $boxShadow;
 }
 
 .commentSection_newComment textarea,
 .commentSection_newReply textarea {
-    font-family: "Open Sans";
+    font-family: "Roboto Slab";
     height: 100px;    
     box-sizing: border-box;
     padding: 5px;
@@ -71,9 +66,9 @@
     cursor: pointer;
     outline: none;
     border-top: none;
-    background: $gold;
-    @include backgroundTransition($lightBlue, 150ms, "up");
-    @include textTransition(p, $darkBlue, white, 300ms, "up");
+    background: $orange;
+    color: white;
+    @include backgroundTransition($darkGrey, 150ms, "up");
 
     &:hover {        
         background-position: 100%;
@@ -91,10 +86,10 @@
 }
 
 .commentSection_submit--disabled {
-    background: $OneDarkBG;
+    background: $purple;
 
     &:hover {
-        background: $OneDarkBG;
+        background: $purple;
     }
 }
 
@@ -115,12 +110,12 @@
     margin-bottom: 20px;
     display: flex;
     align-items: flex-start;
-    border: 1px solid $gold;
-    box-shadow: $boxShadow;
+    border: 1px solid rgb(230, 230, 230);
     padding: 20px;
     padding-top: 30px;
     position: relative;
-    background-color: $darkBlue;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
 
     @include tablet-down() {
         padding: 15px;
@@ -129,7 +124,7 @@
 
 .comment_profile_picture {
     width: 100px;
-    border: 1px solid $gold;
+    border: 1px solid rgb(230, 230, 230);
 
     @include tablet-down() {
         display: none;
@@ -142,7 +137,7 @@
     @include tablet-down() {
         display: inline;
         width: 25px;
-        border: 1px solid $gold;
+        border: 1px solid rgb(230, 230, 230);
         margin-right: 10px;
     }
 }
@@ -155,6 +150,7 @@
     margin-left: 15px;
     width: 100%;
     min-height: 100px;
+    color: black;
 
     @include tablet-down() {
         min-height: 75px;
@@ -170,22 +166,19 @@
 }
 
 .comment_timestamp {
-    font-size: 0.6rem;
-    color: $textColor;    
+    font-size: 0.6rem;  
 }
 
 .comment_author {
     font-family: "Zilla Slab";
     font-weight: bold;
     font-size: 1rem;
-    color: $textColor;
 }
 
 .comment {
     font-size: 0.75rem;
     width: 100%;
     word-wrap: break-word;
-    color: $textColor;
     padding-top: 10px;
     line-height: 1.3em;
 
@@ -204,10 +197,9 @@
     padding: 5px;
     width: 100px;
     font-size: 0.8rem;
-    border: 1px solid rgba(0,0,0,0.2);
-    background-color: $gold;
-    @include backgroundTransition($lightBlue, 150ms, "up");
-    @include textTransition(p, $darkBlue, white, 150ms, "up");
+    background-color: $orange;
+    color: white;
+    @include backgroundTransition($darkGrey, 150ms, "up");
 
     &:hover {
         cursor: pointer;

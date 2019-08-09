@@ -34,7 +34,7 @@ class ReplyContainer extends Component {
         return (
             <Reply
                 username={this.getUserName()}
-                isOwner={this.props.reply.oauthID === this.props.user ? this.props.user.id : null ? true : false}
+                isOwner={this.props.reply.oauthID === this.props.user.id}
                 isAdmin={this.props.admin ? this.props.admin.authorised === true ? true : false : false}
                 reply={this.props.reply.comment}
                 parentCommentID={this.props.parentCommentID}
@@ -47,6 +47,7 @@ class ReplyContainer extends Component {
                 submitReply={this.submitReply}
                 profile_picture={this.props.reply.profile_picture}
                 timestamp={this.props.reply.timestamp}
+                authority={this.props.reply.authority}
             />
         );
     }

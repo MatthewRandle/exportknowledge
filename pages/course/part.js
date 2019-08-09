@@ -43,7 +43,7 @@ const CoursePage = ({ title }) => {
 
                         <div className="course_panel_content">
                             <h3>{parts.length} Parts</h3>
-                            <div className="course_panel_parts">
+                            <div className="course_panel_parts" style={{ paddingRight: parts.length > 6 ? "10px" : "0" }}>
                                 {parts.map((item, i) => {
                                     return (
                                         <Link key={i} href={`/course/${course.url}/${item.url}`}>

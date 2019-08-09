@@ -144,7 +144,8 @@ function sortCommentsAndReplies(commentsData) {
             upvotes: comment.reply_upvotes,
             timestamp: comment.reply_timestamp,
             oauthID: comment.replier_oauthID,
-            profile_picture: comment.replier_profile_picture
+            profile_picture: comment.replier_profile_picture,
+            authority: comment.replier_authority
         }
 
         comments.forEach((existingComment) => {
@@ -169,6 +170,7 @@ function sortCommentsAndReplies(commentsData) {
                 delete newComment.reply_timestamp;
                 delete newComment.replier_oauthID;
                 delete newComment.replier_profile_picture;
+                delete newComment.replier_authority;
             }
             //doesnt have replies so just add comment and delete all reply keys because they are null
             else {
@@ -181,6 +183,7 @@ function sortCommentsAndReplies(commentsData) {
                 delete newComment.reply_timestamp;
                 delete newComment.replier_oauthID;
                 delete newComment.replier_profile_picture;
+                delete newComment.replier_authority;
             }
 
             comments.push(newComment);

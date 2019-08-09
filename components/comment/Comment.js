@@ -104,7 +104,7 @@ const Comment = (props) => {
                         <div style={{ display: "flex", alignItems: "center" }}>
                             <img className="comment_profile_picture--tablet" src={props.profile_picture} />
                             <p className="comment_author">{props.username}</p>
-                            <img title="Admin" style={{ marginLeft: "10px", height: "15px" }} src={"/static/verified.svg"}/>
+                            {props.authority ? <img title="Admin" style={{ marginLeft: "10px", height: "15px" }} src={"/static/verified.svg"} /> : null}
                         </div>
 
                         <div style={{ display: "flex", alignItems: "center" }}>

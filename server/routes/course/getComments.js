@@ -21,10 +21,12 @@ const getComments = `
             commenter.forename as "commenter_forename", 
             commenter.surname as "commenter_surname", 
             commenter.profile_picture as "commenter_profile_picture",
+            commenter_user.authority as "commenter_authority",
         /* GET REPLIES AUTHORS */
             replier.forename as "replier_forename", 
             replier.surname as "replier_surname",
-            replier.profile_picture as "replier_profile_picture"
+            replier.profile_picture as "replier_profile_picture",
+            replier_user.authority as "replier_authority"
     FROM courses_comments
         LEFT JOIN courses_parts_have_comments ON courses_parts_have_comments.comments_id = courses_comments.id        
         LEFT JOIN courses_comments_have_replies ON courses_comments_have_replies.courses_comments_id = courses_comments.id
@@ -37,11 +39,13 @@ const getComments = `
         /* GET AUTHORS OF COMMENTS AND REPLIES BASED ON VALUE FROM ABOVE SO IT IS SPECIFIC TO AS COMMENT OR REPLY */
         LEFT JOIN users_settings commenter ON commenter.id = users_comment.users_settings_id
         LEFT JOIN users_settings replier ON replier.id = users_reply.users_settings_id
+        LEFT JOIN users commenter_user ON commenter.id = commenter_user.users_settings_id
+         LEFT JOIN users replier_user ON replier.id = replier_user.users_settings_id
     WHERE courses_parts_have_comments.courses_parts_id = ?;`
 
 module.exports = app => {
     app.post("/api/get-course-part-comments", bodyCheck, (req, res, next) => {
-        if (typeof req.body.partID == null) {
+        if (req.body.partID == null) {
             res.status(400);
             return;
         }

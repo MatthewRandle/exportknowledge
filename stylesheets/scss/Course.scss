@@ -53,8 +53,22 @@
 .course_panel_parts {
     flex: 1;
     display: grid;
-    grid-auto-rows: 16.6666667%;
-    overflow-y: scroll;
+    grid-auto-rows: calc(14.325%);
+    grid-gap: 10px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+
+    &::-webkit-scrollbar {
+        width: 10px;        
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent; 
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $orange; 
+    }
 }
 
 .part_panel {
@@ -62,7 +76,7 @@
     align-items: center;
     background-color: $purple;
     color: white;
-    margin-bottom: 10px;
+    //margin-top: 10px;
     cursor: pointer;
     @include backgroundTransition($orange, 250ms, "down");
 }
@@ -92,6 +106,7 @@
 .course_text h1 {
     text-align: center;
     font-family: "Zilla Slab";
+    color: $darkGrey;
 }
 
 .course_text li {
