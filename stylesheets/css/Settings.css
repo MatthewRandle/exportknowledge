@@ -57,7 +57,7 @@
 }
 
 .settings form p {
-  color: #3c3c3c;
+  color: #1d1d1d;
 }
 
 .settings_checkbox {
@@ -90,7 +90,7 @@
   border: none;
   font-size: 1rem;
   margin-top: 10px;
-  background: #3c3c3c;
+  background: #1d1d1d;
 }
 
 .settings_buttons button:hover,

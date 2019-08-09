@@ -2,9 +2,8 @@
 
 .code_container {
     font-size: .7rem;
-    border: 2px solid $gold;
+    border: 2px solid $orange;
     display: flex;
-    box-shadow: 7px 7px 0px 0px rgba($darkBlue, 0.4);
     position: relative;
 
     @include desktop-down() {
@@ -30,8 +29,7 @@
 .code_pre_container {
     align-self: flex-start;
     line-height: 1.05rem;
-    border: 2px solid $gold;
-    box-shadow: 7px 7px 0px 0px rgba($darkBlue, 0.4);
+    border: 2px solid $orange;
 }
 
 .code_gutter {
@@ -42,7 +40,7 @@
     counter-reset: line;
     display: flex;
     flex-direction: column;
-    background: $darkBlue;    
+    background: #181e34;    
 
     @include tablet-down() {
         width: 35px;

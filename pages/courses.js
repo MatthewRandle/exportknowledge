@@ -1,24 +1,40 @@
 import React from "react";
-import dynamic from "next/dynamic";
 import Head from "next/head";
+import { useSelector } from "react-redux";
 
-import "../stylesheets/css/CourseSearch.css";
+import "../stylesheets/css/CoursePanel.css";
+import "../stylesheets/css/Courses.css";
 
 import ErrorBoundary from "../components/ErrorBoundary";
+import CoursePanel from "../components/coursePanel";
 import initialSetupFetch from "../utils/initialSetupFetch";
 import { fetchAllCourses } from "../components/course/CourseActions";
-import CourseSearchLoader from "../components/courseSearch/CourseSearchLoader";
-
-const CourseSearch = dynamic(import("../components/courseSearch"), { loading: () => <CourseSearchLoader /> } );
 
 const CoursesPage = () => {
+    const courses = useSelector(state => state.course.all);
+
     return(
         <ErrorBoundary>
             <Head>
                 <title>Courses - export Knowledge;</title>
             </Head>
 
-            <CourseSearch />
+            <div className="courses_container">
+                <div className="courses">
+                    {courses.map((item, i) => {
+                        return (
+                            <CoursePanel
+                                key={i}
+                                url={`/course/${item.course_url}/${item.part_url}`}
+                                image={item.image}
+                                title={item.title}
+                                description={item.description}
+                                parts={item.parts}
+                            />
+                        )
+                    })}
+                </div>
+            </div>
         </ErrorBoundary>
     )
 }
@@ -37,8 +53,6 @@ CoursesPage.getInitialProps = async function ({ store, req }) {
     else if(state.course.all == null) {
         await store.dispatch(fetchAllCourses(req));
     }
-    
-
 
     return {};
 }

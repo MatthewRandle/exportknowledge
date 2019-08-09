@@ -35,8 +35,8 @@ export const fetchArticle = (url, req) => async dispatch => {
     dispatch({ type: FETCH_ARTICLE_ADMIN, payload: { selectedArticle: articleRes.data.article, selectedArticlesTags: tagRes.data.tags, selectedArticlesPrerequisites: prerequisiteRes.data.prerequisites } });
 };
 
-export const newArticle = (url, title, image, text, video, tags, exists, prerequisites, description, router) => async dispatch => {
-    const res = await axios.post("/api/admin/new-article", { url, title, image, text, video, tags, exists, prerequisites, description });
+export const newArticle = (url, title, image, text, video, tags, exists, prerequisites, router) => async dispatch => {
+    const res = await axios.post("/api/admin/new-article", { url, title, image, text, video, tags, exists, prerequisites });
 
     if(res.data.error) {
         console.log(res.data.error)
@@ -81,8 +81,8 @@ export const editCoursesPart = (courseURL, partURL, title, video, description, u
     }
 };
 
-export const editArticle = (id, url, title, image, text, video, tags, exists, prerequisites, description) => async dispatch => {
-    const editArticleRes = await axios.post("/api/admin/edit-article", { id, url, title, image, text, video, exists, prerequisites, tags, description });
+export const editArticle = (id, url, title, image, text, video, tags, exists, prerequisites) => async dispatch => {
+    const editArticleRes = await axios.post("/api/admin/edit-article", { id, url, title, image, text, video, exists, prerequisites, tags });
 
     if (editArticleRes.data.error) {
         dispatch({ type: NEW_ARTICLE_ERROR, payload: { error: editArticleRes.data.error, success: false, articleAdded: false } });

@@ -5,7 +5,6 @@ import Select from "react-select";
 import "../../../stylesheets/css/EditArticle.css";
 
 const EditArticle = (props) => {
-    console.log(props.error)
     return(
         <div className="editArticle_container">
             <div className="editArticle_form">
@@ -17,8 +16,7 @@ const EditArticle = (props) => {
                         image: props.article ? props.article.image : "",
                         video: props.article ? props.article.video || "" : "",
                         text: props.article ? props.article.text : "",
-                        exists: props.article ? props.article.exists : 0,
-                        description: props.article ? props.article.description : ""
+                        exists: props.article ? props.article.exists : 0
                     }}
                     onSubmit={(values) => {
                         props.submit(
@@ -28,8 +26,7 @@ const EditArticle = (props) => {
                                 values.image, 
                                 values.text, 
                                 values.video, 
-                                values.exists,
-                                values.description
+                                values.exists
                             );
                     }}
                     render={({
@@ -79,17 +76,6 @@ const EditArticle = (props) => {
                                 onChange={props.handlePrerequisiteChange}
                                 isMulti
                                 options={props.prerequisites}
-                            />
-
-                            <p>Description</p>
-                            <textarea 
-                                maxLength={150}
-                                style={{ resize: "none", height: "100px" }}
-                                name="description"
-                                cols="30"
-                                rows="300"
-                                onChange={handleChange}
-                                value={values.description}   
                             />
 
                             <p>Text</p>

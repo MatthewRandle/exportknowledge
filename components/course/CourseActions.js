@@ -62,11 +62,11 @@ export const fetchCategories = () => async dispatch => {
     }
 };
 
-export const fetchLatestCourses = (req) => async dispatch => {
+export const fetchLatestCourse = (req) => async dispatch => {
     try {
         const res = await axios.get(getRouteString("/api/get-latest-courses", req));
 
-        dispatch({ type: FETCH_LATEST_COURSES, payload: { latestCourses: res.data.latest } });
+        dispatch({ type: FETCH_LATEST_COURSES, payload: { latestCourse: res.data.latest }});
     }
     catch (err) {
         dispatch(errorHandler(err));

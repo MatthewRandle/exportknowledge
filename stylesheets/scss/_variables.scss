@@ -1,10 +1,17 @@
+$darkGrey: #1d1d1d;
+$orange: #FF8E79;
+$darkPurple: #493082;
+$purple: #7c7ccf;
+$lightPurple: #ececf8;
+
+$blue: #0084D6;
+$darkBlue: #262a4c;
 $desktopContainer: 1100px;
 $articleContainer: 980px;
-$darkBlue: #181e34;
 $lightBlue: #00A6ED;
 $gold: #e2c13d;
 $navbarHeight: 55px;
-$darkGrey: #3c3c3c;
+
 $OneDarkBG: #282c34;
 $headerShadow: 3px 3px 0px $darkBlue;
 $textShadow: 2px 2px 0px $darkBlue;
@@ -16,37 +23,6 @@ $textColor: #e6ebff;
 @mixin tablet-down() {@media only screen and (max-width: 768px) { @content; }}
 
 @mixin phone-down() {@media only screen and (max-width: 480px) { @content; }}
-
-%containerPadding {
-    padding-right: 20px;
-    padding-left: 20px;
-    box-sizing: border-box;
-
-    @include phone-down() {
-        padding-right: 15px;
-        padding-left: 15px;
-    }
-}
-
-%container {
-    width: 95%;
-    height: 100%;
-    @extend %containerPadding;
-
-    @include desktop-down() {
-        width: 100%;
-    }
-}
-
-%articleContainer {
-    width: $desktopContainer;
-    height: 100%;
-    @extend %containerPadding;
-
-    @include desktop-down() {
-        width: 100%;
-    }
-}
 
 @mixin gradientBorder($color1, $color2) {
     border: 3px solid transparent;

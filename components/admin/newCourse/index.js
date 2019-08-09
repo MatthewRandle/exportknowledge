@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import AdminCheck from "../AdminCheck";
 import { withRouter } from "next/router";
 
 import NewCourse from "./NewCourse";
@@ -37,8 +36,8 @@ class NewCourseContainer extends Component {
         return [{ value: "null", label: "Not available" }];
     }
 
-    submit(url, title, image, preview, video, exists, description, whatLearn, whoFor, prerequisites) {
-        this.props.newCourse(url, title, image, preview, video, exists, description, this.state.selectedCategory.value, whatLearn, whoFor, prerequisites);
+    submit(url, title, image, video, exists, description) {
+        this.props.newCourse(url, title, image, video, exists, description, this.state.selectedCategory.value);
     }
 
     render() {
@@ -49,16 +48,14 @@ class NewCourseContainer extends Component {
         }
 
         return (
-            <AdminCheck>
-                <NewCourse
-                    submit={this.submit}
-                    adminError={this.props.admin ? this.props.admin.error : null}
-                    error={this.props.error}
-                    categories={this.getCategories()}
-                    selectedCategory={this.state.selectedCategory}
-                    handleCategoryChange={this.handleCategoryChange}
-                />
-            </AdminCheck>
+            <NewCourse
+                submit={this.submit}
+                adminError={this.props.admin ? this.props.admin.error : null}
+                error={this.props.error}
+                categories={this.getCategories()}
+                selectedCategory={this.state.selectedCategory}
+                handleCategoryChange={this.handleCategoryChange}
+            />
         );
     }
 }

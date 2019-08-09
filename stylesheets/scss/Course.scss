@@ -3,248 +3,104 @@
 .course_container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 60px;
+    align-items: center;    
+    margin-top: 100px;
 }
 
 .course {
-    @extend %container;
-}
-
-.course_info {
+    width: 1500px;
     display: flex;
-    margin-top: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid white;
-    border-style: dashed;
-
-    @include desktop-down() {
-        flex-direction: column;
-        align-items: center;
-    }
+    flex-direction: column;
+    align-items: center;
 }
 
-.course_video {
-    width: 40vw;
-    height: 22.5vw;
-    border: 2px solid $gold;
-    box-shadow: 7px 7px 0px 0px rgba($darkBlue, 0.4);
+.course_panel {
+    display: flex;
+    align-items: flex-start;
+    height: 400px;
+    width: 1300px
+}
 
-    @include desktop-down() {
-        width: 55vw;
-        height: 30.9375vw;
-    }
+.course_panel img {
+    height: 100%;
+    width: 50%;
+    flex: 1;
+    border-bottom: 10px solid $darkGrey;
+    box-sizing: border-box;
+    border-radius: 5px 0 0 0;
+}
 
-    @include tablet-down() {
-        width: 85vw;
-        height: 47.8125vw;
-    }
+.course_panel_content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 10px;
+    padding-bottom: 0;
+    box-sizing: border-box;
+    background-color: $darkGrey;
+    color: white;
+    height: 100%;
+    width: 50%;
+    border-radius: 0 5px 0 0;
+}
+
+.course_panel_content h3 {
+    margin-bottom: 10px;
+    font-family: "Roboto Slab";
+    font-size: 0.8rem;
+}
+
+.course_panel_parts {
+    flex: 1;
+    display: grid;
+    grid-auto-rows: 16.6666667%;
+    overflow-y: scroll;
+}
+
+.part_panel {
+    display: flex;
+    align-items: center;
+    background-color: $purple;
+    color: white;
+    margin-bottom: 10px;
+    cursor: pointer;
+    @include backgroundTransition($orange, 250ms, "down");
+}
+
+.part_panel--active {
+    background-color: $orange;
+}
+
+.part_panel h2 {
+    font-family: "Roboto Slab";
+    font-size: 1.25rem;
+    margin-left: 20px;
+}
+
+.part_panel p {
+    font-family: "Zilla Slab";
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-left: 30px;
 }
 
 .course_text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 25px;
-    padding-bottom: 0;
-    flex: 1;
-    color: $textColor;
-
-    @include desktop-down() {
-        align-items: center;        
-    }
-
-    @include tablet-down() {
-        width: 100%;
-        align-items: center;
-        padding: 0px;
-        padding-top: 20px;
-    }
-
-    @include phone-down() {
-        padding-top: 10px;
-    }
+    width: 768px;
+    margin-top: 50px;
 }
 
-.course_title {
-    font-family: "Zilla Slab";
-    font-weight: bold;
-    font-size: 2.9vw;    
+.course_text h1 {
     text-align: center;
-    color: $textColor;
-    text-shadow: 3px 3px 0px $darkBlue;
-
-    @include desktop-down() {
-        font-size: 4vw;
-        text-align: center;
-    }
-
-    @include tablet-down() {
-        font-size: 6vw;
-    }
-
-    @include phone-down() {
-        font-size: 1.5rem;
-    }
-}
-
-.course_description {
-    font-family: "Open Sans";
-    margin-top: 10px;
-    line-height: 1.5em;
-    font-size: 1.2vw;
-    text-align: center;
-    color: $textColor;
-    text-shadow: 2px 2px 0px $darkBlue;
-
-    @include desktop-down() {
-        font-size: 2vw;
-        margin-top: 5px;
-    }
-
-    @include tablet-down() {
-        width: auto;
-        font-size: 1rem;
-        line-height: 1.2em;
-        margin-top: 5px;
-    }
-
-    @include phone-down() {
-        font-size: 1rem;
-        margin-top: 0px;
-    }
-}
-
-.course_preface {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-
-    @include desktop-down() {
-        align-items: center;
-    }
-}
-
-.course_preface h1 {
-    color: $textColor;
     font-family: "Zilla Slab";
-    margin-top: 20px;
-    font-size: 1.75rem;
-    text-shadow: 3px 3px 0px $darkBlue;
-
-    @include desktop-down() {
-        text-align: center;
-        font-size: 3.5vw;
-    }
-
-    @include tablet-down() {
-        font-size: 5vw;
-    }
-
-    @include phone-down() {
-        font-size: 6vw;
-    }
 }
 
-.course_preface p {
-    margin-top: 10px;
-    width: 65%;
-    color: $textColor;
-    text-shadow: 2px 2px 0px $darkBlue;
-
-    @include desktop-down() {
-        width: 90%;
-        text-align: center;
-        font-size: 2vw;
-        margin-top: 5px;
-    }
-
-    @include tablet-down() {
-        width: 100%;
-        font-size: 1rem;
-    }
-}
-
-.course_parts {
+.course_text li {
+    font-family: "Roboto Slab";
+    line-height: 1.6em;
     margin-top: 30px;
-
-    @include desktop-down() {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+    margin-bottom: 30px;
 }
 
-.course_parts .coursePartPanel_container:nth-child(1) {
-    border-top: 3px solid $gold;
-}
-
-.course_parts .coursePartPanel_container:last-of-type {
-    border-bottom: 3px solid $gold;
-}
-
-.course_preface_h1_whatLearn--loader,
-.course_preface_h1_whoFor--loader,
-.course_preface_h1_prerequisites--loader  {
-    height: 45px; 
-    width: 400px;
-    margin-top: 20px;
-}
-
-.course_preface_h1_whoFor--loader {
-    width: 400px;
-}
-
-.course_preface_h1_whatLearn--loader {
-    width: 575px;
-
-    @include tablet-down() {
-        width: 425px;
-    }
-}
-
-.course_preface_h1_prerequisites--loader {
-    width: 800px;
-
-    @include desktop-down() {
-        width: 600px;
-    }
-
-    @include tablet-down() {
-        width: 425px;
-    }
-}
-
-.course_preface_p--loader {
-    width: 700px;
-    margin-top: 10px;
-    height: 150px;
-
-    @include desktop-down() {
-        height: 100px;
-    }
-
-    @include tablet-down() {
-        width: 85%;
-    }
-}
-
-.course_title--loader {
-    width: 400px;
-    height: 40px;
-}
-
-.course_description--loader {
-    margin-top: 10px;
-    width: 90%;
-
-    @include desktop-down() {
-        width: 700px;
-        height: 100px;
-    }
-
-    @include tablet-down() {
-        width: 85%;
-        height: 75px;
-    }
+.course_text a {
+    color: $orange;
 }

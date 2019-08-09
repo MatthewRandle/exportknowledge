@@ -1,5 +1,65 @@
-When a user clicks on add to cart change border to be a different color
+Cascading style sheets (CSS) are a way in which we can give HTML elements a certain style. We can use JavaScript to alter the CSS that we give to HTML - from changing the color on the click of a button to animating styles.
 
+<br>
+<br>
 
-showcase how you can also just change the class to a different one
-    implement add to wishlist which will change class to item_wishList
+We are going to use JavaScript to change our styling on a movie when we click the 'Add to cart' button. To do this we first need to add event listeners to all of these buttons. This will then allow us to change that movies styling. So, we will use what we learned in the previous part and add event listeners to all 'Add to cart buttons'. If we look at the HTML code the buttons have a class name of 'item_button', we will use getElementsByClassName like we did in the second part
+
+<code><js>
+let buttons = documents.getElementsByClassName("item_button");
+let buttonsArray = Array.prototype.slice.call(buttons);
+
+buttonsArray.forEach(button => {
+    button.addEventListener("click", changeStyle);
+})
+<code>
+
+Next, we will add the changeStyle function. We want to change the border color of the container for the movie that was added to the cart. We will do this by using the parentElement which we looked at last part
+
+<code><js>
+let buttons = documents.getElementsByClassName("item_button");
+let buttonsArray = Array.prototype.slice.call(buttons);
+
+buttonsArray.forEach(button => {
+    button.addEventListener("click", changeStyle);
+})
+
+function changeStyle(event) {
+    let button = event.target;
+    let container = button.parentElement;
+}
+<code>
+
+Now we have the container for the clicked movie all we need to do now is change the CSS border-color property. We simply do this by doing element.style.propertyName
+
+<code><js>
+function changeStyle(event) {
+    let button = event.target;
+    let container = button.parentElement;
+    container.style.borderColor = "blue";
+}
+<code>
+
+Now whenever we add a movie to the shopping cart the containers border changes color!
+
+<br>
+<br>
+
+There is another way that we can change the styling of an element - by directly changing the elements class name. Lets say that we had multiple styles that we wanted to change when the button is pressed. In our CSS we might have a class called 'item--clicked' that has all of this new styling. To change an elements class we do This
+
+<code><pre><js>
+element.className = "newName";
+<code>
+
+Now, since we don't want to completely change the styling of the movie container - we want to keep the original layout and some of the styling - we want to set the containers styling to be both the original and the checked styling. We can do this by setting the className to be multiple classes separated by a space
+
+<code><pre><js>
+container.className = "item item--clicked";
+<code>
+
+When doing this be sure to put the new class name after the original. We need to do this because if our original styling sets the border to be grey and our new styling sets it to blue, which one should it do? The answer is the one thats placed last in the className property.
+
+<br>
+<br>
+
+That's it for part 4, thanks for reading!

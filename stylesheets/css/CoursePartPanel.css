@@ -1,5 +1,5 @@
 .coursePartPanel_container {
-  background: #181e34;
+  background: #262a4c;
   width: 60vw;
   height: 2vw;
   display: -webkit-box;
@@ -14,8 +14,8 @@
   padding-bottom: 15px;
   font-size: 1.85vw;
   font-weight: bold;
-  -webkit-box-shadow: 5px 5px 0px 0px rgba(24, 30, 52, 0.4);
-          box-shadow: 5px 5px 0px 0px rgba(24, 30, 52, 0.4);
+  -webkit-box-shadow: 5px 5px 0px 0px rgba(38, 42, 76, 0.4);
+          box-shadow: 5px 5px 0px 0px rgba(38, 42, 76, 0.4);
   margin-bottom: 15px;
   position: relative;
   -webkit-transform: translateZ(0);
@@ -51,8 +51,8 @@
 .coursePartPanel_container p {
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e6ebff), color-stop(#e6ebff), color-stop(#181e34), to(#181e34));
-  background-image: linear-gradient(#e6ebff, #e6ebff, #181e34, #181e34);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e6ebff), color-stop(#e6ebff), color-stop(#262a4c), to(#262a4c));
+  background-image: linear-gradient(#e6ebff, #e6ebff, #262a4c, #262a4c);
   background-size: auto 400%;
   -webkit-transition: background 250ms ease-out;
   transition: background 250ms ease-out;
@@ -64,16 +64,16 @@
 
 .coursePartPanel_container:hover {
   cursor: pointer;
-  background: #181e34;
+  background: #262a4c;
 }
 
 .coursePartPanel_container:hover .coursePartPanel_part {
-  border-right: 1px solid #181e34;
+  border-right: 1px solid #262a4c;
 }
 
 .coursePartPanel_container:active {
-  -webkit-box-shadow: 3px 3px 0px 0px rgba(24, 30, 52, 0.4);
-          box-shadow: 3px 3px 0px 0px rgba(24, 30, 52, 0.4);
+  -webkit-box-shadow: 3px 3px 0px 0px rgba(38, 42, 76, 0.4);
+          box-shadow: 3px 3px 0px 0px rgba(38, 42, 76, 0.4);
 }
 
 @media only screen and (max-width: 1200px) {

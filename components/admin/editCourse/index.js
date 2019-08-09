@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import EditCourse from "./EditCourse";
-import AdminCheck from "../AdminCheck";
 import { withRouter } from "next/router";
 import PropTypes from "prop-types";
 
@@ -111,20 +110,17 @@ class EditCourseContainer extends Component {
         }
 
         return (
-            <AdminCheck>
-                <EditCourse
-                    submit={this.submit}
-                    course={this.props.course ? this.props.course.selectedCourse : null}
-                    adminError={this.props.admin ? this.props.admin.error : null}
-                    error={this.props.error}
-                    categories={this.getCategories()}
-                    selectedCategory={this.state.selectedCategory}
-                    handleCategoryChange={this.handleCategoryChange}
-                    parts={this.getParts()}
-                    delete={this.delete}
-                />
-                
-            </AdminCheck>
+            <EditCourse
+                submit={this.submit}
+                course={this.props.course ? this.props.course.selectedCourse : null}
+                adminError={this.props.admin ? this.props.admin.error : null}
+                error={this.props.error}
+                categories={this.getCategories()}
+                selectedCategory={this.state.selectedCategory}
+                handleCategoryChange={this.handleCategoryChange}
+                parts={this.getParts()}
+                delete={this.delete}
+            />
         );
     }
 }

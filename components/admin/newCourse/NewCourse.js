@@ -16,25 +16,17 @@ const NewCourse = (props) => {
                             title: props.course ? props.course.title : "",
                             image: props.course ? props.course.image : "",
                             video: props.course ? props.course.video || "" : "",
-                            preview: props.course ? props.course.preview : "",
                             exists: props.course ? props.course.exists : 0,
-                            description: props.course ? props.course.description : "",
-                            whoFor: props.course ? props.course.whoFor : "",
-                            whatLearn: props.course ? props.course.whatLearn : "",
-                            prerequisites: props.course ? props.course.prerequisites : "" //TODO: WE DONT NEED ANY OF THESE CHECkS AS ALWAYS NEW
+                            description: props.course ? props.course.description : ""
                         }}
                         onSubmit={(values) => {
                             props.submit(
                                 values.url,
                                 values.title,
                                 values.image,
-                                values.preview,
                                 values.video,
                                 values.exists,
-                                values.description,
-                                values.whatLearn,
-                                values.whoFor,
-                                values.prerequisites
+                                values.description
                             );
                         }}
                         render={({
@@ -91,43 +83,7 @@ const NewCourse = (props) => {
                                         rows="100"
                                         onChange={handleChange}
                                         value={values.description}
-                                        maxLength={500}
-                                    />
-
-                                    <p>What Will They Learn?</p>
-                                    <textarea
-                                        style={{ resize: "none", height: "150px", fontSize: "1.2rem" }}
-                                        className="editArticle_form_text"
-                                        name="whatLearn"
-                                        cols="30"
-                                        rows="100"
-                                        onChange={handleChange}
-                                        value={values.whatLearn}
-                                        maxLength={400}
-                                    />
-
-                                    <p>Who is the course for?</p>
-                                    <textarea
-                                        style={{ resize: "none", height: "150px", fontSize: "1.2rem" }}
-                                        className="editArticle_form_text"
-                                        name="whoFor"
-                                        cols="30"
-                                        rows="100"
-                                        onChange={handleChange}
-                                        value={values.whoFor}
-                                        maxLength={400}
-                                    />
-
-                                    <p>Prerequisites</p>
-                                    <textarea
-                                        style={{ resize: "none", height: "150px", fontSize: "1.2rem" }}
-                                        className="editArticle_form_text"
-                                        name="prerequisites"
-                                        cols="30"
-                                        rows="100"
-                                        onChange={handleChange}
-                                        value={values.prerequisites}
-                                        maxLength={400}
+                                        maxLength={250}
                                     />
 
                                     <p>Category</p>

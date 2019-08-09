@@ -1,54 +1,107 @@
-import React from "react";
-import dynamic from "next/dynamic";
 import Head from "next/head";
+import Link from "next/link";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 import "../../stylesheets/css/Code.css";
 import "../../stylesheets/css/CommentSection.css";
-import "../../stylesheets/css/CoursePart.css";
+import "../../stylesheets/css/Course.css";
+import "../../stylesheets/css/CoursePartPanel.css";
 
 import ErrorBoundary from "../../components/ErrorBoundary";
+import CommentSection from "../../components/commentSection";
 import initialSetupFetch from "../../utils/initialSetupFetch";
-import { fetchCoursePart } from "../../components/course/CourseActions";
-import CoursePartLoader from "../../components/coursePart/CoursePartLoader";
+import { fetchCourse, clearCourse, fetchCoursePart } from "../../components/course/CourseActions";
+import ParseText from "../../components/ParseText";
 
-const CoursePart = dynamic(import("../../components/coursePart"), { loading: () => <CoursePartLoader /> });
+const CoursePage = ({ title }) => {
+    const dispatch = useDispatch();
+    const course = useSelector(state => state.course.selectedCourse);
+    const parts = useSelector(state => state.course.selectedCourseParts);
+    const currentPart = useSelector(state => state.course.selectedPart);
 
-const CoursePartPage = (props) => {
+    useEffect(() => {
+        return () => {
+            dispatch(clearCourse());
+        }
+    })
+
     return (
         <ErrorBoundary>
             <Head>
-                <title>{props.title} - export Knowledge;</title>
+                <title>{title} - export Knowledge;</title>
             </Head>
 
-            <CoursePart />
+            <div className="course_container pushFooter">
+                <div className="course">
+                    <div className="course_panel">
+                        <img
+                            className="course_video"
+                            src={course.image}
+                            alt={course.title}
+                        />
+
+                        <div className="course_panel_content">
+                            <h3>{parts.length} Parts</h3>
+                            <div className="course_panel_parts">
+                                {parts.map((item, i) => {
+                                    return (
+                                        <Link key={i} href={`/course/${course.url}/${item.url}`}>
+                                            <a className={currentPart.title === item.title ? "part_panel part_panel--active" : "part_panel"}>
+                                                <h2>{item.part}</h2>
+                                                <p>{item.title}</p>
+                                            </a>
+                                        </Link>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="course_text">
+                        <h1>{currentPart.title}</h1>
+                        <ul>
+                            <ParseText text={currentPart.text} />
+                        </ul>
+                    </div>
+
+                    <CommentSection articleID={null} partID={currentPart.id} />
+                </div>
+            </div>
         </ErrorBoundary>
     );
 }
 
-CoursePartPage.getInitialProps = async function ({ store, req, query }) {
+CoursePage.getInitialProps = async function ({ store, req, query }) {
     //if server side
     if (req) {
         await initialSetupFetch(store, req);
     }
 
-    const state = store.getState(); 
+    const state = store.getState();
 
-    if(state.course == null) {
+    if (state.course == null) {
+        await store.dispatch(fetchCourse(query.courseURL, req));
         await store.dispatch(fetchCoursePart(query.partURL, query.courseURL, req));
     }
-    else if(state.course.selectedPart == null) {
-        await store.dispatch(fetchCoursePart(query.partURL, query.courseURL, req));
+    else if (state.course.selectedCourse == null) {
+        await store.dispatch(fetchCourse(query.courseURL, req));
     }
-    
-    
-    //if we have the course title return it
-    if(store.getState().course != null) {
-        if (store.getState().course.selectedPart != null) {
-            return { title: store.getState().course.selectedPart.title };
+
+    if(state.course != null) {
+        if(state.course.selectedPart == null) {
+            await store.dispatch(fetchCoursePart(query.partURL, query.courseURL, req));
         }
     }
-    
+
+    //if we have the course title return it
+    if (store.getState().course != null) {
+        if (store.getState().course.selectedCourse != null) {
+            return { title: store.getState().course.selectedCourse.title };
+        }
+    }    
+
     return {};
 }
 
-export default CoursePartPage;
+export default CoursePage;

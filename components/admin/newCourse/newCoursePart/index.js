@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { withRouter } from "next/router";
 
-import AdminCheck from "../../AdminCheck";
 import { newCoursePart, clearSuccess } from "../../AdminActions";
 import NewCoursePart from "./NewCoursePart";
 
@@ -31,13 +30,11 @@ class NewCoursePartContainer extends Component {
         }
 
         return (
-            <AdminCheck>
-                <NewCoursePart
-                    submit={this.submit}
-                    error={this.props.error}
-                    adminError={this.props.admin ? this.props.admin.error : null}
-                />
-            </AdminCheck>
+            <NewCoursePart
+                submit={this.submit}
+                error={this.props.error}
+                adminError={this.props.admin ? this.props.admin.error : null}
+            />
         )
     }
 }

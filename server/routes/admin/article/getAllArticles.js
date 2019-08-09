@@ -3,7 +3,7 @@ const AppError = require("../../../tools/applicationError");
 const adminCheck = require("../../../middleware/adminCheck");
 
 const getAllArticles = `
-    SELECT id, url, title, image, text, video, articles.exists, timestamp, description
+    SELECT id, url, title, image, text, video, articles.exists, timestamp, text_preview
     FROM articles;`
 
 module.exports = app => {

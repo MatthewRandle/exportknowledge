@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,kBAAkB,CAAC;EACf,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,UAAU,EAAE,IAAI;CACnB;;AAED,AAAA,QAAQ,CAAC;EACL,KAAK,EAAE,MAAM;EACb,WAAW,EAAE,IAAI;EACjB,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,cAAc;EAErC,QAAQ,EAAE,IAAI;CACjB",
+    "sources": [
+        "../scss/Courses.scss"
+    ],
+    "names": [],
+    "file": "Courses.css"
+}

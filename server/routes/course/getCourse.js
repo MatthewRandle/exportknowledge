@@ -4,8 +4,7 @@ const bodyCheck = require("../../middleware/bodyCheck");
 
 const getCourse = `
     SELECT  courses.id, 
-            courses.url, courses.title, 
-            courses.preview_description as preview, 
+            courses.url, courses.title,
             courses.description, 
             courses.image, 
             courses.video, 
@@ -29,7 +28,7 @@ const getCoursesParts = `
 
 module.exports = app => {
     app.post("/api/get-course", bodyCheck, (req, res, next) => {
-        if (typeof req.body.url == null) {
+        if (req.body.url == null) {
             res.status(400);
             return;
         }

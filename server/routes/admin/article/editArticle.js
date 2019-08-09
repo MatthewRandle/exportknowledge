@@ -9,9 +9,9 @@ const editArticle = `
         title = ?,
         image = ?,
         text = ?,
+        text_preview = ?,
         video = ?,
-        articles.exists = ?,
-        description = ?
+        articles.exists = ?
     WHERE id = ?;`
 
 const deleteArticlesTags = `
@@ -24,14 +24,13 @@ const deleteArticlesPrerequisites = `
 
 module.exports = app => {  
     app.post("/api/admin/edit-article", bodyCheck, adminCheck, (req, res, next) => {
-        if (typeof req.body.id == null || 
-            typeof req.body.title == null || 
-            typeof req.body.image == null || 
-            typeof req.body.text == null || 
-            typeof req.body.url == null || 
-            typeof req.body.description == null || 
-            typeof req.body.tags == null ||
-            typeof req.body.exists == null) 
+        if (req.body.id     == null || 
+            req.body.title  == null || 
+            req.body.image  == null || 
+            req.body.text   == null || 
+            req.body.url    == null ||
+            req.body.tags   == null ||
+            req.body.exists == null) 
         {
             res.send({ error: "No Body" });
             return;
@@ -50,8 +49,10 @@ module.exports = app => {
                     return;
                 }
 
+                const text_preview = req.body.text.substring(0, 274);
+
                 //EDIT ARTICLE
-                connection.query(editArticle, [req.body.url, req.body.title, req.body.image, req.body.text, req.body.video, req.body.exists, req.body.description, req.body.id], (err, results) => {
+                connection.query(editArticle, [req.body.url, req.body.title, req.body.image, req.body.text, text_preview, req.body.video, req.body.exists, req.body.id], (err, results) => {
                     if (err) {
                         return connection.rollback(function () {
                             connection.release();

@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { withRouter } from "next/router";
 
-import AdminCheck from "../../AdminCheck";
 import { fetchCoursePart, clearCoursePart } from "../../../course/CourseActions";
 import { editCoursesPart, clearSuccess, deleteCoursePart } from "../../AdminActions";
 import EditCoursePart from "./EditCoursePart";
@@ -53,15 +52,13 @@ class EditCoursePartContainer extends Component {
         }
 
         return(
-            <AdminCheck>
-                <EditCoursePart
-                    submit={this.submit}
-                    part={this.props.course ? this.props.course.selectedPart : null}
-                    error={this.props.error}
-                    adminError={this.props.admin ? this.props.admin.error : null}
-                    delete={this.delete}
-                />
-            </AdminCheck>
+            <EditCoursePart
+                submit={this.submit}
+                part={this.props.course ? this.props.course.selectedPart : null}
+                error={this.props.error}
+                adminError={this.props.admin ? this.props.admin.error : null}
+                delete={this.delete}
+            />
         )
     }
 }

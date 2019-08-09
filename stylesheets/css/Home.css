@@ -1,352 +1,149 @@
-.home, .home_jumbotron {
-  padding-right: 20px;
-  padding-left: 20px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-@media only screen and (max-width: 480px) {
-  .home, .home_jumbotron {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-}
-
-.home, .home_jumbotron {
-  width: 95%;
-  height: 100%;
-}
-
-@media only screen and (max-width: 1200px) {
-  .home, .home_jumbotron {
-    width: 100%;
-  }
-}
-
-.home_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 60px;
-}
-
-.home {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.home_jumbotron_container {
-  width: 100%;
+.hero_container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: #181e34;
+  height: 700px;
+  border-bottom: 2px solid #EFEFEF;
+  padding-bottom: 30px;
 }
 
-.home_jumbotron {
+.hero {
+  width: 1500px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-@media only screen and (max-width: 768px) {
-  .home_jumbotron {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .home_jumbotron {
-    padding-top: 30px;
-  }
-}
-
-.jumbotron_button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 10px;
-  margin-top: 30px;
-  -webkit-box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.5);
-          box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.5);
-  width: 270px;
-  background: #00A6ED;
-  position: relative;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
-}
-
-.jumbotron_button:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #e2c13d;
-  -webkit-transform: scaleY(0);
-          transform: scaleY(0);
-  -webkit-transform-origin: 0% 100%;
-          transform-origin: 0% 100%;
-  -webkit-transition-property: -webkit-transform;
-  transition-property: -webkit-transform;
-  transition-property: transform;
-  transition-property: transform, -webkit-transform;
-  -webkit-transition: 150ms ease-out;
-  transition: 150ms ease-out;
-}
-
-.jumbotron_button:hover:before {
-  -webkit-transform: scaleY(1);
-          transform: scaleY(1);
-}
-
-.jumbotron_button p {
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e6ebff), color-stop(#e6ebff), color-stop(#181e34), to(#181e34));
-  background-image: linear-gradient(#e6ebff, #e6ebff, #181e34, #181e34);
-  background-size: auto 400%;
-  -webkit-transition: background 250ms ease-out;
-  transition: background 250ms ease-out;
-}
-
-.jumbotron_button:hover p {
-  background-position-y: 100%;
-}
-
-.jumbotron_button:hover {
-  cursor: pointer;
-}
-
-@media only screen and (max-width: 480px) {
-  .jumbotron_button {
-    width: 70%;
-  }
-}
-
-.jumbotron_button p {
-  font-family: "Zilla Slab";
-  font-weight: bold;
-  font-size: 1.6rem;
-  color: #e6ebff;
-}
-
-.jumbotron_title {
-  font-family: "Zilla Slab";
-  font-weight: bold;
-  color: #e6ebff;
-  font-size: 1.5rem;
-  text-align: center;
-  margin-bottom: 20px;
-  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5);
-  width: 40%;
-}
-
-@media only screen and (max-width: 1200px) {
-  .jumbotron_title {
-    width: 80%;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .jumbotron_title {
-    width: 100%;
-  }
-}
-
-.jumbotron_title span {
-  color: #e2c13d;
-}
-
-.jumbotron_courses {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  margin-top: 20px;
-  color: #e6ebff;
-  font-family: "Zilla Slab";
-}
-
-@media only screen and (max-width: 768px) {
-  .jumbotron_courses {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .jumbotron_courses {
-    margin-top: 0;
-  }
-}
-
-.home_course {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 50%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-@media only screen and (max-width: 768px) {
-  .home_course {
-    width: auto;
-  }
-}
-
-.jumbotron_courses .home_course:first-of-type {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  margin-right: 50px;
-}
-
-@media only screen and (max-width: 768px) {
-  .jumbotron_courses .home_course:first-of-type {
-    margin-right: 0;
-  }
-}
-
-.jumbotron_courses .home_course:last-of-type {
-  margin-left: 50px;
-}
-
-@media only screen and (max-width: 768px) {
-  .jumbotron_courses .home_course:last-of-type {
-    display: none;
-  }
-}
-
-.home_course_image {
-  width: 37vw;
-  height: 20.8125vw;
-  -webkit-box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.5);
-          box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-}
-
-@media only screen and (max-width: 768px) {
-  .home_course_image {
-    width: 60vw;
-    height: 33.75vw;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .home_course_image {
-    width: 85vw;
-    height: 47.8125vw;
-  }
-}
-
-.home_course_title {
-  font-weight: bold;
-  font-size: 1.75vw;
-  margin-top: 20px;
-  text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
-}
-
-.home_articles {
-  width: 100%;
-  margin-top: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Roboto Slab";
+  font-weight: bold;
 }
 
-.jumbotron_button--loader {
-  height: 55px;
-  width: 270px;
-  border: none;
-  margin-top: 30px;
-  -webkit-box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.5);
-          box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.5);
+.hero_content {
+  position: relative;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-@media only screen and (max-width: 1200px) {
-  .jumbotron_button--loader {
-    height: 52px;
-  }
+.hero_content h1 {
+  color: #1d1d1d;
+  font-size: 1.75rem;
+  line-height: 1.3em;
 }
 
-@media only screen and (max-width: 768px) {
-  .jumbotron_button--loader {
-    height: 48px;
-  }
+.hero_content h1:last-of-type {
+  margin-bottom: 15px;
 }
 
-@media only screen and (max-width: 480px) {
-  .jumbotron_button--loader {
-    width: 70%;
-    height: 45px;
-  }
+.hero_content h1 span {
+  color: #FF8E79;
 }
 
-.jumbotron_title--loader {
-  height: 70px;
-}
-
-@media only screen and (max-width: 1200px) {
-  .jumbotron_title--loader {
-    width: 50%;
-  }
-}
-
-.articleSearch_select--loader,
-.articleSearch_searchBar--loader,
-.articleSearch_checkbox--loader {
-  background: none;
-}
-
-.articleSearch_checkbox--loader {
-  background: white;
+.hero_button {
+  width: 250px;
+  border-radius: 5px;
+  background-color: #7c7ccf;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: white;
-  height: 26px;
+  font-size: 1rem;
+  padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: "Zilla Slab";
+  font-weight: normal;
+  -webkit-box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
+          box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
+}
+
+.hero_content img {
+  width: 150px;
+  position: absolute;
+  bottom: 20px;
+}
+
+.featured_course_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 800px;
+  width: 100%;
+  background-color: #ececf8;
+}
+
+.featured_course_container h2 {
+  margin-bottom: 30px;
+  color: #1d1d1d;
+  font-family: "Zilla Slab";
+  font-size: 2.25rem;
+}
+
+.featured_course_container a {
+  position: relative;
+  width: 45vw;
+  height: 25.3125vw;
+}
+
+.home_course_image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  z-index: 0;
+}
+
+.home_course_image--blur {
+  position: absolute;
+  left: 50%;
+  right: 0;
+  top: 50%;
+  bottom: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  -webkit-filter: blur(30px);
+          filter: blur(30px);
+  z-index: -1;
+  opacity: 0.4;
+}
+
+.articles_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=Home.css.map */

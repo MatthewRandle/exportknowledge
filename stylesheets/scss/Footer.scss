@@ -1,168 +1,71 @@
 @import "_variables";
 
 .footer_container {
-    height: 100px;
-    width: 100%; 
-    background: $darkBlue;
-    z-index: 1;
+    background-color: $purple;
     display: flex;
     justify-content: center;
-
-    @include phone-down() {
-        padding-bottom: 20px;
-        padding-top: 10px;
-        height: auto;
-    }
-}
-
-.footer, .footer a {
-    color: #e6ebff;
-    font-family: "Zilla Slab";
+    margin-top: 100px;
 }
 
 .footer {
+    width: 1500px;
+    min-width: 1200px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    @extend %container;
-
-    @include phone-down() {
-        flex-direction: column;
-        justify-content: center;
-    }
+    padding: 50px;
 }
 
-.footer_logoAndText {
-    @include phone-down() {
-        flex-direction: column;
-        margin-bottom: 10px;
-        margin-top: 10px;
-    }
-}
-
-.footer_title {
-    font-weight: bold;
-    font-size: 1.2rem;
-
-    @include phone-down() {
-        font-size: 1.75rem;
-        text-align: center;
-    }
-}
-
-.footer_text {
-    width: 100%;
-}
-
-.footer_logo_image {
-    height: 50px;
-    margin-right: 20px;
-    transform: translateY(-4px);
-
-    @include desktop-down() {
-        transform: translateY(-5px);
-    }
-
-    @include tablet-down() {
-        transform: translateY(-5px);
-    }
-
-    @include phone-down() {
-        margin-right: 10px;
-        height: 80px;
-    }
-}
-
-.footer_links,
-.footer_social_links {
+.footer_logo {
     display: flex;
-    align-items: center;
-    font-size: 0.8rem;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
 
-    @include phone-down() {
-        font-size: 0.6rem;
-    }
+.footer_logo img {
+    width: 35px;
+    margin-right: 15px;
+}
+
+.footer_info {
+    font-size: 0.7rem;
+    color: white;
+    font-family: "Roboto Slab";
+    width: 500px;
+    line-height: 1.3em;
+    margin-left: 20px;
+}
+
+.footer_info h2 {
+    margin-bottom: 5px;
+    font-family: "Zilla Slab";
+    font-size: 1rem;
+}
+
+.footer_info a {
+    color: $darkGrey;
 }
 
 .footer_links {
-    width: 500px;
+    margin-left: auto;
+    margin-right: 100px;
+    display: flex;
+    flex-direction: column;
+}
 
-    @include desktop-down() {
-        width: 390px;
-    }
-
-    @include tablet-down() {
-        width: 100%;
-        font-size: 0.55rem;
-    }
-
-    @include tablet-down() {
-        font-size: 1rem;
-        display: flex;
-    }
-
-    @include phone-down() {
-        justify-content: space-around;
-        width: 100%;
-        margin-top: 10px;
-    }
+.footer_links h2 {
+    color: white;
+    font-family: "Zilla Slab";
+    font-size: 1rem;
 }
 
 .footer_links a {
-    margin-right: 20px;
-
-    @include tablet-down() {
-        margin-right: 10px;
-    }
-
-    @include phone-down() {
-        text-align: center;
-        font-size: 0.75rem;
-    }
+    color: white;
+    font-family: "Roboto Slab";
+    margin-top: 10px;
+    font-size: 0.7rem;
 }
 
-.footer_social_links_container {
-    @include phone-down() {
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-    }
-}
-
-.footer_social_links {
-    @include phone-down() {
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        margin-top: 15px;
-    }
-}
-
-.footer_social_links a img {
-    height: 65px;
-    margin-left: 20px;
-
-    @include tablet-down() {
-        margin-left: 10px;
-        height: 35px;
-    }
-
-    @include phone-down() {
-        height: 75px;
-    }
-}
-
-.footer_youtube {
+.footer_social img {
     height: 50px;
-
-    @include tablet-down() {
-        margin-left: 5px;
-        height: 40px;
-    }
-
-    @include phone-down() {
-        height: 30px;
-        margin-left: 3px;
-    }
+    margin-left: 20px;
 }

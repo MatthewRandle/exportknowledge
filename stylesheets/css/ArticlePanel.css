@@ -1,64 +1,31 @@
-.articlePanel_container {
-  width: 100%;
-  height: 100%;
-  font-family: "Zilla Slab";
+.articlePanel {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-shadow: 5px 5px 0px 0px rgba(24, 30, 52, 0.4);
-          box-shadow: 5px 5px 0px 0px rgba(24, 30, 52, 0.4);
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  -webkit-transition: -webkit-box-shadow 0.2s;
-  transition: -webkit-box-shadow 0.2s;
-  transition: box-shadow 0.2s;
-  transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
+  margin-bottom: 75px;
 }
 
-.articlePanel_container:hover {
-  cursor: pointer;
-  -webkit-box-shadow: 4px 4px 0px 0px rgba(24, 30, 52, 0.4);
-          box-shadow: 4px 4px 0px 0px rgba(24, 30, 52, 0.4);
+.articlePanel img:first-of-type {
+  width: 600px;
+  border-radius: 20px;
+  z-index: 0;
+  -webkit-box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
+          box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
 }
 
-.articlePanel_container:hover .articlePanel_bottomBar {
-  color: #181e34;
-  background-color: #e2c13d;
-}
-
-.articlePanel_base {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  width: 100%;
-  background-color: #181e34;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-@media only screen and (max-width: 1200px) {
-  .articlePanel_base {
-    padding: 4px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .articlePanel_base {
-    padding: 3px;
-  }
+.articlePanel img:last-of-type {
+  width: 600px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: -1;
+  -webkit-filter: blur(20px);
+          filter: blur(20px);
+  opacity: 0.2;
 }
 
 .articlePanel_content {
@@ -69,123 +36,62 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 100%;
-  height: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  min-height: 100%;
+  color: #1d1d1d;
+  padding-left: 30px;
 }
 
-.articlePanel_title {
-  font-weight: bold;
-  font-size: 1.35vw;
-  text-align: center;
-  width: 95%;
-  line-height: 1em;
-  color: #e6ebff;
-  margin-bottom: 5px;
+.articlePanel_content h2 {
+  font-family: "Zilla Slab";
+  font-size: 1.6rem;
 }
 
-@media only screen and (max-width: 1200px) {
-  .articlePanel_title {
-    font-size: 1.8vw;
-  }
+.articlePanel_content p {
+  font-size: "Roboto";
+  margin-top: 10px;
+  line-height: 1.3em;
 }
 
-@media only screen and (max-width: 768px) {
-  .articlePanel_title {
-    font-size: 3vw;
-  }
+.articlePanel_content button {
+  margin-top: auto;
+  width: 300px;
+  font-family: "Zilla Slab";
+  font-size: 1.3rem;
+  background-color: #1d1d1d;
+  border: none;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+  position: relative;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
 }
 
-@media only screen and (max-width: 480px) {
-  .articlePanel_title {
-    font-size: 5.5vw;
-  }
+.articlePanel_content button:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #FF8E79;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: 100% 0%;
+          transform-origin: 100% 0%;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition: 200ms ease-out;
+  transition: 200ms ease-out;
 }
 
-.articlePanel_description {
-  font-size: 1vw;
-  text-align: center;
-  padding-right: 5px;
-  padding-left: 5px;
-  line-height: 1em;
-  color: #e6ebff;
-}
-
-@media only screen and (max-width: 1200px) {
-  .articlePanel_description {
-    font-size: 1.4vw;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .articlePanel_description {
-    font-size: 2vw;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .articlePanel_description {
-    font-size: 4vw;
-  }
-}
-
-.articlePanel_container img {
-  width: 100%;
-  height: 62%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.articlePanel_bottomBar {
-  font-family: "Open Sans";
-  border-top: 3px solid #38467a;
-  background-color: #181e34;
-  height: 1.3vw;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  font-size: .55vw;
-  padding-right: 8px;
-  padding-left: 8px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  color: #e6ebff;
-}
-
-@media only screen and (max-width: 1200px) {
-  .articlePanel_bottomBar {
-    font-size: 0.8vw;
-    height: 1.3vw;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .articlePanel_bottomBar {
-    font-size: 1.1vw;
-    height: 1.8vw;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .articlePanel_bottomBar {
-    font-size: 2.3vw;
-    height: 4vw;
-  }
-}
-
-.articlePanel_bottomBar--doesntExist {
-  background-color: red;
+.articlePanel_content button:hover:before {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
 }
 /*# sourceMappingURL=ArticlePanel.css.map */

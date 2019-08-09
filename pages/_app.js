@@ -6,6 +6,8 @@ import withRedux from "next-redux-wrapper";
 import reduxThunk from "redux-thunk";
 import Head from "next/head";
 const { detect } = require('detect-browser');
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import GoogleAnalytics, { init } from "../components/GoogleAnalytics";
 import CookieCheck from "../components/cookieCheck";
@@ -14,7 +16,9 @@ import Footer from "../components/footer";
 
 import rootReducer from "../utils/rootReducer";
 import "../stylesheets/css/App.css";
-import "../static/empty.css";
+import "../stylesheets/css/Global.css";
+import "../stylesheets/css/Footer.css";
+import "../stylesheets/css/Navbar.css";
 
 const makeStore = (initialState, options) => {
     return createStore(rootReducer, initialState, applyMiddleware(reduxThunk));
@@ -28,6 +32,7 @@ class MyApp extends App {
 
     componentDidMount() {
         init();
+        AOS.init();
         const browser = detect();
         if(browser.name === "ie") {
             this.setState({ browserSupported: false });
@@ -47,7 +52,7 @@ class MyApp extends App {
                             )}
 
                             <Head>
-                                <link href="https://fonts.googleapis.com/css?family=Open+Sans|Zilla+Slab:400,700" rel="stylesheet" />
+                                <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Zilla+Slab:400,700" rel="stylesheet" />
                                 <meta name="google-site-verification" content="LvIOdKgCzT_ISjQsQi-NWphkCMSMS4rRmN_cN5qPHUI" />
                                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                                 <title>export Knowledge;</title>

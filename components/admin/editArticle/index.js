@@ -5,7 +5,6 @@ import { withRouter } from "next/router";
 
 import EditArticle from "./editArticle";
 import { newArticle, editArticle, deleteArticle, fetchAllArticles } from "../AdminActions";
-import AdminCheck from "../AdminCheck";
 
 class EditArticleContainer extends Component {
     constructor(props) {
@@ -119,21 +118,19 @@ class EditArticleContainer extends Component {
 
     render() {
         return (
-            <AdminCheck>
-                <EditArticle
-                    prerequisites={this.getPrerequistes()}
-                    selectedPrerequisites={this.state.selectedPrerequisites}
-                    tags={this.getTags()}
-                    selectedTags={this.state.selectedTags}
-                    handlePrerequisiteChange={this.handlePrerequisiteChange}
-                    handleTagsChange={this.handleTagsChange}
-                    submit={this.submitArticle}
-                    adminError={this.props.admin ? this.props.admin.error : null}
-                    article={this.props.admin ? this.props.admin.selectedArticle : null}
-                    delete={this.deleteArticle}
-                    error={this.props.error ? this.props.error.databaseError ? this.props.error.databaseError.sqlMessage : null : null }
-                />
-            </AdminCheck>
+            <EditArticle
+                prerequisites={this.getPrerequistes()}
+                selectedPrerequisites={this.state.selectedPrerequisites}
+                tags={this.getTags()}
+                selectedTags={this.state.selectedTags}
+                handlePrerequisiteChange={this.handlePrerequisiteChange}
+                handleTagsChange={this.handleTagsChange}
+                submit={this.submitArticle}
+                adminError={this.props.admin ? this.props.admin.error : null}
+                article={this.props.admin ? this.props.admin.selectedArticle : null}
+                delete={this.deleteArticle}
+                error={this.props.error ? this.props.error.databaseError ? this.props.error.databaseError.sqlMessage : null : null }
+            />
         );        
     }
 }

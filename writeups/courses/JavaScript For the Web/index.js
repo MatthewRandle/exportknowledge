@@ -16,4 +16,14 @@ function updateTotal(event) {
 
     totalPrice += price;
     totalElement.innerText = totalPrice;
+
+    parent.style.borderColor = "blue";
 }
+
+let paragraph = document.createElement("p");
+let textNode = document.createTextNode("Some text for our paragraph");
+paragraph.appendChild(textNode);
+
+let navbar = document.getElementsByClassName("navbar")[0];
+let shoppingCart = document.getElementsByClassName("shoppingCart")[0];
+navbar.insertBefore(paragraph, shoppingCart);

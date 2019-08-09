@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import Proptypes from "prop-types";
 
 import ArticlePanel from "../articlePanel";
-import ArticleSearchLoader from "./ArticleSearchLoader";
 
 export class ArticleSearchContainer extends Component {
     constructor(props) {
@@ -99,7 +98,7 @@ export class ArticleSearchContainer extends Component {
                     exists={item.exists}
                     key={i}
                     timestamp={item.timestamp}
-                    description={item.description}
+                    text_preview={item.text_preview}
                     admin={false}
                     commentCount={item.comments + item.replies}
                     id={item.id}

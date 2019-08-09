@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ArticlePanel from "./ArticlePanel";
 import { withRouter } from "next/router";
-import PropTypes from "prop-types";
 
 import ArticlePanelErrorBoundary from "./ArticlePanelErrorBoundary";
 
@@ -34,14 +33,13 @@ export class ArticlePanelContainer extends Component {
     }
 
     render() {
-        if(this.props.title && (this.props.image || this.props.admin) && this.props.description && this.props.url && this.props.timestamp && this.props.url) {
+        if(this.props.title && (this.props.image || this.props.admin) && this.props.text_preview && this.props.url && this.props.timestamp) {
             return (
                 <ArticlePanel
                     title={this.props.title}
                     image={this.props.image}
-                    description={this.props.description}
+                    text_preview={this.props.text_preview}
                     url={this.props.url}
-                    link={this.props.url}
                     exists={this.props.exists}
                     timestamp={this.getDatePosted()}
                     onAdminPage={this.checkAdminPage()}
@@ -50,20 +48,8 @@ export class ArticlePanelContainer extends Component {
             );
         }
         
-        return <ArticlePanelErrorBoundary title={this.props.title} />;
+        return <div style={{ display: "none" }}></div>;
     }
-}
-
-ArticlePanelContainer.propTypes = {
-    admin: PropTypes.bool,
-    url: PropTypes.string,
-    timestamp: PropTypes.string,
-    title: PropTypes.string,
-    image: PropTypes.string,
-    description: PropTypes.string,
-    exists: PropTypes.number,
-    comments: PropTypes.number,
-    location: PropTypes.any
 }
 
 export default withRouter(ArticlePanelContainer);

@@ -1,115 +1,54 @@
 @import "_variables";
 
-.coursePanel_container {
-    width: 100%;
-    height: 100%;
-
-    &:hover {
-        cursor: pointer;
-
-        .coursePanel_bottomBar {
-            background-color: $lightBlue;            
-        }
-    }
-}
-
-.coursePanel_base {
-    background-color: $OneDarkBG;
+.coursePanel {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 100%;
     height: 100%;
+    color: $darkGrey;
+    margin-bottom: 50px;
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
 }
 
-.coursePanel_base img {
+.coursePanel img {
     width: 100%;
-    height: 65%;
-    object-fit: cover;
-    padding: 0.4vw;
-    padding-bottom: 0vw;
-    box-sizing: border-box;
-
-    @include phone-down() {
-        padding: 1vw;
-    }
+    border-radius: 5px 5px 0 0;
 }
 
 .coursePanel_content {
-    color: white;
+    position: relative;
+    flex: 1;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    padding: 5px;
-    box-sizing: border-box;
 }
 
-.coursePanel_title {
+.coursePanel_content h2 {
     font-family: "Zilla Slab";
-    font-weight: bold;
-    font-size: 1.5vw;
-
-    @include tablet-down() {
-        font-size: 1.8vw;
-    }
-
-    @include phone-down() {
-        font-size: 5vw;
-    }
 }
 
-.coursePanel_description {
-    text-align: center;
-    font-size: 0.9vw;;
-    line-height: 1.2em;
-
-    @include desktop-down() {
-        font-size: 0.9vw;
-    }
-
-    @include tablet-down() {
-        font-size: 1.3vw;
-    }
-
-    @include phone-down() {
-        font-size: 2.8vw;
-    }
+.coursePanel_content p {
+    margin-top: 10px;
+    font-family: "Roboto Slab";
+    line-height: 1.3em;
+    font-size: 0.75rem;
 }
 
-.coursePanel_bottomBar {
-    background: $darkBlue;
-    width: 100%;
-    height: 15px;
+.coursePanel_button {
+    margin-top: auto;
+    background-color: $darkGrey;
+    padding-bottom: 10px;
+    padding-top: 10px;
     color: white;
-    font-family: "Open Sans";
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 8px;
-    padding-right: 8px;
-    box-sizing: border-box;
-    font-size: 0.55vw;
+    font-family: "Roboto Slab";
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0 0 5px 5px;
 
-    @include desktop-down() {
-        font-size: 0.55vw;
-        height: 11px;
+    &:hover {
+        background-color: $orange;
     }
-
-    @include tablet-down() {
-        font-size: 0.8vw;
-        height: 11px;
-    }
-
-    @include phone-down() {
-        font-size: 2vw;
-        height: 3vw;
-    }
-}
-
-.coursePanel_bottomBar--doesntExist {
-    background: red;
 }

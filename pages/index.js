@@ -1,22 +1,53 @@
 import React from "react";
-import dynamic from "next/dynamic";
+import Link from "next/link";
+import { useSelector } from "react-redux";
 
 import "../stylesheets/css/ArticlePanel.css";
 import "../stylesheets/css/ArticleSearch.css";
 import "../stylesheets/css/Home.css";
 
+import ArticleSearch from "../components/articleSearch";
 import ErrorBoundary from "../components/ErrorBoundary";
 import initialSetupFetch from "../utils/initialSetupFetch";
-import HomeLoader from "../components/home/HomeLoader";
 import { fetchAllTags, fetchAllArticles } from "../components/article/ArticleActions";
-import { fetchLatestCourses } from "../components/course/CourseActions";
-
-const Home = dynamic(import("../components/home"), { loading: () => <HomeLoader /> });
+import { fetchLatestCourse } from "../components/course/CourseActions";
 
 const Index = () => {
+    const latestCourse = useSelector(state => state.course.latestCourse[0]);
     return(
         <ErrorBoundary>
-            <Home />
+            <div className="pushFooter">
+                <div className="hero_container">
+                    <div className="hero">
+                        <div className="hero_content">
+                            <h1>Learn and become a full stack</h1>
+                            <h1>web developer for <span>FREE</span></h1>
+                            <Link prefetch href="/courses">
+                                <a className="hero_button"><p>START LEARNING</p></a>
+                            </Link>
+
+                            <a href="https://www.youtube.com/channel/UC3iSlUY21jsuKvDnosFYYUg?view_as=subscriber" target="_blank" rel="noopener noreferrer">
+                                <img src="/static/youtube-logo-full.png" alt="Youtube" />
+                            </a>
+                        </div>
+                        <img style={{ width: "700px" }} src="/static/hero.jpg" alt=""/>
+                    </div>
+                </div>
+
+                <section className="featured_course_container">
+                    <h2>Featured Course</h2>
+                    <Link href={`/course/${latestCourse.course_url}/${latestCourse.part_url}`}>
+                        <a>
+                            <img className="home_course_image--blur" src={latestCourse.image} />
+                            <img className="home_course_image" src={latestCourse.image} />
+                        </a>
+                    </Link>
+                </section>
+
+                <div className="articles_container">
+                    <ArticleSearch />
+                </div>
+            </div>
         </ErrorBoundary>
     );
 }
@@ -45,10 +76,10 @@ Index.getInitialProps = async function({ store, req }) {
     }
     
     if(state.course == null) {
-        await store.dispatch(fetchLatestCourses(req));
+        await store.dispatch(fetchLatestCourse(req));
     }
-    else if(state.course.latestCourses == null) {
-        await store.dispatch(fetchLatestCourses(req));
+    else if(state.course.latestCourse == null) {
+        await store.dispatch(fetchLatestCourse(req));
     }
 
     return {};

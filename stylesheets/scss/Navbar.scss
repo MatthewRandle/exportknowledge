@@ -2,24 +2,29 @@
 
 .navbar_container {
     z-index: 2;
-    position: fixed;
-    display: flex;
-    justify-content: center;
+    position: fixed;    
     width: 100%;
     font-family: "Zilla Slab";
     color: white;
-    background: $darkBlue;
+    background: $purple;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar {
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    width: 1500px;
+    min-width: 1200px;
+    position: relative;
 }
 
 .navbar_logo {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     height: 100%;
-    width: 235px;
-    background: $gold;
-    position: absolute;
-    left: 0;
 
     @include tablet-down() {
         width: 55px;
@@ -33,7 +38,7 @@
 }
 
 .navbar_logo_title {
-    color: $darkBlue;
+    color: white;
     font-family: "Zilla Slab";
     font-weight: bold;   
     font-size: .8rem;
@@ -55,6 +60,7 @@
 }
 
 .navbar_links {    
+    margin-left: 20px;
     display: flex;
     align-items: center;
     height: 55px;
@@ -69,8 +75,7 @@
 .navbar_link {
     width: 100px;
     height: 100%;  
-    @include backgroundTransition($gold, 200ms, "down");
-    @include textTransition(p, white, $darkBlue, 300ms, "down");  
+    @include backgroundTransition($orange, 200ms, "down");
 
     &:hover {
         cursor: pointer;
@@ -89,7 +94,6 @@
     display: flex;
     align-items: center;
     justify-content: center;   
-    font-weight: bold; 
 }
 
 

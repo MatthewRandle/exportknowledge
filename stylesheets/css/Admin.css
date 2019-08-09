@@ -66,8 +66,8 @@
 .admin_new {
   height: 100%;
   width: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#181e34), to(#00A6ED));
-  background: linear-gradient(to right, #181e34, #00A6ED);
+  background: -webkit-gradient(linear, left top, right top, from(#262a4c), to(#00A6ED));
+  background: linear-gradient(to right, #262a4c, #00A6ED);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

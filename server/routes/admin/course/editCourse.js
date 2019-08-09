@@ -6,15 +6,11 @@ const editCourse = `
     UPDATE courses
         SET title = ?,
         description = ?,
-        preview_description = ?,
         video = ?,
         image = ?,
         url = ?,
         courses.exists = ?,
-        categories_id = ?,
-        who_for = ?,
-        what_learn = ?,
-        prerequisites = ?
+        categories_id = ?
     WHERE id = ?;`
 
 module.exports = app => {
@@ -23,14 +19,10 @@ module.exports = app => {
             req.body.id == null || 
             req.body.title == null || 
             req.body.description == null || 
-            req.body.preview == null || 
             req.body.video == null || 
             req.body.url == null || 
             req.body.exists == null || 
-            req.body.category == null ||
-            req.body.whatLearn == null ||
-            req.body.whoFor == null ||
-            req.body.prerequisites == null) 
+            req.body.category == null)
         {
             res.send({ error: "No Body" });
             return;
@@ -39,16 +31,12 @@ module.exports = app => {
         pool.query(editCourse, 
         [
             req.body.title, 
-            req.body.description, 
-            req.body.preview, 
+            req.body.description,
             req.body.video, 
             req.body.image, 
             req.body.url, 
             req.body.exists, 
-            req.body.category,             
-            req.body.whoFor,
-            req.body.whatLearn,
-            req.body.prerequisites,
+            req.body.category,
             req.body.id
         ], 
         (err, results) => {

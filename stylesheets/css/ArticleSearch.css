@@ -6,39 +6,13 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 100%;
+  width: 1200px;
   margin-top: 30px;
 }
 
 .articleSearch_title {
   font-family: "Zilla Slab";
-  color: #e6ebff;
-  text-shadow: 2px 2px 0px #181e34;
-}
-
-.articleSearch_title--loader {
-  width: 300px;
-  height: 44px;
-}
-
-@media only screen and (max-width: 480px) {
-  .articleSearch_title--loader {
-    width: 100%;
-  }
-}
-
-.articleSearch_panel {
-  font-family: "Zilla Slab";
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  color: #1d1d1d;
 }
 
 .articleSearch_top_bar {
@@ -66,32 +40,14 @@
   }
 }
 
-.articleSearch_filter {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-}
-
-@media only screen and (max-width: 480px) {
-  .articleSearch_filter {
-    width: 100%;
-  }
-}
-
 .articleSearch_searchBar {
   border: none;
   border-radius: 2px;
-  background: #00A6ED;
-  color: #e6ebff;
+  background: #1d1d1d;
   height: 30px;
   outline: none;
   padding-left: 10px;
   width: 250px;
-  -webkit-box-shadow: 5px 5px 0px 0px rgba(24, 30, 52, 0.4);
-          box-shadow: 5px 5px 0px 0px rgba(24, 30, 52, 0.4);
 }
 
 @media only screen and (max-width: 768px) {
@@ -107,33 +63,37 @@
 }
 
 .articleSearch_searchBar::-webkit-input-placeholder {
-  color: #e6ebff;
+  color: white;
 }
 
 .articleSearch_searchBar:-ms-input-placeholder {
-  color: #e6ebff;
+  color: white;
 }
 
 .articleSearch_searchBar::-ms-input-placeholder {
-  color: #e6ebff;
+  color: white;
 }
 
 .articleSearch_searchBar::placeholder {
-  color: #e6ebff;
+  color: white;
+}
+
+.articleSearch_searchBar,
+.articleSearch_select {
+  background: #1d1d1d;
+  color: white;
+  -webkit-box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
+          box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
 }
 
 .articleSearch_select {
-  background: #00A6ED;
   border: none;
   border-radius: 2px;
-  color: #e6ebff;
   height: 30px;
   margin-right: 10px;
   outline: none;
   padding-left: 10px;
   width: 100px;
-  -webkit-box-shadow: 5px 5px 0px 0px rgba(24, 30, 52, 0.4);
-          box-shadow: 5px 5px 0px 0px rgba(24, 30, 52, 0.4);
 }
 
 @media only screen and (max-width: 768px) {
@@ -156,6 +116,7 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  font-family: "Zilla Slab";
 }
 
 @media only screen and (max-width: 768px) {
@@ -166,8 +127,8 @@
 
 .articleSearch_checkbox {
   font-size: 0.75rem;
-  background: #00A6ED;
-  color: #e6ebff;
+  background: #7c7ccf;
+  color: white;
   margin-right: 10px;
   margin-bottom: 10px;
   padding: 5px;
@@ -181,8 +142,6 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  -webkit-box-shadow: 5px 5px 0px 0px rgba(24, 30, 52, 0.4);
-          box-shadow: 5px 5px 0px 0px rgba(24, 30, 52, 0.4);
 }
 
 .articleSearch_checkbox:hover {
@@ -205,43 +164,10 @@
 }
 
 .articleSearch_checkbox--checked {
-  background: #e2c13d;
-  color: #181e34;
+  background: #FF8E79;
 }
 
 .articleSearch_articles {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 19.5vw;
-  grid-gap: 30px;
-  width: 100%;
-  margin-top: 10px;
-}
-
-@media only screen and (max-width: 1200px) {
-  .articleSearch_articles {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 27vw;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .articleSearch_articles {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 40vw;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .articleSearch_articles {
-    -ms-grid-columns: (1fr)[1];
-        grid-template-columns: repeat(1, 1fr);
-    grid-gap: 30px;
-    grid-auto-rows: 81vw;
-  }
+  margin-top: 50px;
 }
 /*# sourceMappingURL=ArticleSearch.css.map */

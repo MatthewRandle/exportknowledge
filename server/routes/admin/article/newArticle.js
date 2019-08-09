@@ -4,18 +4,18 @@ const bodyCheck = require("../../../middleware/bodyCheck");
 
 const newArticle = `
     INSERT INTO articles
-    (title, image, text, video, timestamp, url, articles.exists, description)
-    VALUES (?, ?, ? , ? , NOW() , ?, ?, ?);`
+    (title, image, text, text_preview, video, timestamp, url, articles.exists)
+    VALUES (?, ?, ?, ?, ?, NOW(), ?, ?);`
 
 module.exports = app => {
     app.post("/api/admin/new-article", bodyCheck, adminCheck, (req, res, next) => {
-        if (typeof req.body.title == null || 
-            typeof req.body.image == null || 
-            typeof req.body.text == null || 
-            typeof req.body.url == null || 
-            typeof req.body.tags == null || 
+        if (req.body.title == null || 
+            req.body.image == null || 
+            req.body.text == null || 
+            req.body.url == null || 
+            req.body.tags == null || 
             req.body.tags.length === 0 || 
-            typeof req.body.exists == null) 
+            req.body.exists == null) 
         {
             res.send({ error: "No Body" });
             return;
@@ -34,8 +34,10 @@ module.exports = app => {
                     return;
                 }
 
+                const text_preview = req.body.text.substring(0, 274);
+
                 //insert new article
-                connection.query(newArticle, [req.body.title, req.body.image, req.body.text, req.body.video, req.body.url, req.body.exists, req.body.description], (err, results) => {
+                connection.query(newArticle, [req.body.title, req.body.image, req.body.text, text_preview, req.body.video, req.body.url, req.body.exists], (err, results) => {
                     if (err) {
                         return connection.rollback(function () {
                             connection.release();
@@ -59,7 +61,6 @@ module.exports = app => {
 
                         //if new article has prerequisites add them
                         if (req.body.prerequisites.length > 0) {
-
                             const { prerequisitesQuery, escapedPrerequisitesValues } = generatePrerequisitesQuery(req.body.prerequisites, articleID);
 
                             //INSERT ALL PREREQUISITES INTO articles_prerequisites table

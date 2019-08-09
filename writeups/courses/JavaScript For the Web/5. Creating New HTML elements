@@ -1,0 +1,72 @@
+In part 2 we looked at using JavaScript to alter HTML elements. In this part we will look at how we can create entirely new elements and add them to our HTML.
+
+<br>
+<br>
+
+Firstly, to create a new element we use the createElement method
+
+<code><pre><js>
+let element = document.createElement("type");
+<code>
+
+where 'type' is any HTML element such as H1, p, div and so on. Using createElement only creates the element itself, not any text within that element. So if we wanted to create a paragraph how do we add some text to it? We first need to create a new variable and store what is called a text node
+
+<code><js>
+let paragraph = document.createElement("p");
+let textNode = document.createTextNode("Some text for our paragraph");
+<code>
+
+Next we need to attach this textNode to our paragraph that we created. We do this by using appendChild
+
+<code><js>
+let paragraph = document.createElement("p");
+let textNode = document.createTextNode("Some text for our paragraph");
+
+paragraph.appendChild(textNode);
+<code>
+
+We have a paragraph that has some text inside of it, we now need to put this element somewhere in our HTML. To do this, we need to get a HTML element that we wish our paragraph to be attached too. For this example we will add the paragraph to the navbar. Firstly we will get the navbar using getElementsByClassName and then appendChild to attach the paragraph to the navbar
+
+<code><js>
+let paragraph = document.createElement("p");
+let textNode = document.createTextNode("Some text for our paragraph");
+paragraph.appendChild(textNode);
+
+let navbar = document.getElementsByClassName("navbar")[0];
+navbar.appendChild(paragraph);
+<code>
+
+If we refresh our website in the browser we will no see that the paragraph "Some text for our website" is placed inside the navbar. The way appendChild works is that is places the specified element as the last child of some parent (here the navbar is the parent), that is why the paragraph is being places at the very end of the navbar.
+
+<br>
+<br>
+
+What if we wanted to specify where we wanted to place our new element? Luckily a function called insertBefore exists that places our element before a specified element. To use insertBefore we first get the element that we want to be after our new element. Let's say we wanted to place our new paragraph before the shopping cart in the navbar, we would first get the shopping cart
+
+<code><js>
+let paragraph = document.createElement("p");
+let textNode = document.createTextNode("Some text for our paragraph");
+paragraph.appendChild(textNode);
+
+let navbar = document.getElementsByClassName("navbar")[0];
+let shoppingCart = document.getElementsByClassName("shoppingCart")[0];
+<code>
+
+Then simply use the insertBefore function, which takes 2 arguments - the first being the new element and the second the element we want to insert before
+
+<code><js>
+let paragraph = document.createElement("p");
+let textNode = document.createTextNode("Some text for our paragraph");
+paragraph.appendChild(textNode);
+
+let navbar = document.getElementsByClassName("navbar")[0];
+let shoppingCart = document.getElementsByClassName("shoppingCart")[0];
+navbar.insertBefore(paragraph, shoppingCart);
+<code>
+
+and if we view these changes our paragraph will now be in the middle of the navbar!
+
+<br>
+<br>
+
+And that's it for part 5, thanks for reading!

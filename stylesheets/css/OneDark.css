@@ -5,7 +5,7 @@
  */
 code[class*="language-"],
 pre[class*="language-"] {
-  color: rgb(233, 233, 233);
+  color: white;
   background: none;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   text-align: left;
@@ -70,7 +70,7 @@ pre[class*="language-"] {
 
 .token.selector,
 .token.tag {
-  color: #ff5967;
+  color: #e06c75;
 }
 
 .token.property,
@@ -80,7 +80,7 @@ pre[class*="language-"] {
 .token.symbol,
 .token.attr-name,
 .token.deleted {
-  color: #e9a25f;
+  color: #d19a66;
 }
 
 .token.string,
@@ -88,7 +88,7 @@ pre[class*="language-"] {
 .token.attr-value,
 .token.builtin,
 .token.inserted {
-  color: #94cc6c;
+  color: #98c379;
 }
 
 .token.operator,

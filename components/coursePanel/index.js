@@ -1,63 +1,18 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { withRouter } from "next/router";
+import Link from "next/link";
 
-import CoursePanel from "./CoursePanel";
+export default (props) => {
+    return(
+        <div className="coursePanel">
+            <img src={props.image} alt={props.title || "Course"}/>
+            <div className="coursePanel_content">
+                <h2>{props.title}</h2>
+                <p>{props.description}</p>
 
-class CoursePanelContainer extends Component {
-    getTimestamp() {
-        if (this.props.timestamp) {
-            let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
-
-            var date = new Date(this.props.timestamp);
-            var month = months[date.getUTCMonth()]; //months from 1-12
-            var day = date.getUTCDate();
-            var year = date.getUTCFullYear();
-
-            let newdate = `${day} ${month}, ${year}`;
-
-            return newdate;
-        }
-        else {
-            return null;
-        }
-    }
-
-    getLength() {
-        if(this.props.length) {
-            return this.props.length / 60;
-        }
-        else {
-            return 0;
-        }
-    }
-
-    render() {
-        return(
-            <CoursePanel 
-                title={this.props.title}
-                image={this.props.image}
-                exists={this.props.exists}
-                timestamp={this.getTimestamp()}
-                description={this.props.description}
-                length={this.getLength()}
-                link={this.props.url}
-                onAdminPage={this.props.onAdminPage}
-            />
-        )
-    }
+                {/* <button>{props.parts} Parts</button> */}
+                <Link href={props.url}>
+                    <a className="coursePanel_button">Start Course</a>
+                </Link>
+            </div>
+        </div>
+    )
 }
-
-CoursePanelContainer.proptypes = {
-    title: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    exists: PropTypes.number.isRequired,
-    timestamp: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    length: PropTypes.number.isRequired,
-    url: PropTypes.string.isRequired,
-    onAdminPage: PropTypes.bool.isRequired
-}
-
-export default withRouter(CoursePanelContainer);

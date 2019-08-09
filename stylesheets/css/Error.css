@@ -16,7 +16,7 @@
           justify-content: center;
   font-family: "Zilla Slab";
   color: white;
-  text-shadow: 3px 3px 0px #181e34;
+  text-shadow: 3px 3px 0px #262a4c;
   text-align: center;
 }
 
@@ -46,7 +46,7 @@
 
 .error_container p {
   font-size: 3rem;
-  text-shadow: 3px 3px 0px #181e34;
+  text-shadow: 3px 3px 0px #262a4c;
 }
 
 @media only screen and (max-width: 1200px) {
