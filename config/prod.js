@@ -7,5 +7,8 @@ module.exports = {
     databaseUser: "root",
     databasePassword: "Mahjkrmahjkr9871",
     database: "exportknowledge",
-    TMDBKey: "abed60834d8a74d3044fac789f6c7c07"
+    TMDBKey: "abed60834d8a74d3044fac789f6c7c07",
+    mysqlCA: "",
+    mysqlKey: "",
+    mysqlCert: ""
 };
