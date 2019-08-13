@@ -6,17 +6,17 @@
     width: 100%;
     background: $OneDarkBG;
     opacity: .95;
-    height: 50px;
+    height: 25px;
     color: white;
     font-family: "Open Sans";
-    font-size: 0.75rem;
+    font-size: 0.6rem;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 2;
 
     @include tablet-down() {
-        height: 80px;
+        height: 50px;
     }
 }
 
@@ -37,7 +37,7 @@
     flex: 1;
 
     @include desktop-down() {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
     }
 
     @include tablet-down() {
@@ -51,36 +51,22 @@
     color: white;
 }
 
-.cookieBanner_buttons {
-    @include phone-down() {
-        display: flex;
-        width: 100%;
-    }
-}
-
 .cookieBanner_buttons button {
     margin: 5px;
-    height: 30px;
-    width: 100px;
+    height: 15px;
+    width: 75px;
     border: none;
-    background-color: $lightBlue;
+    background-color: $purple;
     color: white;
     font-family: "Zilla Slab";
-    font-size: 0.8rem;
+    font-size: 0.6+rem;
 
     &:hover {
-        background-color: $gold;
-        color: $darkBlue;
+        background-color: $orange;
         cursor: pointer;
     }
 
     @include tablet-down() {
         margin-top: 10px;
-    }
-
-    @include phone-down() {
-        width: 48%;
-        height: 25px;
-        font-size: 1.2rem;
     }
 }

@@ -9,9 +9,14 @@
   margin-top: 100px;
 }
 
+@media only screen and (max-width: 1200px) {
+  .footer_container {
+    margin-top: 50px;
+  }
+}
+
 .footer {
   width: 1500px;
-  min-width: 1200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -19,6 +24,25 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 50px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media only screen and (max-width: 1200px) {
+  .footer {
+    width: 100%;
+    padding: 25px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .footer {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
 .footer_logo {
@@ -45,6 +69,20 @@
   margin-left: 20px;
 }
 
+@media only screen and (max-width: 1200px) {
+  .footer_info {
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .footer_info {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+}
+
 .footer_info h2 {
   margin-bottom: 5px;
   font-family: "Zilla Slab";
@@ -52,7 +90,7 @@
 }
 
 .footer_info a {
-  color: #1d1d1d;
+  color: black;
 }
 
 .footer_links {
@@ -67,10 +105,23 @@
           flex-direction: column;
 }
 
+@media only screen and (max-width: 1200px) {
+  .footer_links {
+    margin-right: 20px;
+    margin-left: 0;
+  }
+}
+
 .footer_links h2 {
   color: white;
   font-family: "Zilla Slab";
   font-size: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .footer_links h2 {
+    font-size: 0.8rem;
+  }
 }
 
 .footer_links a {
@@ -80,8 +131,41 @@
   font-size: 0.7rem;
 }
 
+@media only screen and (max-width: 768px) {
+  .footer_links a {
+    margin-top: 5px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .footer_social {
+    margin-top: 20px;
+  }
+}
+
 .footer_social img {
   height: 50px;
   margin-left: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .footer_social img {
+    height: 30px;
+    margin-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .footer_social img {
+    height: 50px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .footer_social img {
+    margin-right: 20px;
+    margin-left: 0;
+    height: 40px;
+  }
 }
 /*# sourceMappingURL=Footer.css.map */

@@ -16,8 +16,14 @@
     display: flex;
     justify-content: center;
     width: 1500px;
-    min-width: 1200px;
     position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+
+    @include desktop-down() {
+        width: 100%;
+    }
 }
 
 .navbar_logo {
@@ -27,7 +33,11 @@
     height: 100%;
 
     @include tablet-down() {
-        width: 55px;
+        width: 200px;
+    }
+
+    @include phone-down() {
+        width: 50px;
     }
 }
 
@@ -47,15 +57,11 @@
     padding-left: 10px;
 
     @include tablet-down() {
-        display: none;
+        width: 200px;
     }
-}
 
-.navbar_logo_block {
-    width: 235px;
-
-    @include tablet-down() {
-        width: 55px;
+    @include phone-down() {
+        display: none;
     }
 }
 
@@ -66,6 +72,10 @@
     height: 55px;
     font-size: 0.85rem;    
     box-sizing: border-box;
+
+    @include tablet-down() {
+        margin-left: 0;
+    }
 
     @include phone-down() {
         font-size: 1rem;

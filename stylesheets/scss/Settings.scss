@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 100px;
 }
 
 .settings,
@@ -15,13 +16,13 @@
 }
 
 .settings {
-    border: 1px solid gray;
+    border: 1px solid rgb(226, 226, 226);
     height: 500px;
     width: 350px;
     padding: 15px;
     box-sizing: border-box;
     font-size: 1.2rem;
-    background: #dbdbdb;
+    background: white;
     box-shadow: 6px 6px 39px -16px rgba(0,0,0,0.75);
 
     @include phone-down() {

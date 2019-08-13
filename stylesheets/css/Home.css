@@ -5,9 +5,50 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 700px;
+  height: 625px;
   border-bottom: 2px solid #EFEFEF;
   padding-bottom: 30px;
+  position: relative;
+}
+
+@media only screen and (max-width: 1200px) {
+  .hero_container {
+    height: 600px;
+    margin-top: 55px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero_container {
+    height: 500px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .hero_container {
+    height: 350px;
+  }
+}
+
+.hero_youtube {
+  position: absolute;
+  bottom: 20px;
+  width: 150px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 1;
+}
+
+@media only screen and (max-width: 480px) {
+  .hero_youtube {
+    width: 100px;
+    bottom: 15px;
+  }
+}
+
+.hero_youtube img {
+  width: 100%;
 }
 
 .hero {
@@ -23,6 +64,30 @@
           align-items: center;
   font-family: "Roboto Slab";
   font-weight: bold;
+  padding-left: 50px;
+  padding-right: 50px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+}
+
+@media only screen and (max-width: 1200px) {
+  .hero {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .hero_content {
@@ -40,10 +105,31 @@
           justify-content: center;
 }
 
+@media only screen and (max-width: 1200px) {
+  .hero_content {
+    height: auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .hero_content h1 {
   color: #1d1d1d;
   font-size: 1.75rem;
   line-height: 1.3em;
+}
+
+@media only screen and (max-width: 768px) {
+  .hero_content h1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .hero_content h1 {
+    font-size: 1.2rem;
+  }
 }
 
 .hero_content h1:last-of-type {
@@ -78,10 +164,56 @@
           box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
 }
 
-.hero_content img {
-  width: 150px;
+.hero_animation {
+  position: relative;
+  width: 35vw;
+}
+
+@media only screen and (max-width: 1200px) {
+  .hero_animation {
+    margin-top: 50px;
+    width: 600px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero_animation {
+    width: 430px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .hero_animation {
+    width: 290px;
+  }
+}
+
+.hero_animation svg:first-of-type {
   position: absolute;
-  bottom: 20px;
+  width: 50%;
+  left: 9.5vw;
+  top: 2.3vw;
+}
+
+@media only screen and (max-width: 1200px) {
+  .hero_animation svg:first-of-type {
+    left: 165px;
+    top: 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero_animation svg:first-of-type {
+    left: 120px;
+    top: 30px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .hero_animation svg:first-of-type {
+    left: 80px;
+    top: 20px;
+  }
 }
 
 .featured_course_container {
@@ -98,9 +230,21 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 800px;
+  height: 700px;
   width: 100%;
   background-color: #ececf8;
+}
+
+@media only screen and (max-width: 1200px) {
+  .featured_course_container {
+    height: 600px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .featured_course_container {
+    height: 80vw;
+  }
 }
 
 .featured_course_container h2 {
@@ -110,10 +254,30 @@
   font-size: 2.25rem;
 }
 
+@media only screen and (max-width: 480px) {
+  .featured_course_container h2 {
+    margin-bottom: 10px;
+  }
+}
+
 .featured_course_container a {
   position: relative;
-  width: 45vw;
-  height: 25.3125vw;
+  width: 860px;
+  height: 483.75px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .featured_course_container a {
+    width: 700px;
+    height: 393.75px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .featured_course_container a {
+    width: 90vw;
+    height: 50.625vw;
+  }
 }
 
 .home_course_image {
@@ -145,5 +309,135 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+#code rect {
+  opacity: 0;
+  -webkit-animation: expand 0.2s forwards;
+          animation: expand 0.2s forwards;
+}
+
+@-webkit-keyframes expand {
+  0% {
+    opacity: 1;
+    width: 0;
+  }
+  100% {
+    opacity: 1;
+    width: 1;
+  }
+}
+
+@keyframes expand {
+  0% {
+    opacity: 1;
+    width: 0;
+  }
+  100% {
+    opacity: 1;
+    width: 1;
+  }
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  100% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  100% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
+#line-1 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+#line-2 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+#line-3 .dash-1 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+#line-3 .dash-2 {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+#line-3 .dash-3 {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+#line-4 .dash-1 {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+#line-4 .dash-2 {
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+}
+
+#line-4 .dash-3 {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+#line-5 .dash-1 {
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+
+#line-5 .dash-2 {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+#line-6 .dash-1 {
+  -webkit-animation-delay: 1.1s;
+          animation-delay: 1.1s;
+}
+
+#line-7 .dash-1 {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+
+#line-8 .dash-1 {
+  -webkit-animation-delay: 1.3s;
+          animation-delay: 1.3s;
+}
+
+#line-8 .dash-2 {
+  -webkit-animation-delay: 1.4s;
+          animation-delay: 1.4s;
+}
+
+#line-9 .dash-1 {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+#line-10 .dash-1 {
+  -webkit-animation-delay: 1.6s;
+          animation-delay: 1.6s;
 }
 /*# sourceMappingURL=Home.css.map */

@@ -11,6 +11,8 @@
       -ms-flex-align: center;
           align-items: center;
   width: 768px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 @media only screen and (max-width: 768px) {

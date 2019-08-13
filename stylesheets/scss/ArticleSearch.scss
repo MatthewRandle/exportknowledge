@@ -4,7 +4,14 @@
     display: flex;
     flex-direction: column;
     width: 1200px;
+    padding-left: 30px;
+    padding-right: 30px;
     margin-top: 30px;
+    box-sizing: border-box;
+
+    @include desktop-down() {
+        width: 100%;
+    }
 }
 
 .articleSearch_title {
@@ -21,6 +28,13 @@
     @include tablet-down() {
         flex-direction: column;
         align-items: flex-start;
+    }
+}
+
+.articleSearch_filter {
+    @include phone-down() {
+        width: 100%;
+        display: flex;
     }
 }
 
@@ -119,4 +133,10 @@
 
 .articleSearch_articles {
     margin-top: 50px;
+
+    @include desktop-down() {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }

@@ -4,10 +4,10 @@
   width: 100%;
   background: #282c34;
   opacity: .95;
-  height: 50px;
+  height: 25px;
   color: white;
   font-family: "Open Sans";
-  font-size: 0.75rem;
+  font-size: 0.6rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,7 +22,7 @@
 
 @media only screen and (max-width: 768px) {
   .cookieBanner_container {
-    height: 80px;
+    height: 50px;
   }
 }
 
@@ -58,7 +58,7 @@
 
 @media only screen and (max-width: 1200px) {
   .cookieBanner p {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 }
 
@@ -74,43 +74,25 @@
   color: white;
 }
 
-@media only screen and (max-width: 480px) {
-  .cookieBanner_buttons {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-  }
-}
-
 .cookieBanner_buttons button {
   margin: 5px;
-  height: 30px;
-  width: 100px;
+  height: 15px;
+  width: 75px;
   border: none;
-  background-color: #00A6ED;
+  background-color: #7c7ccf;
   color: white;
   font-family: "Zilla Slab";
-  font-size: 0.8rem;
+  font-size: 0.6rem;
 }
 
 .cookieBanner_buttons button:hover {
-  background-color: #e2c13d;
-  color: #262a4c;
+  background-color: #FF8E79;
   cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {
   .cookieBanner_buttons button {
     margin-top: 10px;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .cookieBanner_buttons button {
-    width: 48%;
-    height: 25px;
-    font-size: 1.2rem;
   }
 }
 /*# sourceMappingURL=CookieBanner.css.map */

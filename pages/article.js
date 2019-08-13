@@ -43,11 +43,10 @@ const ArticlePage = () => {
                         image={article.image}
                     />
                     : <img className="article_image" src={article.image} alt="" />
-                }
-
-                <h1>{article.title}</h1>
+                }               
 
                 <div className="article">
+                    <h1>{article.title}</h1>
                     {/* Render prerequisites if they exist */}
                     {prerequisites.length > 0 ?
                         <div>

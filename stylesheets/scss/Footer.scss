@@ -5,14 +5,28 @@
     display: flex;
     justify-content: center;
     margin-top: 100px;
+
+    @include desktop-down() {
+        margin-top: 50px;
+    }
 }
 
 .footer {
     width: 1500px;
-    min-width: 1200px;
     display: flex;
     align-items: center;
     padding: 50px;
+    box-sizing: border-box;
+
+    @include desktop-down() {
+        width: 100%;
+        padding: 25px;
+    }
+
+    @include tablet-down() {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 }
 
 .footer_logo {
@@ -33,6 +47,16 @@
     width: 500px;
     line-height: 1.3em;
     margin-left: 20px;
+
+    @include desktop-down() {
+        width: 400px;
+    }
+
+    @include tablet-down() {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
 }
 
 .footer_info h2 {
@@ -42,7 +66,7 @@
 }
 
 .footer_info a {
-    color: $darkGrey;
+    color: black;
 }
 
 .footer_links {
@@ -50,12 +74,21 @@
     margin-right: 100px;
     display: flex;
     flex-direction: column;
+
+    @include desktop-down() {
+        margin-right: 20px;
+        margin-left: 0;
+    }
 }
 
 .footer_links h2 {
     color: white;
     font-family: "Zilla Slab";
     font-size: 1rem;
+
+    @include tablet-down() {
+        font-size: 0.8rem;
+    }
 }
 
 .footer_links a {
@@ -63,9 +96,34 @@
     font-family: "Roboto Slab";
     margin-top: 10px;
     font-size: 0.7rem;
+
+    @include tablet-down() {
+        margin-top: 5px;
+    }
+}
+
+.footer_social {
+    @include phone-down() {
+        margin-top: 20px;
+    }
 }
 
 .footer_social img {
     height: 50px;
     margin-left: 20px;
+
+    @include desktop-down() {
+        height: 30px;
+        margin-left: 10px;
+    }
+
+    @include tablet-down() {
+        height: 50px;
+    }
+
+    @include phone-down() {
+        margin-right: 20px;
+        margin-left: 0;
+        height: 40px;
+    }
 }

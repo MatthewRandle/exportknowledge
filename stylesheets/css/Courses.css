@@ -16,5 +16,31 @@
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   grid-gap: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .courses {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    width: 769px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .courses {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    width: 450px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .courses {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 /*# sourceMappingURL=Courses.css.map */

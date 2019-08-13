@@ -5,8 +5,26 @@
   margin-bottom: 75px;
 }
 
+@media only screen and (max-width: 1200px) {
+  .articlePanel {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 768px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .articlePanel {
+    width: 100%;
+  }
+}
+
 .articlePanel img:first-of-type {
-  width: 600px;
   border-radius: 20px;
   z-index: 0;
   -webkit-box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
@@ -14,7 +32,6 @@
 }
 
 .articlePanel img:last-of-type {
-  width: 600px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -26,6 +43,28 @@
   -webkit-filter: blur(20px);
           filter: blur(20px);
   opacity: 0.2;
+}
+
+.articlePanel img {
+  width: 600px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .articlePanel img {
+    width: 50vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .articlePanel img {
+    width: 75vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .articlePanel img {
+    width: 90vw;
+  }
 }
 
 .articlePanel_content {
@@ -41,15 +80,52 @@
   padding-left: 30px;
 }
 
+@media only screen and (max-width: 1200px) {
+  .articlePanel_content {
+    padding: 0;
+    margin-top: 20px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .articlePanel_content {
+    padding: 0;
+  }
+}
+
 .articlePanel_content h2 {
   font-family: "Zilla Slab";
   font-size: 1.6rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .articlePanel_content h2 {
+    text-align: center;
+  }
 }
 
 .articlePanel_content p {
   font-size: "Roboto";
   margin-top: 10px;
   line-height: 1.3em;
+}
+
+@media only screen and (max-width: 1200px) {
+  .articlePanel_content p {
+    width: 90%;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .articlePanel_content p {
+    width: 100%;
+  }
 }
 
 .articlePanel_content button {
@@ -93,5 +169,13 @@
 .articlePanel_content button:hover:before {
   -webkit-transform: scaleY(1);
           transform: scaleY(1);
+}
+
+@media only screen and (max-width: 1200px) {
+  .articlePanel_content button {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    margin-top: 20px;
+  }
 }
 /*# sourceMappingURL=ArticlePanel.css.map */

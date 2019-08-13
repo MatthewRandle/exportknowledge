@@ -16,19 +16,63 @@
   font-family: "Zilla Slab";
   color: #1d1d1d;
   font-size: 2.1rem;
-  margin-top: 15px;
+  margin-top: 25px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .article_container h1 {
+    font-size: 1.75rem;
+  }
 }
 
 .article_image {
-  width: 40vw;
-  height: 22.5vw;
+  width: 768px;
+  height: 432px;
   -webkit-box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
           box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
   border-radius: 10px;
 }
 
+@media only screen and (max-width: 1200px) {
+  .article_image {
+    width: 680px;
+    height: 382.5px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .article_image {
+    width: 450px;
+    height: 253.125px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .article_image {
+    width: 90vw;
+    height: 50.625vw;
+  }
+}
+
 .article {
   width: 768px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .article {
+    width: 768px;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .article {
+    width: 100%;
+  }
 }
 
 .article p,

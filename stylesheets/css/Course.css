@@ -13,7 +13,7 @@
 }
 
 .course {
-  width: 1500px;
+  max-width: 1500px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26,6 +26,16 @@
           align-items: center;
 }
 
+@media only screen and (max-width: 1200px) {
+  .course {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+}
+
 .course_panel {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -33,11 +43,28 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  height: 400px;
-  width: 1300px;
+  height: 360px;
+  width: 1150px;
 }
 
-.course_panel img {
+@media only screen and (max-width: 1200px) {
+  .course_panel {
+    width: 700px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .course_panel {
+    width: 100%;
+  }
+}
+
+.course_video {
   height: 100%;
   width: 50%;
   -webkit-box-flex: 1;
@@ -47,6 +74,13 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 5px 0 0 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .course_video {
+    width: 100%;
+    border-bottom: none;
+  }
 }
 
 .course_panel_content {
@@ -71,6 +105,20 @@
   border-radius: 0 5px 0 0;
 }
 
+@media only screen and (max-width: 1200px) {
+  .course_panel_content {
+    width: 100%;
+    border-radius: 0;
+    height: 360px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .course_panel_content {
+    height: 300px;
+  }
+}
+
 .course_panel_content h3 {
   margin-bottom: 10px;
   font-family: "Roboto Slab";
@@ -83,9 +131,10 @@
           flex: 1;
   display: -ms-grid;
   display: grid;
-  grid-auto-rows: calc(14.325%);
+  grid-auto-rows: calc(14%);
   grid-gap: 10px;
   overflow-y: auto;
+  overflow-x: hidden;
   margin-bottom: 10px;
 }
 
@@ -101,6 +150,12 @@
   background: #FF8E79;
 }
 
+@media only screen and (max-width: 480px) {
+  .course_panel_parts {
+    grid-auto-rows: calc(13.4%);
+  }
+}
+
 .part_panel {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -110,6 +165,8 @@
           align-items: center;
   background-color: #7c7ccf;
   color: white;
+  white-space: nowrap;
+  overflow: hidden;
   cursor: pointer;
   position: relative;
   -webkit-transform: translateZ(0);
@@ -148,20 +205,49 @@
 
 .part_panel h2 {
   font-family: "Roboto Slab";
-  font-size: 1.25rem;
-  margin-left: 20px;
+  font-size: 1rem;
+  margin-left: 15px;
+}
+
+@media only screen and (max-width: 480px) {
+  .part_panel h2 {
+    font-size: 0.8rem;
+  }
 }
 
 .part_panel p {
   font-family: "Zilla Slab";
   font-weight: bold;
-  font-size: 1.25rem;
-  margin-left: 30px;
+  font-size: 1.1rem;
+  margin-left: 20px;
+}
+
+@media only screen and (max-width: 480px) {
+  .part_panel p {
+    font-size: 0.9rem;
+    margin-left: 15px;
+  }
 }
 
 .course_text {
   width: 768px;
   margin-top: 50px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .course_text {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .course_text {
+    padding: 0;
+  }
 }
 
 .course_text h1 {
@@ -170,11 +256,24 @@
   color: #1d1d1d;
 }
 
+@media only screen and (max-width: 480px) {
+  .course_text h1 {
+    grid-auto-rows: calc(13.4%);
+  }
+}
+
 .course_text li {
   font-family: "Roboto Slab";
   line-height: 1.6em;
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 480px) {
+  .course_text li {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
 
 .course_text a {

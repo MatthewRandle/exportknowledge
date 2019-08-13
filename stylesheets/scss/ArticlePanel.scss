@@ -3,17 +3,25 @@
 .articlePanel {
     display: flex;
     margin-bottom: 75px;
+
+    @include desktop-down() {
+        flex-direction: column;
+        align-items: center;
+        width: 768px;
+    }
+
+    @include tablet-down() {
+        width: 100%;
+    }    
 }
 
 .articlePanel img:first-of-type {
-    width: 600px;
     border-radius: 20px;
     z-index: 0;
     box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
 }
 
-.articlePanel img:last-of-type {
-    width: 600px;
+.articlePanel img:last-of-type {    
     position: absolute;
     left: 50%;
     top: 50%;
@@ -25,23 +33,64 @@
     opacity: 0.2;
 }
 
+.articlePanel img {
+    width: 600px;
+
+    @include desktop-down() {
+        width: 50vw;
+    }
+
+    @include tablet-down() {
+        width: 75vw;
+    }
+
+    @include phone-down() {
+        width: 90vw;
+    }
+}
+
 .articlePanel_content {
     display: flex;
     flex-direction: column;
     min-height: 100%;
     color: $darkGrey;
     padding-left: 30px;
+
+    @include desktop-down() {
+        padding: 0;
+        margin-top: 20px;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    @include tablet-down() {
+        padding: 0;
+    }
 }
 
 .articlePanel_content h2 {
     font-family: "Zilla Slab";
     font-size: 1.6rem;
+    
+    @include tablet-down() {
+        text-align: center;
+    }
 }
 
 .articlePanel_content p {
     font-size: "Roboto";
     margin-top: 10px;
     line-height: 1.3em;
+
+    @include desktop-down() {
+        width: 90%;
+        text-align: center;
+    }
+
+    @include tablet-down() {
+        width: 100%;
+    }
 }
 
 .articlePanel_content button {
@@ -56,4 +105,9 @@
     cursor: pointer;
     @include backgroundTransition($orange, 200ms, "down");
     transform: translateY(-5px);
+
+    @include desktop-down() {
+        transform: translateY(0);
+        margin-top: 20px;
+    }
 }

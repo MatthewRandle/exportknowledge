@@ -11,18 +11,49 @@
     font-family: "Zilla Slab";
     color: $darkGrey;
     font-size: 2.1rem;
-    margin-top: 15px;
+    margin-top: 25px;
+    text-align: center;
+
+    @include tablet-down() {
+        font-size: 1.75rem;
+    }
 }
 
 .article_image {
-    width: 40vw;
-    height: 22.5vw;
+    width: 768px;
+    height: 432px;
     box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
     border-radius: 10px;
+
+    @include desktop-down() {
+        width: 680px;
+        height: 382.5px;
+    }
+
+    @include tablet-down() {
+        width: 450px;
+        height: 253.125px;
+    }
+
+    @include phone-down() {
+        width: 90vw;
+        height: 50.625vw;
+    }
 }
 
 .article {
     width: 768px;
+
+    @include desktop-down() {
+        width: 768px;
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+    }
+
+    @include tablet-down() {
+        width: 100%;
+    }
 }
 
 .article p,

@@ -13,6 +13,7 @@ import CommentSection from "../../components/commentSection";
 import initialSetupFetch from "../../utils/initialSetupFetch";
 import { fetchCourse, clearCourse, fetchCoursePart } from "../../components/course/CourseActions";
 import ParseText from "../../components/ParseText";
+import Video from "../../components/Video";
 
 const CoursePage = ({ title }) => {
     const dispatch = useDispatch();
@@ -35,10 +36,10 @@ const CoursePage = ({ title }) => {
             <div className="course_container pushFooter">
                 <div className="course">
                     <div className="course_panel">
-                        <img
+                        <Video 
                             className="course_video"
-                            src={course.image}
-                            alt={course.title}
+                            image={currentPart.image}
+                            video={currentPart.video}
                         />
 
                         <div className="course_panel_content">
