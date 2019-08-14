@@ -16,7 +16,26 @@
 
 .coursePanel img {
   width: 100%;
+  height: 17vw;
   border-radius: 5px 5px 0 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .coursePanel img {
+    height: 202px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .coursePanel img {
+    height: 253px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .coursePanel img {
+    height: 50vw;
+  }
 }
 
 .coursePanel_content {

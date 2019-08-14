@@ -36,11 +36,13 @@ const CoursePage = ({ title }) => {
             <div className="course_container pushFooter">
                 <div className="course">
                     <div className="course_panel">
-                        <Video 
-                            className="course_video"
-                            image={currentPart.image}
-                            video={currentPart.video}
-                        />
+                        <div className="course_video_container">
+                            <Video
+                                className="course_video"
+                                image={currentPart.image}
+                                video={currentPart.video}
+                            />
+                        </div>
 
                         <div className="course_panel_content">
                             <h3>{parts.length} Parts</h3>

@@ -3,19 +3,18 @@
 .legal_container {
     display: flex;
     justify-content: center;
-    margin-top: 15px;
+    margin-top: 100px;
     padding-bottom: 60px;
 }
 
 .legal {
-    @extend %articleContainer;
+    width: 768px;
 }
 
 .legal h2 {
     font-family: "Zilla Slab";
     font-size: 2rem;
-    color: white;
-    text-shadow: 3px 3px 0px $darkBlue;
+    color: $darkGrey;
     margin-bottom: 10px;
     margin-top: 10px;
 }
@@ -23,11 +22,10 @@
 .legal p, 
 .legal li, 
 .legal a {
-    font-family: "Open Sans";
+    font-family: "Roboto Slab";
     line-height: 1.3em;
-    text-shadow: 2px 2px 0px $darkBlue;
 }
 
 .legal a {
-    color: $gold;
+    color: $orange;
 }

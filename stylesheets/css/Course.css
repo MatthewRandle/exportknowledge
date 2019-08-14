@@ -12,6 +12,12 @@
   margin-top: 100px;
 }
 
+@media only screen and (max-width: 768px) {
+  .course_container {
+    margin-top: 75px;
+  }
+}
+
 .course {
   max-width: 1500px;
   display: -webkit-box;
@@ -28,11 +34,17 @@
 
 @media only screen and (max-width: 1200px) {
   .course {
-    width: 100%;
+    width: 700px;
     padding-left: 20px;
     padding-right: 20px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .course {
+    width: 100%;
   }
 }
 
@@ -49,7 +61,7 @@
 
 @media only screen and (max-width: 1200px) {
   .course_panel {
-    width: 700px;
+    width: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -58,15 +70,19 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .course_panel {
+.course_video_container {
+  height: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .course_video_container {
     width: 100%;
   }
 }
 
 .course_video {
   height: 100%;
-  width: 50%;
+  width: 640px;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -80,6 +96,13 @@
   .course_video {
     width: 100%;
     border-bottom: none;
+    height: 393.75px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .course_video {
+    height: 53.4375vw;
   }
 }
 
@@ -109,13 +132,7 @@
   .course_panel_content {
     width: 100%;
     border-radius: 0;
-    height: 360px;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .course_panel_content {
-    height: 300px;
+    height: auto;
   }
 }
 
@@ -150,9 +167,17 @@
   background: #FF8E79;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1200px) {
   .course_panel_parts {
-    grid-auto-rows: calc(13.4%);
+    grid-auto-rows: calc(40px);
+    overflow-y: visible;
+    padding-right: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .course_panel_parts {
+    grid-auto-rows: calc(35px);
   }
 }
 
@@ -205,7 +230,7 @@
 
 .part_panel h2 {
   font-family: "Roboto Slab";
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin-left: 15px;
 }
 
@@ -218,7 +243,7 @@
 .part_panel p {
   font-family: "Zilla Slab";
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-left: 20px;
 }
 
