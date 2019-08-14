@@ -9,8 +9,6 @@ import initialSetupFetch from "../utils/initialSetupFetch";
 import HomeLoader from "../components/home/HomeLoader";
 import HowManyHours from "../components/howmanyhours";
 
-const Home = dynamic(import("../components/home"), { loading: () => <HomeLoader /> });
-
 const HowManyHoursPage = () => {
     return (
         <ErrorBoundary>
