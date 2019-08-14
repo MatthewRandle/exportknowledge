@@ -34,7 +34,15 @@ module.exports = app => {
                     return;
                 }
 
-                const text_preview = req.body.text.substring(0, 274);
+                const firstParagraph = req.body.text.indexOf("<");
+                let text_preview;
+
+                if (firstParagraph > 274) {
+                    text_preview = req.body.text.substring(0, 274).trim();
+                }
+                else {
+                    text_preview = req.body.text.substring(0, firstParagraph).trim();
+                }
 
                 //insert new article
                 connection.query(newArticle, [req.body.title, req.body.image, req.body.text, text_preview, req.body.video, req.body.url, req.body.exists], (err, results) => {
