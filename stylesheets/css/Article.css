@@ -86,6 +86,31 @@
   margin-bottom: 30px;
 }
 
+.article h2 {
+  margin-top: 100px;
+  margin-bottom: 15px;
+  font-family: "Roboto Slab";
+  font-size: 1.5rem;
+  line-height: 1.3em;
+  color: #1d1d1d;
+}
+
+@media only screen and (max-width: 768px) {
+  .article h2 {
+    margin-top: 75px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .article h2 {
+    margin-top: 50px;
+  }
+}
+
+.article a {
+  color: #FF8E79;
+}
+
 .article_prerequisites_container {
   margin-top: 50px;
   margin-bottom: 50px;

@@ -67,6 +67,27 @@
     margin-bottom: 30px;
 }
 
+.article h2 {
+    margin-top: 100px;
+    margin-bottom: 15px;
+    font-family: "Roboto Slab";
+    font-size: 1.5rem;
+    line-height: 1.3em;
+    color: $darkGrey;
+
+    @include tablet-down() {
+        margin-top: 75px;
+    }
+
+    @include tablet-down() {
+        margin-top: 50px;
+    }
+}
+
+.article a {
+    color: $orange;
+}
+
 .article_prerequisites_container {
     margin-top: 50px;
     margin-bottom: 50px;
