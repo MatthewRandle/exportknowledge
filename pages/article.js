@@ -36,7 +36,7 @@ const ArticlePage = () => {
             </Head>
 
             <div className="article_container pushFooter">                
-                {article.video !== null ?
+                {article.video !== null && article.video !== "" ?
                     <Video
                         className="article_image"
                         video={article.video}
