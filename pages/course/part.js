@@ -15,7 +15,7 @@ import { fetchCourse, clearCourse, fetchCoursePart } from "../../components/cour
 import ParseText from "../../components/ParseText";
 import Video from "../../components/Video";
 
-const CoursePage = ({ title }) => {
+const CoursePage = ({ title, description }) => {
     const dispatch = useDispatch();
     const course = useSelector(state => state.course.selectedCourse);
     const parts = useSelector(state => state.course.selectedCourseParts);
@@ -30,7 +30,9 @@ const CoursePage = ({ title }) => {
     return (
         <ErrorBoundary>
             <Head>
+                <link rel="canonical" href={`https://exportknowledge.com/${course.url}/${currentPart.url}`} />
                 <title>{title} - export Knowledge;</title>
+                <meta name="description" content={description} />
             </Head>
 
             <div className="course_container pushFooter">
@@ -97,10 +99,12 @@ CoursePage.getInitialProps = async function ({ store, req, query }) {
         }
     }
 
+    const newState = store.getState();
+
     //if we have the course title return it
-    if (store.getState().course != null) {
-        if (store.getState().course.selectedCourse != null) {
-            return { title: store.getState().course.selectedCourse.title };
+    if (newState.course != null) {
+        if (newState.course.selectedPart != null) {
+            return { title: newState.course.selectedPart.title, description: newState.course.selectedPart.text.substring(0, 150) };
         }
     }    
 

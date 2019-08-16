@@ -5,7 +5,7 @@ const PrivacyPolicy = (props) => {
     return(
         <div className="legal_container pushFooter">
             <div className="legal">
-                <h2>Welcome to our Privacy Policy</h2>
+                <h1>Privacy Policy for export Knowledge;</h1>
                 <h2>Your privacy is critically important to us.</h2>
 
                 <p>It is Export Knowledge’s policy to respect your privacy regarding any information we may collect while operating our website. This Privacy Policy applies to <a href="https://exportknowledge.com">https://exportknowledge.com</a> (hereinafter, "us", "we", or "https://exportknowledge.com"). We respect your privacy and are committed to protecting personally identifiable information you may provide us through the Website. We have adopted this privacy policy ("Privacy Policy") to explain what information may be collected on our Website, how we use this information, and under what circumstances we may disclose the information to third parties. This Privacy Policy applies only to information we collect through the Website and does not apply to our collection of information from other sources.</p>

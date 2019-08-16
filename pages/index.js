@@ -23,8 +23,8 @@ const Index = () => {
                     </a>
                     <div className="hero">
                         <div className="hero_content">
-                            <h1>Learn and become a full stack</h1>
-                            <h1>web developer for <span>FREE</span></h1>
+                            <h1>Learn and become a full stack <br/>
+                            web developer for <span>FREE</span></h1>
                             <Link prefetch href="/courses">
                                 <a className="hero_button"><p>START LEARNING</p></a>
                             </Link>
@@ -41,8 +41,8 @@ const Index = () => {
                     <h2>Featured Course</h2>
                     <Link href={`/course/${latestCourse.course_url}/${latestCourse.part_url}`}>
                         <a>
-                            <img className="home_course_image--blur" src={latestCourse.image} />
-                            <img className="home_course_image" src={latestCourse.image} />
+                            <img className="home_course_image--blur" src={latestCourse.image} alt="Course" />
+                            <img className="home_course_image" src={latestCourse.image} alt="Course Blur" />
                         </a>
                     </Link>
                 </section>

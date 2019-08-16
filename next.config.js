@@ -1,5 +1,6 @@
 const withCSS = require('@zeit/next-css');
 
 module.exports = withCSS({
-    cssModules: false
+    cssModules: false,
+    poweredByHeader: false
 });

@@ -13,7 +13,8 @@
   width: 768px;
 }
 
-.legal h2 {
+.legal h2,
+.legal h1 {
   font-family: "Zilla Slab";
   font-size: 2rem;
   color: #1d1d1d;

@@ -32,7 +32,9 @@ const ArticlePage = () => {
     return(
         <ErrorBoundary>   
             <Head>
+                <link rel="canonical" href={`https://exportknowledge.com/article/${article.url}`} />
                 <title>{article.title} - export Knowledge;</title>
+                <meta name="description" content={article.text_preview} />
             </Head>
 
             <div className="article_container pushFooter">                

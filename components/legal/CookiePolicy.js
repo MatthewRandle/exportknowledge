@@ -4,7 +4,7 @@ const CookiePolicy = (props) => {
     return(
         <div className="legal_container pushFooter">
             <div className="legal">
-                <h2>Cookie Policy for export Knowledge;</h2>
+                <h1>Cookie Policy for export Knowledge;</h1>
 
                 <p>This is the Cookie Policy for export Knowledge;, accessible from https://exportknowledge.com</p>
 

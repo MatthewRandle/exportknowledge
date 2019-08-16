@@ -16,7 +16,9 @@ const CoursesPage = () => {
     return(
         <ErrorBoundary>
             <Head>
+                <link rel="canonical" href="https://exportknowledge.com/courses" />
                 <title>Courses - export Knowledge;</title>
+                <meta name="description" content="All of the courses here at export Knowledge. Each course has several parts that each have a written and video tutorial." />
             </Head>
 
             <div className="courses_container">

@@ -53,9 +53,11 @@ class MyApp extends App {
 
                             <Head>
                                 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Zilla+Slab:400,700" rel="stylesheet" />
+                                <link rel="canonical" href="https://exportknowledge.com" />
                                 <meta name="google-site-verification" content="LvIOdKgCzT_ISjQsQi-NWphkCMSMS4rRmN_cN5qPHUI" />
                                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                                <title>export Knowledge;</title>
+                                <title>export Knowledge - Become a full stack web developer for free</title>
+                                <meta name="description" content="exort Knowledge is a place where anyone can learn how to become a full stack web developer for free. Including courses of multiple parts and topics that each have a written and video format." />
                             </Head>
 
                             <Navbar />

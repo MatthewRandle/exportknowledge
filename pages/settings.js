@@ -14,7 +14,9 @@ const SettingsPage = () => {
     return (
         <ErrorBoundary>
             <Head>
+                <link rel="canonical" href="https://exportknowledge.com/settings" />
                 <title>Settings - export Knowledge;</title>
+                <meta name="description" content="Change your account settings and delete your account." />
             </Head>
 
             <Settings />

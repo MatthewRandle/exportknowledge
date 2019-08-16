@@ -6,7 +6,7 @@ export default class TermsAndConditions extends Component {
         return(
             <div className="legal_container pushFooter">
                 <div className="legal">
-                    <h2>Welcome to export Knowledge</h2>
+                    <h1>Terms and Conditions for export Knowledge;</h1>
                     <p>These terms and conditions outline the rules and regulations for the use of export Knowledge's Website.</p> <br />
                     <p>
                         By accessing this website we assume you accept these terms and conditions in full. Do not continue to use export Knowledge's website
