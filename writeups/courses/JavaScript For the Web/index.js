@@ -10,6 +10,7 @@ buttonsArray.forEach(button => {
 })
 
 function updateTotal(event) {
+    console.log(event)
     let button = event.target;
     let parent = button.parentElement;
     let price = parseInt(parent.getElementsByClassName("item_price")[0].getAttribute("value"));    

@@ -1,4 +1,4 @@
-In the last 2 parts we used the onclick event within our HTML code to call a function within our JavaScript file. Looking at the last part when we created a function that updated the items count each time the button was pressed, to get the function working for both buttons we have (for both products), we would have had to add this onclick event to both of them. You can image if we had 100 items in our store, adding this onclick event to each of them would get very tedious - and also very bad practice.
+In the last 2 parts we used the onclick event within our HTML code to call a function within our JavaScript file. Looking at the last part, when we created a function that updated the items count each time the button was pressed, to get the function working for both buttons we have (for both products), we would have had to add this onclick event to both of them. You can image if we had 100 items in our store, adding this onclick event to each of them would get very tedious - and also is very bad practice.
 
 <br>
 <br>
@@ -16,7 +16,7 @@ let someElement = document.getElementById("elementID");
 someElement.addEventListener("eventName", functionName);
 <code>
 
-Since we have multiple elemets stored in our buttons variable, we cannot simply do this. We must iterate over each of the elements that buttons holds. 
+Since we have multiple elements stored in our buttons variable, we cannot do this. We must iterate over each of the elements that the buttons variable holds. 
 
 <br>
 <br>
@@ -43,12 +43,12 @@ function updateTotal() {
 }
 <code>
 
-So now when any of the buttons is clicked, our updateTotal function is called.
+The 'button' we have straight after the forEach is a reference to the current object, we can give this any name we desire. Now when any of the buttons are clicked, our updateTotal function is called.
 
 <br>
 <br>
 
-We want to update the total price whenever this function is called. If we look at our HTML all of our items have a paragraph that hold the price of the item_button
+We want to update the total price whenever this function is called. If we look at our HTML all of our items have a paragraph that holds the price of the item_button
 
 <code><pre><html>
 <p class="item_price" value="10">Price: £10</p>
@@ -64,7 +64,20 @@ function updateTotal(event) {
 }
 <code>
 
-This event holds some information about the thing that called the function. We can use event.target to grab the element that called the function. We know this a button, so lets create a variable called button and give it a value of event.target
+This event holds some information about the thing that called the function. If we console.log this event out it will help us understand want information it holds
+
+<code><js>
+function updateTotal(event) {
+    console.log(event);
+}
+<code>
+
+If we go to the browser and go to our console (F12 in chrome) we will see an MouseEvent is logged.  If we expand the log using the arrow we see a list of all the attributes that this event holds. The one we are looking for is called 'target'. This contains the element itself that created the event.
+
+<br>
+<br>
+
+So we can use event.target to grab the element that called the function. We know this a button, so lets create a variable called button and give it a value of event.target
 
 <code><js>
 //rest of our code above
@@ -74,11 +87,21 @@ function updateTotal(event) {
 }
 <code>
 
-So, we want to access the price value of the paragraph. The easiest way to do this is by first getting the whole item itself. We can do this using parentElement
+We want to get the value (price) of the item that was added to the cart. Right now we have the button that belongs to that item, if we look at our HTML for an item we see that a paragraph exists with a value attribute
+
+<code><html>
+ <div class="item">
+    <p class="item_wishlist">Add to wishlist</p>
+    <p class="item_name">Inception</p>
+    <p class="item_price" value="10">Price: £10</p> <!-- Value -->
+    <p class="item_description">A god damn good movie.</p>
+    <button class="item_button">Add to cart</button>
+</div>
+<code>
+
+The easiest way to get this paragraph containing the value is to first get the container for the element (the div thats holding all the paragraphs and the button). We can do this using parentElement on the button
 
 <code><js>
-//rest of our code above
-
 function updateTotal(event) {
     let button = event.target;
     let item = button.parentElement;
@@ -88,12 +111,10 @@ function updateTotal(event) {
 This item variable now holds everything to do with the item that was added to the cart. So we can use it to access the paragraph of class name 'item_price'
 
 <code><js>
-//rest of our code above
-
 function updateTotal(event) {
     let button = event.target;
     let item = button.parentElement;
-    let price = parent.getElementsByClassName("item_price")[0];
+    let price = item.getElementsByClassName("item_price")[0];
 }
 <code>
 
@@ -105,16 +126,14 @@ We add the [0] to the end because we know that getElementsByClassName returns a 
 If we were to console.log the price variable we would see that we get the entire paragraph. We only need the 'price' value that it holds. To get attribute (such as style and src) we can use the getAttribute function, passing in the name of the attribute we wish to get
 
 <code><js>
-//rest of our code above
-
 function updateTotal(event) {
     let button = event.target;
     let item = button.parentElement;
-    let price = parent.getElementsByClassName("item_price")[0].getAttribute("value");
+    let price = item.getElementsByClassName("item_price")[0].getAttribute("value");
 }
 <code>
 
-To update the total price will need to get the element that holds it. Looking at our HTMl we have this line in the shopping cart section
+Now our price variable contains the value. To update the total price will need to get the element that holds it. Looking at our HTMl we have this line in the shopping cart section
 
 <code><pre><html>
 <p id="shoppingCartTotal">0</p>
@@ -149,7 +168,7 @@ function updateTotal(event) {
     let price = parent.getElementsByClassName("item_price")[0].getAttribute("value");
 
     totalPrice += price;
-    totalPriceElement.innerText = totalPrice;
+    totalPriceElement.innerText = totalPrice; <!-- Actually update our HTML element with the new price -->
 }
 <code>
 
@@ -164,7 +183,7 @@ let totalPriceElement = document.getElementById("shoppingCartTotal");
 function updateTotal(event) {
     let button = event.target;
     let item = button.parentElement;
-    let price = parseInt(parent.getElementsByClassName("item_price")[0].getAttribute("value"));
+    let price = parseInt(parent.getElementsByClassName("item_price")[0].getAttribute("value")); <!-- Convert attribute to an integer -->
 
     totalPrice += price;
     totalPriceElement.innerText = totalPrice;

@@ -6,7 +6,7 @@ Cascading style sheets (CSS) are a way in which we can give HTML elements a cert
 We are going to use JavaScript to change our styling on a movie when we click the 'Add to cart' button. To do this we first need to add event listeners to all of these buttons. This will then allow us to change that movies styling. So, we will use what we learned in the previous part and add event listeners to all 'Add to cart buttons'. If we look at the HTML code the buttons have a class name of 'item_button', we will use getElementsByClassName like we did in the second part
 
 <code><js>
-let buttons = documents.getElementsByClassName("item_button");
+let buttons = document.getElementsByClassName("item_button");
 let buttonsArray = Array.prototype.slice.call(buttons);
 
 buttonsArray.forEach(button => {
@@ -30,7 +30,7 @@ function changeStyle(event) {
 }
 <code>
 
-Now we have the container for the clicked movie all we need to do now is change the CSS border-color property. We simply do this by doing element.style.propertyName
+Now we have the container for the clicked movie all we need to do now is change the CSS border-color property. We do this by doing element.style.propertyName, in this case propertyName will be borderColor, we will then set this equal to any color
 
 <code><js>
 function changeStyle(event) {
@@ -58,6 +58,19 @@ container.className = "item item--clicked";
 <code>
 
 When doing this be sure to put the new class name after the original. We need to do this because if our original styling sets the border to be grey and our new styling sets it to blue, which one should it do? The answer is the one thats placed last in the className property.
+
+<br>
+<br>
+
+In our CSS file we might have this styling for a clicked item
+
+<code><css>
+.item--clicked {
+    padding: 100px;
+}
+<code>
+
+Note that this looks really ugly, it was just for demonstration purposes!
 
 <br>
 <br>
