@@ -45,7 +45,7 @@ app.prepare()
                 maxAge: 30 * 24 * 60 * 60 * 1000,
                 keys: [keys.cookieKey],
                 sameSite: "lax",
-                secure: process.env.NODE_ENV === "production" ? true : false
+                secure: false
             })
         );
         server.use(passport.initialize());
